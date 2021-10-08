@@ -1,0 +1,2 @@
+class SupportedCryptosController < ApplicationController
+end
