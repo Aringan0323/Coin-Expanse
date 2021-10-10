@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  initialValue: 1.5
+  creationTimestamp: 2021-10-10 17:18:26
+
+two:
+  initialValue: 1.5
+  creationTimestamp: 2021-10-10 17:18:26
