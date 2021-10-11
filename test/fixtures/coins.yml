@@ -2,8 +2,16 @@
 
 one:
   name: MyString
+<<<<<<< HEAD
   symbol: MyString
 
 two:
   name: MyString
   symbol: MyString
+=======
+  symbol: 
+
+two:
+  name: MyString
+  symbol: 
+>>>>>>> 904acd7713ab2d59c47abf8f35502baa845ffc06
