@@ -1,6 +1,10 @@
+require 'digest'
 class User < ApplicationRecord
-<<<<<<< HEAD
-=======
-  has_many :portfolios
->>>>>>> 904acd7713ab2d59c47abf8f35502baa845ffc06
+  has_many :portfolios 
+
+  #add a user password verification system
+
+
+
+
 end

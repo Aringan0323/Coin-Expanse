@@ -4,6 +4,7 @@ require 'net/http'
 
 require './app/helpers/coin_helper.rb'
 
+Coin.delete_all
 
 def createCoinsFromSymbols
 
@@ -22,6 +23,7 @@ def createCoinsFromSymbols
       if spot and has_usd_conversion
         coin = Coin.create(symbol: symbol_info["baseAsset"])
         CoinHelper.getTicker(coin)
+        CoinHelper.getDaySummary(coin)
       end
 
     end
@@ -31,15 +33,3 @@ def createCoinsFromSymbols
 end
 
 createCoinsFromSymbols
-
-
-# def getTicker(symbol, currency="BUSD")
-
-# 	uri = URI("https://api.binance.us/api/v3/ticker/bookTicker?symbol=#{symbol}#{currency}")
-# 	res = Net::HTTP.get_response(uri)
-# 	if res.is_a?(Net::HTTPSuccess)
-# 		JSON(res.body)
-# 	else
-# 		nil
-# 	end
-# end

@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: d369a567f96f164cc3664263a3b9673696a3469d
+  branch: master
+  specs:
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -78,6 +86,7 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    digest (3.0.0)
     erubi (1.10.0)
     ffi (1.15.4)
     globalid (0.5.2)
@@ -214,6 +223,8 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  digest
+  faker!
   jbuilder (~> 2.7)
   json
   listen (~> 3.3)

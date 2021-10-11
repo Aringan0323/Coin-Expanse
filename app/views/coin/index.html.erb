@@ -3,7 +3,7 @@
   <h1>Supported Cryptos</h1>
   <div>
     <% @coins.each do |coin| %>
-      <p><%= coin.symbol + "\n" %></p>
+      <p><%= link_to coin.symbol, coin_path(coin) %></p>
     <% end %>
   </div>
 </div>

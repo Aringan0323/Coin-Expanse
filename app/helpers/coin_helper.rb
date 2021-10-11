@@ -36,5 +36,39 @@ module CoinHelper
 	end
 
 
+	def self.getDaySummary(coin)
+
+		day_summary_uri = URI("https://api.binance.us/api/v3/ticker/24hr?symbol=#{coin.symbol}USDT")
+		day_summary_res = Net::HTTP.get_response(day_summary_uri)
+
+		# If either of the API requests fail, returns nil and nothing is created.
+		if day_summary_res.is_a?(Net::HTTPSuccess)
+
+			json = JSON(day_summary_res.body)
+
+			day_summary = DaySummary.create(
+			priceChange: json["priceChange"],
+			priceChangePercent: json["priceChangePercent"],
+			weightedAvgPrice: json["weightedAvgPrice"],
+			prevClosePrice: json["prevClosePrice"],
+			lastPrice: json["lastPrice"],
+			lastQty: json["lastQty"],
+			bidPrice: json["bidPrice"],
+			askPrice: json["askPrice"],
+			openPrice: json["openPrice"],
+			highPrice: json["highPrice"],
+			lowPrice: json["lowPrice"],
+			volume: json["volume"],
+			openTime: nil,
+			closeTime: nil,
+			tradeCount: json["count"],
+			coin_id: coin.id
+			)
+			  
+			return day_summary
+		else
+			return nil
+		end
+	end
 
 end
