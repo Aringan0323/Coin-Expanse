@@ -1,34 +1,30 @@
-require './app/helpers/user_helper.rb'
+require './app/helpers/user_helper'
 require 'faker'
 require 'date'
 
 User.delete_all
 
 def generateFakeUsers
+  (0..100).each do |_i|
+    name = Faker::Cannabis.buzzword
+    password = Faker::Cannabis.strain
+    binance_api_key = Faker::Cannabis.terpene
 
-	(0..100).each do |i|
+    passwordDigest = password
+    encryptedBinanceApiKey = binance_api_key
 
-		name = Faker::Cannabis.buzzword
-		password = Faker::Cannabis.strain
-		binance_api_key = Faker::Cannabis.terpene
+    # passwordDigest = UserHelper.digest_password(password)
+    # encryptedBinanceApiKey = UserHelper.digest_password(binance_api_key)
 
-		passwordDigest = password
-		encryptedBinanceApiKey = binance_api_key
+    user = User.new(
+      username: name,
+      passwordDigest: passwordDigest,
+      encryptedBinanceApiKey: encryptedBinanceApiKey,
+      userSince: DateTime.now
+    )
 
-		# passwordDigest = UserHelper.digest_password(password)
-		# encryptedBinanceApiKey = UserHelper.digest_password(binance_api_key)
-
-		user = User.new(
-			username:name,
-			passwordDigest:passwordDigest,
-			encryptedBinanceApiKey: encryptedBinanceApiKey,
-			userSince:DateTime.now()
-		)
-
-		return user
-	end
+    user.save
+  end
 end
 
 generateFakeUsers
-
-

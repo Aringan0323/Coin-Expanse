@@ -1,6 +1,7 @@
 <%= render 'shared/nav' %>
 <div class="page">
   <h1>Supported Cryptos</h1>
+  <p><%= "Analyzing crypto: #{@coin.symbol}"%></p>
   <div>
     <% @coin.book_tickers.each do |book_ticker| %>
       <p><%= book_ticker.avgPrice %></p>

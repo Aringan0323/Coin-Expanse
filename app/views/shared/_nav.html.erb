@@ -6,15 +6,19 @@
       </a>
       <ul class="nav-sub-links">
         <li>
-          <a id="suported-cryptos" class="nav-link" href="/supported-cryptos">Supported Cryptos</a>
+          <%= link_to coin_index_path, class: "nav-link" do%>
+            <strong>Supported Cryptos</strong>
+          <% end %>
         </li>
         <li>
-          <a id="about" class="nav-link" href="/about">About</a>
+          <%= link_to '/about', class: "nav-link" do%>
+            <p>About</p>
+          <% end %>
         </li>
       </ul>
     </div>
     <form class="form-box">
-      <input class="form-input" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-input" type="search" placeholder="Search (under construction)" aria-label="Search">
       <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>

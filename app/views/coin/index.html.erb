@@ -2,8 +2,10 @@
 <div class="page">
   <h1>Supported Cryptos</h1>
   <div>
+  <ol>
     <% @coins.each do |coin| %>
-      <p><%= link_to coin.symbol, coin_path(coin) %></p>
+      <li><%= link_to coin.symbol, coin %></li>
     <% end %>
+    </ol>
   </div>
 </div>
