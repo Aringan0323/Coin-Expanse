@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get '/about', to: 'about#index'
 
   # GET /supported-cryptos
-  get '/supported-cryptos', to: 'supported_cryptos#index'
+  get '/supported-cryptos', to: 'coin#index'
 end

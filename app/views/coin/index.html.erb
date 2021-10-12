@@ -1,0 +1,9 @@
+<%= render 'shared/nav' %>
+<div class="page">
+  <h1>Supported Cryptos</h1>
+  <div>
+    <% @coins.each do |coin| %>
+      <p><%= link_to coin.symbol, coin_path(coin) %></p>
+    <% end %>
+  </div>
+</div>

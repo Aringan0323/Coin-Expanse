@@ -13,6 +13,10 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore database.yml
+
+/config/database.yml
+
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/

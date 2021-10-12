@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+<<<<<<< HEAD
+  password_digest: MyString
+
+two:
+  username: MyString
+  password_digest: MyString
+=======
+  passwordDigest: MyString
+  encryptedBinanceApiKey: MyString
+
+two:
+  username: MyString
+  passwordDigest: MyString
+  encryptedBinanceApiKey: MyString
+>>>>>>> 904acd7713ab2d59c47abf8f35502baa845ffc06

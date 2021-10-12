@@ -1,0 +1,9 @@
+<%= render 'shared/nav' %>
+<div class="page">
+  <h1>Supported Cryptos</h1>
+  <div>
+    <% @coin.book_tickers.each do |book_ticker| %>
+      <p><%= book_ticker.avgPrice %></p>
+    <% end %>
+  </div>
+</div>
