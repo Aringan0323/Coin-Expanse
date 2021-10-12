@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/users/search?client_id=INSTAGRAM_CLIENT_ID&q=qz_privacy_test
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Remaining:
+      - '4990'
+      Content-Language:
+      - en
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      X-Ratelimit-Limit:
+      - '5000'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Date:
+      - Wed, 05 Aug 2015 22:17:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Set-Cookie:
+      - csrftoken=2abe346f912d91279491474a9f7d9a1a; expires=Wed, 03-Aug-2016 22:17:15
+        GMT; Max-Age=31449600; Path=/
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '192'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"code":200},"data":[{"username":"qz_privacy_test2","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/anonymousUser.jpg","id":"1643312009","full_name":""},{"username":"qz_privacy_test","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/anonymousUser.jpg","id":"1640440401","full_name":"Privacy
+        Test"}]}'
+    http_version: 
+  recorded_at: Wed, 05 Aug 2015 22:17:15 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/users/1640440401?client_id=INSTAGRAM_CLIENT_ID
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: BAD REQUEST
+    headers:
+      X-Ratelimit-Remaining:
+      - '4989'
+      Content-Language:
+      - en
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Cookie, Accept-Language
+      X-Ratelimit-Limit:
+      - '5000'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Date:
+      - Wed, 05 Aug 2015 22:17:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Set-Cookie:
+      - csrftoken=bc5e22de7e179b933aca9e921ef631df; expires=Wed, 03-Aug-2016 22:17:15
+        GMT; Max-Age=31449600; Path=/
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"error_type":"APINotAllowedError","code":400,"error_message":"you
+        cannot view this resource"}}'
+    http_version: 
+  recorded_at: Wed, 05 Aug 2015 22:17:15 GMT
+recorded_with: VCR 2.9.3

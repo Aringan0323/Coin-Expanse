@@ -1,0 +1,31 @@
+## MAC OS
+.DS_Store
+
+## TEXTMATE
+*.tmproj
+tmtags
+
+## EMACS
+*~
+\#*
+.\#*
+
+## VIM
+*.swp
+
+## PROJECT::GENERAL
+coverage
+rdoc
+pkg
+
+## PROJECT::SPECIFIC
+*.gem
+test/dummy/tmp
+test/dummy/log
+.bundle
+.rvmrc
+.ruby-version
+.ruby-gemset
+Gemfile.lock
+.bundle
+.byebug_history
