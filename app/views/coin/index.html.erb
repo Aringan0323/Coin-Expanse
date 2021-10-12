@@ -1,11 +1,21 @@
 <%= render 'shared/nav' %>
-<div class="page">
-  <h1>Supported Cryptos</h1>
-  <div>
-  <ol>
+
+<table class = "table table-bordered">
+  <thead>
+    <tr>
+      <th>Coin Symbol</th>
+      <th>Link To Coin Information</th>
+      <th?Current Market Price</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
     <% @coins.each do |coin| %>
-      <li><%= link_to coin.symbol, coin %></li>
+      <tr>
+        <td><%= coin.symbol %></td>
+        <td><%= link_to 'Show', coin %></td>
+      </tr>
     <% end %>
-    </ol>
-  </div>
-</div>
+  </tbody>
+</table>
