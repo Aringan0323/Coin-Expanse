@@ -61,6 +61,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'net'
 gem 'uri'
+gem "binance-ruby"
+gem 'figaro'
 gem 'json'
 gem 'seedbank'
 gem 'digest'
