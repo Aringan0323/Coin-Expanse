@@ -5,8 +5,8 @@
     <tr>
       <th>Coin Symbol</th>
       <th>Link To Coin Information</th>
-      <th?Current Market Price</th>
-      <th colspan="2"></th>
+      <th>Current Market Price</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -15,6 +15,7 @@
       <tr>
         <td><%= coin.symbol %></td>
         <td><%= link_to 'Show', coin %></td>
+        <td><%= "price: #{(coin.book_tickers[0].eql? nil) ? "unlisted" : coin.book_tickers[0].avgPrice}" %></td>
       </tr>
     <% end %>
   </tbody>
