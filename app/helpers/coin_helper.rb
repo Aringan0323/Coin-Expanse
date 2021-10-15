@@ -3,10 +3,10 @@ module CoinHelper
 	# Creates and returns a new BookTicker for the Coin.
 	def self.getTicker(coin)
 
-		ticker_uri = URI("https://api.binance.us/api/v3/ticker/bookTicker?symbol=#{coin.symbol}USDT")
+		ticker_uri = URI("https://api.binance.us/api/v3/ticker/bookTicker?symbol=#{coin.symbol}USD")
 		ticker_res = Net::HTTP.get_response(ticker_uri)
 
-		avg_price_uri = URI("https://api.binance.us/api/v3/avgPrice?symbol=#{coin.symbol}USDT")
+		avg_price_uri = URI("https://api.binance.us/api/v3/avgPrice?symbol=#{coin.symbol}USD")
 		average_price_res = Net::HTTP.get_response(avg_price_uri)
 
 		# If either of the API requests fail, returns nil and nothing is created.
@@ -38,7 +38,7 @@ module CoinHelper
 
 	def self.getDaySummary(coin)
 
-		day_summary_uri = URI("https://api.binance.us/api/v3/ticker/24hr?symbol=#{coin.symbol}USDT")
+		day_summary_uri = URI("https://api.binance.us/api/v3/ticker/24hr?symbol=#{coin.symbol}USD")
 		day_summary_res = Net::HTTP.get_response(day_summary_uri)
 
 		# If either of the API requests fail, returns nil and nothing is created.
