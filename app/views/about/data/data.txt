@@ -7,5 +7,5 @@ with crypto trading. This is comparable to programs like Scratch, a basic progra
 which have drag-and-drop components that allow users to construct something more complex.
 Block Trade has that direct functionality, as well as a means for you to upload your
 own Ruby code for more customized widgets or displays, and save them to a marketplace for
-other users to take advantage of. It's' linked to your personal trading account via
+other users to take advantage of. It's linked to your personal trading account via
 Binance US.
