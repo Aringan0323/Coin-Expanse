@@ -6,6 +6,11 @@ module CoinHelper
 	def self.getTicker(coin)
 
 		ticker_json = MarketApi.book_ticker(coin.symbol)
+		ticker_uri = URI("https://api.binance.us/api/v3/ticker/bookTicker?symbol=#{coin.symbol}USD")
+		ticker_res = Net::HTTP.get_response(ticker_uri)
+
+		avg_price_uri = URI("https://api.binance.us/api/v3/avgPrice?symbol=#{coin.symbol}USD")
+		average_price_res = Net::HTTP.get_response(avg_price_uri)
 
 		avg_price_json = MarketApi.current_average_price(coin.symbol)
 

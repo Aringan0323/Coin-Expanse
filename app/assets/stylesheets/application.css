@@ -65,12 +65,18 @@
   justify-content: space-around;
   align-items: center;
   width: 20%;
+  
 }
 
 .form-input {
-  border-radius: 5px;
+  border-radius: 10px; /*how rounded the corners of the textbox are */
   padding: 7px;
   width: 70%
+}
+
+.form-button {
+  border-radius: 10px; /*how rounded the corners of the textbox are */
+  padding: 7px;
 }
 
 .page {

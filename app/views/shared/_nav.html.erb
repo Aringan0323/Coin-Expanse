@@ -17,9 +17,9 @@
         </li>
       </ul>
     </div>
-    <form class="form-box">
-      <input class="form-input" type="search" placeholder="Search (under construction)" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <%= form_tag request.path, method: "GET", class: "form-box" do %>
+     <%= text_field_tag :search_param, params[:search_param], placeholder: "search", class: "form-input" %>
+     <%= submit_tag "Search", class: "form-button" %>
+    <% end %>
   </div>
 </nav>
