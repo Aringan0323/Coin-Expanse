@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # GET /about
   get '/about', to: 'about#index'
 
-  # GET /supported-cryptos
+
+  # paths for coin
   resources :coin
 end
