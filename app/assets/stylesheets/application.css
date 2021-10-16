@@ -89,3 +89,8 @@
 li {
   padding-bottom: 5px;
 }
+
+mark {
+  padding: 0;
+  background-color: lightblue;
+}
