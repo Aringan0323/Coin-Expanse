@@ -4,7 +4,12 @@ require 'net/http'
 require './app/helpers/coin_helper.rb'
 require './app/helpers/market_api.rb'
 
+puts("Deleting all coins")
 Coin.delete_all
+puts("Deleting all day summaries")
+DaySummary.delete_all
+puts("Deleting all book tickers")
+BookTicker.delete_all
 
 symbols = MarketApi.get_all_symbols
 
@@ -16,8 +21,9 @@ symbols.each do |symbol|
   coin = Coin.create(symbol: symbol, name: symbol_to_name[symbol])
   CoinHelper.getTicker(coin)
   CoinHelper.getDaySummary(coin)
+  puts("Created #{symbol} coin")
 end
-
+puts("Created ALL coins")
 
 # def createCoinsFromSymbols
 
