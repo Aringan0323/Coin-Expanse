@@ -11,7 +11,7 @@ module MarketApi
     info_uri = URI("https://api.binance.us/api/v3/exchangeInfo")
     info_res = Net::HTTP.get_response(info_uri)
 
-    compatible_symbols = []
+    base_assets = []
 
     if info_res.is_a?(Net::HTTPSuccess)
       symbols_info = JSON(info_res.body)["symbols"]
@@ -84,6 +84,32 @@ module MarketApi
       nil
     end
   end
+
+  def self.day_summaries
+
+    day_summaries_uri = URI("https://api.binance.us/api/v3/ticker/24hr")
+		day_summaries_res = Net::HTTP.get_response(day_summaries_uri)
+
+    if day_summaries_res.is_a?(Net::HTTPSuccess)
+      JSON(day_summaries_res.body)
+    else
+      nil
+    end
+  end
+
+  def self.book_tickers
+
+    btickers_uri = URI("https://api.binance.us/api/v3/ticker/bookTicker")
+    btickers_res = Net::HTTP.get_response(btickers_uri)
+
+    # Returns json object if get request succeeds, otherwise returns nil
+    if btickers_res.is_a?(Net::HTTPSuccess)
+      JSON(btickers_res.body)
+    else
+      nil
+    end
+  end
+
 
 end
         
