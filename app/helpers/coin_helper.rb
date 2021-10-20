@@ -58,8 +58,8 @@ module CoinHelper
 				highPrice: json["highPrice"],
 				lowPrice: json["lowPrice"],
 				volume: json["volume"],
-				openTime: Time.at(json["openTime"]/1000),
-				closeTime: Time.at(json["closeTime"]/1000),
+				openTime: nil,
+				closeTime: nil,
 				tradeCount: json["count"],
 				coin_id: coin.id
 			)
@@ -68,45 +68,46 @@ module CoinHelper
 	end
 
 
-  def self.getDaySummaries(coin_list)
+#   def self.getDaySummaries(coin_list)
 
-		day_summaries = MarketApi.day_summaries	
+# 		day_summaries = MarketApi.day_summaries	
 
-		if day_summaries.nil?
+# 		if day_summaries.nil?
 
-			puts "Day summary data for all coins could not be fetched"
+# 			puts "Day summary data for all coins could not be fetched"
 
-		else
+# 		else
 
-      day_summary_dict = {}
+#       		day_summary_dict = {}
+# 		end
+#       day_summaries.each do |s|
+#         symbol = s["symbol"][0..-3]
+#         if coin_name_list.include? symbol
 
-      day_summaries.each do |s|
-        symbol = s["symbol"][0..-3]
-        if coin_name_list.include? symbol
 
 
-
-			day_summary = DaySummary.create(
-				priceChange: json["priceChange"],
-				priceChangePercent: json["priceChangePercent"],
-				weightedAvgPrice: json["weightedAvgPrice"],
-				prevClosePrice: json["prevClosePrice"],
-				lastPrice: json["lastPrice"],
-				lastQty: json["lastQty"],
-				bidPrice: json["bidPrice"],
-				askPrice: json["askPrice"],
-				openPrice: json["openPrice"],
-				highPrice: json["highPrice"],
-				lowPrice: json["lowPrice"],
-				volume: json["volume"],
-				openTime: Time.at(json["openTime"]/1000),
-				closeTime: Time.at(json["closeTime"]/1000),
-				tradeCount: json["count"],
-				coin_id: coin.id
-			)
+# 			day_summary = DaySummary.create(
+# 				priceChange: json["priceChange"],
+# 				priceChangePercent: json["priceChangePercent"],
+# 				weightedAvgPrice: json["weightedAvgPrice"],
+# 				prevClosePrice: json["prevClosePrice"],
+# 				lastPrice: json["lastPrice"],
+# 				lastQty: json["lastQty"],
+# 				bidPrice: json["bidPrice"],
+# 				askPrice: json["askPrice"],
+# 				openPrice: json["openPrice"],
+# 				highPrice: json["highPrice"],
+# 				lowPrice: json["lowPrice"],
+# 				volume: json["volume"],
+# 				openTime: Time.at(json["openTime"]/1000),
+# 				closeTime: Time.at(json["closeTime"]/1000),
+# 				tradeCount: json["count"],
+# 				coin_id: coin.id
+# 			)
 			
-		end
-	end
+# 		end
+# 	end
+
 
 
 

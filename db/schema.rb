@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_10_19_202717) do
 
   create_table "coins", force: :cascade do |t|
     t.string "symbol"
+    t.string "binance_symbol"
     t.string "name"
   end
 

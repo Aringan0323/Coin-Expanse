@@ -1,29 +1,51 @@
 require 'json'
 require 'uri'
 require 'net/http'
-require './app/helpers/coin_helper.rb'
-require './app/helpers/market_api.rb'
+# require './app/helpers/coin_helper.rb'
+require './app/api_wrappers/market_api.rb'
 
 puts("Deleting all coins")
 Coin.delete_all
+
 puts("Deleting all day summaries")
 DaySummary.delete_all
+
 puts("Deleting all book tickers")
 BookTicker.delete_all
 
-symbols = MarketApi.get_all_symbols
+puts("Creating coins")
+coins = MarketApi.get_all_coins
 
-json_file = File.read("./db/seed_data/symbol_to_name.json")
-symbol_to_name = JSON.parse(json_file)
-
-
-symbols.each do |symbol|
-  coin = Coin.create(symbol: symbol, name: symbol_to_name[symbol])
-  CoinHelper.getTicker(coin)
-  CoinHelper.getDaySummary(coin)
-  puts("Created #{symbol} coin")
+coins.each do |coin|
+  coin.save
+  puts("Created #{coin.name}")
 end
-puts("Created ALL coins")
+
+puts("Creating day summaries")
+day_summaries = MarketApi.day_summaries(Coin.all)
+
+day_summaries.each do |day_summary|
+  day_summary.save
+end
+
+puts("Creating book tickers")
+book_tickers = MarketApi.book_tickers(Coin.all)
+puts(book_tickers)
+book_tickers.each do |book_ticker|
+  book_ticker.save
+end
+
+# json_file = File.read("./db/seed_data/symbol_to_name.json")
+# symbol_to_name = JSON.parse(json_file)
+
+
+# symbols.each do |symbol|
+#   coin = Coin.create(symbol: symbol, name: symbol_to_name[symbol])
+#   CoinHelper.getTicker(coin)
+#   CoinHelper.getDaySummary(coin)
+#   puts("Created #{symbol} coin")
+# end
+# puts("Created ALL coins")
 
 # def createCoinsFromSymbols
 
