@@ -1,8 +1,5 @@
-require "net/http"
-require "uri"
+require "./app/api_wrappers/api_utils.rb"
 require "json"
-
-
 
 
 module MarketApi
@@ -11,18 +8,7 @@ module MarketApi
   json_file = File.read("./db/seed_data/symbol_to_name.json")
   @symbol_to_name = JSON.parse(json_file)
 
-  # Accepts a GET request string and then returns a hash of the response from the Binance api, or nil if
-  # the request failed
-  def self.get_api_res(get_request)
-    uri = URI(get_request)
-    res = Net::HTTP.get_response(uri)
-
-    if res.is_a?(Net::HTTPSuccess)
-      JSON(res.body)
-    else
-      nil
-    end
-  end
+  
 
   # Creates a hash mapping the binance symbols of Coins to their ids
   def self.coin_id_map(coins)
@@ -105,7 +91,7 @@ module MarketApi
   # Returns a list of new Coin ApplicationRecords
   def self.get_all_coins
 
-    info = get_api_res("https://api.binance.us/api/v3/exchangeInfo")
+    info = ApiUtils.get_api_res("https://api.binance.us/api/v3/exchangeInfo")
 
     coins = []
 
@@ -133,52 +119,11 @@ module MarketApi
     end
   end
 
-  
-  def self.book_ticker(coin)
-
-    book_ticker_hash = get_api_res("https://api.binance.us/api/v3/ticker/bookTicker?symbol=#{coin.binance_symbol}")
-    price_hash = get_api_res("https://api.binance.us/api/v3/ticker/price?symbol=#{coin.binance_symbol}")
-
-    # If either of the API request fail, returns nil, otherwise returns a new BookTicker
-    if book_ticker_hash.nil? or price_hash.nil?
-      nil
-    else
-      book_ticker = create_book_ticker(price_hash, book_ticker_hash, coin.id)
-      book_ticker
-    end
-  end
-
-  def self.current_average_price(coin)
-
-    avg_price_hash = get_api_res("https://api.binance.us/api/v3/avgPrice?symbol=#{coin.binance_symbol}")
-
-    # If the API request fails, returns nil, otherwise returns the average price of the coin
-    if average_price_hash.nil?
-      nil
-    else
-      avg_price_hash["price"]
-    end
-  end
-
-
-  def self.day_summary(coin)
-
-    day_summary_hash = get_api_res("https://api.binance.us/api/v3/ticker/24hr?symbol=#{coin.binance_symbol}")
-
-    # If the API request fails, returns nil, otherwise returns a new DaySummary
-    if day_summary_hash.nil?
-      nil
-    else
-      day_summary = create_day_summary(day_summary_hash, coin.id)
-      day_summary
-    end
-  end
-
   # Returns a list of new DaySummary ApplicationRecords from a list of Coin ApplicationRecords which
   # have been saved to the database
   def self.day_summaries(coins)
 
-    day_summaries_list = get_api_res("https://api.binance.us/api/v3/ticker/24hr")
+    day_summaries_list = ApiUtils.get_api_res("https://api.binance.us/api/v3/ticker/24hr")
 
     if day_summaries_list.nil?
       nil
@@ -202,8 +147,8 @@ module MarketApi
   # have been saved to the database
   def self.book_tickers(coins)
 
-    avg_prices_list = get_api_res("https://api.binance.us/api/v3/ticker/price")
-    btickers_list = get_api_res("https://api.binance.us/api/v3/ticker/bookTicker")
+    avg_prices_list = ApiUtils.get_api_res("https://api.binance.us/api/v3/ticker/price")
+    btickers_list = ApiUtils.get_api_res("https://api.binance.us/api/v3/ticker/bookTicker")
 
     if avg_prices_list.nil? or btickers_list.nil?
       nil
@@ -230,6 +175,46 @@ module MarketApi
     end
   end
 
+
+  def self.book_ticker(coin)
+
+    book_ticker_hash = ApiUtils.get_api_res("https://api.binance.us/api/v3/ticker/bookTicker?symbol=#{coin.binance_symbol}")
+    price_hash = ApiUtils.get_api_res("https://api.binance.us/api/v3/ticker/price?symbol=#{coin.binance_symbol}")
+
+    # If either of the API request fail, returns nil, otherwise returns a new BookTicker
+    if book_ticker_hash.nil? or price_hash.nil?
+      nil
+    else
+      book_ticker = create_book_ticker(price_hash, book_ticker_hash, coin.id)
+      book_ticker
+    end
+  end
+
+  def self.current_average_price(coin)
+
+    avg_price_hash = ApiUtils.get_api_res("https://api.binance.us/api/v3/avgPrice?symbol=#{coin.binance_symbol}")
+
+    # If the API request fails, returns nil, otherwise returns the average price of the coin
+    if average_price_hash.nil?
+      nil
+    else
+      avg_price_hash["price"]
+    end
+  end
+
+
+  def self.day_summary(coin)
+
+    day_summary_hash = ApiUtils.get_api_res("https://api.binance.us/api/v3/ticker/24hr?symbol=#{coin.binance_symbol}")
+
+    # If the API request fails, returns nil, otherwise returns a new DaySummary
+    if day_summary_hash.nil?
+      nil
+    else
+      day_summary = create_day_summary(day_summary_hash, coin.id)
+      day_summary
+    end
+  end
 
 end
         
