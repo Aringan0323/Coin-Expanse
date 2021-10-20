@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_10_213713) do
+ActiveRecord::Schema.define(version: 2021_10_19_202717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2021_10_10_213713) do
 
   create_table "coins", force: :cascade do |t|
     t.string "symbol"
-    t.string "name"
   end
 
   create_table "day_summaries", force: :cascade do |t|
@@ -49,6 +48,17 @@ ActiveRecord::Schema.define(version: 2021_10_10_213713) do
     t.datetime "closeTime"
     t.integer "tradeCount"
     t.index ["coin_id"], name: "index_day_summaries_on_coin_id"
+  end
+
+  create_table "news_articles", force: :cascade do |t|
+    t.string "title"
+    t.string "name"
+    t.string "description"
+    t.string "url"
+    t.string "image_url"
+    t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "portfolio_coin_join_tables", force: :cascade do |t|
