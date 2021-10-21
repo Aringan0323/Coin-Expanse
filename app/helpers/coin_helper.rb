@@ -1,4 +1,4 @@
-require "./app/helpers/market_api.rb"
+require "./app/api_wrappers/market_api.rb"
 
 module CoinHelper
 

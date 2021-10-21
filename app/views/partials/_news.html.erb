@@ -1,0 +1,19 @@
+<div class="news">
+  <% @news.each do |article| %>
+    <div style="padding:30px;">
+      <div class="card" style="width: 30rem;">
+        <%= link_to image_tag(article.image_url, style: 'height:auto;width:30rem;border-radius:5px'), article.url, :class => 'card-img-top' %>
+        <div class='card-body'>
+          <div class="card-title" style="font-size:x-large"><%= link_to article.title, article.url%></div>
+          <div class="card-subtitle mb-2 text-muted">
+          <%= content_tag :div, article.name, :class => 'article-origin' %>
+            <%= content_tag :div, article.date.localtime.strftime("%m/%d/%Y %I:%M %p") %>
+          </div>
+          <div class='card-text'>
+            <%= content_tag :div, article.description[..100]+'...', :class => 'article-desc' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
