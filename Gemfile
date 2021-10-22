@@ -59,6 +59,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Block_Trade specific gems
 
+gem 'rexml'
+
+
+gem 'dotenv-rails', groups: [:development, :test]
+
+
 gem 'net'
 gem 'uri'
 gem "binance-ruby"

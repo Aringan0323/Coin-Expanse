@@ -4,7 +4,7 @@
   <p><%= "Analyzing crypto: #{@coin.symbol}"%></p>
   <div>
     <% @coin.book_tickers.each do |book_ticker| %>
-      <p><%= book_ticker.avgPrice %></p>
+      <p><%= "$#{book_ticker.avgPrice}" %></p>
     <% end %>
   </div>
 </div>

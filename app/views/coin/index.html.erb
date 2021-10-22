@@ -1,6 +1,7 @@
 <%= render 'shared/nav' %>
 
-<table class = "table table-bordered">
+<div style="padding-top:142px;">
+  <table class = "table table-bordered">
   <thead>
     <tr>
       <th>Coin Symbol</th>
@@ -14,8 +15,9 @@
       <tr>
         <td><%= coin.name %></td>
         <td><%= link_to 'Show', coin %></td>
-        <td><%= "price: #{(coin.book_tickers[0].eql? nil) ? "unlisted" : coin.book_tickers[0].avgPrice}" %></td>
+        <td><%= "price: $#{(coin.book_tickers[0].eql? nil) ? "unlisted" : coin.book_tickers[0].avgPrice}" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
