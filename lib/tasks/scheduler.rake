@@ -1,8 +1,12 @@
 require "./app/api_wrappers/market_api.rb"
 
-task :update_feed => :environment do
-  btickers = MarketApi.book_tickers(Coin.all)
-  btickers.each do |bticker|
-    bticker.save
+
+namespace :update_coins
+  desc "updates all of the coins book tickers"
+  task :update_btickers do
+    btickers = MarketApi.book_tickers(Coin.all)
+    btickers.each do |bticker|
+      bticker.save
+    end
   end
 end
