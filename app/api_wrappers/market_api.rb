@@ -145,7 +145,7 @@ module MarketApi
 
   # Returns a list of new BookTicker ApplicationRecords from a list of Coin ApplicationRecords which
   # have been saved to the database
-  def self.book_tickers(coins)
+  def self.book_tickers(coins=Coin.all)
 
     avg_prices_list = ApiUtils.get_api_res("https://api.binance.us/api/v3/ticker/price")
     btickers_list = ApiUtils.get_api_res("https://api.binance.us/api/v3/ticker/bookTicker")
