@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: block_trade_production
-  username: postgres
+  username: block_trade
   password: <%= ENV['BLOCK_TRADE_DATABASE_PASSWORD'] %>
