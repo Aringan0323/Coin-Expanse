@@ -1,7 +1,42 @@
-<%= form_tag '/login' do %>
-   <%= label_tag :username%>
-   <%= text_field_tag :username %>
-   <%= label_tag :password%>
-   <%= password_field_tag :password%>
-   <%= submit_tag "Login"%>
-<% end%>
+<section class="vh-100" style="background-color: gray;">
+  <%= flash[:danger]%>
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;border: 1px solid black;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img
+                src="https://images.hdqwalls.com/download/dogecoin-sw-1080x1920.jpg"
+                alt="login form"
+                class="img-fluid" style="border-radius: 1rem 0 0 1rem;"
+              />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+                <%= form_tag '/login' do %>
+                  <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h3>
+                  <div class="form-outline mb-4">
+                    <%= text_field_tag :username, "", class: "form-control form-control-lg", placeholder: "Username" %>
+                  </div>
+                  
+                  <div class="form-outline mb-4">
+                    <%= password_field_tag :password, "", class: "form-control form-control-lg", placeholder: "Password"%>
+                  </div>
+                  
+                  <div class="pt-1 mb-4">
+                    <%= submit_tag "Login", class: "btn btn-dark btn-lg btn-block", style: "width:100%;"%>
+                  </div>
+
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#!" style="color: #393f81;">Register here</a></p>
+                <% end%>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
