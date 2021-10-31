@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 2021_10_19_202717) do
     t.string "username"
     t.string "password_digest"
     t.string "encryptedBinanceApiKey"
+    t.string "email"
     t.datetime "userSince"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
