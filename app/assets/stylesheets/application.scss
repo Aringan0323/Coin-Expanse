@@ -14,7 +14,6 @@
  *= require_self
  */
 
-//  @import "bootstrap";
 
 .title {
   font-family: Arial, Helvetica, sans-serif;
@@ -65,8 +64,7 @@
 .nav-right {
   display: flex;
   flex-direction: row;
-  width: 300px;
-  // border: 1px solid purple;
+  width: 450px;
   justify-content: space-between;
 }
 
@@ -75,12 +73,13 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  width: 80%;
 }
 
 .form-input {
   border-radius: 10px; /*how rounded the corners of the textbox are */
   padding: 7px;
-  width: 70%;
+  width: 80%;
 }
 
 .form-button {
@@ -96,7 +95,7 @@
 }
 
 li {
-  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 mark {
