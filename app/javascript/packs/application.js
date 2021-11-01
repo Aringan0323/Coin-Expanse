@@ -8,7 +8,15 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap/dist/js/bootstrap";
+import "bootstrap/dist/css/bootstrap";
+import "@fortawesome/fontawesome-free/js/all";
+import "bootstrap";
 
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
+
+document.addEventListener("turbolinks:load", () => {
+  $('[data-toggle="popover"]').popover();
+});

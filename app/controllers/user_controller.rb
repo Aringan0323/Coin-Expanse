@@ -1,8 +1,9 @@
-class UserController < ApplicationController
+class UserController < PublicController
   include SessionsHelper
   def create
     user = User.new(params.require(:user).permit(:username, :password, :password_confirmation, :encryptedBinanceApiKey, :email))
     if user.valid?
+      user.userSince = DateTime.now
       user.save
       log_in user
       redirect_to root_url

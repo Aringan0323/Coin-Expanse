@@ -14,9 +14,14 @@
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
+                <% if flash[:notice] %>
+                  <div class="alert alert-danger"><%= flash[:notice] %></div>
+                <% end %>
+
                 <% if flash[:danger] %>
                   <div class="alert alert-danger"><%= flash[:danger] %></div>
                 <% end %>
+
 
                 <%= form_tag '/login' do %>
                   <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h3>
