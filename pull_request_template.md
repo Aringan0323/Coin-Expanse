@@ -6,16 +6,12 @@ Brief description of the ticket
 
 ## Changes Made
 
----
-
 Describe in some detail the changes made. This might include relevant file changes, problems, solutions
 
 ## How were these changed tested?
 
----
-
 - [ ] Unit tests ran
-- [ ] Functional tests ran
+- [ ] Functional/Integration/System tests ran
 - [ ] Locally
 
 Additional notes: (remove this line if no additional notes)
