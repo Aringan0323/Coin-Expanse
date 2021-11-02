@@ -17,9 +17,19 @@
         </li>
       </ul>
     </div>
-    <%= form_tag request.path, method: "GET", class: "form-box" do %>
-     <%= text_field_tag :search_param, params[:search_param], placeholder: "search", class: "form-input" %>
-     <%= submit_tag "Search", class: "form-button" %>
-    <% end %>
+    <div class="nav-right">
+      <%= form_tag request.path, method: "GET", class: "form-box" do %>
+      <%= text_field_tag :search_param, params[:search_param], placeholder: "search", class: "form-input" %>
+      <%= button_tag(type: "submit", class: "btn btn-default") do %>
+        <i class="bi bi-search" style="color: white;"></i>
+        <% end %>
+      <% end %>
+      <%# <button data-toggle="popover" title="Popover title" data-placement="bottom" style="background-color:transparent"><i class='bi bi-person-circle fa-2x' style='color:white;'></i></button> %>
+      <div style="padding-top:8px;">
+      <%= link_to '/logout', style: "color: white;text-decoration: none;align-items: center" do %>
+        <strong>Log out</strong>
+      <% end %>
+      </div>
+    </div>
   </div>
 </nav>

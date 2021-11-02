@@ -1,4 +1,4 @@
-class CoinController < ApplicationController
+class CoinController < PrivateController
 
   def index
     puts "params: #{params[:search_param]}"

@@ -81,8 +81,9 @@ ActiveRecord::Schema.define(version: 2021_10_19_202717) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "passwordDigest"
+    t.string "password_digest"
     t.string "encryptedBinanceApiKey"
+    t.string "email"
     t.datetime "userSince"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
