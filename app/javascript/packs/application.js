@@ -10,12 +10,13 @@ import "channels";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@fortawesome/fontawesome-free/js/all";
 import "bootstrap";
-global.$ = require('jquery');
-require('jquery-ui')
+global.$ = require("jquery");
+require("jquery-ui");
 
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
-
-$('#draggable').draggable();
+$(document).on("turbolinks:load", function () {
+  $("#draggable").draggable();
+});
