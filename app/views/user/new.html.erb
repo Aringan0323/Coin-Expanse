@@ -1,4 +1,4 @@
-<section class="vh-100" style="background-color: grey;">
+<section class="vh-100 gradient-custom" style="background-color: grey;">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
@@ -19,35 +19,40 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="bi bi-file-person me-3"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <%= form.text_field :username, class: "form-control", placeholder: "Username", required: true %>
+                      <%= form.text_field :username, class: "form-control", required: true %>
+                      <label class="form-label" for="username">Username</label>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="bi bi-google me-3"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <%= form.text_field :email, class: "form-control", placeholder: "Email", required: true %>
+                      <%= form.text_field :email, class: "form-control", required: true, type: "email" %>
+                      <label class="form-label" for="email">Email</label>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="bi bi-file-lock-fill me-3"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <%= form.password_field :password, class: "form-control", placeholder: "Password", required: true%>
+                      <%= form.password_field :password, class: "form-control", required: true%>
+                      <label class="form-label" for="password">Password</label>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="bi bi-shield-lock-fill me-3"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Repeat Password", required: true%>
+                      <%= form.password_field :password_confirmation, class: "form-control",required: true%>
+                      <label class="form-label" for="password_confirmation">Password Confirmation</label>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="bi bi-key-fill me-3"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <%= form.password_field :encryptedBinanceApiKey, class: "form-control", placeholder: "Binance Key (optional)" %>
+                      <%= form.password_field :encryptedBinanceApiKey, class: "form-control" %>
+                      <label class="form-label" for="username">Binance Key (optional)</label>
                     </div>
                   </div>
 
@@ -56,6 +61,10 @@
                   </div>
 
                 <% end %>
+
+                <div style="display:flex;flex-direction:row;justify-content:center">
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account? <%= link_to "Log In", '/login'%></p>
+                </div>
 
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">

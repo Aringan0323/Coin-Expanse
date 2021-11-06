@@ -1,34 +1,27 @@
 <nav class="navbar navbar-dark bg-dark" style="width:100%;position:fixed;z-index:1">
   <div class="nav-items">
     <div class="nav-links">
-      <a class="navbar-brand" href="/">
-        <p class="nav-title">Block Trade</p>
-      </a>
-      <ul class="nav-sub-links">
-        <li>
-          <%= link_to coin_index_path, class: "nav-link" do%>
+      <%= link_to "Coin Expanse", root_url, class: "navbar-brand nav-title"%>
+      <div class="nav-sub-links">
+        <%= link_to coin_index_path, class: "nav-link" do%>
             <strong>Supported Cryptos</strong>
           <% end %>
-        </li>
-        <li>
-          <%= link_to '/about', class: "nav-link" do%>
+        <%= link_to '/about', class: "nav-link" do%>
             <strong>About</strong>
           <% end %>
-        </li>
-      </ul>
+      </div>
     </div>
     <div class="nav-right">
-      <%= form_tag request.path, method: "GET", class: "form-box" do %>
-      <%= text_field_tag :search_param, params[:search_param], placeholder: "search", class: "form-input" %>
-      <%= button_tag(type: "submit", class: "btn btn-default") do %>
-        <i class="bi bi-search" style="color: white;"></i>
+      <%= form_tag request.path, method: "GET", class: "form-box", id: 'search_form' do %>
+        <%= text_field_tag :search_param, params[:search_param], placeholder: "Search this page...", class: "form-input" %>
+        <%= link_to 'submit', onclick: "$('#search_form').submit()"  do %>
+          <i class="bi bi-search" style="color: white;"></i>
         <% end %>
       <% end %>
-      <%# <button data-toggle="popover" title="Popover title" data-placement="bottom" style="background-color:transparent"><i class='bi bi-person-circle fa-2x' style='color:white;'></i></button> %>
-      <div style="padding-top:8px;">
-      <%= link_to '/logout', style: "color: white;text-decoration: none;align-items: center" do %>
-        <strong>Log out</strong>
-      <% end %>
+      <div class="logout">
+        <%= button_to '/logout', class: "btn btn-primary", method: :get do %>
+          Log Out
+        <% end %>
       </div>
     </div>
   </div>

@@ -18,5 +18,11 @@ Turbolinks.start();
 ActiveStorage.start();
 
 $(document).on("turbolinks:load", function () {
+  // draggable functionality
   $("#draggable").draggable();
+
+  // form outlines
+  document.querySelectorAll(".form-outline").forEach((formOutline) => {
+    new mdb.Input(formOutline).init();
+  });
 });

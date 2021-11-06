@@ -5,8 +5,11 @@ class CoinController < PrivateController
     if params[:search_param].eql? nil
       @coins = Coin.all
     else 
-      puts "HERE"
-      @coins = Coin.where("symbol like ?", "%#{params[:search_param]}%")
+      symbol = Coin.where("symbol ilike ?", "%#{params[:search_param]}%").to_a
+      puts symbol
+      name = Coin.where("name ilike ?", "%#{params[:search_param]}%").to_a
+      puts name
+      @coins = symbol | name
     end
   end
 
