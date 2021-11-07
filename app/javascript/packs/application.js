@@ -12,6 +12,7 @@ import "@fortawesome/fontawesome-free/js/all";
 import "bootstrap";
 global.$ = require("jquery");
 require("jquery-ui");
+import "chartkick/chart.js";
 
 Rails.start();
 Turbolinks.start();
