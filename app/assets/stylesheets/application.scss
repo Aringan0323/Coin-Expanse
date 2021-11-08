@@ -138,3 +138,10 @@ mark {
 .dropdown-item:hover {
     background-color: rgb(92, 185, 228) !important;
 }
+
+.dropdown-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}

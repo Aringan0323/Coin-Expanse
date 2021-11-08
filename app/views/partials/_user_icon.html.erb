@@ -6,11 +6,21 @@
     data-mdb-toggle="dropdown"
     aria-expanded="false"
   >
-    <i class="fas fa-user-cog"></i>
+    <i class="fas fa-user"></i>
   </button>
   <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
-    <li><%= link_to "My Account", '/account', class: "dropdown-item" %></li>
+    <li>
+      <%= link_to ('/account'), class: "dropdown-item" do %>
+        <i class="fas fa-user-cog text-white"></i>
+        My Account
+      <% end %>
+    </li>
     <li><hr class="dropdown-divider" /></li>
-    <li><%= link_to "Log Out", '/logout', class: "dropdown-item" %></li>
+    <li>
+      <%= link_to ('/logout'), class: "dropdown-item" do %>
+        <i class="fas fa-sign-out-alt"></i>
+        Log Out
+      <% end %>
+    </li>
   </ul>
 </div> 
