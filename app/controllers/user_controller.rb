@@ -14,4 +14,9 @@ class UserController < PublicController
   end
 
   def new; end
+
+  def show
+    require_login
+    @user = current_user
+  end
 end

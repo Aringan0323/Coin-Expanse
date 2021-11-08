@@ -14,113 +14,127 @@
  *= require_self
  */
 
-
 .title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
 }
 
 .nav-title {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 40px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
 }
 
 .nav-items {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  width: 100%;
-  align-items: center;
-  padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
 }
 
 .nav-links {
-  // border: 1px solid green;
-  display: flex;
-  flex-direction: row;
-  flex: 6;  
+    // border: 1px solid green;
+    display: flex;
+    flex-direction: row;
+    flex: 6;
 }
 
 .nav-link {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 20px;
-  color: white;
-  text-decoration: none;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
 }
 
 .nav-sub-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  // border: 1px solid purple;
-  align-items: center;
-  padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // border: 1px solid purple;
+    align-items: center;
+    padding-top: 10px;
 }
 
 .nav-right {
-  // border: 1px solid peru;
-  display: flex;
-  flex: 2;
-  flex-direction: row;
-  width: 450px;
-  justify-content: space-between;
+    // border: 1px solid peru;
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .nav-search {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .logout {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .form-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
 }
 
 .form-input {
-  border-radius: 10px; /*how rounded the corners of the textbox are */
-  padding: 7px;
-  width: 80%;
+    border-radius: 10px;
+    /*how rounded the corners of the textbox are */
+    padding: 7px;
+    width: 80%;
 }
 
 .form-button {
-  border-radius: 10px; /*how rounded the corners of the textbox are */
-  padding: 7px;
+    border-radius: 10px;
+    /*how rounded the corners of the textbox are */
+    padding: 7px;
 }
 
 .page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 150px;
 }
 
 li {
-  padding-right: 10px;
+    padding-right: 10px;
 }
 
 mark {
-  padding: 0;
-  background-color: lightblue;
+    padding: 0;
+    background-color: lightblue;
 }
 
 .gradient-custom {
-  /* fallback for old browsers */
-  background: #667eea;
-
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5));
-
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5))
+    /* fallback for old browsers */
+    background: #667eea;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(74, 161, 195, 0.774), rgba(23, 32, 158, 0.568));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient( to right, rgba(74, 161, 195, 0.774), rgba(23, 32, 158, 0.568));
 }
 
+.gradient-custom-2 {
+    background: -webkit-linear-gradient( to right, rgba(174, 192, 241, 0.986), rgba(53, 10, 97, 0.5));
+    background: linear-gradient( to right, rgba(174, 192, 241, 0.986), rgba(53, 10, 97, 0.5));
+}
+
+.dropdown-menu>li:first-child {
+    margin-top: 15px;
+}
+
+.dropdown-menu>li:last-child {
+    margin-bottom: 15px;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(92, 185, 228) !important;
+}

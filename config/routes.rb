@@ -17,4 +17,7 @@ Rails.application.routes.draw do
 
   # paths for coin
   resources :coin
+
+  # private user routes
+  get '/account', to: 'user#show'
 end

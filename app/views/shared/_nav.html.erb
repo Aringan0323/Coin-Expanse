@@ -18,11 +18,7 @@
           <i class="bi bi-search" style="color: white;"></i>
         <% end %>
       <% end %>
-      <div class="logout">
-        <%= button_to '/logout', class: "btn btn-primary", method: :get do %>
-          Log Out
-        <% end %>
-      </div>
+      <%= render 'partials/user_icon' %>
     </div>
   </div>
 </nav>

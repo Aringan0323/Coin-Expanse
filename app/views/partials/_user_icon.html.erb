@@ -1,0 +1,16 @@
+<div class="dropdown logout">
+  <button
+    class="btn btn-secondary btn-floating"
+    type="button"
+    id="dropdownMenuButton2"
+    data-mdb-toggle="dropdown"
+    aria-expanded="false"
+  >
+    <i class="fas fa-user-cog"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+    <li><%= link_to "My Account", '/account', class: "dropdown-item" %></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><%= link_to "Log Out", '/logout', class: "dropdown-item" %></li>
+  </ul>
+</div> 
