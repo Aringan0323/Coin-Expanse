@@ -1,6 +1,6 @@
 require './app/helpers/about_helper'
 
-class AboutController < ApplicationController
+class AboutController < PrivateController
   def index
     search_terms = params[:search_param]
     file = File.open('./app/views/about/data/data.txt')

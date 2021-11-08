@@ -1,25 +1,28 @@
 <nav class="navbar navbar-dark bg-dark" style="width:100%;position:fixed;z-index:1">
   <div class="nav-items">
     <div class="nav-links">
-      <a class="navbar-brand" href="/">
-        <p class="nav-title">Block Trade</p>
-      </a>
-      <ul class="nav-sub-links">
-        <li>
-          <%= link_to coin_index_path, class: "nav-link" do%>
+      <%= link_to "Coin Expanse", root_url, class: "navbar-brand nav-title"%>
+      <div class="nav-sub-links">
+        <%= link_to coin_index_path, class: "nav-link" do%>
             <strong>Supported Cryptos</strong>
           <% end %>
-        </li>
-        <li>
-          <%= link_to '/about', class: "nav-link" do%>
+        <%= link_to '/about', class: "nav-link" do%>
             <strong>About</strong>
           <% end %>
-        </li>
-      </ul>
+      </div>
     </div>
-    <%= form_tag request.path, method: "GET", class: "form-box" do %>
-     <%= text_field_tag :search_param, params[:search_param], placeholder: "search", class: "form-input" %>
-     <%= submit_tag "Search", class: "form-button" %>
-    <% end %>
+    <div class="nav-right">
+      <%= form_tag request.path, method: "GET", class: "form-box", id: 'search_form' do %>
+        <%= text_field_tag :search_param, params[:search_param], placeholder: "Search this page...", class: "form-input" %>
+        <%= link_to 'submit', onclick: "$('#search_form').submit()"  do %>
+          <i class="bi bi-search" style="color: white;"></i>
+        <% end %>
+      <% end %>
+      <div class="logout">
+        <%= button_to '/logout', class: "btn btn-primary", method: :get do %>
+          Log Out
+        <% end %>
+      </div>
+    </div>
   </div>
 </nav>
