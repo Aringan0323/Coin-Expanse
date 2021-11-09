@@ -2,20 +2,6 @@ require "./app/api_wrappers/api_utils.rb"
 
 
 module NewsApi
-
-  # def self.init_api_key(api_key)
-  #   @key = api_key
-  # end
-  
-  
-  
-  
-  # def self.get_headlines(country, *keywords)
-  
-  
-  # https://newsapi.org/v2/everything?q=bitcoin&apiKey=
-  
-  
   
   def self.format_keywords(keyword_list)
   
@@ -29,13 +15,6 @@ module NewsApi
     keyword_string
   end
 
-
-  # t.string "title"
-  # t.string "name"
-  # t.string "description"
-  # t.string "url"
-  # t.string "image_url"
-  # t.date "date"
 
   def self.create_articles(articles_hash)
 

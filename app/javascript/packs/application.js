@@ -19,6 +19,13 @@ Turbolinks.start();
 ActiveStorage.start();
 
 $(document).on("turbolinks:load", function () {
+
+  $('#draggable-scroll').draggable({
+    scroll: true,
+    scrollSensitivity: 40,
+    scrollSpeed: 40
+  });
+
   // draggable functionality
   $("#draggable").draggable();
 
@@ -27,3 +34,5 @@ $(document).on("turbolinks:load", function () {
     new mdb.Input(formOutline).init();
   });
 });
+
+
