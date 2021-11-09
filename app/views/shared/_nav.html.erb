@@ -1,28 +1,42 @@
-<nav class="navbar navbar-dark bg-dark" style="width:100%;position:fixed;z-index:1">
-  <div class="nav-items">
-    <div class="nav-links">
-      <%= link_to "Coin Expanse", root_url, class: "navbar-brand nav-title"%>
-      <div class="nav-sub-links">
-        <%= link_to coin_index_path, class: "nav-link" do%>
-            <strong>Supported Cryptos</strong>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand mt-2 mt-lg-0" href="/">
+        <img
+          src="https://i.ibb.co/RT1wGqp/Coin-Expanse-logos-white.png"
+          width="150"
+          alt="logo"
+          loading="lazy"
+        />
+      </a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to coin_index_path, class: "nav-link" do%>
+            Supported Cryptos
           <% end %>
-        <%= link_to '/about', class: "nav-link" do%>
-            <strong>About</strong>
+        </li>
+        <li class="nav-item">
+          <%= link_to '/about', class: "nav-link" do%>
+            About
           <% end %>
-      </div>
+        </li>
+      </ul>
     </div>
-    <div class="nav-right">
-      <%= form_tag request.path, method: "GET", class: "form-box", id: 'search_form' do %>
-        <%= text_field_tag :search_param, params[:search_param], placeholder: "Search this page...", class: "form-input" %>
-        <%= link_to 'submit', onclick: "$('#search_form').submit()"  do %>
-          <i class="bi bi-search" style="color: white;"></i>
-        <% end %>
-      <% end %>
-      <div class="logout">
-        <%= button_to '/logout', class: "btn btn-primary", method: :get do %>
-          Log Out
-        <% end %>
-      </div>
-    </div>
+    <div class="d-flex align-items-center">
+
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <%= form_tag request.path, method: "GET", class: "d-flex input-group w-auto", id: 'search_form' do %>
+            <%= text_field_tag :search_param, params[:search_param], 
+              placeholder: "Search this page...", class: "form-control rounded", type: "search" %>
+            <span class="input-group-text text-white border-0" id="search-addon">
+              <%= link_to request.path, onclick: "$('#search_form').submit()"  do %>
+                <i class="bi bi-search" style="color: white;"></i>
+              <% end %>
+            </span>
+          <% end %>
+        </div>
+      </nav>
+      <%= render 'partials/user_icon' %>
   </div>
 </nav>

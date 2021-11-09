@@ -1,4 +1,0 @@
-* Add generator for seeds directories
-* Add platform independent test environment
-* Add generator for seeds data?
-* Add ability to add or update records in place?

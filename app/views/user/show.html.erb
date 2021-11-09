@@ -1,0 +1,42 @@
+<%= render 'shared/nav' %>
+<div class='page'>
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-6 mb-4 mb-lg-0">
+        <div class="card mb-3 shadow" style="border-radius: .5rem">
+          <div class="row g-0">
+            <div class="col-md-4 gradient-custom-2 text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+              <img
+                src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579"
+                alt="..."
+                class="img-fluid my-5"
+                style="width: 80px;"
+              />
+              <h5><%= @user.username %></h5>
+              <p>Crypto Trader</p>
+              <%= link_to '#' do %>
+                <i class="far fa-edit mb-5 text-white"></i>
+              <% end %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body p-4">
+                <h6>Account Information</h6>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h6>Email</h6>
+                    <p class="text-muted"><%= @user.email %></p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Full Name</h6>
+                    <p class="text-muted"><%= "No name!" %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
