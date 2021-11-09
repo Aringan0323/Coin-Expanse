@@ -31,3 +31,9 @@ Then, you can start the server by running
 ```
 
 This will start the server on `localhost:3000`. The port number can be changed by adding `-p xxxx`, where `xxxx` is some other port number (does not have to be 4 digits).
+
+### If MDBootstrap is not working
+
+- Go to `./app/javascript/packs/application.js` and comment any lines that throw errors in the browser console.
+- Reload the page to recompile webpacker.
+- Uncomment the lines that you commented out previously and reload the page once more.
