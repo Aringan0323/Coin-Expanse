@@ -1,6 +1,6 @@
 class PublicController < ApplicationController
   include SessionsHelper
-  before_action :check_logged_in
+  before_action :check_logged_in, only: [:new]
 
   private
 
