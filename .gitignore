@@ -48,4 +48,3 @@ yarn-debug.log*
 
 # ignoring vendor stuff
 /vendor
-/vendor/bundle/ruby/3.0.0
