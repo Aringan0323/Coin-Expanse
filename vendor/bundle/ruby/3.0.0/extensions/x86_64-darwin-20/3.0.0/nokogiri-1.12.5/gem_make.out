@@ -1,5 +1,5 @@
 current directory: /Users/joshualangman/Desktop/cs166B/block_trade/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.12.5/ext/nokogiri
-/Users/joshualangman/.rbenv/versions/3.0.1/bin/ruby -I /Users/joshualangman/.rbenv/versions/3.0.1/lib/ruby/3.0.0 -r ./siteconf20211010-41882-icgj6x.rb extconf.rb
+/Users/joshualangman/.rbenv/versions/3.0.1/bin/ruby -I /Users/joshualangman/.rbenv/versions/3.0.1/lib/ruby/3.0.0 -r ./siteconf20211108-7074-hao8z2.rb extconf.rb
 checking for whether -std=c99 is accepted as CFLAGS... yes
 checking for whether -Wno-declaration-after-statement is accepted as CFLAGS... yes
 checking for whether -g is accepted as CFLAGS... yes
@@ -206,5 +206,5 @@ Cleaning files only used during build.
 
 current directory: /Users/joshualangman/Desktop/cs166B/block_trade/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.12.5/ext/nokogiri
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20211010-41882-67sg22/nokogiri
+/usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20211108-7074-of7hqc/nokogiri
 installing nokogiri libraries

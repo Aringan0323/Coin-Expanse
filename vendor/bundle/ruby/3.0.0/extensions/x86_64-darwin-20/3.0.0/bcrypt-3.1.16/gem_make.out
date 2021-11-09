@@ -1,5 +1,5 @@
 current directory: /Users/joshualangman/Desktop/cs166B/block_trade/vendor/bundle/ruby/3.0.0/gems/bcrypt-3.1.16/ext/mri
-/Users/joshualangman/.rbenv/versions/3.0.1/bin/ruby -I /Users/joshualangman/.rbenv/versions/3.0.1/lib/ruby/3.0.0 -r ./siteconf20211106-1432-i4pmhe.rb extconf.rb
+/Users/joshualangman/.rbenv/versions/3.0.1/bin/ruby -I /Users/joshualangman/.rbenv/versions/3.0.1/lib/ruby/3.0.0 -r ./siteconf20211108-7074-mzmn34.rb extconf.rb
 creating Makefile
 
 current directory: /Users/joshualangman/Desktop/cs166B/block_trade/vendor/bundle/ruby/3.0.0/gems/bcrypt-3.1.16/ext/mri
@@ -27,4 +27,4 @@ linking shared-object bcrypt_ext.bundle
 
 current directory: /Users/joshualangman/Desktop/cs166B/block_trade/vendor/bundle/ruby/3.0.0/gems/bcrypt-3.1.16/ext/mri
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20211106-1432-nnhxjv
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20211108-7074-6lmxn9

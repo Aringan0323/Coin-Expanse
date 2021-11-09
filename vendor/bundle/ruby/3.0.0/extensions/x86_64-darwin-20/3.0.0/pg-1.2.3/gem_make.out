@@ -1,5 +1,5 @@
 current directory: /Users/joshualangman/Desktop/cs166B/block_trade/vendor/bundle/ruby/3.0.0/gems/pg-1.2.3/ext
-/Users/joshualangman/.rbenv/versions/3.0.1/bin/ruby -I /Users/joshualangman/.rbenv/versions/3.0.1/lib/ruby/3.0.0 -r ./siteconf20211010-41882-bryto4.rb extconf.rb
+/Users/joshualangman/.rbenv/versions/3.0.1/bin/ruby -I /Users/joshualangman/.rbenv/versions/3.0.1/lib/ruby/3.0.0 -r ./siteconf20211108-7074-mgehho.rb extconf.rb
 checking for pg_config... yes
 Using config values from /usr/local/bin/pg_config
 checking for libpq-fe.h... yes
@@ -134,4 +134,4 @@ linking shared-object pg_ext.bundle
 
 current directory: /Users/joshualangman/Desktop/cs166B/block_trade/vendor/bundle/ruby/3.0.0/gems/pg-1.2.3/ext
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20211010-41882-35u6q
+/usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20211108-7074-r62ebk

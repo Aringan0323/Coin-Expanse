@@ -45,3 +45,4 @@ yarn-debug.log*
 
 # Ignore environment variables
 .env
+/vendor/*

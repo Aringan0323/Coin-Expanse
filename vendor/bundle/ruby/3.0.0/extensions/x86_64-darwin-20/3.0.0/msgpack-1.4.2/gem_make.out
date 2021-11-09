@@ -1,5 +1,5 @@
 current directory: /Users/joshualangman/Desktop/cs166B/block_trade/vendor/bundle/ruby/3.0.0/gems/msgpack-1.4.2/ext/msgpack
-/Users/joshualangman/.rbenv/versions/3.0.1/bin/ruby -I /Users/joshualangman/.rbenv/versions/3.0.1/lib/ruby/3.0.0 -r ./siteconf20211010-41882-zqns8d.rb extconf.rb
+/Users/joshualangman/.rbenv/versions/3.0.1/bin/ruby -I /Users/joshualangman/.rbenv/versions/3.0.1/lib/ruby/3.0.0 -r ./siteconf20211108-7074-w5o3jv.rb extconf.rb
 checking for ruby/st.h... yes
 checking for st.h... no
 checking for rb_str_replace() in ruby.h... yes
@@ -53,4 +53,4 @@ linking shared-object msgpack/msgpack.bundle
 
 current directory: /Users/joshualangman/Desktop/cs166B/block_trade/vendor/bundle/ruby/3.0.0/gems/msgpack-1.4.2/ext/msgpack
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20211010-41882-1nr41k/msgpack
+/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20211108-7074-7gogkd/msgpack

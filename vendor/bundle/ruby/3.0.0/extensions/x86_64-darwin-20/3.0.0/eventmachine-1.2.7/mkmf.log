@@ -119,7 +119,7 @@ checked program was:
 "clang -fdeclspec -o conftest -I/Users/joshualangman/.rbenv/versions/3.0.1/include/ruby-3.0.0/x86_64-darwin20 -I/Users/joshualangman/.rbenv/versions/3.0.1/include/ruby-3.0.0/ruby/backward -I/Users/joshualangman/.rbenv/versions/3.0.1/include/ruby-3.0.0 -I. -I/Users/joshualangman/.rbenv/versions/3.0.1/openssl/include -I/Users/joshualangman/.rbenv/versions/3.0.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/joshualangman/.rbenv/versions/3.0.1/lib -L/Users/joshualangman/.rbenv/versions/3.0.1/openssl/lib -L. -L/Users/joshualangman/.rbenv/versions/3.0.1/lib  -fstack-protector-strong -L/usr/local/lib     -lruby.3.0   "
 Undefined symbols for architecture x86_64:
   "_rb_thread_blocking_region", referenced from:
-      _t in conftest-685798.o
+      _t in conftest-d2a85b.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -282,7 +282,7 @@ checked program was:
 "clang -fdeclspec -o conftest -I/Users/joshualangman/.rbenv/versions/3.0.1/include/ruby-3.0.0/x86_64-darwin20 -I/Users/joshualangman/.rbenv/versions/3.0.1/include/ruby-3.0.0/ruby/backward -I/Users/joshualangman/.rbenv/versions/3.0.1/include/ruby-3.0.0 -I. -I/Users/joshualangman/.rbenv/versions/3.0.1/openssl/include -I/Users/joshualangman/.rbenv/versions/3.0.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/joshualangman/.rbenv/versions/3.0.1/lib -L/Users/joshualangman/.rbenv/versions/3.0.1/openssl/lib -L. -L/Users/joshualangman/.rbenv/versions/3.0.1/lib  -fstack-protector-strong -L/usr/local/lib     -lruby.3.0   "
 Undefined symbols for architecture x86_64:
   "_rb_enable_interrupt", referenced from:
-      _t in conftest-65cf54.o
+      _t in conftest-a6849f.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -463,7 +463,7 @@ checked program was:
 "clang -fdeclspec -o conftest -I/Users/joshualangman/.rbenv/versions/3.0.1/include/ruby-3.0.0/x86_64-darwin20 -I/Users/joshualangman/.rbenv/versions/3.0.1/include/ruby-3.0.0/ruby/backward -I/Users/joshualangman/.rbenv/versions/3.0.1/include/ruby-3.0.0 -I. -I/Users/joshualangman/.rbenv/versions/3.0.1/openssl/include -I/Users/joshualangman/.rbenv/versions/3.0.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/joshualangman/.rbenv/versions/3.0.1/lib -L/Users/joshualangman/.rbenv/versions/3.0.1/openssl/lib -L. -L/Users/joshualangman/.rbenv/versions/3.0.1/lib  -fstack-protector-strong -L/usr/local/lib     -lruby.3.0   "
 Undefined symbols for architecture x86_64:
   "_pipe2", referenced from:
-      _t in conftest-cb92bd.o
+      _t in conftest-8b81cf.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -519,7 +519,7 @@ checked program was:
 "clang -fdeclspec -o conftest -I/Users/joshualangman/.rbenv/versions/3.0.1/include/ruby-3.0.0/x86_64-darwin20 -I/Users/joshualangman/.rbenv/versions/3.0.1/include/ruby-3.0.0/ruby/backward -I/Users/joshualangman/.rbenv/versions/3.0.1/include/ruby-3.0.0 -I. -I/Users/joshualangman/.rbenv/versions/3.0.1/openssl/include -I/Users/joshualangman/.rbenv/versions/3.0.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/joshualangman/.rbenv/versions/3.0.1/lib -L/Users/joshualangman/.rbenv/versions/3.0.1/openssl/lib -L. -L/Users/joshualangman/.rbenv/versions/3.0.1/lib  -fstack-protector-strong -L/usr/local/lib     -lruby.3.0   "
 Undefined symbols for architecture x86_64:
   "_accept4", referenced from:
-      _t in conftest-a8a2ec.o
+      _t in conftest-7ddd7a.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
