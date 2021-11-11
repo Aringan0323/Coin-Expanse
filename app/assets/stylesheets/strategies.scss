@@ -1,0 +1,61 @@
+.workspace {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 100px;
+    height: 800px;
+}
+
+.centered-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.select {
+    flex: 1;
+    flex-direction: column;
+    padding-right: 90px;
+}
+
+.select-container {
+    // border: 1px solid blue;
+    height: 90%;
+    padding-left: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.create {
+    flex: 3;
+    height: 90%;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+
+.create-header {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+// .tab-content {
+//     background-color: lightgray;
+//     width: 95%;
+//     height: 85%;
+// }
+.create-tabs {
+    display: flex;
+    flex-direction: row;
+}
+
+.submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 200px;
+}

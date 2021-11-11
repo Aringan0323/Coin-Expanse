@@ -1,0 +1,101 @@
+<%= render 'shared/nav' %>
+<div class="workspace">
+  <div class="select">
+    <div class="select-container">
+      <ul class="nav nav-tabs mb-3" id="select" role="tablist">
+        <li class="nav-item w-50" role="presentation">
+          <a
+            class="nav-link active centered-text"
+            id="indicators-tab"
+            data-mdb-toggle="tab"
+            href="#indicators-content"
+            role="tab"
+            aria-controls="indicators-content"
+            aria-selected="true"
+            >Indicators</a
+          >
+        </li>
+        <li class="nav-item w-50" role="presentation">
+          <a
+            class="nav-link centered-text"
+            id="operations-tab"
+            data-mdb-toggle="tab"
+            href="#operations-content"
+            role="tab"
+            aria-controls="operations-content"
+            aria-selected="false"
+            >Operations</a
+          >
+        </li>
+      </ul>
+      <hr width="95%">
+      <div class="tab-content" id="left-tabs-content">
+        <div
+          class="tab-pane fade show active"
+          id="indicators-content"
+          role="tabpanel"
+          aria-labelledby="indicators-tab"
+        >
+          List of Indicators Here
+        </div>
+        <div class="tab-pane fade" id="operations-content" role="tabpanel" aria-labelledby="operations-tab">
+          List of Operations Here
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="create">
+    <div class="create-header">
+      <div class="form-outline mb-4" style="display:flex;flex-direction:column;justify-content:center;">
+        <%= text_field_tag :strategy_name, "", class: "form-control form-control-lg", id: "strategy_name" %>
+        <label class="form-label" for="strategy_name">Strategy Name</label>
+      </div>
+      <div class="create-tabs">
+        <p style="display:flex;flex-direction:column;justify-content:center;padding-right:30px">Strategy Option:</p>
+        <ul class="nav nav-tabs create-tabs" id="create" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link active"
+              id="buy-tab"
+              data-mdb-toggle="tab"
+              href="#buy-tab-content"
+              role="tab"
+              aria-controls="buy-tab-content"
+              aria-selected="true"
+              >Buy</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link"
+              id="sell-tab"
+              data-mdb-toggle="tab"
+              href="#sell-tab-content"
+              role="tab"
+              aria-controls="sell-tab-content"
+              aria-selected="true"
+              >Sell</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr width="99%">
+    <div class="tab-content" id="right-tabs-content">
+      <div
+        class="tab-pane fade show active"
+        id="buy-tab-content"
+        role="tabpanel"
+        aria-labelledby="buy-tab"
+      >
+        Buy Creation Space
+      </div>
+      <div class="tab-pane fade" id="sell-tab-content" role="tabpanel" aria-labelledby="sell-tab">
+        Sell Creation Space
+      </div>
+    </div>
+  </div>
+</div>
+<div class="submit">
+  <button class="btn btn-primary">Create</button>
+</div>
