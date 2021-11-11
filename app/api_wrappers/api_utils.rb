@@ -16,4 +16,18 @@ module ApiUtils
     end
   end
 
+  def self.post_api_res(post_request, body)
+    uri = URI.parse(post_request)
+    Net::HTTP.start(uri.host, uri.port, :use_ssl => true) do |http|
+
+      request = Net::HTTP::Post.new(uri.request_uri, 'Content-Type' => 'application/json')
+      request.body = body.to_json
+
+      JSON(http.request(request).body)
+    end
+  rescue => e
+    puts "failed #{e}"
+  end
+
+
 end

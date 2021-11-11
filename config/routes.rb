@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
-  get 'welcome', to: 'sessions#welcome'
   get 'logout', to: 'private_sessions#destroy'
   get 'register', to: 'user#new'
   post 'register', to: 'user#create'
@@ -17,4 +16,7 @@ Rails.application.routes.draw do
 
   # paths for coin
   resources :coin
+
+  # private user routes
+  get '/account', to: 'user#show'
 end

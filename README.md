@@ -32,6 +32,7 @@ Then, you can start the server by running
 
 This will start the server on `localhost:3000`. The port number can be changed by adding `-p xxxx`, where `xxxx` is some other port number (does not have to be 4 digits).
 
+<<<<<<< HEAD
 ## Models
 
 A Rails model is a Ruby class which relates to a specific schema in the database. Say you create a person schema with two fields - name:string age:integer. A Model will be created relating to this item in the database which will enable the user to add database records, delete records, or update existing records.
@@ -85,3 +86,10 @@ User --> has one portfolio -->> has many coins -->> (has_many :day_summaries and
 
 
 
+=======
+### If MDBootstrap is not working
+
+- Go to `./app/javascript/packs/application.js` and comment any lines that throw errors in the browser console.
+- Reload the page to recompile webpacker.
+- Uncomment the lines that you commented out previously and reload the page once more.
+>>>>>>> 2492cb13a587246a3dec5a5d8704a9a4d7c77c71

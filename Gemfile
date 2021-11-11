@@ -64,7 +64,6 @@ gem 'rexml'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
-
 gem 'net'
 gem 'uri'
 gem "binance-ruby"
