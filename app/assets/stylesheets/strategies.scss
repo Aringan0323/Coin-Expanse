@@ -54,8 +54,7 @@
 }
 
 .submit {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding-right: 200px;
+    align-self: flex-end;
+    height: 100%;
+    border: 1px solid purple;
 }
