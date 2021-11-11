@@ -55,6 +55,8 @@ A Rails view is an embedded ruby file which contains ruby as well as html and cs
 **views/sessions/login.html.erb** - the page that first gets displayed, asking the user to login
 **views/user/new.html.erb** - the page that enables you to create an account
 
+**Paper Prototype** a link to the paper prototype of the final project: [Paper Prototype](paper_prototype.pdf)
+
 ## Planned Views
 
 These views will be introduced to the functionality of our app in the near future/ 
