@@ -38,7 +38,8 @@ module NewsApi
   def self.all_articles(keyword_list)
     keyword_params = format_keywords(keyword_list)
     oldest = DateTime.now() - 3
-    oldest = oldest.to_s
+    oldest = oldest.strftime("%Y-%m-%d")
+    puts oldest
     response = ApiUtils.get_api_res("https://newsapi.org/v2/everything?q=#{keyword_params}&from=#{oldest}&language=en&apiKey=#{ENV["NEWS_API_KEY"]}")
     if response.nil?
       nil
