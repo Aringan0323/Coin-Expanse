@@ -1,0 +1,16 @@
+<div class="card text-center shadow">
+  <div class="card-header"> Default Operation </div>
+  <div class="card-body">
+    <h5 class="card-title"> <%= locals[:name].upcase %> </h5>
+    <p class="card-text">
+      <% if locals[:name] == 'and' %>
+        Conjoin multiple indicators or functions together so that the operation is only successful if <strong>both</strong> functions are satisfied.
+      <% elsif locals[:name] == 'or' %>
+        Conjoin multiple indicators or functions together so that the operation is only successful if <strong>one or both</strong> function is satisfied.
+      <% else %>
+        Conjoin multiple indicators or functions together so that the operation is only successful if the function is <strong>not</strong> satisfied.
+      <% end %>
+    </p>
+    <a id="<%= locals[:name] %>-button"class="btn btn-primary">Add to Creation Space</a>
+  </div>
+</div>

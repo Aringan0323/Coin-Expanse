@@ -18,44 +18,59 @@ Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
-$(document).on("turbolinks:load", function() {
-    // draggable functionality 
-    $("#draggable").draggable();
+$(document).on("turbolinks:load", function () {
+  // draggable functionality 
+  $("div[id$='-draggable']").draggable({
+    containment: '.create-cards',
+    scroll: true,
+    scrollSensitivity: 40,
+    scrollSpeed: 40
+  });
 
-    // form outlines
-    document.querySelectorAll(".form-outline").forEach((formOutline) => {
-        new mdb.Input(formOutline).init();
+  // form outlines
+  document.querySelectorAll(".form-outline").forEach((formOutline) => {
+    new mdb.Input(formOutline).init();
+  });
+
+  $("#workspaceDropdownLink")
+    .on("mouseenter", () => {
+      $("#workspaceDropdown").addClass("show").attr("aria-expanded", "true");
+      $("#workspaceList").addClass("show").attr("data-mdb-popper", "none");
+    })
+    .on("mouseleave", () => {
+      // link
+      $("#workspaceDropdown")
+        .removeClass("show")
+        .attr("aria-expanded", "false");
+
+      // list
+      $("#workspaceList").removeClass("show").removeAttr("data-mdb-popper");
     });
 
-    $("#workspaceDropdownLink")
-        .on("mouseenter", () => {
-            console.log("hovered");
-            $("#workspaceDropdown").addClass("show").attr("aria-expanded", "true");
-            $("#workspaceList").addClass("show").attr("data-mdb-popper", "none");
-        })
-        .on("mouseleave", () => {
-            console.log("unhovered");
-            // link
-            $("#workspaceDropdown")
-                .removeClass("show")
-                .attr("aria-expanded", "false");
+  $("#workspaceList")
+    .on("mouseleave", () => {
+      // link
+      $("#workspaceDropdown")
+        .removeClass("show")
+        .attr("aria-expanded", "false");
 
-            // list
-            $("#workspaceList").removeClass("show").removeAttr("data-mdb-popper");
-        });
+      // list
+      $("#workspaceList").removeClass("show").removeAttr("data-mdb-popper");
+    })
+    .on("mouseenter", () => {
+      $("#workspaceDropdown").addClass("show").attr("aria-expanded", "true");
+      $("#workspaceList").addClass("show").attr("data-mdb-popper", "none");
+    });
 
-    $("#workspaceList")
-        .on("mouseleave", () => {
-            // link
-            $("#workspaceDropdown")
-                .removeClass("show")
-                .attr("aria-expanded", "false");
 
-            // list
-            $("#workspaceList").removeClass("show").removeAttr("data-mdb-popper");
-        })
-        .on("mouseenter", () => {
-            $("#workspaceDropdown").addClass("show").attr("aria-expanded", "true");
-            $("#workspaceList").addClass("show").attr("data-mdb-popper", "none");
-        });
+  $("a[id$='-button']").on('click', (...a) => {
+    const id = a[0].currentTarget.id;
+    const name = id.substring(0, id.indexOf('-'));
+    // "<%= escape_javascript("#{render :partial => 'posts/comment', :locals => { :comment => @comment }}").html_safe %>"
+    // `<%= render 'partials/operation_draggable', locals: {name: ${id}}%>`
+    $(".create-cards").append(`<%= escape_javascript(render :partial => 'partials/operation_draggable', :locals => { :name => ${name} }).html_safe %>`);
+    // $(".create-cards").append(`<%= escape_javascript({render :partial => 'partials/opperation_draggable', :locals => { name: ${name} }}).html_safe %>`);
+  })
+
+
 });

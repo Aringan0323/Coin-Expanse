@@ -35,61 +35,47 @@
           role="tabpanel"
           aria-labelledby="indicators-tab"
         >
-          List of Indicators Here
+          List of Indicators
         </div>
         <div class="tab-pane fade" id="operations-content" role="tabpanel" aria-labelledby="operations-tab">
-          List of Operations Here
+          <div class="operations">
+            <% %w(and or not).each do |operation| %>
+              <div style="padding-bottom: 50px">
+                <%= render 'partials/operation', locals: { name: operation } %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="create">
     <div class="create-header">
-      <div class="form-outline mb-4" style="display:flex;flex-direction:column;justify-content:center;">
+      <div class="form-outline">
         <%= text_field_tag :strategy_name, "", class: "form-control form-control-lg", id: "strategy_name" %>
         <label class="form-label" for="strategy_name">Strategy Name</label>
       </div>
-      <div class="create-tabs">
-        <p style="display:flex;flex-direction:column;justify-content:center;padding-right:30px">Strategy Option:</p>
-        <ul class="nav nav-tabs create-tabs" id="create" role="tablist">
-          <li class="nav-item" role="presentation">
-            <a
-              class="nav-link active"
-              id="buy-tab"
-              data-mdb-toggle="tab"
-              href="#buy-tab-content"
-              role="tab"
-              aria-controls="buy-tab-content"
-              aria-selected="true"
-              >Buy</a
-            >
-          </li>
-          <li class="nav-item" role="presentation">
-            <a
-              class="nav-link"
-              id="sell-tab"
-              data-mdb-toggle="tab"
-              href="#sell-tab-content"
-              role="tab"
-              aria-controls="sell-tab-content"
-              aria-selected="true"
-              >Sell</a
-            >
-          </li>
-        </ul>
+      
+      <div class="create-buttons">
+        <strong>Strategy Option:</strong>
+        <div class="btn-group">
+          <input
+            type="radio"
+            class="btn-check"
+            name="options"
+            id="buy-radio"
+            autocomplete="off"
+            checked
+          />
+          <label class="btn btn-secondary" for="buy-radio">Buy</label>
+
+          <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" />
+          <label class="btn btn-secondary" for="sell-radio">Sell</label>
+        </div>
       </div>
     </div>
-    <div class="tab-content" id="right-tabs-content" style="border:1px solid green;height:500px;width:99%">
-      <div
-        class="tab-pane fade show active"
-        id="buy-tab-content"
-        role="tabpanel"
-        aria-labelledby="buy-tab"
-      >
-        Buy Creation Space
-      </div>
-      <div class="tab-pane fade" id="sell-tab-content" role="tabpanel" aria-labelledby="sell-tab">
-        Sell Creation Space
+    <div class="create-space">
+      <div class="create-cards">
       </div>
       <div class="submit">
         <button class="btn btn-primary">Create</button>
