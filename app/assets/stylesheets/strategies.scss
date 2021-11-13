@@ -83,6 +83,15 @@
   // border: 1px solid green;
   display: flex;
   flex-direction: row;
+  overflow: scroll;
+  flex-wrap: wrap;
+  max-height: 500px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.create-cards::-webkit-scrollbar {
+  display: none;
 }
 
 .operations {
@@ -98,4 +107,13 @@
 
 .operations::-webkit-scrollbar {
   display: none;
+}
+
+.operation-card {
+  width: 300px;
+  height: 300px;
+  min-height: 100px;
+  min-width: 100px;
+  max-width: 600px;
+  max-height: 400px;
 }
