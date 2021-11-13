@@ -11,7 +11,6 @@
         Conjoin multiple indicators or functions together so that the operation is only successful if the function is <strong>not</strong> satisfied.
       <% end %>
     </p>
-    <%= link_to "Add to Creation Space", {controller: 'strategies', action: 'new', operation: locals[:name], total: @operations}, 
-      method: :get, id: "#{locals[:name]}-button", class: "btn btn-primary" %>
+    <%= link_to "Add to Creation Space", "#", id: "#{locals[:name]}-button", class: "btn btn-primary" %>
   </div>
 </div>
