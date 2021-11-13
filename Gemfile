@@ -73,3 +73,4 @@ gem 'seedbank'
 gem 'digest'
 gem 'faker'
 gem "chartkick"
+gem 'securerandom'

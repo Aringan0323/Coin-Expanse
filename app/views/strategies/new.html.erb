@@ -76,9 +76,7 @@
     </div>
     <div class="create-space">
       <div class="create-cards">
-        <% @operations.each do |operation| %>
-          <%= render 'partials/operation_draggable', locals: {operation: operation}%>
-        <% end %>
+        
       </div>
       <div class="submit">
         <button class="btn btn-primary">Create</button>

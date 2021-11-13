@@ -193,6 +193,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    securerandom (0.1.1)
     seedbank (0.5.0)
       rake (>= 10.0)
     selenium-webdriver (3.142.7)
@@ -261,6 +262,7 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.1)
   rexml
   sass-rails (>= 6)
+  securerandom
   seedbank
   selenium-webdriver
   spring

@@ -1,4 +1,4 @@
-<div id="<%= locals[:operation] %>-draggable-resizable" class="card text-center shadow operation-card">
+<div id="<%= locals[:operation] %>-draggable-resizable-<%= SecureRandom.uuid %>" class="card text-center shadow operation-card">
   <% if locals[:operation] == 'and' %>
     <div class="card-header primary text-white"> <%= locals[:operation].upcase %> </div>
   <% elsif locals[:operation] == 'or' %>
