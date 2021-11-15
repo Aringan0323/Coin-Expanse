@@ -1,0 +1,14 @@
+$("a[id$='-button']").on('click', (e) => {
+  const id = e.currentTarget.id;
+  const name = id.substring(0, id.indexOf('-'));
+  $(".create-cards").append(`<%= j render 'partials/operation_draggable', locals: {operation: 'and'} %>`);
+});
+
+$("div[id*='-draggable']").draggable({
+  containment: '.create-cards',
+  scroll: true,
+  scrollSensitivity: 40,
+  scrollSpeed: 40
+});
+
+$("div[id*='-resizable']" ).resizable();
