@@ -1,119 +1,153 @@
 .workspace {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-top: 100px;
-  height: 800px;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 100px;
+    height: 800px;
 }
 
 .centered-text {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .select {
-  flex: 1;
-  flex-direction: column;
-  padding-right: 90px;
+    flex: 1;
+    flex-direction: column;
+    padding-right: 90px;
 }
 
 .select-container {
-  height: 90%;
-  padding-left: 10px;
-  border: outset;
-  border-radius: 10px;
+    height: 90%;
+    padding-left: 10px;
+    border: outset;
+    border-radius: 10px;
 }
 
 .create {
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  height: 90%;
-  border: outset;
-  border-radius: 15px;
-  padding-left: 10px;
-  // border: 1px solid peru;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    border: outset;
+    border-radius: 15px;
+    padding-left: 10px;
+    // border: 1px solid peru;
 }
 
 .create-header {
-  // border: 1px solid purple;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex: 1;
-  padding-top: 20px;
+    // border: 1px solid purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding-top: 20px;
 }
 
 .create-buttons {
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  width: 40%;
-  padding-left: 20px;
-  padding-right: 20px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .create-name {
-  width: 50%;
+    width: 50%;
 }
 
 .submit {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  justify-content: flex-end;
-  // border: 1px solid purple;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+    // border: 1px solid purple;
 }
 
 .create-space {
-  display: flex;
-  flex-direction: column;
-  width: 99%;
-  flex: 7;
-  max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+    flex: 7;
+    max-height: 90%;
 }
 
 .create-cards {
-  flex: 9;
-  // border: 1px solid green;
-  display: flex;
-  flex-direction: row;
-  overflow: scroll;
-  flex-wrap: wrap;
-  max-height: 500px;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    flex: 9;
+    // border: 1px solid green;
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    flex-wrap: wrap;
+    max-height: 500px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .create-cards::-webkit-scrollbar {
-  display: none;
+    display: none;
+}
+
+.operation {
+    top: 0;
+    left: 0;
 }
 
 .operations {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  width: 98%;
-  height: 525px;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 98%;
+    height: 525px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .operations::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .operation-card {
-  width: 300px;
-  height: 300px;
-  min-height: 100px;
-  min-width: 100px;
-  max-width: 600px;
-  max-height: 400px;
+    width: 300px;
+    height: 300px;
+    min-height: 100px;
+    min-width: 100px;
+    max-width: 600px;
+    max-height: 400px;
+    z-index: 0;
+}
+
+.remove {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    // border: 1px solid black;
+}
+
+.remove-link {
+    border: 1px solid black;
+}
+
+.remove-link:hover {
+    cursor: pointer;
+}
+
+.op-card-header {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+}
+
+.op-card-title {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

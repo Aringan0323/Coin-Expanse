@@ -75,12 +75,25 @@
       </div>
     </div>
     <div class="create-space">
-      <div class="create-cards">
+      <div id= "create-cards-droppable" class="create-cards">
         
       </div>
       <div class="submit">
-        <button class="btn btn-primary">Create</button>
+        <button id="create-strat" class="btn btn-primary">Create</button>
       </div>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $("a[id$='-button']").on('click', (e) => {
+    const id = e.currentTarget.id;
+    const name = id.substring(0, id.indexOf('-'));
+    if (name === 'and') {
+      $(".create-cards").append(`<%= j render 'partials/operation_draggable', locals: {operation: 'and'} %>`);
+    } else if (name == 'or') {
+      $(".create-cards").append(`<%= j render 'partials/operation_draggable', locals: {operation: 'or'} %>`);
+    } else {
+      $(".create-cards").append(`<%= j render 'partials/operation_draggable', locals: {operation: 'not'} %>`);
+    }
+  });
+</script>

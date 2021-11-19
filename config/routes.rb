@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   # strategies
   get '/strategies/library', to: 'strategies#show'
   get '/strategies/new', to: 'strategies#new'
+  post '/strategies/add_card', to: 'strategies#add_card'
+  # post '/strategies/new', to: 'strategies#new'
 end

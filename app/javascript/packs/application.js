@@ -18,50 +18,54 @@ Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
-$(document).on("turbolinks:load", function () {
-  // draggable functionality 
-  $("div[id*='-draggable']").draggable({
-    containment: '.create-cards',
-    scroll: true,
-    scrollSensitivity: 40,
-    scrollSpeed: 40
-  });
-
-  $("div[id*='-resizable']" ).resizable();
-
-  // form outlines
-  document.querySelectorAll(".form-outline").forEach((formOutline) => {
-    new mdb.Input(formOutline).init();
-  });
-
-  $("#workspaceDropdownLink")
-    .on("mouseenter", () => {
-      $("#workspaceDropdown").addClass("show").attr("aria-expanded", "true");
-      $("#workspaceList").addClass("show").attr("data-mdb-popper", "none");
-    })
-    .on("mouseleave", () => {
-      // link
-      $("#workspaceDropdown")
-        .removeClass("show")
-        .attr("aria-expanded", "false");
-
-      // list
-      $("#workspaceList").removeClass("show").removeAttr("data-mdb-popper");
+$(document).on("turbolinks:load", function() {
+    // draggable functionality 
+    $("div[id*='-draggable']").draggable({
+        containment: '.create-cards',
+        scroll: true,
+        scrollSensitivity: 40,
+        scrollSpeed: 40
     });
 
-  $("#workspaceList")
-    .on("mouseleave", () => {
-      // link
-      $("#workspaceDropdown")
-        .removeClass("show")
-        .attr("aria-expanded", "false");
+    $("div[id*='-resizable']").resizable();
 
-      // list
-      $("#workspaceList").removeClass("show").removeAttr("data-mdb-popper");
-    })
-    .on("mouseenter", () => {
-      $("#workspaceDropdown").addClass("show").attr("aria-expanded", "true");
-      $("#workspaceList").addClass("show").attr("data-mdb-popper", "none");
+    // form outlines
+    document.querySelectorAll(".form-outline").forEach((formOutline) => {
+        new mdb.Input(formOutline).init();
     });
+
+    $("#workspaceDropdownLink")
+        .on("mouseenter", () => {
+            $("#workspaceDropdown").addClass("show").attr("aria-expanded", "true");
+            $("#workspaceList").addClass("show").attr("data-mdb-popper", "none");
+        })
+        .on("mouseleave", () => {
+            // link
+            $("#workspaceDropdown")
+                .removeClass("show")
+                .attr("aria-expanded", "false");
+
+            // list
+            $("#workspaceList").removeClass("show").removeAttr("data-mdb-popper");
+        });
+
+    $("#workspaceList")
+        .on("mouseleave", () => {
+            // link
+            $("#workspaceDropdown")
+                .removeClass("show")
+                .attr("aria-expanded", "false");
+
+            // list
+            $("#workspaceList").removeClass("show").removeAttr("data-mdb-popper");
+        })
+        .on("mouseenter", () => {
+            $("#workspaceDropdown").addClass("show").attr("aria-expanded", "true");
+            $("#workspaceList").addClass("show").attr("data-mdb-popper", "none");
+        });
+
+    // $('#create-strat').on('click', () => {
+    //     console.log('clicked2!')
+    // })
 
 });

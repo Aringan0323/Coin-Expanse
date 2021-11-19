@@ -1,10 +1,40 @@
 <div id="<%= locals[:operation] %>-draggable-resizable-<%= SecureRandom.uuid %>" class="card text-center shadow operation-card">
   <% if locals[:operation] == 'and' %>
-    <div class="card-header primary text-white"> <%= locals[:operation].upcase %> </div>
+    <div id="<%= locals[:operation] %>-card-title-<%= SecureRandom.uuid %>" class="card-header primary text-white op-card-header"> 
+      <div style="flex:1"></div>
+      <div class="op-card-title">
+        <%= locals[:operation].upcase %>
+      </div> 
+      <div class="remove">
+        <a id="remove-link-<%= SecureRandom.uuid %>" class="remove-link">
+         <i class="far fa-window-close" style="color:white"></i>
+        <a>
+      </div>
+    </div>
   <% elsif locals[:operation] == 'or' %>
-    <div class="card-header intermediary text-white"> <%= locals[:operation].upcase %> </div>
+    <div id="<%= locals[:operation] %>-card-title-<%= SecureRandom.uuid %>" class="card-header intermediary text-white op-card-header"> 
+      <div style="flex:1"></div>
+      <div class="op-card-title">
+        <%= locals[:operation].upcase %>
+      </div> 
+      <div class="remove">
+        <a id="remove-link-<%= SecureRandom.uuid %>" class="remove-link">
+         <i class="far fa-window-close" style="color:white"></i>
+        <a>
+      </div> 
+    </div>
   <% else %>
-    <div class="card-header secondary text-white"> <%= locals[:operation].upcase %> </div>
+    <div id="<%= locals[:operation] %>-card-title-<%= SecureRandom.uuid %>" class="card-header secondary text-white op-card-header"> 
+      <div style="flex:1"></div>
+      <div class="op-card-title">
+        <%= locals[:operation].upcase %>
+      </div> 
+      <div class="remove">
+        <a id="remove-link-<%= SecureRandom.uuid %>" class="remove-link">
+         <i class="far fa-window-close" style="color:white"></i>
+        <a>
+      </div>
+    </div>
   <% end %>
   <div class="card-body">
   </div>

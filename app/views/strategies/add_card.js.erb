@@ -1,0 +1,27 @@
+$("div[id*='-draggable']").draggable({
+  containment: '.create-cards',
+  scroll: true,
+  scrollSensitivity: 40,
+  scrollSpeed: 40,
+  stack: "div",
+  <%# grid: [$(this).width(), $(this).height()] %>
+});
+
+$("div[id*='-resizable']" ).resizable({
+  autoHide: true,
+});
+
+$("div[id*='-droppable'], .card-body").droppable({
+  tolerance: "intersect",
+  accept: ".operation-card",
+  greedy: true,
+  over: function(event, ui) {        
+      $(this).append($(ui.draggable));
+  }
+})
+
+$("a[id^='remove-link']").on('click', (e) => {
+  var id = "#" + $(e.target).closest("div[id*='-draggable-resizable-'").attr("id");
+  console.log(id)
+  $(id).remove()
+})

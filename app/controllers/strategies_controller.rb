@@ -1,9 +1,9 @@
 class StrategiesController < PrivateController
-  def new
+  def new; end
+  def show; end
+  def add_card
     respond_to do |format|
-      format.html { render :action => 'new' }
-      format.js { render :action => 'new' }
+      format.js
     end
   end
-  def show; end
 end
