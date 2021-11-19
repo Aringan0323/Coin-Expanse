@@ -68,6 +68,84 @@ module CoinHelper
 	end
 
 
+
+	def render_avg_price_chart(coin)
+		btickers = coin.book_tickers.order(:timestamp)
+		data = btickers.map { |bt| [bt.timestamp, bt.avgPrice] }.to_h
+		min = btickers.minimum(:avgPrice)
+		# max = btickers.maximum(:avgPrice)
+		line_chart data,
+			min: min,
+			ytitle: "USD",
+			title: "#{coin.symbol}: $#{btickers.last.avgPrice}",
+			height: "500px",
+			curve: false,
+			points: false,
+			round: 2,
+			zeros: true,
+			prefix: "$",
+			thousands: ","
+
+	end
+
+	def render_avg_price_chart(coin)
+		btickers = coin.book_tickers.order(:timestamp)
+		data = btickers.map { |bt| [bt.timestamp, bt.avgPrice] }.to_h
+		min = btickers.minimum(:avgPrice)
+		line_chart data,
+			min: min,
+			ytitle: "USD",
+			title: "#{coin.name} Average Price: $#{btickers.last.avgPrice}",
+			height: "500px",
+			curve: false,
+			points: false,
+			round: 2,
+			zeros: true,
+			prefix: "$",
+			thousands: ","
+
+	end
+
+
+
+	def render_ask_price_chart(coin)
+		btickers = coin.book_tickers.order(:timestamp)
+		data = btickers.map { |bt| [bt.timestamp, bt.askPrice] }.to_h
+		min = btickers.minimum(:askPrice)
+		line_chart data,
+			min: min,
+			ytitle: "USD",
+			title: "#{coin.name} Ask Price: $#{btickers.last.askPrice}",
+			height: "500px",
+			curve: false,
+			points: false,
+			round: 2,
+			zeros: true,
+			prefix: "$",
+			thousands: ","
+
+	end
+
+
+	def render_bid_price_chart(coin)
+		btickers = coin.book_tickers.order(:timestamp)
+		data = btickers.map { |bt| [bt.timestamp, bt.bidPrice] }.to_h
+		min = btickers.minimum(:bidPrice)
+		line_chart data,
+			min: min,
+			ytitle: "USD",
+			title: "#{coin.name} Bid Price: $#{btickers.last.bidPrice}",
+			height: "500px",
+			curve: false,
+			points: false,
+			round: 2,
+			zeros: true,
+			prefix: "$",
+			thousands: ","
+
+	end
+
+
 #   def self.getDaySummaries(coin_list)
 
 # 		day_summaries = MarketApi.day_summaries	

@@ -1,10 +1,13 @@
 <%= render 'shared/nav' %>
 <div class="page">
-  <h1>Supported Cryptos</h1>
-  <p><%= "Analyzing crypto: #{@coin.symbol}"%></p>
-  <div>
-    <% @coin.book_tickers.each do |book_ticker| %>
-      <p><%= "$#{book_ticker.avgPrice}" %></p>
-    <% end %>
+  <h1 class="chart_page_title"><%= @coin.name %></h1>
+  <div class="chart">
+    <%= render_avg_price_chart(@coin) %>
+  </div>
+  <div class="chart">
+    <%= render_ask_price_chart(@coin) %>
+  </div>
+  <div class="chart">
+    <%= render_bid_price_chart(@coin) %>
   </div>
 </div>

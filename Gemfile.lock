@@ -104,6 +104,8 @@ GEM
       thor (>= 0.14.0, < 2)
     globalid (0.5.2)
       activesupport (>= 5.0)
+    groupdate (5.2.2)
+      activesupport (>= 5)
     httparty (0.20.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -251,6 +253,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   figaro
+  groupdate
   jbuilder (~> 2.7)
   json
   listen (~> 3.3)
