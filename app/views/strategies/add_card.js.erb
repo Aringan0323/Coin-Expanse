@@ -9,19 +9,28 @@ $("div[id*='-draggable']").draggable({
 
 $("div[id*='-resizable']" ).resizable({
   autoHide: true,
+  <%# start:function(event,ui){
+    ui.element.css('position','absolute');
+  } %>
 });
 
 $("div[id*='-droppable'], .card-body").droppable({
   tolerance: "intersect",
   accept: ".operation-card",
-  greedy: true,
   over: function(event, ui) {        
-      $(this).append($(ui.draggable));
+      <%# $(this).append($(ui.draggable)); %>
+      console.log('over!')
+      <%# console.log('event is', event) %>
+      console.log($(event.target).parent().attr('id'))
+      console.log('ui is', ui.draggable)
+      <%# console.log(ui.target) %>
+      $(event.target).append(ui.draggable)
   }
 })
 
-$("a[id^='remove-link']").on('click', (e) => {
+function remove (e) {
+  e.preventDefault();
   var id = "#" + $(e.target).closest("div[id*='-draggable-resizable-'").attr("id");
   console.log(id)
   $(id).remove()
-})
+}

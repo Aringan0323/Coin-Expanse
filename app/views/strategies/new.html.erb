@@ -55,7 +55,7 @@
         <%= text_field_tag :strategy_name, "", class: "form-control form-control-lg", id: "strategy_name" %>
         <label class="form-label" for="strategy_name">Strategy Name</label>
       </div>
-      
+      <%= collection_select :coin, :coin_id, Coin.all.order(:name), :id, :name, :include_blank => true , class: "browser-default custom-select"%>
       <div class="create-buttons">
         <strong>Strategy Option:</strong>
         <div class="btn-group">
@@ -75,7 +75,7 @@
       </div>
     </div>
     <div class="create-space">
-      <div id= "create-cards-droppable" class="create-cards">
+      <div id= "create-cards" class="create-cards">
         
       </div>
       <div class="submit">
@@ -85,15 +85,19 @@
   </div>
 </div>
 <script type="text/javascript">
+
+  let a = 0;
+
   $("a[id$='-button']").on('click', (e) => {
-    const id = e.currentTarget.id;
-    const name = id.substring(0, id.indexOf('-'));
+    let i = e.currentTarget.id;
+    let name = i.substring(0, i.indexOf('-'));
     if (name === 'and') {
-      $(".create-cards").append(`<%= j render 'partials/operation_draggable', locals: {operation: 'and'} %>`);
+      $(".create-cards").append(`<%= render 'partials/operation_draggable', locals: {operation: 'and'} %>`);
     } else if (name == 'or') {
-      $(".create-cards").append(`<%= j render 'partials/operation_draggable', locals: {operation: 'or'} %>`);
+      $(".create-cards").append(`<%= render 'partials/operation_draggable', locals: {operation: 'or'} %>`);
     } else {
-      $(".create-cards").append(`<%= j render 'partials/operation_draggable', locals: {operation: 'not'} %>`);
+      $(".create-cards").append(`<%= render 'partials/operation_draggable', locals: {operation: 'not'} %>`);
     }
+    $(".create-cards").children().last().attr('id', $(".create-cards").children().last().attr("id") + "-" + a++);
   });
 </script>

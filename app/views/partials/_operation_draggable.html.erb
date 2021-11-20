@@ -1,38 +1,38 @@
-<div id="<%= locals[:operation] %>-draggable-resizable-<%= SecureRandom.uuid %>" class="card text-center shadow operation-card">
+<div id="<%= locals[:operation] %>-draggable-resizable-<%= Time.now.to_i %>" class="card text-center shadow operation-card">
   <% if locals[:operation] == 'and' %>
-    <div id="<%= locals[:operation] %>-card-title-<%= SecureRandom.uuid %>" class="card-header primary text-white op-card-header"> 
+    <div id="<%= locals[:operation] %>-card-title-<%= Time.now.to_i %>" class="card-header primary text-white op-card-header"> 
       <div style="flex:1"></div>
       <div class="op-card-title">
         <%= locals[:operation].upcase %>
       </div> 
       <div class="remove">
-        <a id="remove-link-<%= SecureRandom.uuid %>" class="remove-link">
+        <button id="remove-link-<%= Time.now.to_i %>" class="remove-link" onclick="remove(event)">
          <i class="far fa-window-close" style="color:white"></i>
-        <a>
+        </button>
       </div>
     </div>
   <% elsif locals[:operation] == 'or' %>
-    <div id="<%= locals[:operation] %>-card-title-<%= SecureRandom.uuid %>" class="card-header intermediary text-white op-card-header"> 
+    <div id="<%= locals[:operation] %>-card-title-<%= Time.now.to_i %>" class="card-header intermediary text-white op-card-header"> 
       <div style="flex:1"></div>
       <div class="op-card-title">
         <%= locals[:operation].upcase %>
       </div> 
       <div class="remove">
-        <a id="remove-link-<%= SecureRandom.uuid %>" class="remove-link">
+        <button id="remove-link-<%= Time.now.to_i %>" class="remove-link" onclick="remove(event)">
          <i class="far fa-window-close" style="color:white"></i>
-        <a>
+        </button>
       </div> 
     </div>
   <% else %>
-    <div id="<%= locals[:operation] %>-card-title-<%= SecureRandom.uuid %>" class="card-header secondary text-white op-card-header"> 
+    <div id="<%= locals[:operation] %>-card-title-<%= Time.now.to_i %>" class="card-header secondary text-white op-card-header"> 
       <div style="flex:1"></div>
       <div class="op-card-title">
         <%= locals[:operation].upcase %>
       </div> 
       <div class="remove">
-        <a id="remove-link-<%= SecureRandom.uuid %>" class="remove-link">
+        <button id="remove-link-<%= Time.now.to_i %>" class="remove-link" onclick="remove(event)">
          <i class="far fa-window-close" style="color:white"></i>
-        <a>
+        </button>
       </div>
     </div>
   <% end %>
