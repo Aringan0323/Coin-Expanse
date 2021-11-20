@@ -17,20 +17,21 @@ $("div[id*='-resizable']" ).resizable({
 $("div[id*='-droppable'], .card-body").droppable({
   tolerance: "intersect",
   accept: ".operation-card",
-  over: function(event, ui) {        
-      <%# $(this).append($(ui.draggable)); %>
-      console.log('over!')
-      <%# console.log('event is', event) %>
-      console.log($(event.target).parent().attr('id'))
-      console.log('ui is', ui.draggable)
-      <%# console.log(ui.target) %>
+  drop: function(event, ui) {
+    // if ui is not child of event, snap to middle
+    const parentID = '#' + $(event.target).parent().attr('id');
+    const childID = '#' + ui.draggable.attr('id');
+    if(!$(parentID).find(childID).length) {
       $(event.target).append(ui.draggable)
+      ui.draggable.position({
+        my: "center",
+        at: "center",
+        of: $(event.target)
+      })
+    }
+  },
+  out: function (event, ui) {
+    $(event.target).remove(ui.draggable)
+    $('.create-cards').append(ui.draggable)
   }
 })
-
-function remove (e) {
-  e.preventDefault();
-  var id = "#" + $(e.target).closest("div[id*='-draggable-resizable-'").attr("id");
-  console.log(id)
-  $(id).remove()
-}

@@ -100,4 +100,13 @@
     }
     $(".create-cards").children().last().attr('id', $(".create-cards").children().last().attr("id") + "-" + a++);
   });
+
+  function remove (e) {
+    e.preventDefault();
+    var id = "#" + $(e.target).closest("div[id*='-draggable-resizable-'").attr("id");
+    console.log(id)
+    // $(id).css("border", "3px solid black")
+    // $(id).children().each(child => console.log('next child is\n', $(child)))
+    $(id).remove()
+  }
 </script>
