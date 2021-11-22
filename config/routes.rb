@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'logout', to: 'private_sessions#destroy'
@@ -15,7 +16,6 @@ Rails.application.routes.draw do
   get '/about', to: 'about#index'
 
   # paths for coin
-  resources :coin
 
   # private user routes
   get '/account', to: 'user#show'

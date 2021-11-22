@@ -1,9 +1,11 @@
 require "./app/api_wrappers/market_api.rb"
 require "./app/api_wrappers/news_api.rb"
+require "./app/helpers/coin_helper.rb"
 ENV["NEWS_API_KEY"] = "af7ed64513f5449a855f235ca6484388"
 
 namespace :db do
   desc "updates all of the coins book tickers each second"
+  include CoinHelper
   task update_btickers_every_second: :environment do
     while true do
       BookTicker.where(['timestamp < ?', 8.hours.ago]).destroy_all
@@ -11,6 +13,10 @@ namespace :db do
       btickers.each do |bticker|
         bticker.save
       end
+      Coin.all.each do |coin|
+        broadcast_price_charts(coin)
+      end
+
       puts "saved btickers"
       sleep(1.second)
     end
