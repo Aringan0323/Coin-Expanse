@@ -35,7 +35,13 @@
           role="tabpanel"
           aria-labelledby="indicators-tab"
         >
-          List of Indicators
+          <div class="operations">
+            <% %w(rsi stoch bband).each do |indicator_name| %>
+              <div style="padding-bottom: 50px">
+                <%= render 'partials/indicator', locals: { name: indicator_name } %>
+              </div>
+            <% end %>
+          </div>
         </div>
         <div class="tab-pane fade show active" id="operations-content" role="tabpanel" aria-labelledby="operations-tab">
           <div class="operations">
@@ -92,11 +98,17 @@
     let i = e.currentTarget.id;
     let name = i.substring(0, i.indexOf('-'));
     if (name === 'and') {
-      $(".create-cards").append(`<%= render 'partials/operation_draggable', locals: {operation: 'and'} %>`);
+      $(".create-cards").append(`<%= j render 'partials/operation_draggable', locals: {operation: 'and'} %>`);
     } else if (name == 'or') {
-      $(".create-cards").append(`<%= render 'partials/operation_draggable', locals: {operation: 'or'} %>`);
+      $(".create-cards").append(`<%= j render 'partials/operation_draggable', locals: {operation: 'or'} %>`);
+    } else if (name === 'not') {
+      $(".create-cards").append(`<%= j render 'partials/operation_draggable', locals: {operation: 'not'} %>`);
+    } else if (name === 'rsi') {
+      $(".create-cards").append(`<%= j render 'partials/indicator_draggable', locals: {indicator: 'rsi'} %>`);
+    } else if (name === 'stoch') {
+      $(".create-cards").append(`<%= j render 'partials/indicator_draggable', locals: {indicator: 'stoch'} %>`);
     } else {
-      $(".create-cards").append(`<%= render 'partials/operation_draggable', locals: {operation: 'not'} %>`);
+      $(".create-cards").append(`<%= j render 'partials/indicator_draggable', locals: {indicator: 'bbands'} %>`);
     }
     $(".create-cards").children().last().attr('id', $(".create-cards").children().last().attr("id") + "-" + a++);
   });
@@ -104,9 +116,6 @@
   function remove (e) {
     e.preventDefault();
     var id = "#" + $(e.target).closest("div[id*='-draggable-resizable-'").attr("id");
-    console.log(id)
-    // $(id).css("border", "3px solid black")
-    // $(id).children().each(child => console.log('next child is\n', $(child)))
     $(id).remove()
   }
 </script>

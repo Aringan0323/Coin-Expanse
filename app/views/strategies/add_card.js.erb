@@ -1,20 +1,17 @@
 $("div[id*='-draggable']").draggable({
   containment: '.create-cards',
-  scroll: true,
-  scrollSensitivity: 40,
-  scrollSpeed: 40,
   stack: "div",
   <%# grid: [$(this).width(), $(this).height()] %>
 });
 
 $("div[id*='-resizable']" ).resizable({
   autoHide: true,
-  <%# start:function(event,ui){
-    ui.element.css('position','absolute');
-  } %>
+  // start:function(event,ui){
+  //   ui.element.css('position','absolute');
+  // }
 });
 
-$("div[id*='-droppable'], .card-body").droppable({
+$("#card-body").droppable({
   tolerance: "intersect",
   accept: ".operation-card",
   drop: function(event, ui) {
@@ -35,3 +32,7 @@ $("div[id*='-droppable'], .card-body").droppable({
     $('.create-cards').append(ui.draggable)
   }
 })
+
+document.querySelectorAll(".form-outline").forEach((formOutline) => {
+  new mdb.Input(formOutline).init();
+});
