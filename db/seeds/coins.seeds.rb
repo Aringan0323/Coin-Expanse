@@ -38,6 +38,8 @@ end
 
 puts "Creating coin indicators"
 first = true
+indic_names = ["rsi", "stoch", "macd", "bbands2", "vwap"]
+waiting_time = 60
 Coin.all.each do |coin|
   if !first
     sleep(16.seconds)
@@ -45,11 +47,9 @@ Coin.all.each do |coin|
     first = false
   end
   indics = []
-  indics << Indicator.new(coin: coin, name: "#{coin.symbol}_rsi")
-  indics << Indicator.new(coin: coin, name: "#{coin.symbol}_stoch")
-  indics << Indicator.new(coin: coin, name: "#{coin.symbol}_macd")
-  indics << Indicator.new(coin: coin, name: "#{coin.symbol}_bbands2")
-  indics << Indicator.new(coin: coin, name: "#{coin.symbol}_vwap")
+  indic_names.each do |indic_name|
+    indics << Indicator.new(coin: coin, name: "#{coin.symbol}_#{indic_name}", interval: "1h")
+  end
   IndicatorApi.bulk(coin, "1h", indics)
   indics.each do |indic|
     indic.save

@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_11_24_013906) do
     t.bigint "coin_id", null: false
     t.string "name"
     t.string "data"
+    t.string "interval"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["coin_id"], name: "index_indicators_on_coin_id"
