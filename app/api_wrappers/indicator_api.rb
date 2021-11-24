@@ -4,6 +4,17 @@ require "json"
 
 module IndicatorApi
 
+  '''
+  Commonly used indicators:
+
+  Relative Strength Index:                rsi
+  Stochastic Oscillator:                  stoch
+  Moving Average Convergence Divergence:  macd
+  Bollinger Bands:                        bbands2
+  Volume Weighted Average Price:          vwap
+  
+  '''
+
   def self.rsi(coin, interval)
     self.indicator("rsi", coin, interval)
   end
