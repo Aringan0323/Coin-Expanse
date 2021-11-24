@@ -30,7 +30,7 @@ module IndicatorApi
   def self.bulk(coin, interval, indicators_list)
     indicator_names = []
     indicators_list.each do |ind|
-      indicator_names << {indicator: ind.name}
+      indicator_names << {indicator: ind.name.split("_")[1]}
     end
     construct = {
       exchange: "binance",
@@ -46,11 +46,13 @@ module IndicatorApi
       i = 0
       data.each do |indicator_data|
         if indicator_data["errors"].count == 0
-          q_ind = Indicator.where(name: indicator_names[i], coin:coin)
-          puts q_ind
+          name = "#{coin.symbol}_#{indicator_names[i][:indicator]}"
+          q_ind = indicators_list[i]
           ind_result = indicator_data["result"]
           result_string = ind_result.to_s
           q_ind.data = result_string
+          q_ind.save
+          puts JSON.parse(result_string.gsub('=>', ':'))
         end
         i += 1
       end
