@@ -1,7 +1,6 @@
 require 'json'
 require 'uri'
 require 'net/http'
-# require './app/helpers/coin_helper.rb'
 require './app/api_wrappers/market_api.rb'
 
 puts("Deleting all coins")

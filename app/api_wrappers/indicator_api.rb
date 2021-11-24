@@ -28,18 +28,33 @@ module IndicatorApi
   end
 
   def self.bulk(coin, interval, indicators_list)
-    indicators = []
-    indicators_list.each do |i|
-      indicators << {indicator: i}
+    indicator_names = []
+    indicators_list.each do |ind|
+      indicator_names << {indicator: ind.name}
     end
     construct = {
       exchange: "binance",
       symbol: "#{coin.symbol}/USDT",
       interval: interval,
-      indicators: indicators
+      indicators: indicator_names
     }
     body = {secret: ENV["TAAPI_API_KEY"], construct: construct}
-    ApiUtils.post_api_res("https://api.taapi.io/bulk", body)
+    response = ApiUtils.post_api_res("https://api.taapi.io/bulk", body)
+
+    if !response.key?("error")
+      data = response["data"]
+      i = 0
+      data.each do |indicator_data|
+        if indicator_data["errors"].count == 0
+          q_ind = Indicator.where(name: indicator_names[i], coin:coin)
+          puts q_ind
+          ind_result = indicator_data["result"]
+          result_string = ind_result.to_s
+          q_ind.data = result_string
+        end
+        i += 1
+      end
+    end
 
   end
 
