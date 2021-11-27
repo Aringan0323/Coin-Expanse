@@ -73,3 +73,7 @@ gem 'seedbank'
 gem 'digest'
 gem 'faker'
 gem "chartkick"
+gem "groupdate"
+
+gem "stimulus_reflex", "~> 3.4"
+gem "redis"

@@ -93,6 +93,8 @@ module MarketApi
 
     info = ApiUtils.get_api_res("https://api.binance.us/api/v3/exchangeInfo")
 
+    taapi_coins = ["BTC", "ETH", "XRP", "LTC", "XMR"]
+
     coins = []
 
     if info.nil?
@@ -101,7 +103,7 @@ module MarketApi
       symbols_info = info["symbols"]
       symbols_info.each do |symbol_info|
 
-        spot = symbol_info["isSpotTradingAllowed"]
+        spot = symbol_info["isSpotTradingAllowed"] && (taapi_coins.include? symbol_info["baseAsset"])
         has_usd_conversion = symbol_info["quoteAsset"] == "USD"
         
         if spot && has_usd_conversion
