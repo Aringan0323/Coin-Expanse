@@ -1,7 +1,7 @@
 class HomeController < PrivateController
 
   def index
-    @news =  NewsArticle.order('RANDOM()').limit(6)
+    @news =  NewsArticle.order(date: :desc).limit(12)
   end
 
 end

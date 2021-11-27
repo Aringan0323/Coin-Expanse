@@ -1,8 +1,10 @@
 require 'json'
 require 'uri'
 require 'net/http'
-# require './app/helpers/coin_helper.rb'
 require './app/api_wrappers/market_api.rb'
+
+puts "Deleting all indicators"
+Indicator.delete_all
 
 puts("Deleting all coins")
 Coin.delete_all
@@ -33,4 +35,25 @@ book_tickers = MarketApi.book_tickers(Coin.all)
 book_tickers.each do |book_ticker|
   book_ticker.save
 end
+
+puts "Creating coin indicators"
+first = true
+indic_names = ["rsi", "stoch", "macd", "bbands2", "vwap"]
+waiting_time = 60
+Coin.all.each do |coin|
+  if !first
+    sleep(16.seconds)
+  else
+    first = false
+  end
+  indics = []
+  indic_names.each do |indic_name|
+    indics << Indicator.new(coin: coin, name: "#{coin.symbol}_#{indic_name}", interval: "1h")
+  end
+  IndicatorApi.bulk(coin, "1h", indics)
+  indics.each do |indic|
+    indic.save
+  end
+end
+puts "Created indicators"
 

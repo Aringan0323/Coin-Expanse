@@ -74,3 +74,7 @@ gem 'digest'
 gem 'faker'
 gem "chartkick"
 gem 'securerandom'
+gem "groupdate"
+
+gem "stimulus_reflex", "~> 3.4"
+gem "redis"

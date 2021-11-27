@@ -4,6 +4,17 @@ require "json"
 
 module IndicatorApi
 
+  '''
+  Commonly used indicators:
+
+  Relative Strength Index:                rsi
+  Stochastic Oscillator:                  stoch
+  Moving Average Convergence Divergence:  macd
+  Bollinger Bands:                        bbands2
+  Volume Weighted Average Price:          vwap
+  
+  '''
+
   def self.rsi(coin, interval)
     self.indicator("rsi", coin, interval)
   end
@@ -17,18 +28,35 @@ module IndicatorApi
   end
 
   def self.bulk(coin, interval, indicators_list)
-    indicators = []
-    indicators_list.each do |i|
-      indicators << {indicator: i}
+    indicator_names = []
+    indicators_list.each do |ind|
+      indicator_names << {indicator: ind.name.split("_")[1]}
     end
     construct = {
       exchange: "binance",
       symbol: "#{coin.symbol}/USDT",
       interval: interval,
-      indicators: indicators
+      indicators: indicator_names
     }
     body = {secret: ENV["TAAPI_API_KEY"], construct: construct}
-    ApiUtils.post_api_res("https://api.taapi.io/bulk", body)
+    response = ApiUtils.post_api_res("https://api.taapi.io/bulk", body)
+
+    if !response.key?("error")
+      data = response["data"]
+      i = 0
+      data.each do |indicator_data|
+        if indicator_data["errors"].count == 0
+          name = "#{coin.symbol}_#{indicator_names[i][:indicator]}"
+          q_ind = indicators_list[i]
+          ind_result = indicator_data["result"]
+          result_string = ind_result.to_s
+          q_ind.data = result_string
+          q_ind.save
+          puts JSON.parse(result_string.gsub('=>', ':'))
+        end
+        i += 1
+      end
+    end
 
   end
 
