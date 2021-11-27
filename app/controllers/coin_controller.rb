@@ -17,5 +17,7 @@ class CoinController < PrivateController
     puts "params: #{params[:search_param]}"
     puts "id: #{params[:id]}"
     @coin = Coin.find(params[:id])
+
+    
   end
 end

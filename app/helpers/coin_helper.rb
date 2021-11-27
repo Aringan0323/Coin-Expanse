@@ -1,9 +1,10 @@
 require "./app/api_wrappers/market_api.rb"
-
+require "chartkick"
 module CoinHelper
 
 	# Creates and returns a new BookTicker for the Coin.
 	def self.getTicker(coin)
+    include "chartkick"
 
 		ticker_json = MarketApi.book_ticker(coin.symbol)
 		ticker_uri = URI("https://api.binance.us/api/v3/ticker/bookTicker?symbol=#{coin.symbol}USD")
@@ -67,46 +68,50 @@ module CoinHelper
 		end
 	end
 
+	def broadcast_price_charts(coin)
+		btickers = coin.book_tickers.order(:timestamp)
+		avg_data = btickers.map { |bt| [bt.timestamp, bt.avgPrice] }.to_h
+    latest_avg_price = btickers.last.avgPrice
+		min_avg_price = btickers.minimum(:avgPrice)
 
-#   def self.getDaySummaries(coin_list)
+    ask_data = btickers.map { |bt| [bt.timestamp, bt.askPrice] }.to_h
+    latest_ask_price = btickers.last.askPrice
+		min_ask_price = btickers.minimum(:askPrice)
 
-# 		day_summaries = MarketApi.day_summaries	
+    bid_data = btickers.map { |bt| [bt.timestamp, bt.bidPrice] }.to_h
+    latest_bid_price = btickers.last.bidPrice
+		min_bid_price = btickers.minimum(:bidPrice)
 
-# 		if day_summaries.nil?
+    avg_chart = render_chart(coin, avg_data, latest_avg_price, min_avg_price, "avg")
+    ask_chart = render_chart(coin, ask_data, latest_ask_price, min_ask_price, "ask")
+    bid_chart = render_chart(coin, biddata, latest_bid_price, min_bid_price, "bid")
 
-# 			puts "Day summary data for all coins could not be fetched"
+    ActionCable.server.broadcast(
+      "#{coin.symbol}_chart",
+      {
+        avg: avg_chart,
+        ask: ask_chart,
+        bid: bid_chart
+      }
+    )
+	end
 
-# 		else
 
-#       		day_summary_dict = {}
-# 		end
-#       day_summaries.each do |s|
-#         symbol = s["symbol"][0..-3]
-#         if coin_name_list.include? symbol
+	def render_chart(coin, data, latest_price, min_price, type)
+		line_chart data,
+			min: min_price,
+			ytitle: "USD",
+			title: "#{coin.name} #{type} price: $#{latest_price}",
+			height: "500px",
+			curve: false,
+			points: false,
+			round: 2,
+			zeros: true,
+			prefix: "$",
+			thousands: ","
 
-
-
-# 			day_summary = DaySummary.create(
-# 				priceChange: json["priceChange"],
-# 				priceChangePercent: json["priceChangePercent"],
-# 				weightedAvgPrice: json["weightedAvgPrice"],
-# 				prevClosePrice: json["prevClosePrice"],
-# 				lastPrice: json["lastPrice"],
-# 				lastQty: json["lastQty"],
-# 				bidPrice: json["bidPrice"],
-# 				askPrice: json["askPrice"],
-# 				openPrice: json["openPrice"],
-# 				highPrice: json["highPrice"],
-# 				lowPrice: json["lowPrice"],
-# 				volume: json["volume"],
-# 				openTime: Time.at(json["openTime"]/1000),
-# 				closeTime: Time.at(json["closeTime"]/1000),
-# 				tradeCount: json["count"],
-# 				coin_id: coin.id
-# 			)
-			
-# 		end
-# 	end
+	end
+		
 
 
 
