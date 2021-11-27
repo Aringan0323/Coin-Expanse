@@ -76,15 +76,15 @@ These views will be introduced to the functionality of our app in the near futur
 
 The dependencies listed below consist of a mix of gems and apis we use to help create the functionality and setup of our web application.
 
-*Binance API* **(https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md)** - an official REST API provided by the crypto trading platform Binance. This is where we send our get requests to query for data, as well as make post requests for transactions.
-*News api* **https://newsapi.org/** - the api we use to make get requests for up to date crypto news and market changes.
-*gem 'net'* **https://github.com/ruby/net-http** - gem used to build http user agents.
-*gem 'uri'* **https://github.com/ruby/uri** - URI is a module providing classes to handle Uniform Resource Identifiers.
-*gem "binance-ruby"* **https://github.com/Jakenberg/binance-ruby** - "(not yet used) api wrapper for binance queries".
-*gem 'json'* **https://github.com/flori/json** - provides an API for parsing JSON from text as well as generating JSON text from arbitrary Ruby objects.
-*gem 'seedbank'* **https://github.com/james2m/seedbank** - used to organise the seed files into a folder.
-*gem 'digest'* **https://github.com/ruby/digest** - "performs the encryption of user passwords stored in the database".
-*gem "chartkick"* **https://github.com/ankane/chartkick** - gem used for organising market data into tables and graphs. 
+* Binance API* **(https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md)** - an official REST API provided by the crypto trading platform Binance. This is where we send our get requests to query for data, as well as make post requests for transactions.
+* News api [LINK](https://newsapi.org/) - the api we use to make get requests for up to date crypto news and market changes.
+* gem 'net' [LINK](https://github.com/ruby/net-http) - gem used to build http user agents.
+* gem 'uri' [LINK](https://github.com/ruby/uri) - URI is a module providing classes to handle Uniform Resource Identifiers.
+* gem "binance-ruby" [LINK](https://github.com/Jakenberg/binance-ruby) - "(not yet used) api wrapper for binance queries".
+* gem 'json' [LINK](https://github.com/flori/json) - provides an API for parsing JSON from text as well as generating JSON text from arbitrary Ruby objects.
+* gem 'seedbank' [LINK](https://github.com/james2m/seedbank) - used to organise the seed files into a folder.
+* gem 'digest' [LINK](https://github.com/ruby/digest) - "performs the encryption of user passwords stored in the database".
+* gem "chartkick" [LINK](https://github.com/ankane/chartkick) - gem used for organising market data into tables and graphs. 
 
 ## Database Schema
 
