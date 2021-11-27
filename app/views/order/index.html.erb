@@ -1,0 +1,32 @@
+<%= render 'shared/nav' %>
+<div id="wrapper">
+<div id="first">
+<h1> BUY </h1>
+<%= form_with model: @order do |form| %>
+<%= form.label "select coin:"%>
+<%= form.select :type, @coins.pluck(:name,:id) %>
+<br />
+<%= form.label "select amount:"%>
+<%= form.number_field :amount, in:0..1000000%>
+<br />
+
+<%= form.submit "buy crypto" %>
+<% end %>
+</div>
+
+coin.book_tickers[0].avgPrice 
+
+<div id="first">
+<h1> SELL </h1>
+<%= form_with model: @order do |form| %>
+<%= form.label "select coin:"%>
+<%= form.select :type, @coins.pluck(:name,:id) %>
+<br />
+<%= form.label "select amount:"%>
+<%= form.number_field :amount, in:0..1000000%>
+<br />
+
+<%= form.submit "sell crypto" %>
+<% end %>
+</div>
+</div>
