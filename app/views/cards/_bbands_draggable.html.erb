@@ -1,8 +1,8 @@
-<div id="stoch-draggable-resizable" class="card text-center shadow indicator-card">
-   <div id="stoch-card-title" class="card-header stoch text-white op-card-header"> 
+<div id="bbands-draggable-resizable" class="card text-center shadow indicator-card">
+   <div id="bbands-card-title" class="card-header bbands text-white op-card-header"> 
       <div style="flex:1"></div>
       <div class="op-card-title">
-        <%= "stoch".upcase %>
+        <%= "bbands".upcase %>
       </div> 
       <div class="remove">
         <button id="remove-link" class="remove-link" onclick="remove(event)">
@@ -14,21 +14,31 @@
     <%= collection_select :coin, :coin_id, Coin.all.order(:name), :id, :name, :include_blank => true , class: "browser-default custom-select"%>
     <div class="input-row">
       <div class="form-outline">
-        <input type="number" id="valueK" class="form-control" />
+        <input type="number" id="valueLowerBand" class="form-control" />
         <label class="form-label" for="typeNumber" style="font-size:5">Lower (USD)</label>
       </div>
       <div class="form-outline">
-        <input type="number" id="valueKError" class="form-control" />
+        <input type="number" id="valueLowerBandError" class="form-control" />
         <label class="form-label" for="typeNumber">Error (USD)</label>
       </div>
     </div>
     <div class="input-row">
       <div class="form-outline">
-        <input type="number" id="valueD" class="form-control" />
+        <input type="number" id="valueMiddleBand" class="form-control" />
+        <label class="form-label" for="typeNumber" style="font-size:5">Middle (USD)</label>
+      </div>
+      <div class="form-outline">
+        <input type="number" id="valueMiddleBandError" class="form-control" />
+        <label class="form-label" for="typeNumber">Error (USD)</label>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="form-outline">
+        <input type="number" id="valueUpperBand" class="form-control" />
         <label class="form-label" for="typeNumber" style="font-size:5">Upper (USD)</label>
       </div>
       <div class="form-outline">
-        <input type="number" id="valueDError" class="form-control" />
+        <input type="number" id="valueUpperBandError" class="form-control" />
         <label class="form-label" for="typeNumber">Error (USD)</label>
       </div>
     </div>

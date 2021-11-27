@@ -13,7 +13,7 @@ import "bootstrap";
 global.$ = require("jquery");
 require("jquery-ui");
 import "chartkick/chart.js";
-// import "chartkick/highcharts"
+import "chartkick/highcharts"
 import "controllers"
 Rails.start();
 Turbolinks.start();

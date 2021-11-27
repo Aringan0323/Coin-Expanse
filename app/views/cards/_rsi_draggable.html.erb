@@ -11,21 +11,24 @@
       </div>
     </div>
   <div class="indicator-body">
+    <%= collection_select :coin, :coin_id, Coin.all.order(:name), :id, :name, :include_blank => true , class: "browser-default custom-select"%>
     <div class="form-outline">
-      <%= text_field_tag :coin, "", class: "form-control form-control-lg", id: "strategy_name" %>
-      <label class="form-label" for="strategy_name">Coin</label>
-    </div>
-    <div class="form-outline">
-      <input type="number" id="typeNumber" class="form-control" />
+      <input type="number" id="value" class="form-control" />
       <label class="form-label" for="typeNumber">Value (USD)</label>
     </div>
-    <select class="mdb-select md-form">
+    <select id="condition" class="mdb-select md-form">
       <option value="" disabled selected>Condition</option>
       <option value="1"><</option>
       <option value="2">></option>
       <option value="3">=</option>
       <option value="4">≤</option>
       <option value="5">≥</option>
+    </select>
+    <select id="interval" class="mdb-select md-form">
+      <option value="" disabled selected>Interval</option>
+      <% %w(1m 5m 15m 30m 1h 2h 4h 12h 1d 1w).each do |interval| %>
+        <option value="1"><%= interval %></option>
+      <% end %>
     </select>
   </div>
 </div>

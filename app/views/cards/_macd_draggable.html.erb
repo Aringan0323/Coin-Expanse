@@ -1,8 +1,8 @@
-<div id="stoch-draggable-resizable" class="card text-center shadow indicator-card">
-   <div id="stoch-card-title" class="card-header stoch text-white op-card-header"> 
+<div id="macd-draggable-resizable" class="card text-center shadow indicator-card">
+   <div id="macd-card-title" class="card-header macd text-white op-card-header"> 
       <div style="flex:1"></div>
       <div class="op-card-title">
-        <%= "stoch".upcase %>
+        <%= "macd".upcase %>
       </div> 
       <div class="remove">
         <button id="remove-link" class="remove-link" onclick="remove(event)">
@@ -14,21 +14,31 @@
     <%= collection_select :coin, :coin_id, Coin.all.order(:name), :id, :name, :include_blank => true , class: "browser-default custom-select"%>
     <div class="input-row">
       <div class="form-outline">
-        <input type="number" id="valueK" class="form-control" />
-        <label class="form-label" for="typeNumber" style="font-size:5">Lower (USD)</label>
+        <input type="number" id="value" class="form-control" />
+        <label class="form-label" for="typeNumber" style="font-size:5">Value (USD)</label>
       </div>
       <div class="form-outline">
-        <input type="number" id="valueKError" class="form-control" />
+        <input type="number" id="valueError" class="form-control" />
         <label class="form-label" for="typeNumber">Error (USD)</label>
       </div>
     </div>
     <div class="input-row">
       <div class="form-outline">
-        <input type="number" id="valueD" class="form-control" />
-        <label class="form-label" for="typeNumber" style="font-size:5">Upper (USD)</label>
+        <input type="number" id="signal" class="form-control" />
+        <label class="form-label" for="typeNumber" style="font-size:5">Signal (USD)</label>
       </div>
       <div class="form-outline">
-        <input type="number" id="valueDError" class="form-control" />
+        <input type="number" id="signalError" class="form-control" />
+        <label class="form-label" for="typeNumber">Error (USD)</label>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="form-outline">
+        <input type="number" id="hist" class="form-control" />
+        <label class="form-label" for="typeNumber" style="font-size:5">Hist (USD)</label>
+      </div>
+      <div class="form-outline">
+        <input type="number" id="histError" class="form-control" />
         <label class="form-label" for="typeNumber">Error (USD)</label>
       </div>
     </div>
