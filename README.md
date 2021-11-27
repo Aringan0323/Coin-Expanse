@@ -15,6 +15,7 @@ Please run the following steps to get this project set up locally (*Note*: **Ple
 
 ```terminal
 ~$ bundle install
+~$ rails dev:cache
 ~$ rails db:drop
 ~$ rails db:create
 ~$ rails db:migrate
