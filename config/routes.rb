@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   #post '/buyorder' to: 'order#buy'
   #post '/sellorder' to: 'order#sell'
   resources :news_articles
+  resources :indicators
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # GET /
