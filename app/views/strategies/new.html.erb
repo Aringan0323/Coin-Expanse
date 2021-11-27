@@ -36,9 +36,9 @@
           aria-labelledby="indicators-tab"
         >
           <div class="operations">
-            <% %w(rsi stoch bband).each do |indicator_name| %>
+            <% %w(rsi stoch vwap bband).each do |indicator_name| %>
               <div style="padding-bottom: 50px">
-                <%= render 'partials/indicator', locals: { name: indicator_name } %>
+                <%= render 'cards/indicator', locals: { name: indicator_name } %>
               </div>
             <% end %>
           </div>
@@ -47,7 +47,7 @@
           <div class="operations">
             <% %w(and or not).each do |operation_name| %>
               <div style="padding-bottom: 50px">
-                <%= render 'partials/operation', locals: { name: operation_name } %>
+                <%= render 'cards/operation', locals: { name: operation_name } %>
               </div>
             <% end %>
           </div>
@@ -98,17 +98,19 @@
     let i = e.currentTarget.id;
     let name = i.substring(0, i.indexOf('-'));
     if (name === 'and') {
-      $(".create-cards").append(`<%= j render 'partials/operation_draggable', locals: {operation: 'and'} %>`);
+      $(".create-cards").append(`<%= j render 'cards/operation_draggable', locals: {operation: 'and'} %>`);
     } else if (name == 'or') {
-      $(".create-cards").append(`<%= j render 'partials/operation_draggable', locals: {operation: 'or'} %>`);
+      $(".create-cards").append(`<%= j render 'cards/operation_draggable', locals: {operation: 'or'} %>`);
     } else if (name === 'not') {
-      $(".create-cards").append(`<%= j render 'partials/operation_draggable', locals: {operation: 'not'} %>`);
+      $(".create-cards").append(`<%= j render 'cards/operation_draggable', locals: {operation: 'not'} %>`);
     } else if (name === 'rsi') {
-      $(".create-cards").append(`<%= j render 'partials/indicator_draggable', locals: {indicator: 'rsi'} %>`);
+      $(".create-cards").append(`<%= j render 'cards/rsi_draggable' %>`);
     } else if (name === 'stoch') {
-      $(".create-cards").append(`<%= j render 'partials/indicator_draggable', locals: {indicator: 'stoch'} %>`);
+      $(".create-cards").append(`<%= j render 'cards/stoch_draggable' %>`);
+    } else if (name === 'vwap') {
+      $(".create-cards").append(`<%= j render 'cards/vwap_draggable' %>`);
     } else {
-      $(".create-cards").append(`<%= j render 'partials/indicator_draggable', locals: {indicator: 'bbands'} %>`);
+      $(".create-cards").append(`<%= j render 'cards/rsi_draggable' %>`);
     }
     $(".create-cards").children().last().attr('id', $(".create-cards").children().last().attr("id") + "-" + a++);
   });

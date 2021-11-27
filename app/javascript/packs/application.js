@@ -64,8 +64,11 @@ $(document).on("turbolinks:load", function() {
             $("#workspaceList").addClass("show").attr("data-mdb-popper", "none");
         });
 
-    // $('#create-strat').on('click', () => {
-    //     console.log('clicked2!')
-    // })
+    $('#create-strat').on('click', () => {
+        const data = $('#create-cards').serialize();
+        $.post("/strategies/new", data).done(response => {
+            console.log(response);
+        })
+    });
 
 });

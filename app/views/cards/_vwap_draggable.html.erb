@@ -1,0 +1,31 @@
+<div id="vwap-draggable-resizable-<%= Time.now.to_i %>" class="card text-center shadow indicator-card">
+   <div id="vwap-card-title-<%= Time.now.to_i %>" class="card-header vwap text-white op-card-header"> 
+      <div style="flex:1"></div>
+      <div class="op-card-title">
+        <%= "vwap".upcase %>
+      </div> 
+      <div class="remove">
+        <button id="remove-link-<%= Time.now.to_i %>" class="remove-link" onclick="remove(event)">
+         <i class="far fa-window-close" style="color:white"></i>
+        </button>
+      </div>
+    </div>
+  <div class="card-body indicator-body">
+    <div class="form-outline">
+      <%= text_field_tag :coin, "", class: "form-control form-control-lg", id: "strategy_name" %>
+      <label class="form-label" for="strategy_name">Coin</label>
+    </div>
+    <div class="form-outline">
+      <input type="number" id="typeNumber" class="form-control" />
+      <label class="form-label" for="typeNumber">Value (USD)</label>
+    </div>
+    <select class="mdb-select md-form">
+      <option value="" disabled selected>Condition</option>
+      <option value="1"><</option>
+      <option value="2">></option>
+      <option value="3">=</option>
+      <option value="4">≤</option>
+      <option value="5">≥</option>
+    </select>
+  </div>
+</div>
