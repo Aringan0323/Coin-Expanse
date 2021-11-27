@@ -108,7 +108,6 @@ module CoinHelper
 		type = "average"
 
 		line_chart data,
-			refresh: 1,
 			min: min_price,
 			ytitle: "USD",
 			title: "#{coin.name} #{display_type} price: $#{latest_price}",
@@ -121,8 +120,4 @@ module CoinHelper
 			thousands: ","
 
 	end
-
-
-
-
 end
