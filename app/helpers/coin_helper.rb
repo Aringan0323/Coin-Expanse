@@ -2,9 +2,9 @@ require "./app/api_wrappers/market_api.rb"
 require "chartkick"
 module CoinHelper
 
+
 	# Creates and returns a new BookTicker for the Coin.
 	def self.getTicker(coin)
-    include "chartkick"
 
 		ticker_json = MarketApi.book_ticker(coin.symbol)
 		ticker_uri = URI("https://api.binance.us/api/v3/ticker/bookTicker?symbol=#{coin.symbol}USD")
@@ -97,11 +97,20 @@ module CoinHelper
 	end
 
 
-	def render_chart(coin, data, latest_price, min_price, type)
+	def render_chart(coin, display_type, type)
+
+
+		book_tickers = coin.book_tickers.order(:timestamp)
+		data = book_tickers.pluck(:timestamp, type)
+		prices = book_tickers.pluck(type)
+		latest_price = prices.last
+		min_price = prices.min
+		type = "average"
+
 		line_chart data,
 			min: min_price,
 			ytitle: "USD",
-			title: "#{coin.name} #{type} price: $#{latest_price}",
+			title: "#{coin.name} #{display_type} price: $#{latest_price}",
 			height: "500px",
 			curve: false,
 			points: false,
@@ -111,7 +120,6 @@ module CoinHelper
 			thousands: ","
 
 	end
-		
 
 
 

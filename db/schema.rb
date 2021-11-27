@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 2021_11_24_013906) do
     t.datetime "userSince"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "binance_public_key"
   end
 
   add_foreign_key "indicators", "coins"
