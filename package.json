@@ -13,6 +13,7 @@
     "chart.js": "^3.6.0",
     "chartkick": "^4.1.1",
     "highcharts": "^9.3.1",
+    "html-to-json": "^0.6.0",
     "jquery": "^3.6.0",
     "jquery-ui-dist": "^1.12.1",
     "stimulus": "^3.0.1",

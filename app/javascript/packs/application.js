@@ -15,6 +15,7 @@ require("jquery-ui");
 import "chartkick/chart.js";
 import "chartkick/highcharts"
 import "controllers"
+// import "html-to-json"
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
@@ -65,11 +66,25 @@ $(document).on("turbolinks:load", function() {
             $("#workspaceList").addClass("show").attr("data-mdb-popper", "none");
         });
 
-    $('#create-strat').on('click', () => {
-        const data = $('#create-cards').serialize();
-        $.post("/strategies/new", data).done(response => {
-            console.log(response);
+    $('#create-strat').on('click', (e) => {
+        e.preventDefault();
+        const data = $('#create-cards');
+        console.log(data.html())
+        $.ajax({
+            type: "POST",
+            url: "/strategies/new",
+            data: { html: data.html() },
+            success: (resp) => console.log(resp),
+            error: (err) => console.error(err)
         })
     });
+
+    function print(html, level) {
+        console.log('\t'.repeat(level))
+    }
+
+    $('#interval').change((e) => {
+        console.log('here')
+    })
 
 });
