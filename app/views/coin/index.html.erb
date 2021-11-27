@@ -12,11 +12,10 @@
 
   <tbody>
     <% @coins.each do |coin| %>
-      <tr>
-        <td><%= coin.name %></td>
-        <td><%= link_to 'Show', coin %></td>
-        <td><%= "price: $#{(coin.book_tickers[0].eql? nil) ? "unlisted" : coin.book_tickers[0].avgPrice}" %></td>
-      </tr>
+      <%= link_to coin.name, coin %>
+      <div class="chart" id="avg">
+        <%= render_chart(coin, "average", "avgPrice") %>
+      </div>
     <% end %>
   </tbody>
 </table>
