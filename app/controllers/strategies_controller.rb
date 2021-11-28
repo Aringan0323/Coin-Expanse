@@ -1,7 +1,6 @@
 class StrategiesController < PrivateController
   def new; end
   def create
-    puts params[:html].split("\n")
     redirect_to "/strategies/library"
   end
   def add_card

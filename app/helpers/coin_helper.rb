@@ -68,49 +68,40 @@ module CoinHelper
 		end
 	end
 
-	def broadcast_price_charts(coin)
-		btickers = coin.book_tickers.order(:timestamp)
-		avg_data = btickers.map { |bt| [bt.timestamp, bt.avgPrice] }.to_h
-    latest_avg_price = btickers.last.avgPrice
-		min_avg_price = btickers.minimum(:avgPrice)
+	def broadcast_coin(coin)
 
-    ask_data = btickers.map { |bt| [bt.timestamp, bt.askPrice] }.to_h
-    latest_ask_price = btickers.last.askPrice
-		min_ask_price = btickers.minimum(:askPrice)
-
-    bid_data = btickers.map { |bt| [bt.timestamp, bt.bidPrice] }.to_h
-    latest_bid_price = btickers.last.bidPrice
-		min_bid_price = btickers.minimum(:bidPrice)
-
-    avg_chart = render_chart(coin, avg_data, latest_avg_price, min_avg_price, "avg")
-    ask_chart = render_chart(coin, ask_data, latest_ask_price, min_ask_price, "ask")
-    bid_chart = render_chart(coin, biddata, latest_bid_price, min_bid_price, "bid")
+    # avg_chart = render_chart(coin, "average", "avgPrice")
+    # ask_chart = render_chart(coin, "ask", "askPrice")
+    # bid_chart = render_chart(coin, "bid", "bidPrice")
 
     ActionCable.server.broadcast(
-      "#{coin.symbol}_chart",
+      "#{coin.symbol}",
       {
-        avg: avg_chart,
-        ask: ask_chart,
-        bid: bid_chart
+        btickers: coin.book_tickers
       }
     )
 	end
 
-
-	def render_chart(coin, display_type, type)
-
-
+	def get_chart_data(coin, display_type, type)
+		data = {}
 		book_tickers = coin.book_tickers.order(:timestamp)
-		data = book_tickers.pluck(:timestamp, type)
 		prices = book_tickers.pluck(type)
-		latest_price = prices.last
-		min_price = prices.min
-		type = "average"
+		data["chart_data"] = book_tickers.pluck(:timestamp, type)
+		data["latest_price"] = prices.last
+		data["min_price"] = prices.min
+		data["display_type"] = display_type
+		data["coin_name"] = coin.name
 
-		line_chart data,
-			min: min_price,
+		data
+
+	end
+	def render_chart(data)
+
+
+		line_chart data["chart_data"],
+			min: data["min_price"],
 			ytitle: "USD",
-			title: "#{coin.name} #{display_type} price: $#{latest_price}",
+			title: "#{data["coin_name"]} #{data["display_type"]} price: $#{data["latest_price"]}",
 			height: "500px",
 			curve: false,
 			points: false,

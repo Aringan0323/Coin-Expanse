@@ -11,12 +11,12 @@
   </thead>
 
   <tbody>
+    <div class="index_charts">
     <% @coins.each do |coin| %>
-      <%= link_to coin.name, coin %>
-      <div class="chart" id="avg">
-        <%= render_chart(coin, "average", "avgPrice") %>
-      </div>
+        <%= link_to coin.name, coin%>
+        <div id="<%=coin.id%>"></div>
     <% end %>
+    </div>
   </tbody>
 </table>
 </div>
