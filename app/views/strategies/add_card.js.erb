@@ -1,0 +1,41 @@
+$("div[id*='-draggable']").draggable({
+  containment: '.create-cards',
+  stack: "div",
+  <%# grid: [$(this).width(), $(this).height()] %>
+});
+
+$("div[id*='-resizable']" ).resizable({
+  autoHide: true,
+  // start:function(event,ui){
+  //   ui.element.css('position','absolute');
+  // },
+  // stop: function (event, ui) {
+  //   ui.element.css('position', 'static')
+  // }
+});
+
+$(".card-body").droppable({
+  tolerance: "intersect",
+  accept: ".operation-card, .indicator-card",
+  drop: function(event, ui) {
+    // if ui is not child of event, snap to middle
+    const parentID = '#' + $(event.target).parent().attr('id');
+    const childID = '#' + ui.draggable.attr('id');
+    if(!$(parentID).find(childID).length) {
+      $(event.target).append(ui.draggable)
+      ui.draggable.position({
+        my: "center",
+        at: "center",
+        of: $(event.target)
+      })
+    }
+  },
+  out: function (event, ui) {
+    $(event.target).remove(ui.draggable)
+    $('.create-cards').append(ui.draggable)
+  }
+})
+
+document.querySelectorAll(".form-outline").forEach((formOutline) => {
+  new mdb.Input(formOutline).init();
+});

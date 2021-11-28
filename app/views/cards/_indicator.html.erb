@@ -1,0 +1,18 @@
+<div class="card text-center shadow operation">
+  <div class="card-header"> Default Indicator </div>
+  <div class="card-body">
+    <h5 class="card-title"> <%= locals[:name].upcase %> </h5>
+    <p class="card-text">
+      <% if locals[:name] == 'rsi' %>
+        The Relative Strength Index (<strong>RSI</strong>) is a momentum indicator that measures the magnitude of recent price changes to analyze overbought or oversold conditions.
+      <% elsif locals[:name] == 'stoch' %>
+        A stochastic oscillator (<strong>STOCH</strong>) is a momentum indicator comparing a particular closing price of a security to a range of its prices over a certain period of time.
+      <% elsif locals[:name] == 'vwap' %>
+        The volume weighted average price (<strong>VWAP</strong>) is a trading benchmark used by traders that gives the average price a security has traded at throughout the day, based on both volume and price.
+      <% else %>
+        Bollinger Bands (<strong>BBANDS</strong>) are envelopes plotted at a standard deviation level above and below a simple moving average of the price.
+      <% end %>
+    </p>
+    <%= link_to "Add to Creation Space", "/strategies/add_card", id: "#{locals[:name]}-button", class: "btn btn-primary", remote: true, method: :post %>
+  </div>
+</div>
