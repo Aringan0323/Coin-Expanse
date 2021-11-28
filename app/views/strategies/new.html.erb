@@ -72,10 +72,11 @@
             id="buy-radio"
             autocomplete="off"
             checked
+            onclick="switchRadio(event)"
           />
           <label class="btn btn-secondary" for="buy-radio">Buy</label>
 
-          <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" />
+          <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" onclick="switchRadio(event)"/>
           <label class="btn btn-secondary" for="sell-radio">Sell</label>
         </div>
       </div>
@@ -121,5 +122,26 @@
     e.preventDefault();
     var id = "#" + $(e.target).closest("div[id*='-draggable-resizable-'").attr("id");
     $(id).remove()
+  }
+
+  function changeInput(e) {
+    console.log(e.target.value)
+    $(e.target).attr('value', e.target.value)
+  }
+
+  function change(e) {
+    const val = e.target.options[e.target.value - 1].text;
+    $(e.target).attr('value', val);
+  }
+
+  function switchRadio(e) {
+    const id = $(e.target).attr('id')
+    if (id === 'buy-radio') {
+      $('#buy-radio').attr('checked', 'checked')
+      $('#sell-radio').removeAttr('checked')
+    } else {
+      $('#sell-radio').attr('checked', 'checked')
+      $('#buy-radio').removeAttr('checked')
+    }
   }
 </script>

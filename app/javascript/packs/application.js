@@ -68,23 +68,18 @@ $(document).on("turbolinks:load", function() {
 
     $('#create-strat').on('click', (e) => {
         e.preventDefault();
-        const data = $('#create-cards');
-        console.log(data.html())
+        const name = $('#strategy_name').val();
+        const coin = $('#coin_coin_id option:selected').text();
+        const data = $('#create-cards').html();
+        const type = $('#buy-radio').attr('checked') ? 'buy' : 'sell';
+        console.log(type);
         $.ajax({
             type: "POST",
             url: "/strategies/new",
-            data: { html: data.html() },
+            data: { html: data, name: name, coin: coin, type: type },
             success: (resp) => console.log(resp),
             error: (err) => console.error(err)
         })
     });
-
-    function print(html, level) {
-        console.log('\t'.repeat(level))
-    }
-
-    $('#interval').change((e) => {
-        console.log('here')
-    })
 
 });
