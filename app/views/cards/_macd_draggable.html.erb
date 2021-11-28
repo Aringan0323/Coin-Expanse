@@ -1,0 +1,57 @@
+<div id="macd-draggable-resizable" class="card text-center shadow indicator-card">
+   <div id="macd-card-title" class="card-header macd text-white op-card-header"> 
+      <div style="flex:1"></div>
+      <div class="op-card-title">
+        <%= "macd".upcase %>
+      </div> 
+      <div class="remove">
+        <button id="remove-link" class="remove-link" onclick="remove(event)">
+         <i class="far fa-window-close" style="color:white"></i>
+        </button>
+      </div>
+    </div>
+  <div class="indicator-body">
+    <select id="coin" class="mdb-select md-form" onchange="change(event)">
+      <option value="1" disabled selected>Coin</option>
+      <% Coin.all.order(:name).each_with_index do |coin, index| %>
+        <option value="<%= index + 2 %>"><%= coin.name %></option>
+      <% end %>
+    </select>
+    <div class="input-row">
+      <div class="form-outline">
+        <input type="number" id="value" class="form-control" oninput="changeInput(event)"/>
+        <label class="form-label" for="typeNumber" style="font-size:5">Value (USD)</label>
+      </div>
+      <div class="form-outline">
+        <input type="number" id="valueError" class="form-control" oninput="changeInput(event)"/>
+        <label class="form-label" for="typeNumber">Error (USD)</label>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="form-outline">
+        <input type="number" id="signal" class="form-control" oninput="changeInput(event)"/>
+        <label class="form-label" for="typeNumber" style="font-size:5">Signal (USD)</label>
+      </div>
+      <div class="form-outline">
+        <input type="number" id="signalError" class="form-control" oninput="changeInput(event)"/>
+        <label class="form-label" for="typeNumber">Error (USD)</label>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="form-outline">
+        <input type="number" id="hist" class="form-control" oninput="changeInput(event)"/>
+        <label class="form-label" for="typeNumber" style="font-size:5">Hist (USD)</label>
+      </div>
+      <div class="form-outline">
+        <input type="number" id="histError" class="form-control" oninput="changeInput(event)"/>
+        <label class="form-label" for="typeNumber">Error (USD)</label>
+      </div>
+    </div>
+    <select id="interval" class="mdb-select md-form" onchange="change(event)">
+      <option value="1" disabled selected>Interval</option>
+      <% %w(1m 5m 15m 30m 1h 2h 4h 12h 1d 1w).each_with_index do |interval, index| %>
+        <option value="<%= index + 2 %>"><%= interval %></option>
+      <% end %>
+    </select>
+  </div>
+</div>
