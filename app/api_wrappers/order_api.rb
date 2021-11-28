@@ -16,6 +16,19 @@ module OrderApi
   end
 
 
+  def self.account_info(current_user)
+    # reqire_login
+    ENV["BINANCE_API_KEY"] = current_user.binance_public_key
+    ENV["BINANCE_SECRET_KEY"] = current_user.encryptedBinanceApiKey
+    info = Binance::Api::Account.info!
+    Binance::Api::Configuration.api_key = nil
+    Binance::Api::Configuration.secret_key = nil
+    ENV["BINANCE_API_KEY"] = nil
+    ENV["BINANCE_SECRET_KEY"] = nil
+    info
+  end
+
+
   def self.buy(coin, qty)
     require_login
     ENV["BINANCE_API_KEY"] = current_user.binance_public_key
