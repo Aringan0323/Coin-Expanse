@@ -9,26 +9,20 @@ class User < ApplicationRecord
 
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   
-  def generate_password_token!
-    self.reset_password_token = generate_token
-    self.reset_password_sent_at = Time.now.utc
+  def send_password_reset
+    generate_token(:reset_password_token)
+    self.reset_password_sent_at = Time.zone.now
     save!
+    email = UserMailer.forgot_password(self)# This sends an e-mail with a link for the user to reset the password
+    email.deliver
   end
-   
-  def password_token_valid?
-    (self.reset_password_sent_at + 4.hours) > Time.now.utc
-  end
-   
-  def reset_password!(password)
-    self.reset_password_token = nil
-    self.password = password
-    save!
-  end
-   
+
   private
-   
-  def generate_token
-    SecureRandom.hex(10)
+
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
   end
 
 end

@@ -5,8 +5,9 @@ class UserMailer < ApplicationMailer
         mail(to: @user.email, subject: "Welcome to Coin Expanse!")
     end
 
-    def password_reset(email)
-        @user = user.
+    def forgot_password(user)
+        @user = user
+        mail(to: @user.email, subject: "Password Reset")
         
     end
 
