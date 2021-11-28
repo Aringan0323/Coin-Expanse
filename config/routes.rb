@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get 'register', to: 'user#new'
   post 'register', to: 'user#create'
   get '/order', to: 'order#index'
+
+  resources :passwords
+  get "password/forgot", to: 'password#forgot'
+  post 'password/forgot', to: 'password#forgot'
+  post 'password/reset', to: 'password#reset'
   #post '/buyorder' to: 'order#buy'
   #post '/sellorder' to: 'order#sell'
   resources :news_articles

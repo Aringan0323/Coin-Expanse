@@ -62,6 +62,24 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "block_trade_production"
 
+  ActionMailer::Base.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = { 
+    :address => "smtp.gmail.com",
+    :port => "587",
+    :domain => "gmail.com",
+    :user_name => "coinexpanse@gmail.com", 
+    :password => "coin expanse is great!", 
+    :authentication => "plain", 
+    :enable_starttls_auto => true 
+  }
+
+  host = "coinexpanse"
+
+  config.action_mailer.default_url_options = {:host => host}
+
+  config.action_mailer.raise_delivery_errors = true
+
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.

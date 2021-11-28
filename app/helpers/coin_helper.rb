@@ -68,19 +68,19 @@ module CoinHelper
 		end
 	end
 
-	def broadcast_coin(coin)
+	# def broadcast_coin(coin)
 
-    # avg_chart = render_chart(coin, "average", "avgPrice")
-    # ask_chart = render_chart(coin, "ask", "askPrice")
-    # bid_chart = render_chart(coin, "bid", "bidPrice")
+    # # avg_chart = render_chart(coin, "average", "avgPrice")
+    # # ask_chart = render_chart(coin, "ask", "askPrice")
+    # # bid_chart = render_chart(coin, "bid", "bidPrice")
 
-    ActionCable.server.broadcast(
-      "#{coin.symbol}",
-      {
-        btickers: coin.book_tickers
-      }
-    )
-	end
+    # ActionCable.server.broadcast(
+    #   "#{coin.symbol}",
+    #   {
+    #     btickers: coin.book_tickers
+    #   }
+    # )
+	# end
 
 	def get_chart_data(coin, display_type, type)
 		data = {}
@@ -95,20 +95,20 @@ module CoinHelper
 		data
 
 	end
-	def render_chart(data)
+	# def render_chart(data)
 
 
-		line_chart data["chart_data"],
-			min: data["min_price"],
-			ytitle: "USD",
-			title: "#{data["coin_name"]} #{data["display_type"]} price: $#{data["latest_price"]}",
-			height: "500px",
-			curve: false,
-			points: false,
-			round: 2,
-			zeros: true,
-			prefix: "$",
-			thousands: ","
+	# 	line_chart data["chart_data"],
+	# 		min: data["min_price"],
+	# 		ytitle: "USD",
+	# 		title: "#{data["coin_name"]} #{data["display_type"]} price: $#{data["latest_price"]}",
+	# 		height: "500px",
+	# 		curve: false,
+	# 		points: false,
+	# 		round: 2,
+	# 		zeros: true,
+	# 		prefix: "$",
+	# 		thousands: ","
 
-	end
+	# end
 end

@@ -19,6 +19,7 @@ class CoinController < PrivateController
     @coin = Coin.find(params[:id])    
   end
 
+  # API endpoints for graphing data (average prices, ask prices, bid prices) over time 
   def chart_avg_data
     render json: Coin.find(params[:id]).book_tickers.pluck(:timestamp, :avgPrice).to_json
   end

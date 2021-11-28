@@ -13,10 +13,14 @@ class UserController < PublicController
     end
   end
 
-  def new; end
+  def new
+  end
 
   def show
     require_login
     @user = current_user
   end
+
+
+
 end
