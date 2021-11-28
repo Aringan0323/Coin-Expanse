@@ -33,8 +33,47 @@ $(document).on("turbolinks:load", function () {
   document.querySelectorAll(".form-outline").forEach((formOutline) => {
     new mdb.Input(formOutline).init();
   });
+
+  // create each chart for a coin
+  document.querySelectorAll(".chart").forEach((charts) =>{
+    const coin_id = $(charts).attr("id");
+    create_chart("avg-chart", "/chart_data/avg?id="+coin_id)
+    create_chart("ask-chart", "/chart_data/ask?id="+coin_id)
+    create_chart("bid-chart", "/chart_data/bid?id="+coin_id)
+  })
+
+  // create average price charts for all coins
+  document.querySelectorAll(".index_charts").forEach((avgChart) =>{
+    const coin_ids = $(avgChart).children();
+    console.log(coin_ids)
+    coin_ids.each(
+      function (child) {
+        if (child % 2 == 1){
+          const coin_id = $(coin_ids[child]).attr("id");
+          const url = "/chart_data/avg?id="+coin_id;
+          create_chart(coin_id, url)
+        }
+        
+      }
+    )
+    
+  })
 });
 
-
+function create_chart(id, url){
+  return new Chartkick.LineChart(id, url,{
+            min: null,
+            ytitle: "USD",
+            height: "1000px",
+            curve: false,
+            points: false,
+            round: 2,
+            zeros: true,
+            prefix: "$",
+            thousands: ",",
+            refresh: 1
+          })
+}
 
 import "controllers"
+

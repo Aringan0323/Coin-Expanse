@@ -1,15 +1,9 @@
 <%= render 'shared/nav' %>
 <div class="page">
   <h1 class="chart_page_title"><%= @coin.name %></h1>
-  <div id="charts">
-    <div class="chart" id="avg">
-      <%= render_chart(@coin, "average", "avgPrice") %>
-    </div>
-    <div class="chart" id="avg">
-      <%= render_chart(@coin, "ask", "askPrice") %>
-    </div>
-    <div class="chart" id="avg">
-      <%= render_chart(@coin, "bid", "bidPrice") %>
-    </div>
+  <div class="chart" id="<%=@coin.id%>">
+    <div id="avg-chart"></div>
+    <div id="ask-chart"></div>
+    <div id="bid-chart"></div>
   </div>
 </div>
