@@ -12,9 +12,9 @@
 
   <tbody>
     <% @coins.each do |coin| %>
-      <%= link_to coin.name, coin %>
+      <%= coin.name %>
       <div class="chart" id="avg">
-        <%= render_chart(coin, "average", "avgPrice") %>
+        <%= link_to render_chart(coin, "average", "avgPrice"), coin %>
       </div>
     <% end %>
   </tbody>
