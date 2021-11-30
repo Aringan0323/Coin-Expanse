@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   # private user routes
   get '/account', to: 'user#show'
+  get '/account/edit', to: 'user#edit'
 
   # strategies
   get '/strategies/library', to: 'strategies#show'

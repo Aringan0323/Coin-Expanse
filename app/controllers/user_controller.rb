@@ -1,7 +1,7 @@
 class UserController < PublicController
   include SessionsHelper
   def create
-    user = User.new(params.require(:user).permit(:username, :password, :password_confirmation, :encryptedBinanceApiKey, :binance_public_key, :email))
+    user = User.new(params.require(:user).permit(:full_name, :username, :password, :password_confirmation, :encryptedBinanceApiKey, :binance_public_key, :email))
     if user.valid?
       user.userSince = DateTime.now
       user.save
@@ -13,14 +13,14 @@ class UserController < PublicController
     end
   end
 
-  def new
-  end
+  def new; end
 
   def show
     require_login
     @user = current_user
   end
 
-
+  def edit
+  end
 
 end
