@@ -19,32 +19,32 @@
     </select>
     <div class="input-row">
       <div class="form-outline">
-        <input type="number" id="value" class="form-control" oninput="changeInput(event)"/>
-        <label class="form-label" for="typeNumber" style="font-size:5">Value (USD)</label>
+        <input type="number" id="valueMACD" class="form-control" oninput="changeInput(event)"/>
+        <label class="form-label" for="typeNumber" style="font-size:5">Value </label>
       </div>
       <div class="form-outline">
-        <input type="number" id="valueError" class="form-control" oninput="changeInput(event)"/>
-        <label class="form-label" for="typeNumber">Error (USD)</label>
-      </div>
-    </div>
-    <div class="input-row">
-      <div class="form-outline">
-        <input type="number" id="signal" class="form-control" oninput="changeInput(event)"/>
-        <label class="form-label" for="typeNumber" style="font-size:5">Signal (USD)</label>
-      </div>
-      <div class="form-outline">
-        <input type="number" id="signalError" class="form-control" oninput="changeInput(event)"/>
-        <label class="form-label" for="typeNumber">Error (USD)</label>
+        <input type="number" id="valueMACDError" class="form-control" oninput="changeInput(event)"/>
+        <label class="form-label" for="typeNumber">Error </label>
       </div>
     </div>
     <div class="input-row">
       <div class="form-outline">
-        <input type="number" id="hist" class="form-control" oninput="changeInput(event)"/>
-        <label class="form-label" for="typeNumber" style="font-size:5">Hist (USD)</label>
+        <input type="number" id="valueMACDsignal" class="form-control" oninput="changeInput(event)"/>
+        <label class="form-label" for="typeNumber" style="font-size:5">Signal </label>
       </div>
       <div class="form-outline">
-        <input type="number" id="histError" class="form-control" oninput="changeInput(event)"/>
-        <label class="form-label" for="typeNumber">Error (USD)</label>
+        <input type="number" id="valueMACDsignalError" class="form-control" oninput="changeInput(event)"/>
+        <label class="form-label" for="typeNumber">Error </label>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="form-outline">
+        <input type="number" id="valueMACDhist" class="form-control" oninput="changeInput(event)"/>
+        <label class="form-label" for="typeNumber" style="font-size:5">Hist </label>
+      </div>
+      <div class="form-outline">
+        <input type="number" id="valueMACDhistError" class="form-control" oninput="changeInput(event)"/>
+        <label class="form-label" for="typeNumber">Error </label>
       </div>
     </div>
     <select id="interval" class="mdb-select md-form" onchange="change(event)">
