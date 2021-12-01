@@ -14,3 +14,5 @@ User.create(
     encryptedBinanceApiKey: "zZH85w6d8M3gnXSWoMZa0xMCTKuE4ov7DcDHx3POS8U3nkYJELCL6B8TIkS1pqNR"
 )
 puts "Admin user created"
+
+ENV["BINANCE_TLD"] = "US"

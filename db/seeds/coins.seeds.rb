@@ -36,6 +36,8 @@ book_tickers.each do |book_ticker|
   book_ticker.save
 end
 
+ENV["TAAPI_API_KEY"] = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkYW1yaW5nQGJyYW5kZWlzLmVkdSIsImlhdCI6MTYzNTUzOTAyNCwiZXhwIjo3OTQyNzM5MDI0fQ.yJTKVpk9ki71pIzHua0OLb9JdHIAyXbQzcHzWBulAoE"
+
 puts "Creating coin indicators"
 first = true
 indic_names = ["rsi", "stoch", "macd", "bbands2", "vwap"]
