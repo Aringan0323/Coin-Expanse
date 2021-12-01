@@ -1,22 +1,13 @@
 <%= render 'shared/nav' %>
 
 <div class='page'>
-  <table class = "table table-bordered">
-  <thead>
-    <tr>
-      <th>Coin Symbol</th>
-      <th>Link To Coin Information</th>
-      <th>Current Market Price</th>
-    </tr>
-  </thead>
 
   <tbody>
+    <div class="index_charts">
     <% @coins.each do |coin| %>
-      <%= coin.name %>
-      <div class="chart" id="avg">
-        <%= link_to render_chart(coin, "average", "avgPrice"), coin %>
-      </div>
+        <h2 class="centered-text"><%= link_to "#{coin.name} average price", coin%></h2>
+        <div class="chart" style="boarderColor:green;backgroundColor:black;" id="<%=coin.id%>"></div>
     <% end %>
+    </div>
   </tbody>
-</table>
 </div>

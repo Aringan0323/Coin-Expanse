@@ -39,8 +39,12 @@
                     <%= submit_tag "Login", class: "btn btn-dark btn-lg btn-block", style: "width:100%;"%>
                   </div>
 
-                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <%= link_to "Register here", '/register'%></p>
                 <% end%>
+                
+                <p class="mb-5 pb-lg-2" style="color: #393f81;">
+                  <div>Don't have an account? <%= link_to "Register here", '/register'%></div>
+                  <div>Forgot your password? <%= link_to "Reset Password", new_password_path%></div>
+                </p>
 
               </div>
             </div>
