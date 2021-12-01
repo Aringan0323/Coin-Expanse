@@ -4,7 +4,6 @@ module OrderApi
 
 
   def self.check_orders
-    reqire_login
     ENV["BINANCE_API_KEY"] = current_user.binance_public_key
     ENV["BINANCE_SECRET_KEY"] = current_user.encryptedBinanceApiKey
     open_orders = Binance::Api::Order.all_open!
@@ -29,17 +28,17 @@ module OrderApi
   end
 
 
-  def self.buy(coin, qty)
-    require_login
-    ENV["BINANCE_API_KEY"] = current_user.binance_public_key
+  def self.buy(current_user, coin, qty)
+    ENV["BINANCE_TRADING_API_KEY"] = current_user.binance_public_key
     ENV["BINANCE_SECRET_KEY"] = current_user.encryptedBinanceApiKey
     buy_response = Binance::Api::Order.create!(
       quantity: qty.to_s,
       side: 'BUY',
       symbol: coin.binance_symbol,
+      timeInForce: "GTC",
       type: 'MARKET'
     )
-    ENV["BINANCE_API_KEY"] = nil
+    ENV["BINANCE_TRADING_API_KEY"] = nil
     ENV["BINANCE_SECRET_KEY"] = nil
     buy_response
   end

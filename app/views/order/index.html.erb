@@ -1,32 +1,53 @@
 <%= render 'shared/nav' %>
-<div id="wrapper">
-<div id="first">
-<h1> BUY </h1>
-<%= form_with model: @order do |form| %>
-<%= form.label "select coin:"%>
-<%= form.select :type, @coins.pluck(:name,:id) %>
-<br />
-<%= form.label "select amount:"%>
-<%= form.number_field :amount, in:0..1000000%>
-<br />
+<div class='order-form'>
+  <div class='card shadow card-padding w-50'>
+    <div class='card-title order-title'>
+      <div class='display-4'>Make an Order</div>
+    </div>
+    <div class='card-body card-padding'>
+      <% if flash[:danger] %>
+        <div class="alert alert-danger order-alert"><%= flash[:danger] %></div>
+      <% end %>
+      <%= form_with url: '/order', method: :post do |form| %>
+        <div class='input'>
+          1. Please select the type of order you would like to make:
+          <div class="radio pt-4">
+            <div>
+              <%= form.label :autolyse, "Buy", :value => "true"  %>
+              <%= form.radio_button :buy, true, :checked => true %>
+            </div>
+            <div>
+              <%= form.label :autolyse, "Sell", :value => "false" %>
+              <%= form.radio_button :buy, false %>
+            </div>
+          </div>
+        </div>
+        <div class='input'>
+          2. Please select the coin you'd like to make an order for:
+          <div class='pt-4'>
+            <%= form.collection_select :coin_id, @coins.order(:name),:id,:name, required: true %>
+          </div>
+        </div>
+        <div class='input'>
+          3. Please enter the quantity of the coin for transaction:
+          <div class='input-row'>
+            <div class='pt-4'>
+              <%= form.number_field :quantity, min: 0, step: 0.000001, required: true %>
+            </div>
+          </div>
+        </div>
 
-<%= form.submit "buy crypto" %>
-<% end %>
-</div>
-
-coin.book_tickers[0].avgPrice 
-
-<div id="first">
-<h1> SELL </h1>
-<%= form_with model: @order do |form| %>
-<%= form.label "select coin:"%>
-<%= form.select :type, @coins.pluck(:name,:id) %>
-<br />
-<%= form.label "select amount:"%>
-<%= form.number_field :amount, in:0..1000000%>
-<br />
-
-<%= form.submit "sell crypto" %>
-<% end %>
-</div>
+        <div class="pt-3 mb-4">
+          <%= submit_tag "Order", class: "btn btn-dark btn-lg btn-block", style: "width:100%;"%>
+        </div>
+        
+      <% end %>
+    </div>
+    <div class='card-footer'>
+      <h6><strong>Notice:</strong> Please be cautious with buying and selling cryptocurrencies. 
+      Our systems provide security in relation to your linked BinanceUS account; however, any valid purchases and sales made are final,
+      and cannot be renegotiated with us. Please visit <a href='https://www.binance.com/en/support'>Binance Customer Support</a>
+      for any issues.</h6>
+    </div>
+  </div>
 </div>
