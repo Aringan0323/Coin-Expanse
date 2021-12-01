@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_secure_password
 
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+
+  has_many :strategies
   
   def send_password_reset
     generate_token(:reset_password_token)

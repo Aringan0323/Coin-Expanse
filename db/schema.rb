@@ -90,9 +90,14 @@ ActiveRecord::Schema.define(version: 2021_11_28_182638) do
   end
 
   create_table "strategies", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "coin_name"
+    t.string "type"
+    t.float "amount"
     t.string "algorithm"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_strategies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

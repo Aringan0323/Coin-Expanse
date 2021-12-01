@@ -16,10 +16,10 @@ module OrderApi
   end
 
 
-  def self.account_info(current_user)
+  def self.account_info(user)
     # reqire_login
-    ENV["BINANCE_API_KEY"] = current_user.binance_public_key
-    ENV["BINANCE_SECRET_KEY"] = current_user.encryptedBinanceApiKey
+    ENV["BINANCE_API_KEY"] = user.binance_public_key
+    ENV["BINANCE_SECRET_KEY"] = user.encryptedBinanceApiKey
     info = Binance::Api::Account.info!
     Binance::Api::Configuration.api_key = nil
     Binance::Api::Configuration.secret_key = nil
@@ -29,10 +29,9 @@ module OrderApi
   end
 
 
-  def self.buy(coin, qty)
-    require_login
-    ENV["BINANCE_API_KEY"] = current_user.binance_public_key
-    ENV["BINANCE_SECRET_KEY"] = current_user.encryptedBinanceApiKey
+  def self.buy(user, coin, qty)
+    ENV["BINANCE_API_KEY"] = user.binance_public_key
+    ENV["BINANCE_SECRET_KEY"] = user.encryptedBinanceApiKey
     buy_response = Binance::Api::Order.create!(
       quantity: qty.to_s,
       side: 'BUY',
@@ -45,10 +44,9 @@ module OrderApi
   end
 
 
-  def self.sell(coin, qty)
-    require_login
-    ENV["BINANCE_API_KEY"] = current_user.binance_public_key
-    ENV["BINANCE_SECRET_KEY"] = current_user.encryptedBinanceApiKey
+  def self.sell(user, coin, qty)
+    ENV["BINANCE_API_KEY"] = user.binance_public_key
+    ENV["BINANCE_SECRET_KEY"] = user.encryptedBinanceApiKey
     sell_response = Binance::Api::Order.create!(
       quantity: qty.to_s,
       side: 'SELL',

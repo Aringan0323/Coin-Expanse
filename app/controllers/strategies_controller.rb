@@ -8,7 +8,9 @@ class StrategiesController < PrivateController
     else
       filtered_json = filter_json(params['data']['content']['0'])
       puts "here is solution:"
-      puts filtered_json
+      strat = Strategy.new(algorithm: filtered_json.to_s)
+      current_user.strategies << strat
+      strat.save
       # other logic here
       redirect_to '/strategies/library'
     end
@@ -48,4 +50,6 @@ class StrategiesController < PrivateController
     end
     res
   end
+
+
 end
