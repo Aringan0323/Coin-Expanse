@@ -8,7 +8,7 @@ class StrategiesController < PrivateController
     else
       filtered_json = filter_json(params['data']['content']['0'])
       puts "here is solution:"
-      puts filtered_json
+      pp filtered_json
       # other logic here
       redirect_to '/strategies/library'
     end
