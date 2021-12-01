@@ -1,92 +1,97 @@
 <%= render 'shared/nav' %>
-<div class="workspace">
-  <div class="select">
-    <div class="select-container">
-      <ul class="nav nav-tabs mb-3" id="select" role="tablist">
-        <li class="nav-item w-50" role="presentation">
-          <a
-            class="nav-link active centered-text"
-            id="operations-tab"
-            data-mdb-toggle="tab"
-            href="#operations-content"
-            role="tab"
-            aria-controls="operations-content"
-            aria-selected="false"
-            >Operations</a
+<div class='page'>
+  <% if flash[:danger] %>
+    <div class="alert alert-danger strategy-alert"><%= flash[:danger] %></div>
+  <% end %>
+  <div class="workspace"> 
+    <div class="select">
+      <div class="select-container">
+        <ul class="nav nav-tabs mb-3" id="select" role="tablist">
+          <li class="nav-item w-50" role="presentation">
+            <a
+              class="nav-link active centered-text"
+              id="operations-tab"
+              data-mdb-toggle="tab"
+              href="#operations-content"
+              role="tab"
+              aria-controls="operations-content"
+              aria-selected="false"
+              >Operations</a
+            >
+          </li>
+          <li class="nav-item w-50" role="presentation">
+            <a
+              class="nav-link centered-text"
+              id="indicators-tab"
+              data-mdb-toggle="tab"
+              href="#indicators-content"
+              role="tab"
+              aria-controls="indicators-content"
+              aria-selected="true"
+              >Indicators</a
+            >
+          </li>
+        </ul>
+        <div class="tab-content pt-4" id="left-tabs-content">
+          <div
+            class="tab-pane fade"
+            id="indicators-content"
+            role="tabpanel"
+            aria-labelledby="indicators-tab"
           >
-        </li>
-        <li class="nav-item w-50" role="presentation">
-          <a
-            class="nav-link centered-text"
-            id="indicators-tab"
-            data-mdb-toggle="tab"
-            href="#indicators-content"
-            role="tab"
-            aria-controls="indicators-content"
-            aria-selected="true"
-            >Indicators</a
-          >
-        </li>
-      </ul>
-      <div class="tab-content pt-4" id="left-tabs-content">
-        <div
-          class="tab-pane fade"
-          id="indicators-content"
-          role="tabpanel"
-          aria-labelledby="indicators-tab"
-        >
-          <div class="operations">
-            <% %w(rsi stoch vwap bband macd).each do |indicator_name| %>
-              <div style="padding-bottom: 50px">
-                <%= render 'cards/indicator', locals: { name: indicator_name } %>
-              </div>
-            <% end %>
+            <div class="operations">
+              <% %w(rsi stoch vwap bband macd).each do |indicator_name| %>
+                <div style="padding-bottom: 50px">
+                  <%= render 'cards/indicator', locals: { name: indicator_name } %>
+                </div>
+              <% end %>
+            </div>
           </div>
-        </div>
-        <div class="tab-pane fade show active" id="operations-content" role="tabpanel" aria-labelledby="operations-tab">
-          <div class="operations">
-            <% %w(and or not).each do |operation_name| %>
-              <div style="padding-bottom: 50px">
-                <%= render 'cards/operation', locals: { name: operation_name } %>
-              </div>
-            <% end %>
+          <div class="tab-pane fade show active" id="operations-content" role="tabpanel" aria-labelledby="operations-tab">
+            <div class="operations">
+              <% %w(and or not).each do |operation_name| %>
+                <div style="padding-bottom: 50px">
+                  <%= render 'cards/operation', locals: { name: operation_name } %>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="create">
-    <div class="create-header">
-      <div class="form-outline">
-        <%= text_field_tag :strategy_name, "", class: "form-control form-control-lg", id: "strategy_name" %>
-        <label class="form-label" for="strategy_name">Strategy Name</label>
-      </div>
-      <%= collection_select :coin, :coin_id, Coin.all.order(:name), :id, :name, :include_blank => true , class: "browser-default custom-select"%>
-      <div class="create-buttons">
-        <strong>Strategy Option:</strong>
-        <div class="btn-group">
-          <input
-            type="radio"
-            class="btn-check"
-            name="options"
-            id="buy-radio"
-            autocomplete="off"
-            checked
-            onclick="switchRadio(event)"
-          />
-          <label class="btn btn-secondary" for="buy-radio">Buy</label>
+    <div class="create">
+      <div class="create-header">
+        <div class="form-outline">
+          <%= text_field_tag :strategy_name, "", class: "form-control form-control-lg", id: "strategy_name" %>
+          <label class="form-label" for="strategy_name">Strategy Name</label>
+        </div>
+        <%= collection_select :coin, :coin_id, Coin.all.order(:name), :id, :name, :include_blank => true , class: "browser-default custom-select"%>
+        <div class="create-buttons">
+          <strong>Strategy Option:</strong>
+          <div class="btn-group">
+            <input
+              type="radio"
+              class="btn-check"
+              name="options"
+              id="buy-radio"
+              autocomplete="off"
+              checked
+              onclick="switchRadio(event)"
+            />
+            <label class="btn btn-secondary" for="buy-radio">Buy</label>
 
-          <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" onclick="switchRadio(event)"/>
-          <label class="btn btn-secondary" for="sell-radio">Sell</label>
+            <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" onclick="switchRadio(event)"/>
+            <label class="btn btn-secondary" for="sell-radio">Sell</label>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="create-space">
-      <div id= "create-cards" class="create-cards">
-        
-      </div>
-      <div class="submit">
-        <button id="create-strat" class="btn btn-primary">Create</button>
+      <div class="create-space">
+        <div id= "create-cards" class="create-cards">
+          
+        </div>
+        <div class="submit">
+          <button id="create-strat" class="btn btn-primary">Create</button>
+        </div>
       </div>
     </div>
   </div>

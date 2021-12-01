@@ -1,190 +1,200 @@
+.page {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
+}
+
+.strategy-alert {
+    width: 100%;
+}
+
 .workspace {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 100px;
-  height: 800px;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    height: 800px;
+    // border: 1px solid purple;
 }
 
 .centered-text {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .select {
-  flex: 1;
-  flex-direction: column;
-  padding-right: 90px;
+    flex: 1;
+    flex-direction: column;
+    padding-right: 90px;
 }
 
 .select-container {
-  height: 90%;
-  padding-left: 10px;
-  border: outset;
-  border-radius: 10px;
+    padding-left: 10px;
+    border: outset;
+    border-radius: 10px;
+    // border: 2px solid purple;
 }
 
 .create {
-  flex: 4;
-  display: flex;
-  flex-direction: column;
-  height: 90%;
-  border: outset;
-  border-radius: 15px;
-  padding-left: 10px;
-  // border: 1px solid peru;
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    border: outset;
+    border-radius: 15px;
+    padding-left: 10px;
+    // border: 1px solid peru;
 }
 
 .create-header {
-  // border: 1px solid purple;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex: 1;
-  padding-top: 20px;
+    // border: 1px solid purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding-top: 20px;
 }
 
 .create-buttons {
-  justify-content: space-around;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  width: 40%;
-  padding-left: 20px;
-  padding-right: 20px;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .create-name {
-  width: 50%;
+    width: 50%;
 }
 
 .submit {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  justify-content: flex-end;
-  // border: 1px solid purple;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+    // border: 1px solid purple;
 }
 
 .create-space {
-  display: flex;
-  flex-direction: column;
-  width: 99%;
-  flex: 7;
-  max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+    flex: 7;
+    max-height: 90%;
 }
 
 .create-cards {
-  flex: 9;
-  // border: 1px solid green;
-  display: flex;
-  flex-direction: row;
-  overflow: scroll;
-  flex-wrap: wrap;
-  max-height: 500px;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    flex: 9;
+    // border: 1px solid green;
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    flex-wrap: wrap;
+    max-height: 500px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .create-cards::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .operation {
-  top: 0;
-  left: 0;
+    top: 0;
+    left: 0;
 }
 
 .operations {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  width: 98%;
-  height: 525px;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 98%;
+    height: 525px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .operations::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .operation-card {
-  width: 300px;
-  height: 300px;
-  min-height: 100px;
-  min-width: 100px;
-  max-width: 600px;
-  max-height: 400px;
-  z-index: 0;
-  // position: fixed;
+    width: 300px;
+    height: 300px;
+    min-height: 100px;
+    min-width: 100px;
+    max-width: 600px;
+    max-height: 400px;
+    z-index: 0;
+    // position: fixed;
 }
 
 .indicator-card {
-  width: 300px;
-  height: 300px;
-  min-height: 250px;
-  min-width: 250px;
-  max-width: 600px;
-  max-height: 400px;
-  z-index: 0;
-  // position: fixed;
+    width: 300px;
+    height: 300px;
+    min-height: 250px;
+    min-width: 250px;
+    max-width: 600px;
+    max-height: 400px;
+    z-index: 0;
+    // position: fixed;
 }
 
 .remove {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  // border: 1px solid black;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    // border: 1px solid black;
 }
 
 .remove-link {
-  // border: 1px solid black;
-  background-color: transparent;
-  border-color: transparent;
+    // border: 1px solid black;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 .remove-link:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .op-card-header {
-  display: flex;
-  flex-direction: row;
-  height: 40px;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
 }
 
 .op-card-title {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .picker {
-  border-radius: 5px;
+    border-radius: 5px;
 }
 
 .coin-select {
-  display: flex;
+    display: flex;
 }
 
 .indicator-body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
 }
 
 .input-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
