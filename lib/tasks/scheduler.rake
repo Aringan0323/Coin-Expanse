@@ -54,11 +54,11 @@ end
 
 
 
-namespace :strats do 
+# namespace :strats do 
 
-  desc 
+#   desc 
 
-end
+# end
 
 
 # rake db:update_btickers
