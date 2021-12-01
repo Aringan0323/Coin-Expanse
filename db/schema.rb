@@ -91,8 +91,9 @@ ActiveRecord::Schema.define(version: 2021_11_28_182638) do
 
   create_table "strategies", force: :cascade do |t|
     t.bigint "user_id"
+    t.string "name"
     t.string "coin_name"
-    t.string "type"
+    t.string "side"
     t.float "amount"
     t.string "algorithm"
     t.datetime "created_at", precision: 6, null: false

@@ -73,7 +73,7 @@ $(document).on("turbolinks:load", function() {
         const name = $('#strategy_name').val();
         const coin = $('#coin_coin_id option:selected').text();
         const data = mapDOM(document.getElementById('create-cards'), false);
-        const type = $('#buy-radio').attr('checked') ? 'buy' : 'sell';
+        const type = $('#buy-radio').attr('checked') ? 'BUY' : 'SELL';
         const rawHtml = $('#create-cards').html();
         const quantity = $("#quantity").val();
         console.log(quantity)

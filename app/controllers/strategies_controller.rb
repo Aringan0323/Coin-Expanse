@@ -7,12 +7,10 @@ class StrategiesController < PrivateController
       redirect_to '/strategies/new'
     else
       filtered_json = filter_json(params['data']['content']['0'])
-      puts "here is solution:"
       pp filtered_json
-      strat = Strategy.new(algorithm: filtered_json.to_s)
+      strat = Strategy.new(side: params[:type], coin_name: params[:coin], amount: params[:quantity], algorithm: filtered_json.to_json)
       current_user.strategies << strat
       strat.save
-      # other logic here
       redirect_to '/strategies/library'
     end
   end
