@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :password_digest
       t.string :encryptedBinanceApiKey
       t.string :email
+      t.string :full_name
       t.datetime :userSince
 
       t.timestamps

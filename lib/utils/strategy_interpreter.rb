@@ -12,7 +12,7 @@ module StrategyInterpreter
 
     def check_strategy(user, strategy)
 
-
+        
 
     end
 end

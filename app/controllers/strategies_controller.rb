@@ -11,6 +11,7 @@ class StrategiesController < PrivateController
       strat = Strategy.new(algorithm: filtered_json.to_s)
       current_user.strategies << strat
       strat.save
+      pp filtered_json
       # other logic here
       redirect_to '/strategies/library'
     end

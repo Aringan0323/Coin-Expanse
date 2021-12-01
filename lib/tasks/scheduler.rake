@@ -52,4 +52,13 @@ namespace :db do
   end
 end
 
+
+
+namespace :strats do 
+
+  desc 
+
+end
+
+
 # rake db:update_btickers

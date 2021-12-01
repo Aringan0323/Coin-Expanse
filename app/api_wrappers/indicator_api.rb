@@ -46,11 +46,8 @@ module IndicatorApi
       i = 0
       data.each do |indicator_data|
         if indicator_data["errors"].count == 0
-          name = "#{coin.symbol}_#{indicator_names[i][:indicator]}"
           q_ind = indicators_list[i]
-          ind_result = indicator_data["result"]
-          result_string = ind_result.to_s
-          q_ind.data = result_string
+          q_ind.data = indicator_data["result"].to_s
           q_ind.save
           puts JSON.parse(result_string.gsub('=>', ':'))
         end

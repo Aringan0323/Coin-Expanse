@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   # private user routes
   get '/account', to: 'user#show'
+  get '/account/edit', to: 'user#edit'
 
   # strategies
   get '/strategies/library', to: 'strategies#show'
@@ -39,4 +40,7 @@ Rails.application.routes.draw do
   post 'strategies/new', to: 'strategies#create'
   post '/strategies/add_card', to: 'strategies#add_card'
   # post '/strategies/new', to: 'strategies#new'
+
+  # orders
+  post '/order', to: 'order#order'
 end
