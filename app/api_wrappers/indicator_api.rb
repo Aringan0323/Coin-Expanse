@@ -49,10 +49,10 @@ module IndicatorApi
           q_ind = indicators_list[i]
           q_ind.data = indicator_data["result"].to_s
           q_ind.save
-          puts JSON.parse(result_string.gsub('=>', ':'))
         end
         i += 1
       end
+      puts "Created #{coin.name} indicators"
     end
 
   end
