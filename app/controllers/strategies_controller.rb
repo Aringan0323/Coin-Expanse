@@ -8,6 +8,7 @@ class StrategiesController < PrivateController
     else
       filtered_json = filter_json(params['data']['content']['0'])
       puts "here is solution:"
+      pp filtered_json
       strat = Strategy.new(algorithm: filtered_json.to_s)
       current_user.strategies << strat
       strat.save
@@ -39,7 +40,7 @@ class StrategiesController < PrivateController
         content = json['content']
         name = content['0']['content']['0']['attributes']['id']
         res[name] = { 'value' => content['0']['content']['0']['attributes']['value'],
-                      'error' => content['1']['content']['0']['attributes']['value'] } # is a row of value and error
+                      'condition' => content['1']['attributes']['value'] } # is a row of value and error
       else
         content = json['content']
         name = content['0']['attributes']['id']

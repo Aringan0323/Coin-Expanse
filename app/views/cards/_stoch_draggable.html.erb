@@ -22,24 +22,32 @@
         <input type="number" id="valueK" class="form-control" oninput="changeInput(event)"/>
         <label class="form-label" for="typeNumber" style="font-size:5">Lower </label>
       </div>
-      <div class="form-outline">
-        <input type="number" id="valueKError" class="form-control" oninput="changeInput(event)"/>
-        <label class="form-label" for="typeNumber">Error </label>
-      </div>
+      <select class="mdb-select md-form" onchange="change(event)">
+        <option value="" disabled selected>Condition</option>
+        <option value="1"><</option>
+        <option value="2">></option>
+        <option value="3">=</option>
+        <option value="4">≤</option>
+        <option value="5">≥</option>
+      </select>
     </div>
     <div class="input-row">
       <div class="form-outline">
         <input type="number" id="valueD" class="form-control" oninput="changeInput(event)"/>
         <label class="form-label" for="typeNumber" style="font-size:5">Upper </label>
       </div>
-      <div class="form-outline">
-        <input type="number" id="valueDError" class="form-control" oninput="changeInput(event)"/>
-        <label class="form-label" for="typeNumber">Error </label>
-      </div>
+      <select class="mdb-select md-form" onchange="change(event)">
+        <option value="" disabled selected>Condition</option>
+        <option value="1"><</option>
+        <option value="2">></option>
+        <option value="3">=</option>
+        <option value="4">≤</option>
+        <option value="5">≥</option>
+      </select>
     </div>
     <select id="interval" class="mdb-select md-form" onchange="change(event)">
       <option value="1" disabled selected>Interval</option>
-      <% %w(1m 5m 15m 30m 1h 2h 4h 12h 1d 1w).each_with_index do |interval, index| %>
+      <% %w(1h 1d 1w).each_with_index do |interval, index| %>
         <option value="<%= index + 2 %>"><%= interval %></option>
       <% end %>
     </select>
