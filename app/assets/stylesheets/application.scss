@@ -174,29 +174,84 @@ mark {
 }
 
 .macd {
-    background-color: #e7e57a; 
+    background-color: #e7e57a;
 }
 
 #wrapper {
     width: 500px;
     border: 1px solid black;
-    overflow: hidden; /* will contain if #first is longer than #second */
-}
-#first {
-    width: 300px;
-    float:left; /* add this */
-    border: 1px solid red;
-}
-#second {
-    border: 1px solid green;
-    overflow: hidden; /* if you don't want #second to wrap below #first */
+    overflow: hidden;
+    /* will contain if #first is longer than #second */
 }
 
-.chart{
+#first {
+    width: 300px;
+    float: left;
+    /* add this */
+    border: 1px solid red;
+}
+
+#second {
+    border: 1px solid green;
+    overflow: hidden;
+    /* if you don't want #second to wrap below #first */
+}
+
+.chart {
     width: 1000px;
     height: 1000px;
 }
 
 .chart_page_title {
     padding: 50px;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 75px;
+}
+
+.card-padding {
+    padding: 30px;
+}
+
+.order-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.input {
+    font-size: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.radio {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.conversion {
+    display: flex;
+}
+
+.order-alert {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

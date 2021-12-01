@@ -14,7 +14,7 @@
               />
               <h5><%= @user.username %></h5>
               <p>Crypto Trader</p>
-              <%= link_to '#' do %>
+              <%= link_to '/account/edit' do %>
                 <i class="far fa-edit mb-5 text-white"></i>
               <% end %>
             </div>
@@ -29,7 +29,7 @@
                   </div>
                   <div class="col-6 mb-3">
                     <h6>Full Name</h6>
-                    <p class="text-muted"><%= "No name!" %></p>
+                    <p class="text-muted"><%= @user.full_name %></p>
                   </div>
                 </div>
               </div>
