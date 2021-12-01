@@ -66,6 +66,7 @@
           <label class="form-label" for="strategy_name">Strategy Name</label>
         </div>
         <%= collection_select :coin, :coin_id, Coin.all.order(:name), :id, :name, :include_blank => true , class: "browser-default custom-select"%>
+        <input type="number" id="quantity" name="quantity" min="0.000001" step="0.000001">
         <div class="create-buttons">
           <strong>Strategy Option:</strong>
           <div class="btn-group">
