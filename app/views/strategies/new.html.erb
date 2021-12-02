@@ -129,7 +129,7 @@
 
   function remove (e) {
     e.preventDefault();
-    var id = "#" + $(e.target).closest("div[id*='-draggable-resizable-'").attr("id");
+    var id = "#" + $(e.target).closest("div[id*='-draggable-resizable-']").attr("id");
     $(id).remove()
   }
 
