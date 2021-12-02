@@ -34,22 +34,17 @@ module ApiUtils
   end
 
 
-  def self.binance_order_req(params, api_key, secret_key)
-    params.merge!(signature: signed_request_signature(params, secret_key))
-    response = put
-  end
-
-  def signed_request_signature(params, secret_key)
+  def self.signed_request_signature(params, secret_key)
     payload = params.map { |key, value| "#{key}=#{value}" }.join("&")
     digest = OpenSSL::Digest::SHA256.new
     OpenSSL::HMAC.hexdigest(digest, secret_key, payload)
   end
 
-  def timestamp
+  def self.timestamp
     Time.now.utc.strftime("%s%3N")
   end
 
-  def key_header(api_key)
+  def self.key_header(api_key)
     headers = {
       "Content-Type"=>"application/json; charset=utf-8",
       "X-MBX-APIKEY"=>api_key
