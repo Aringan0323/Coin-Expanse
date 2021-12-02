@@ -1,5 +1,4 @@
 require "binance-ruby"
-require 'rest-client'
 require 'httparty'
 # RestClient.proxy = ENV["IPB_HTTP"]
 # response = RestClient.post("http://binance.us/api/v3/order")
