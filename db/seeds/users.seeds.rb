@@ -10,8 +10,8 @@ User.create(
     username: "admin",
     email: "test@gmail.com",
     password: "pass",
-    binance_public_key: "FVDgHdYvlx2QTaXO5yZtIwtIVLcZ0xIEPho9dxVHbFMNyI8DELpm3IotYPdOQ1e4",
-    encryptedBinanceApiKey: "zZH85w6d8M3gnXSWoMZa0xMCTKuE4ov7DcDHx3POS8U3nkYJELCL6B8TIkS1pqNR"
+    binance_public_key: "zsXP0MQ3XUQ3clwfewN45dLm0xcBlks0QokSUsLaxT9PkvXMiarAhXYTxy7sHRMi",
+    encryptedBinanceApiKey: "f2xDJ4YJSLUrddqvpk5nQg62XfD8gcPMsikOpkPPhRxB5iKYTf2LXf2tnOLcx8cn"
 )
 puts "Admin user created"
 
