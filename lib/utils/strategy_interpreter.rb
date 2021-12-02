@@ -5,12 +5,12 @@ module StrategyInterpreter
 
     def self.check_strategies(user)
         user.strategies.all.each do |strat|
-            strat = JSON.parse(strat.algorithm.gsub("=>", ":").gsub("nil", "null"))
-            check_strategy(user, strat)
+            strat = JSON.parse(strat.algorithm.gsub("=>", ":"))
+            check_strategy(strat)
         end 
     end
 
-    def self.check_strategy(user, strategy)
+    def self.check_strategy(strategy)
         if self.check_and(strategy)
             #NOT YET IMPLEMENTED
             puts "EXECUTE ORDER"
@@ -31,7 +31,9 @@ module StrategyInterpreter
                 not_indic = and_hash[key].keys[0]
                 execute = execute && !self.check_indicator(not_indic, and_hash[key][not_indic])
             else
+                puts "Got here"
                 execute = execute && self.check_indicator(key, and_hash[key])
+                puts "Got further"
             end
         end
         execute
@@ -40,6 +42,7 @@ module StrategyInterpreter
     def self.check_or(or_hash)
         execute = false
         or_hash.keys.each do |key|
+            key = key.to_s
             if key == "and"
                 execute = execute || self.check_and(or_hash[key])
             elsif key == "or"
@@ -56,7 +59,9 @@ module StrategyInterpreter
 
     def self.check_indicator(ind_name, ind_hash)
         coin = Coin.find_by(name: ind_hash['coin'])
+        puts ind_name
         indicator = Indicator.find_by(name: "#{coin.symbol}_#{ind_name}", interval: ind_hash['interval'])
+        puts indicator.name
         data = JSON.parse(indicator.data.gsub("=>", ":"))
         execute = false
         if data.keys.count == 1
@@ -64,8 +69,8 @@ module StrategyInterpreter
         else
             execute = true
             data.keys.each do |key|
-                val = ind_hash[key]
-                execute = execute && self.cond(val['value'], val['condition'], data[key])
+                val = ind_hash[key.to_s]
+                execute = execute && self.cond(val['value'], val['condition'], data[key.to_s]['value'])
             end
             execute
         end
@@ -76,13 +81,13 @@ module StrategyInterpreter
     def self.cond(expected, condition, actual)
         bool = false
         if condition == "<"
-            bool = expected.to_f < actual.to_f
+            bool = actual.to_f < expected.to_f
         elsif condition == ">"
-            bool = expected.to_f > actual.to_f
+            bool =  actual.to_f > expected.to_f
         else
             bool = false
         end
-        puts "#{expected} #{condition} #{actual} : #{bool}"
+        puts "#{actual} #{condition} #{expected}: #{bool}"
         bool
     end
 

@@ -29,7 +29,7 @@ namespace :db do
   desc "updates all of the coins book tickers every minute"
   task update_btickers_every_minute: :environment do
     while true do 
-      BookTicker.where(['timestamp < ?', 24.hours.ago]).destroy_all
+      BookTicker.where(['timestamp < ?', 2.hours.ago]).destroy_all
       btickers = MarketApi.book_tickers(Coin.all)
       btickers.each do |bticker|
         bticker.save
