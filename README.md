@@ -14,6 +14,11 @@ Coin Expanse is an effort to consolidate cryptocurrency trading into a simple an
 
 ## Important Setup Notes
 
+**Important**: In order to have your BinanceUS account properly linked with our application, even if you supply us with the keys, you need to whitelist the following IP Adresses on your BinanceUS account:
+
+1. 54.173.229.200
+2. 54.175.230.252
+
 Please run the following steps to get this project set up locally (*Note*: **Please** make sure `PostgresQL` is running locally in order to start the development process):
 
 ```terminal
