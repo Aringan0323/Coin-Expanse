@@ -1,6 +1,7 @@
 require "./app/api_wrappers/market_api.rb"
 require "./app/api_wrappers/news_api.rb"
 require "./app/helpers/coin_helper.rb"
+require "./lib/utils/strategy_interpreter.rb"
 ENV["NEWS_API_KEY"] = "af7ed64513f5449a855f235ca6484388"
 
 namespace :db do
@@ -54,11 +55,17 @@ end
 
 
 
-# namespace :strats do 
+namespace :strats do 
 
-#   desc 
+  desc "Runs all user strategies"
 
-# end
+  task check_user_strategies: :environment do
+    User.all.each do |user|
+      StrategyInterpreter.check_strategies(user)
+    end
+  end
+
+end
 
 
 # rake db:update_btickers

@@ -52,7 +52,7 @@ module IndicatorApi
         end
         i += 1
       end
-      puts "Created #{coin.name} indicators"
+      puts "Created #{coin.name} indicators with interval #{interval}"
     end
 
   end
