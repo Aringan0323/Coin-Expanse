@@ -46,7 +46,7 @@ module OrderApi
       side => 'BUY',
       symbol => coin.binance_symbol,
       type => 'MARKET'
-    )
+  }
 
     puts binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
 

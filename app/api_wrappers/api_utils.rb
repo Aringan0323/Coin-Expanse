@@ -1,6 +1,9 @@
 require "net/http"
 require "uri"
 require "httparty"
+require "openssl"
+require "base64"
+
 
 module ApiUtils
   include HTTParty
