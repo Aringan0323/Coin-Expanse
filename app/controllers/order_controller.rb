@@ -15,7 +15,7 @@ class OrderController < PrivateController
       else
         OrderApi.sell(current_user, coin, qty)
       end
-      flash[:notice] =
+      flash[:success] =
         "You successfully #{params[:buy] ? 'bought' : 'sold'} #{qty} #{qty == 1 ? 'coin' : 'coins'} of #{coin.name}"
       redirect_to root_url
     rescue Binance::Api::Error::NewOrderRejected

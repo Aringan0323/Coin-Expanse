@@ -21,13 +21,10 @@
       <input type="number" id="value" class="form-control" oninput="changeInput(event)"/>
       <label class="form-label" for="typeNumber">Value </label>
     </div>
-    <select class="mdb-select md-form" onchange="change(event)">
-      <option value="" disabled selected>Condition</option>
-      <option value="1"><</option>
-      <option value="2">></option>
-      <option value="3">=</option>
-      <option value="4">≤</option>
-      <option value="5">≥</option>
+    <select id="condition" class="mdb-select md-form" onchange="change(event)">
+      <option value="1" disabled selected>Condition</option>
+      <option value="2"><</option>
+      <option value="3">></option>
     </select>
     <select id="interval" class="mdb-select md-form" onchange="change(event)">
       <option value="1" disabled selected>Interval</option>

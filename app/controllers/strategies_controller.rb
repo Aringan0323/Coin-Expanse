@@ -8,16 +8,35 @@ class StrategiesController < PrivateController
     else
       filtered_json = filter_json(params['data']['content']['0'])
       pp filtered_json
-      strat = Strategy.new(side: params[:type], coin_name: params[:coin], amount: params[:quantity], algorithm: filtered_json.to_json)
+      strat = Strategy.new(name: params[:name], side: params[:type], coin_name: params[:coin], amount: params[:quantity], algorithm: filtered_json.to_json)
       current_user.strategies << strat
-      strat.save
-      redirect_to '/strategies/library'
+      if strat.save
+        redirect_to '/strategies/library'
+      else
+        flash[:danger] = 'Please fill out all required fields'
+        redirect_to '/strategies/new'
+      end
     end
+  end
+
+  def show
+    @strategies = current_user.strategies
   end
 
   def add_card
     respond_to do |format|
       format.js
+    end
+  end
+
+  def delete
+    strat = Strategy.find(params[:id])
+    if strat.delete
+      flash[:success] = "Successfully deleted"
+      redirect_to '/strategies/library'
+    else
+      flash[:danger] = "Something went wrong"
+      redirect_to '/strategies/library'
     end
   end
 
