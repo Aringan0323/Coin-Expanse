@@ -1,0 +1,39 @@
+<div class='entry'>
+  <div class='entry-header'>
+    <div class='display-6 entry-title'>
+      <%= locals[:strat].name %>
+    </div>
+    <a 
+      class='arrow rotate' 
+      data-mdb-toggle="collapse" 
+      href="#description-<%= locals[:strat].name.gsub(" ", "") %>" 
+      aria-expanded="false"
+      aria-controls="collapseExample"
+      onclick="handleClick(event)"
+      id="collapse-<%= locals[:strat].name.gsub(" ", "") %>"
+    >
+      <i class="fas fa-angle-down"></i>
+    </a>
+  </div>
+  <div class="collapse mt-3 description" id="description-<%= locals[:strat].name.gsub(" ", "") %>">
+    <div class='description-row'>
+      <div>
+        For: 
+        <a href="<%= generate_coin_link locals[:strat].coin_name %>">
+          <%= locals[:strat].coin_name %>
+        </a>
+      </div>
+      <div>
+        Type: <%= locals[:strat].side %>
+      </div>
+      <div>
+        Quantity: <%= locals[:strat].amount %>
+      </div>
+    </div>
+    <div class='description-row' style="width:25%">
+      <%= link_to "Edit", '#', class: "btn btn-primary" %>
+      <%= button_to "Delete", generate_delete_link(locals[:strat]), class: "btn btn-danger" %>
+    </div>
+  </div>
+  <hr/>
+</div>

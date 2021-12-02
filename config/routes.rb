@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   get '/strategies/new', to: 'strategies#new'
   post 'strategies/new', to: 'strategies#create'
   post '/strategies/add_card', to: 'strategies#add_card'
+  post '/strategies/delete/:id', to: 'strategies#delete'
   # post '/strategies/new', to: 'strategies#new'
 
   # orders

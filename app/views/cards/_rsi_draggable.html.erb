@@ -22,13 +22,10 @@
       <label class="form-label" for="typeNumber">Value </label>
     </div>
     <select id="condition" class="mdb-select md-form" onchange="change(event)">
-      <option value="1" disabled selected>Condition</option>
-      <option value="2"><</option>
-      <option value="3">></option>
-      <option value="4">=</option>
-      <option value="5">≤</option>
-      <option value="6">≥</option>
-    </select>
+        <option value="1" disabled selected>Condition</option>
+        <option value="2"><</option>
+        <option value="3">></option>
+      </select>
     <select id="interval" class="mdb-select md-form" onchange="change(event)">
       <option value="1" disabled selected>Interval</option>
       <% %w(1h 1d 1w).each_with_index do |interval, index| %>
