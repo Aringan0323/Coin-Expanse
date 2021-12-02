@@ -60,27 +60,27 @@ namespace :db do
   task update_indicators: :environment do 
 
     first = true
-    while true
-      indic_names = ["rsi", "stoch", "macd", "bbands2", "vwap"]
-      Coin.all.each do |coin|
-        ["1h", "1d", "1w"].each do |interval|
-          if !first
-            sleep(16.seconds)
-          else
-            first = false
-          end
-          indics = []
-          indic_names.each do |indic_name|
-            indics << Indicator.new(coin: coin, name: "#{coin.symbol}_#{indic_name}", interval: interval)
-          end
-          IndicatorApi.bulk(coin, interval, indics)
-          indics.each do |indic|
-            indic.save
-          end
+    indic_names = ["rsi", "stoch", "macd", "bbands2", "vwap"]
+    Indicator.delete_all
+    Coin.all.each do |coin|
+      ["1h", "1d", "1w"].each do |interval|
+        if !first
+          sleep(16.seconds)
+        else
+          first = false
+        end
+        indics = []
+        indic_names.each do |indic_name|
+          indics << Indicator.new(coin: coin, name: "#{coin.symbol}_#{indic_name}", interval: interval)
+        end
+        IndicatorApi.bulk(coin, interval, indics)
+        indics.each do |indic|
+          indic.save
         end
       end
-      puts "Created indicators"
     end
+    
+    puts "Created indicators"
   end
 
 
