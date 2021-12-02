@@ -1,4 +1,8 @@
 require "binance-ruby"
+require 'rest-client'
+require 'httparty'
+# RestClient.proxy = ENV["IPB_HTTP"]
+# response = RestClient.post("http://binance.us/api/v3/order")
 
 module OrderApi
 
@@ -29,41 +33,54 @@ module OrderApi
 
 
   def self.buy(user, coin, qty)
-    ENV["BINANCE_API_KEY"] = user.binance_public_key
-    ENV["BINANCE_SECRET_KEY"] = user.encryptedBinanceApiKey
+    # ENV["BINANCE_API_KEY"] = user.binance_public_key
+    # ENV["BINANCE_SECRET_KEY"] = user.encryptedBinanceApiKey
 
     puts qty.to_s
     puts coin.binance_symbol
-    puts ENV["BINANCE_API_KEY"]
-    puts ENV["BINANCE_SECRET_KEY"]
+    # puts ENV["BINANCE_API_KEY"]
+    # puts ENV["BINANCE_SECRET_KEY"]
 
-    puts Binance::Api::Order.create!(
-      quantity: qty.to_s,
-      side: 'BUY',
-      symbol: coin.binance_symbol,
-      type: 'MARKET'
+    params = {
+      quantity => qty.to_s,
+      side => 'BUY',
+      symbol => coin.binance_symbol,
+      type => 'MARKET'
     )
-    ENV["BINANCE_TRADING_API_KEY"] = nil
-    ENV["BINANCE_SECRET_KEY"] = nil
+
+    puts binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
+
+    # ENV["BINANCE_TRADING_API_KEY"] = nil
+    # ENV["BINANCE_SECRET_KEY"] = nil
   end
 
 
   def self.sell(user, coin, qty)
     # require_login
-    ENV["BINANCE_API_KEY"] = user.binance_public_key
-    ENV["BINANCE_SECRET_KEY"] = user.encryptedBinanceApiKey
-
-    info = Binance::Api::Account.info!
-  
-    sell_response = Binance::Api::Order.create!(
-      quantity: qty.to_s,
-      side: 'SELL',
-      symbol: coin.binance_symbol,
-      type: 'MARKET'
+    puts qty.to_s
+    puts coin.binance_symbol
+    params = {
+      quantity => qty.to_s,
+      side => 'BUY',
+      symbol => coin.binance_symbol,
+      type => 'MARKET'
     )
-    puts sell_response
-    ENV["BINANCE_API_KEY"] = nil
-    ENV["BINANCE_SECRET_KEY"] = nil
+
+    puts binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
+    # ENV["BINANCE_API_KEY"] = user.binance_public_key
+    # ENV["BINANCE_SECRET_KEY"] = user.encryptedBinanceApiKey
+
+    # info = Binance::Api::Account.info!
+  
+    # sell_response = Binance::Api::Order.create!(
+    #   quantity: qty.to_s,
+    #   side: 'SELL',
+    #   symbol: coin.binance_symbol,
+    #   type: 'MARKET'
+    # )
+    # puts sell_response
+    # ENV["BINANCE_API_KEY"] = nil
+    # ENV["BINANCE_SECRET_KEY"] = nil
   end
 
   # For testing 
@@ -80,35 +97,22 @@ module OrderApi
     open_orders
   end
 
+  private
+  include ApiUtils
+  include HTTParty
 
-  def self.buy_test(coin, qty, user)
-    ENV["BINANCE_API_KEY"] = user.binance_public_key
-    ENV["BINANCE_SECRET_KEY"] = user.encryptedBinanceApiKey
-    buy_response = Binance::Api::Order.create!(
-      quantity: qty.to_s,
-      side: 'BUY',
-      symbol: coin.binance_symbol,
-      type: 'MARKET',
-      test: "true"
-    )
-    ENV["BINANCE_API_KEY"] = nil
-    ENV["BINANCE_SECRET_KEY"] = nil
-    buy_response
-  end
-
-  def self.sell_test(coin, qty, user)
-    ENV["BINANCE_API_KEY"] = user.binance_public_key
-    ENV["BINANCE_SECRET_KEY"] = user.encryptedBinanceApiKey
-    sell_response = Binance::Api::Order.create!(
-      quantity: qty.to_s,
-      side: 'SELL',
-      symbol: coin.binance_symbol,
-      type: 'MARKET',
-      test: "true"
-    )
-    ENV["BINANCE_API_KEY"] = nil
-    ENV["BINANCE_SECRET_KEY"] = nil
-    sell_response
+  def binance_order_req(params, api_key, secret_key)
+    fixie = URI.parse ENV['FIXIE_URL']
+    params.merge!(signature: signed_request_signature(params, secret_key))
+    response = post(
+      "https://api.binance.us/api/v3/order", 
+      query: params, 
+      headers: key_header(api_key), 
+      http_proxyaddr: fixie.host,
+      http_proxyport: fixie.port,
+      http_proxyuser: fixie.user,
+      http_proxypass: fixie.password
+      )
   end
 
 end

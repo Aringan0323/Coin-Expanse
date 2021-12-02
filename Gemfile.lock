@@ -269,6 +269,7 @@ DEPENDENCIES
   faker
   figaro
   groupdate
+  httparty
   jbuilder (~> 2.7)
   json
   listen (~> 3.3)

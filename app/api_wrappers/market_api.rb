@@ -104,7 +104,7 @@ module MarketApi
       symbols_info.each do |symbol_info|
 
         spot = symbol_info["isSpotTradingAllowed"] && (taapi_coins.include? symbol_info["baseAsset"])
-        has_usd_conversion = symbol_info["quoteAsset"] == "USD"
+        has_usd_conversion = symbol_info["quoteAsset"] == "BUSD"
         
         if spot && has_usd_conversion
 
