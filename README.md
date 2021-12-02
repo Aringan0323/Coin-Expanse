@@ -4,10 +4,13 @@ Coin Expanse is an effort to consolidate cryptocurrency trading into a simple an
 
 1. User profile creation and login (authentication)
 2. Home page that includes formatted news cards for 6 random news articles from 20 articles seeded from the last 3 days of crypto news
-3. A page with supported cryptocurrencies, which includes links to individual coin pages
+3. A page with supported cryptocurrencies, which includes links to individual coin pages, which includes live-time updating charts for different metrics
 4. An about page with convenient highlighting on search
-5. A navigation bar, which includes a search bar with custom implementation for each page and logout button
+5. A navigation bar, which includes a search bar with custom implementation for each page and user icon, which lets the user access their profile or log out
 6. Inability to access any page except login/register when not logged in, inability to access login/register when logged in but access to any other page
+7. A page to order cryptocurrency, provided the linked account (through the secret and public keys) has enough balance
+8. A page to create custom automated strategies, including a drag and drop GUI
+9. A library that displays all of a users custom strategies
 
 ## Important Setup Notes
 
