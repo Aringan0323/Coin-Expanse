@@ -57,10 +57,10 @@ module StrategyInterpreter
     def self.check_indicator(ind_name, ind_hash)
         coin = Coin.find_by(name: ind_hash['coin'])
         indicator = Indicator.find_by(name: "#{coin.symbol}_#{ind_name}", interval: ind_hash['interval'])
-        data = JSON.parse(indicator.data.gsub("=>", ":").gsub("nil", "null"))
+        data = JSON.parse(indicator.data.gsub("=>", ":"))
         execute = false
-        if data.keys == 1
-            execute = self.cond(ind_hash['value'], ind_hash['condition'], data['value'])
+        if data.keys.count == 1
+            execute = self.cond(ind_hash['value'], ind_hash['condition'], data[data.keys[0].to_s])
         else
             execute = true
             data.keys.each do |key|
@@ -74,13 +74,16 @@ module StrategyInterpreter
     end
 
     def self.cond(expected, condition, actual)
+        bool = false
         if condition == "<"
-            expected < actual
+            bool = expected.to_f < actual.to_f
         elsif condition == ">"
-            expected > actual
+            bool = expected.to_f > actual.to_f
         else
-            false
+            bool = false
         end
+        puts "#{expected} #{condition} #{actual} : #{bool}"
+        bool
     end
 
 end
