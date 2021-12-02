@@ -131,7 +131,7 @@ function create_chart(id, url) {
         zeros: true,
         prefix: "$",
         thousands: ",",
-        refresh: 1,
+        refresh: 15,
         library: {
             container: {
                 plotOptions: {
