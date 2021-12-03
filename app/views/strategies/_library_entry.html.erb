@@ -3,6 +3,18 @@
     <div class='display-6 entry-title'>
       <%= locals[:strat].name %>
     </div>
+    <div class="header-text">
+      For: 
+      <a href="<%= generate_coin_link locals[:strat].coin_name %>">
+        <%= locals[:strat].coin_name %>
+      </a>
+    </div>
+    <div class="header-text">
+      Type: <%= locals[:strat].side %>
+    </div>
+    <div class="header-text">
+      Quantity: <%= locals[:strat].amount %>
+    </div>
     <a 
       class='arrow rotate' 
       data-mdb-toggle="collapse" 
@@ -17,21 +29,11 @@
   </div>
   <div class="collapse mt-3 description" id="description-<%= locals[:strat].name.gsub(" ", "") %>">
     <div class='description-row'>
-      <div>
-        For: 
-        <a href="<%= generate_coin_link locals[:strat].coin_name %>">
-          <%= locals[:strat].coin_name %>
-        </a>
-      </div>
-      <div>
-        Type: <%= locals[:strat].side %>
-      </div>
-      <div>
-        Quantity: <%= locals[:strat].amount %>
-      </div>
+      Algorithm
     </div>
-    <div class='description-row' style="width:25%">
-      <%= link_to "Edit", '#', class: "btn btn-primary" %>
+    <div class='description-row'>
+      <%= link_to "Edit", strategies_new_url(:raw => locals[:strat].raw), class: "btn btn-primary" %>
+      <%= button_to "Execute Manually", '#', class: "btn btn-success" %>
       <%= button_to "Delete", generate_delete_link(locals[:strat]), class: "btn btn-danger" %>
     </div>
   </div>

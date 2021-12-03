@@ -232,7 +232,7 @@
 }
 
 .entry-header {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -265,7 +265,7 @@ hr {
     border: 0;
     clear:both;
     display:block; 
-    width: 55%;              
+    width: 75%;              
     background-color:gray;
     height: 1px;
 }
@@ -284,6 +284,7 @@ hr {
     justify-content: space-around;
     padding-bottom: 30px;
     font-size: 25px;
+    // border: 2px solid blue;
 }
 
 .delete {
@@ -292,4 +293,8 @@ hr {
 
 .delete:hover {
     color: white;
+}
+
+.header-text {
+    font-size: 20px;
 }

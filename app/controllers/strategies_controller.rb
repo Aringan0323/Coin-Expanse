@@ -1,5 +1,8 @@
 class StrategiesController < PrivateController
-  def new; end
+  def new
+    @raw = params[:raw]
+    puts @raw.inspect
+  end
 
   def create
     if !params['data']['content']
@@ -8,7 +11,7 @@ class StrategiesController < PrivateController
     else
       filtered_json = filter_json(params['data']['content']['0'])
       pp filtered_json
-      strat = Strategy.new(name: params[:name], side: params[:type], coin_name: params[:coin], amount: params[:quantity], algorithm: filtered_json.to_json)
+      strat = Strategy.new(name: params[:name], side: params[:type], coin_name: params[:coin], amount: params[:quantity], algorithm: filtered_json.to_json, raw: params[:html_raw])
       current_user.strategies << strat
       if strat.save
         redirect_to '/strategies/library'

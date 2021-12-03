@@ -91,7 +91,10 @@
       </div>
       <div class="create-space">
         <div id= "create-cards" class="create-cards">
-          
+          <% if @raw %>
+          <% puts 'here!!!'%>
+            <%= raw @raw %>
+          <% end %>
         </div>
         <div class="submit">
           <button id="create-strat" class="btn btn-primary">Create</button>
