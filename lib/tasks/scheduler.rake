@@ -34,9 +34,6 @@ namespace :db do
       btickers.each do |bticker|
         bticker.save
       end
-      # Coin.all.each do |coin|
-      #   broadcast_coin(coin)
-      # end
 
       puts "saved btickers"
       sleep(5.seconds)

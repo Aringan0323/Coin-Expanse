@@ -28,6 +28,10 @@ Rails.application.routes.draw do
   get '/chart_data/avg', to: "coin#chart_avg_data"
   get '/chart_data/ask', to: "coin#chart_ask_data"
   get '/chart_data/bid', to: "coin#chart_bid_data"
+  get '/chart_data/price', to: "coin#chart_price_data"
+
+  resources :indicator
+  get '/indicator/data', to: "indicator#get_data"
 
 
   # private user routes

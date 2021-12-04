@@ -3,11 +3,15 @@
 <div class='page'>
 
   <tbody>
-    <div class="index_charts">
     <% @coins.each do |coin| %>
-        <h2 class="centered-text"><%= link_to "#{coin.name} average price", coin%></h2>
-        <div class="chart" style="boarderColor:green;backgroundColor:black;" id="<%=coin.id%>"></div>
+        
+        <div class="card bg-dark mb-3 text-center rounded" style="max-width: 80rem;">
+          <div class="card-header" style="color:white;font-size:30px"><%=coin.name%></div>
+          <div class="card-body">
+            <div class="chart" id="<%=coin.id%>" ></div>
+            <%=link_to "Details", coin, style:"color:dark-grey", class:"btn btn-light btn-lg"%>
+          </div>
+        </div>
     <% end %>
-    </div>
   </tbody>
 </div>

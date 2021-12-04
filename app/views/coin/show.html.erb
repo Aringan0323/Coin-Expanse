@@ -1,9 +1,40 @@
 <%= render 'shared/nav' %>
 <div class="page">
   <h1 class="chart_page_title"><%= @coin.name %></h1>
-  <div class="show_charts" id="<%=@coin.id%>">
-    <div class="chart" id="avg-chart"></div>
-    <div class="chart" id="ask-chart"></div>
-    <div class="chart" id="bid-chart"></div>
+  <div class="card bg-dark mb-3 text-center rounded" style="max-width: 80rem;">
+    <div class="card-header font-weight-bold" style="color:white">Prices</div>
+    <div class="card-body">
+      <div class="chart" id="<%=@coin.id%>" ></div>
+    </div>
   </div>
+  <%ind_data = get_ind_data(@coin)%>
+  <p>
+  <table class="table table-gray rounded-pill">
+    <%@coin.indicators.pluck(:name).uniq.each do |ind|%>
+
+      <thead>
+        <tr class="bg-primary">
+          <th scope="col" class="bg-dark" style="color:white"><%=ind.split("_")[1].upcase%></th>
+          <th scope="col" class="bg-dark" style="color:white">Hour</th>
+          <th scope="col" class="bg-dark" style="color:white">Day</th>
+          <th scope="col" class="bg-dark" style="color:white">Week</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% ind_data["1h"][ind].keys.each do |key|%>
+        <tr>
+          <th scope="row" class="bg-light"><%=key%></th>
+          <% ["1h", "1d", "1w"].each do |interval|%>
+          <td><%=ind_data[interval][ind][key]%></td>
+          <%end%>
+        </tr>
+        <%end%>
+      </tbody>
+    <%end%>
+  </table>
+  </p>
+
+  
+
 </div>
+
