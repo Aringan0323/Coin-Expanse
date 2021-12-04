@@ -1,41 +1,32 @@
-<div class='entry'>
-  <div class='entry-header'>
-    <div class='display-6 entry-title'>
-      <%= locals[:strat].name %>
-    </div>
-    <div class="header-text">
-      For: 
-      <a href="<%= generate_coin_link locals[:strat].coin_name %>">
-        <%= locals[:strat].coin_name %>
-      </a>
-    </div>
-    <div class="header-text">
-      Type: <%= locals[:strat].side %>
-    </div>
-    <div class="header-text">
-      Quantity: <%= locals[:strat].amount %>
-    </div>
-    <a 
-      class='arrow rotate' 
-      data-mdb-toggle="collapse" 
-      href="#description-<%= locals[:strat].name.gsub(" ", "") %>" 
-      aria-expanded="false"
-      aria-controls="collapseExample"
-      onclick="handleClick(event)"
-      id="collapse-<%= locals[:strat].name.gsub(" ", "") %>"
-    >
-      <i class="fas fa-angle-down"></i>
-    </a>
+<div class="accordion-item">
+  <div class="accordion-header display-6" id="<%= locals[:strat].name %>-heading">
+    <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+      data-mdb-target="#<%= locals[:strat].name.gsub(" ", "") %>-collapse" 
+      aria-expanded="true" aria-controls="<%= locals[:strat].name.gsub(" ", "") %>-collapse">
+      <div class='display-title'>
+        <%= locals[:strat].name %>
+      </div>
+    </button>
   </div>
-  <div class="collapse mt-3 description" id="description-<%= locals[:strat].name.gsub(" ", "") %>">
-    <div class='description-row'>
-      Algorithm
-    </div>
-    <div class='description-row'>
-      <%= link_to "Edit", generate_edit_link(locals[:strat]), class: "btn btn-primary" %>
-      <%= button_to "Execute Manually", '#', class: "btn btn-success" %>
-      <%= button_to "Delete", generate_delete_link(locals[:strat]), class: "btn btn-danger" %>
+  <div id="<%= locals[:strat].name.gsub(" ", "") %>-collapse" class="accordion-collapse collapse" 
+    aria-labelledby="<%= locals[:strat].name.gsub(" ", "") %>-heading">
+    <div class="accordion-body">
+      <div class='display-text'>
+        <strong>Created: </strong>
+        <%= locals[:strat].created_at.localtime.strftime("%m/%d/%Y") %>
+      </div>
+      <div class='display-text'>
+        <strong>Last Updated: </strong>
+        <%= locals[:strat].updated_at.localtime.strftime("%m/%d/%Y") %>
+      </div>
+      <div class='display-text'>
+        <strong>Brief Description: </strong>
+        <%= generate_description locals[:strat] %>
+      </div>
+      <div class='display-text'>
+        <strong>Algorithm Evaluated: </strong>
+        <%= to_string_from_json(locals[:strat])[0] %>
+      </div>
     </div>
   </div>
-  <hr/>
 </div>
