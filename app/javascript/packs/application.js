@@ -92,29 +92,16 @@ $(document).on("turbolinks:load", function() {
     });
 
     // create each chart for a coin
-    document.querySelectorAll(".show_charts").forEach((charts) => {
+    document.querySelectorAll(".chart").forEach((charts) => {
         const coin_id = $(charts).attr("id");
-        create_chart("avg-chart", "/chart_data/avg?id=" + coin_id)
-        create_chart("ask-chart", "/chart_data/ask?id=" + coin_id)
-        create_chart("bid-chart", "/chart_data/bid?id=" + coin_id)
+        create_chart(coin_id, "/chart_data/price?id=" + coin_id)
     })
 
-    // create average price charts for all coins
-    document.querySelectorAll(".index_charts").forEach((avgChart) => {
-        const coin_ids = $(avgChart).children();
-        console.log(coin_ids)
-        coin_ids.each(
-            function(child) {
-                if (child % 2 == 1) {
-                    const coin_id = $(coin_ids[child]).attr("id");
-                    const url = "/chart_data/avg?id=" + coin_id;
-                    create_chart(coin_id, url)
-                }
-
-            }
-        )
-
+    document.querySelectorAll(".bar_chart").forEach((charts) => {
+        const ind_id = $(charts).attr("id");
+        create_bar(ind_id, "/indicator/data?name=" + ind_id + "&interval=1h")
     })
+
 });
 
 function create_chart(id, url) {
@@ -132,21 +119,33 @@ function create_chart(id, url) {
         prefix: "$",
         thousands: ",",
         refresh: 15,
+        colors: ["rgb(117, 16, 232)", "rgb(16, 138, 232)", "rgb(158, 0, 0)"],
         library: {
-            container: {
-                plotOptions: {
-                    series: { pointIntervalUnit: "minute" }
-                },
-                chart: {
-                    backgroundColor: "#262626",
-                    boarderColor: "#03a8a3"
+            chart: {
+                backgroundColor: "rgb(38,38,38)",
+                boarderColor: "rgb(0,0,0)",
+                zoomType: "x"
+                
+            },
+            legend: {
+                itemStyle:{
+                    "color":"rgb(255,255,255)",
+                    "fontSize":"17px"
+
                 }
+            },
+            loading: {
+                showDuration: 0
             }
 
 
         }
     })
 }
+
+
+
+
 
 function mapDOM(element, json) {
     var treeObject = {};
@@ -209,3 +208,5 @@ function filterLast(html) {
         html.splice(-1)
     }
 }
+
+

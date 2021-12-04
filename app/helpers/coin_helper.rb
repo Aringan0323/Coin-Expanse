@@ -37,36 +37,36 @@ module CoinHelper
 	end
 
 
-	def self.getDaySummary(coin)
+	# def self.getDaySummary(coin)
 
-		json = MarketApi.day_summary(coin.symbol)		
+	# 	json = MarketApi.day_summary(coin.symbol)		
 
-		if json.nil?
+	# 	if json.nil?
 
-			puts "Day summary data for #{coin.symbol} could not be fetched"
+	# 		puts "Day summary data for #{coin.symbol} could not be fetched"
 
-		else
-			day_summary = DaySummary.create(
-				priceChange: json["priceChange"],
-				priceChangePercent: json["priceChangePercent"],
-				weightedAvgPrice: json["weightedAvgPrice"],
-				prevClosePrice: json["prevClosePrice"],
-				lastPrice: json["lastPrice"],
-				lastQty: json["lastQty"],
-				bidPrice: json["bidPrice"],
-				askPrice: json["askPrice"],
-				openPrice: json["openPrice"],
-				highPrice: json["highPrice"],
-				lowPrice: json["lowPrice"],
-				volume: json["volume"],
-				openTime: nil,
-				closeTime: nil,
-				tradeCount: json["count"],
-				coin_id: coin.id
-			)
+	# 	else
+	# 		day_summary = DaySummary.create(
+	# 			priceChange: json["priceChange"],
+	# 			priceChangePercent: json["priceChangePercent"],
+	# 			weightedAvgPrice: json["weightedAvgPrice"],
+	# 			prevClosePrice: json["prevClosePrice"],
+	# 			lastPrice: json["lastPrice"],
+	# 			lastQty: json["lastQty"],
+	# 			bidPrice: json["bidPrice"],
+	# 			askPrice: json["askPrice"],
+	# 			openPrice: json["openPrice"],
+	# 			highPrice: json["highPrice"],
+	# 			lowPrice: json["lowPrice"],
+	# 			volume: json["volume"],
+	# 			openTime: nil,
+	# 			closeTime: nil,
+	# 			tradeCount: json["count"],
+	# 			coin_id: coin.id
+	# 		)
 			
-		end
-	end
+	# 	end
+	# end
 
 	# def broadcast_coin(coin)
 
@@ -95,6 +95,19 @@ module CoinHelper
 		data
 
 	end
+
+
+	def get_ind_data(coin)
+		all_inds = coin.indicators
+		hour_inds = coin.indicators.where(interval: "1h").map {|ind| [ind.name, JSON.parse(ind.data.gsub("=>", ":"))]}.to_h
+		day_inds = coin.indicators.where(interval: "1d").map {|ind| [ind.name, JSON.parse(ind.data.gsub("=>", ":"))]}.to_h
+		week_inds = coin.indicators.where(interval: "1w").map {|ind| [ind.name, JSON.parse(ind.data.gsub("=>", ":"))]}.to_h
+		inds_hash = {"1h"=>hour_inds, "1d"=>day_inds, "1w"=>week_inds}
+		pp inds_hash
+		inds_hash
+        
+	end
+
 	# def render_chart(data)
 
 
