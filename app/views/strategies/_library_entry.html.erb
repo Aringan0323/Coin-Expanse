@@ -30,9 +30,33 @@
         </div>
       </div>
       <div class='description-right'>
-        <%= button_to "Edit", generate_edit_link(locals[:strat]), class: "btn btn-primary", method: :get %>
-        <%= button_to "Execute Manually", '#', class: "btn btn-success" %>
-        <%= button_to "Delete", generate_delete_link(locals[:strat]), class: "btn btn-danger" %>
+        <%= button_to "Edit", generate_edit_link(locals[:strat]), class: "btn btn-dark", method: :get %>
+        <%= button_to "Execute Manually", '#', class: "btn btn-info", method: :get %>
+        <div>
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#<%= locals[:strat].name.gsub(" ", "") %>-delete">
+            Delete
+          </button>
+          <div class="modal fade" id="<%= locals[:strat].name.gsub(" ", "") %>-delete" tabindex="-1" role="dialog" 
+            aria-labelledby="<%= locals[:strat].name.gsub(" ", "") %>-deleteLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Caution: About to Delete an Automatic Strategy</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Are you sure you want to delete strategy "<%= locals[:strat].name %>"? Deleted strategies are not cached or stored for any period of time,
+                  so deleting this strategy will mean it is lost forever.
+                </div>
+                <div class="modal-footer">
+                  <%= button_to "I understand, delete anyways", generate_delete_link(locals[:strat]), class: "btn btn-danger" %>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
       </div>
     </div>
   </div>

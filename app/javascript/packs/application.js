@@ -23,6 +23,11 @@ Turbolinks.start();
 ActiveStorage.start();
 
 $(document).on("turbolinks:load", function() {
+
+    $('.alert').fadeTo(2000, 0, function() {
+        $('.alert').slideUp(750);
+    });
+
     // draggable functionality 
     $("div[id*='-draggable']").draggable({
         containment: '.create-cards',

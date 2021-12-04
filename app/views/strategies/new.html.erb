@@ -134,11 +134,13 @@
   function changeInput(e) {
     console.log(e.target.value)
     $(e.target).attr('value', e.target.value)
+    $('#'+e.target.attr('id')).val(e.target.value)
   }
 
   function change(e) {
     const val = e.target.options[e.target.value - 1].text;
     $(e.target).attr('value', val);
+    $('#'+e.target.attr('id')).val(val)
   }
 
   function switchRadio(e) {
