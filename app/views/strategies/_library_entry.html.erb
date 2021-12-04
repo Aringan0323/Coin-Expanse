@@ -10,22 +10,29 @@
   </div>
   <div id="<%= locals[:strat].name.gsub(" ", "") %>-collapse" class="accordion-collapse collapse" 
     aria-labelledby="<%= locals[:strat].name.gsub(" ", "") %>-heading">
-    <div class="accordion-body">
-      <div class='display-text'>
-        <strong>Created: </strong>
-        <%= locals[:strat].created_at.localtime.strftime("%m/%d/%Y") %>
+    <div class="accordion-body description">
+      <div class='description-left'>
+        <div class='display-text'>
+          <strong>Created: </strong>
+          <%= locals[:strat].created_at.localtime.strftime("%m/%d/%Y") %>
+        </div>
+        <div class='display-text'>
+          <strong>Last Updated: </strong>
+          <%= locals[:strat].updated_at.localtime.strftime("%m/%d/%Y") %>
+        </div>
+        <div class='display-text'>
+          <strong>Action: </strong>
+          <%= generate_description locals[:strat] %>
+        </div>
+        <div class='display-text'>
+          <strong>Algorithm Evaluated Description: </strong>
+          <%= to_string_from_json(locals[:strat])[0] %>
+        </div>
       </div>
-      <div class='display-text'>
-        <strong>Last Updated: </strong>
-        <%= locals[:strat].updated_at.localtime.strftime("%m/%d/%Y") %>
-      </div>
-      <div class='display-text'>
-        <strong>Brief Description: </strong>
-        <%= generate_description locals[:strat] %>
-      </div>
-      <div class='display-text'>
-        <strong>Algorithm Evaluated: </strong>
-        <%= to_string_from_json(locals[:strat])[0] %>
+      <div class='description-right'>
+        <%= button_to "Edit", generate_edit_link(locals[:strat]), class: "btn btn-primary", method: :get %>
+        <%= button_to "Execute Manually", '#', class: "btn btn-success" %>
+        <%= button_to "Delete", generate_delete_link(locals[:strat]), class: "btn btn-danger" %>
       </div>
     </div>
   </div>
