@@ -1,7 +1,12 @@
 class StrategiesController < PrivateController
-  def new
-    @raw = params[:raw]
-    puts @raw.inspect
+  def new; end
+
+  def edit
+    strategy = Strategy.find(params[:id])
+    @raw = strategy.raw
+    @name = strategy.name
+    @qty = strategy.amount
+    @side = strategy.side
   end
 
   def create

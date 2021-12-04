@@ -32,7 +32,7 @@
       Algorithm
     </div>
     <div class='description-row'>
-      <%= link_to "Edit", strategies_new_url(:raw => locals[:strat].raw), class: "btn btn-primary" %>
+      <%= link_to "Edit", generate_edit_link(locals[:strat]), class: "btn btn-primary" %>
       <%= button_to "Execute Manually", '#', class: "btn btn-success" %>
       <%= button_to "Delete", generate_delete_link(locals[:strat]), class: "btn btn-danger" %>
     </div>
