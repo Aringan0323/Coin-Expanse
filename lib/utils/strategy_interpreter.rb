@@ -4,14 +4,16 @@ require "./app/api_wrappers/order_api.rb"
 module StrategyInterpreter
 
     def self.check_strategies(user)
+        outcomes = []
         user.strategies.all.each do |strat|
-            strat = JSON.parse(strat.algorithm.gsub("=>", ":"))
+            algorithm = JSON.parse(strat.algorithm.gsub("=>", ":"))
             side = strat.side
             coin = Coin.find_by(name: strat.coin_name)
             amount = strat.amount
 
-            check_strategy(user, strat, side, coin, amount)
+            outcomes << check_strategy(user, algorithm, side, coin, amount)
         end 
+        puts outcomes
     end
 
     def self.check_strategy(user, strategy, side, coin, amount)
@@ -21,9 +23,9 @@ module StrategyInterpreter
             else
                 OrderApi.sell(user, coin, amount)
             end
-            puts "EXECUTE ORDER"
+            true
         else
-            puts "NO ORDER"
+            false
         end
     end
 
@@ -39,9 +41,7 @@ module StrategyInterpreter
                 not_indic = and_hash[key].keys[0]
                 execute = execute && !self.check_indicator(not_indic, and_hash[key][not_indic])
             else
-                puts "Got here"
                 execute = execute && self.check_indicator(key, and_hash[key])
-                puts "Got further"
             end
         end
         execute
@@ -67,9 +67,8 @@ module StrategyInterpreter
 
     def self.check_indicator(ind_name, ind_hash)
         coin = Coin.find_by(name: ind_hash['coin'])
-        puts ind_name
-        indicator = Indicator.find_by(name: "#{coin.symbol}_#{ind_name}", interval: ind_hash['interval'])
-        puts indicator.name
+        ind_name = coin.symbol + "_" + ind_name
+        indicator = Indicator.find_by(name: ind_name, interval: ind_hash['interval'])
         data = JSON.parse(indicator.data.gsub("=>", ":"))
         execute = false
         if data.keys.count == 1
@@ -78,11 +77,11 @@ module StrategyInterpreter
             execute = true
             data.keys.each do |key|
                 val = ind_hash[key.to_s]
-                execute = execute && self.cond(val['value'], val['condition'], data[key.to_s]['value'])
+                puts("else")
+                execute = execute && self.cond(val['value'], val['condition'], data[key.to_s])
             end
             execute
         end
-        puts indicator.name + ": " + execute.to_s
         execute
     end
 
@@ -95,8 +94,13 @@ module StrategyInterpreter
         else
             bool = false
         end
-        puts "#{actual} #{condition} #{expected}: #{bool}"
+        puts "actual: #{actual} #{condition} expected: #{expected}   :   #{bool}"
         bool
     end
 
 end
+
+
+
+
+

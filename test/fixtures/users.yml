@@ -1,11 +1,14 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  username: MyString
-  passwordDigest: MyString
-  encryptedBinanceApiKey: MyString
-
-two:
-  username: MyString
-  passwordDigest: MyString
-  encryptedBinanceApiKey: MyString
+---
+user_1:
+  id: 1
+  username: admin
+  password_digest: "$2a$12$l0A0dy0EzXOX3vnuzdaYpuCqeHNvCoEwBcVlv92b0h5y68kjo4UR."
+  encryptedBinanceApiKey: f2xDJ4YJSLUrddqvpk5nQg62XfD8gcPMsikOpkPPhRxB5iKYTf2LXf2tnOLcx8cn
+  email: test@gmail.com
+  full_name: Psuedo User
+  userSince: 
+  created_at: 2021-12-03 19:16:23.191193000 Z
+  updated_at: 2021-12-03 19:16:23.191193000 Z
+  binance_public_key: zsXP0MQ3XUQ3clwfewN45dLm0xcBlks0QokSUsLaxT9PkvXMiarAhXYTxy7sHRMi
+  reset_password_token: 
+  reset_password_sent_at: 

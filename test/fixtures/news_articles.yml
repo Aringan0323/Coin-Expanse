@@ -1,17 +1,241 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  title: MyString
-  name: MyString
-  description: MyString
-  url: MyString
-  image_url: MyString
-  date: 2021-10-19
-
-two:
-  title: MyString
-  name: MyString
-  description: MyString
-  url: MyString
-  image_url: MyString
-  date: 2021-10-19
+---
+news_article_1:
+  id: 1
+  title: 'Jack Dorsey''s Square Has a New Name: Block'
+  name: Wired
+  description: Payments company Square has a new name befitting its CEO's blockchain
+    obsession.
+  url: https://www.wired.com/story/square-block-new-name/
+  image_url: https://media.wired.com/photos/61a7e6eda6f3ff70a99e3283/191:100/w_1280,c_limit/Business-Square-Rebrand-BLOCK_FILM_STILLS_BUILDING_BLOCKS_2.jpg
+  date: 2021-12-01 21:30:00.000000000 Z
+  created_at: 2021-12-03 19:16:22.914116000 Z
+  updated_at: 2021-12-03 19:16:22.914116000 Z
+news_article_2:
+  id: 2
+  title: S.Korea set to delay crypto taxation by one year to begin in 2023 - Reuters
+  name: Reuters
+  description: South Korea's finance ministry said on Tuesday the National Assembly
+    passed a bill on pushing back the planned taxation of capital gains from cryptocurrency
+    trading by one year.
+  url: https://www.reuters.com/markets/europe/skorea-set-delay-crypto-taxation-by-one-year-begin-2023-2021-11-30/
+  image_url: https://www.reuters.com/resizer/8RwZ0ms4zaICboO3yBuGmthAqfw=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/YZX3DE5XK5IXHOJGBAD6XV3CWY.jpg
+  date: 2021-11-30 08:36:00.000000000 Z
+  created_at: 2021-12-03 19:16:22.918024000 Z
+  updated_at: 2021-12-03 19:16:22.918024000 Z
+news_article_3:
+  id: 3
+  title: Nothing’s debut earbuds now come in black
+  name: The Verge
+  description: 'Nothing’s Ear 1 earbuds will soon come in black. They’ll be widely
+    available from December 13th at the same price as the original white versions:
+    $99 / £99.'
+  url: https://www.theverge.com/2021/12/1/22802107/nothing-ear-1-black-edition-price
+  image_url: https://cdn.vox-cdn.com/thumbor/rmLBWDzawqeTLS-e8X13lgVNBd4=/0x551:7695x4580/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/23042763/Nothing__1__black_edition_closed_case.jpg
+  date: 2021-12-01 12:00:00.000000000 Z
+  created_at: 2021-12-03 19:16:22.921532000 Z
+  updated_at: 2021-12-03 19:16:22.921532000 Z
+news_article_4:
+  id: 4
+  title: A Software Bug Let Hackers Drain $31M From a Crypto Service
+  name: Wired
+  description: An attacker exploited a vulnerability in MonoX Finance's smart contract
+    to inflate the price of its digital token and then cash out.
+  url: https://www.wired.com/story/hackers-drain-31-million-from-crypto-service/
+  image_url: https://media.wired.com/photos/61a8e032b7391d86bbd9a4c4/191:100/w_1280,c_limit/Sec_ars_GettyImages-1324841380.jpg
+  date: 2021-12-02 23:45:00.000000000 Z
+  created_at: 2021-12-03 19:16:22.924752000 Z
+  updated_at: 2021-12-03 19:16:22.924752000 Z
+news_article_5:
+  id: 5
+  title: Jack Dorsey chases crypto, fintech dream post Twitter - Reuters
+  name: Reuters
+  description: 'At a packed Miami conference in June, Jack Dorsey, mused in front
+    of thousands of attendees about where his real passion lay: "If I weren''t at
+    Square or Twitter, I''d be working on bitcoin."'
+  url: https://www.reuters.com/markets/us/jack-dorsey-chases-crypto-fintech-dream-post-twitter-2021-11-30/
+  image_url: https://www.reuters.com/resizer/HUtEZcynxl8GXo4NYXOXnSdv-lo=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/UTRT5OSNKFNPTNYDYV6BPSLHRA.jpg
+  date: 2021-11-30 21:48:00.000000000 Z
+  created_at: 2021-12-03 19:16:22.927909000 Z
+  updated_at: 2021-12-03 19:16:22.927909000 Z
+news_article_6:
+  id: 6
+  title: 'Beyond Bitcoin: Diversification Can Help Manage Crypto Risks'
+  name: NerdWallet
+  description: When it comes to investing, diversification is key. By spreading your
+    wealth around, you’re less likely to suffer a major financial blow should one
+    of your investments not pan out.…
+  url: https://www.nerdwallet.com/article/investing/crypto-diversification
+  image_url: https://assets.entrepreneur.com/providers/nerdwallet/hero-image-nerdwallet-399953.jpeg
+  date: 2021-11-30 19:10:35.000000000 Z
+  created_at: 2021-12-03 19:16:22.931017000 Z
+  updated_at: 2021-12-03 19:16:22.931017000 Z
+news_article_7:
+  id: 7
+  title: Celebrities are endorsing cryptocurrency. Hear why one actor is calling them
+    out
+  name: CNN
+  description: While A-list celebrities like Kim Kardashian and Matt Damon are being
+    paid to promote crypto, one actor is publicly bucking the trend. Ben McKenzie,
+    of "The OC" and "Gotham," has become one of the most prominent critics of celebrities
+    endorsing the controvers…
+  url: https://www.cnn.com/videos/business/2021/11/23/kim-kardashian-crypto-ben-mckenzie-js-orig.cnn
+  image_url: https://cdn.cnn.com/cnnnext/dam/assets/211130101548-ben-mckenzie-crypto-super-tease.jpg
+  date: 2021-11-30 15:17:51.000000000 Z
+  created_at: 2021-12-03 19:16:22.934038000 Z
+  updated_at: 2021-12-03 19:16:22.934038000 Z
+news_article_8:
+  id: 8
+  title: Metaverse won't be turning point in cryptocurrency adoption, investor Chesnais
+    says - Reuters
+  name: Reuters
+  description: The growth of online virtual worlds will help advance the mainstream
+    adoption of cryptocurrencies for payment transactions but it won't be a game-changer,
+    according to Frédéric Chesnais, chief executive of French fintech company Crypto
+    Blockchain Industries <…
+  url: https://www.reuters.com/markets/currencies/metaverse-wont-be-turning-point-cryptocurrency-adoption-investor-chesnais-says-2021-12-02/
+  image_url: https://www.reuters.com/resizer/c8mj7t3vETFVZEJoemxXNwcPpP4=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/RBQNZMDHRVNYXBILIUA2LHBKL4.jpg
+  date: 2021-12-02 14:37:00.000000000 Z
+  created_at: 2021-12-03 19:16:22.937135000 Z
+  updated_at: 2021-12-03 19:16:22.937135000 Z
+news_article_9:
+  id: 9
+  title: Giving cryptocurrency as a gift is easier than you think - CNET
+  name: CNET
+  description: As Coinbase rolls out its new gifting feature, we explore some simple
+    ways to give cryptocurrency this holiday season.
+  url: https://www.cnet.com/personal-finance/crypto/giving-cryptocurrency-as-a-gift-is-easier-than-you-think/
+  image_url: https://www.cnet.com/a/img/ChN6bYYIowdJd2BxfPQCjMznRNw=/1200x630/2021/12/01/b6fcda67-9482-4c0a-919d-602fabc02c25/robot-invasion.png
+  date: 2021-12-02 17:00:05.000000000 Z
+  created_at: 2021-12-03 19:16:22.940285000 Z
+  updated_at: 2021-12-03 19:16:22.940285000 Z
+news_article_10:
+  id: 10
+  title: Britain's ETC Group to list crypto products on Deutsche Boerse - Reuters
+  name: Reuters
+  description: Britain's ETC Group said on Thursday it will this month list five new
+    "exchange traded cryptocurrencies" at the Frankfurt stock exchange, adding to
+    the glut of exchange-traded products at European exchanges.
+  url: https://www.reuters.com/markets/currencies/britains-etc-group-list-crypto-products-deutsche-boerse-2021-12-02/
+  image_url: https://www.reuters.com/resizer/oZK1kEMBafq_WFR79ByqtmFLWyk=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/SZLX32FDOVPLRJGYX7YCROXGIE.jpg
+  date: 2021-12-02 10:17:00.000000000 Z
+  created_at: 2021-12-03 19:16:22.943321000 Z
+  updated_at: 2021-12-03 19:16:22.943321000 Z
+news_article_11:
+  id: 11
+  title: The Perfect Pairing With Fine Wine Is ... Crypto?
+  name: Entrepreneur
+  description: Cryptocurrencies and fine wine might seem like an unlikely duo, but
+    their complementary dynamics make them an unbeatable combo for your portfolio.
+  url: https://www.entrepreneur.com/article/398365
+  image_url: https://assets.entrepreneur.com/content/3x2/2000/1637701168-shutterstock-1208628337.jpg
+  date: 2021-12-02 15:30:00.000000000 Z
+  created_at: 2021-12-03 19:16:22.946386000 Z
+  updated_at: 2021-12-03 19:16:22.946386000 Z
+news_article_12:
+  id: 12
+  title: 3 smart crypto trading strategies that aren't so different from investing
+    in the stock market
+  name: Business Insider
+  description: Crypto mining and trading expert CALV!N from Purebase Studios says
+    to treat crypto investments like a 401(k) by investing small amounts regularly.
+  url: https://www.businessinsider.com/personal-finance/crypto-trading-strategies-like-investing-stocks-2021-12
+  image_url: https://i.insider.com/61aa37085d47cc0018e935cd?width=1200&format=jpeg
+  date: 2021-12-03 17:02:24.000000000 Z
+  created_at: 2021-12-03 19:16:22.949705000 Z
+  updated_at: 2021-12-03 19:16:22.949705000 Z
+news_article_13:
+  id: 13
+  title: Facebook is making it easier for crypto firms to run ads on its platform
+    in a reversal of previous policies
+  name: Business Insider
+  description: The move is the latest update to the company's crypto policies, which
+    have oscillated as the sector has grown in the past several years.
+  url: https://markets.businessinsider.com/news/currencies/facebook-crypto-advertising-policy-change-regulatory-licenses-meta-platform-2021-12
+  image_url: https://images2.markets.businessinsider.com/618afecd23745d001825ca14?format=jpeg
+  date: 2021-12-02 14:57:48.000000000 Z
+  created_at: 2021-12-03 19:16:22.952984000 Z
+  updated_at: 2021-12-03 19:16:22.952984000 Z
+news_article_14:
+  id: 14
+  title: Should You Invest in Bitcoin ETFs Now?
+  name: Zacks.com
+  description: We highlight 3 bitcoin futures ETFs as cryptocurrencies rebound
+  url: http://www.zacks.com/stock/news/1833512/should-you-invest-in-bitcoin-etfs-now?cid=CS-ENTREPRENEUR-FT-etf_news_and_commentary-1833512
+  image_url: https://assets.entrepreneur.com/providers/zacks/hero-image-zacks-399951.jpeg
+  date: 2021-11-30 18:04:00.000000000 Z
+  created_at: 2021-12-03 19:16:22.956308000 Z
+  updated_at: 2021-12-03 19:16:22.956308000 Z
+news_article_15:
+  id: 15
+  title: CoinShares Intl to buy French fintech company Napoleon for around 14 mln
+    euros - Reuters
+  name: Reuters
+  description: Cryptocurrency company CoinShares International  has agreed to buy
+    French fintech Napoleon Crypto SAS for around 13.9 million euros ($15.8 million),
+    as the booming cryptocurrency sector continues to attract investors' money.
+  url: https://www.reuters.com/technology/coinshares-intl-buy-french-fintech-company-napoleon-around-14-mln-euros-2021-12-01/
+  image_url: https://www.reuters.com/pf/resources/images/reuters/reuters-default.png?d=60
+  date: 2021-12-01 07:28:00.000000000 Z
+  created_at: 2021-12-03 19:16:22.959390000 Z
+  updated_at: 2021-12-03 19:16:22.959390000 Z
+news_article_16:
+  id: 16
+  title: When all my friends ran to buy crypto, I tiptoed, and I benefited in 5 ways
+    from ignoring their advice
+  name: Business Insider
+  description: Jen Glantz got many tips from friends about cryptocurrency investing
+    during 2020. She's invested in some coins now, but ignored most of their advice.
+  url: https://www.businessinsider.com/personal-finance/benefited-from-ignoring-cryptocurrency-fads-2021-11
+  image_url: https://i.insider.com/61a6c6622ff9830018d601af?width=1200&format=jpeg
+  date: 2021-12-01 17:17:28.000000000 Z
+  created_at: 2021-12-03 19:16:22.962453000 Z
+  updated_at: 2021-12-03 19:16:22.962453000 Z
+news_article_17:
+  id: 17
+  title: Meta Allows More Cryptocurrency Ads
+  name: Slashdot.org
+  description: 'Meta is backing away from its longstanding (if not absolute) ban on
+    cryptocurrency ads. Engadget reports: As CNBC reports, Meta has greatly loosened
+    its ban by expanding the number of regulatory licenses it accepts from three to
+    27. The crypto landscape has "…'
+  url: https://meta.slashdot.org/story/21/12/01/2145224/meta-allows-more-cryptocurrency-ads
+  image_url: https://a.fsdn.com/sd/topics/bitcoin_64.png
+  date: 2021-12-02 01:25:00.000000000 Z
+  created_at: 2021-12-03 19:16:22.965543000 Z
+  updated_at: 2021-12-03 19:16:22.965543000 Z
+news_article_18:
+  id: 18
+  title: Hackers drain $31 million from cryptocurrency service MonoX Finance
+  name: Ars Technica
+  description: Company says it has contacted the hacker in an attempt to recover the
+    funds. Good luck.
+  url: https://arstechnica.com/information-technology/2021/12/hackers-drain-31-million-from-cryptocurrency-service-monox-finance/
+  image_url: https://cdn.arstechnica.net/wp-content/uploads/2021/12/cryptocurrency-760x380.jpeg
+  date: 2021-12-01 23:41:36.000000000 Z
+  created_at: 2021-12-03 19:16:22.968608000 Z
+  updated_at: 2021-12-03 19:16:22.968608000 Z
+news_article_19:
+  id: 19
+  title: DOJ sharpens its cryptocurrency enforcement focus - Reuters
+  name: Reuters
+  description: Since its inception, cryptocurrency has been the subject of hot debate.
+    Proponents of more widespread use and investment see tremendous potential for
+    a decentralized but secure medium of exchange with untold implications for global
+    finance. Detractors instead…
+  url: https://www.reuters.com/legal/transactional/doj-sharpens-its-cryptocurrency-enforcement-focus-2021-11-30/
+  image_url: https://www.reuters.com/resizer/7eyKFBxS5OX96DORV2uuGCz05Ho=/800x419/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/V5KYGM526ZGHBOWK2BDMPTEDJI.jpg
+  date: 2021-11-30 18:38:00.000000000 Z
+  created_at: 2021-12-03 19:16:22.971914000 Z
+  updated_at: 2021-12-03 19:16:22.971914000 Z
+news_article_20:
+  id: 20
+  title: 'FYI: ‘Square’ Is Now ‘Block,’ Jack Dorsey Is Now Fully a Crypto Laser Eyes
+    Guy'
+  name: Vice News
+  description: Jack Dorsey is no longer the Twitter guy and is now building a cryptocurrency
+    empire instead.
+  url: https://www.vice.com/en/article/5dggqn/fyi-square-is-now-block-jack-dorsey-is-now-fully-a-crypto-laser-eyes-guy
+  image_url: https://video-images.vice.com/articles/61a7f0b81a747e009a644991/lede/1638396462572-gettyimages-1236804471.jpeg?image-resize-opts=Y3JvcD0xeHc6MC44NDM5NjA5OTAyNDc1NjE5eGg7Y2VudGVyLGNlbnRlciZyZXNpemU9MTIwMDoqJnJlc2l6ZT0xMjAwOio
+  date: 2021-12-01 22:08:11.000000000 Z
+  created_at: 2021-12-03 19:16:22.974960000 Z
+  updated_at: 2021-12-03 19:16:22.974960000 Z

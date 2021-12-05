@@ -1,7 +1,11 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  algorithm: MyString
-
-two:
-  algorithm: MyString
+---
+strategy_3:
+  id: 3
+  user_id: 1
+  name: test
+  coin_name: Litecoin
+  side: BUY
+  amount: 1.0
+  algorithm: '{"and":{"stoch":{"coin":"Litecoin","valueK":{"value":"30","condition":"\u003e"},"valueD":{"value":"70","condition":"\u003c"},"interval":"1d"},"bbands2":{"coin":"Litecoin","valueLowerBand":{"value":"110","condition":"\u003e"},"valueMiddleBand":{"value":"186","condition":"\u003c"},"valueUpperBand":{"value":"300","condition":"\u003c"},"interval":"1w"}}}'
+  created_at: 2021-12-05 02:06:40.502730000 Z
+  updated_at: 2021-12-05 02:06:40.502730000 Z

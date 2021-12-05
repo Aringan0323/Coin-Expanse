@@ -1,17 +1,2917 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  avgPrice: 1.5
-  bidPrice: 1.5
-  bidQty: 1.5
-  askPrice: 1.5
-  askQty: 1.5
-  timestamp: 2021-10-10 17:34:19
-
-two:
-  avgPrice: 1.5
-  bidPrice: 1.5
-  bidQty: 1.5
-  askPrice: 1.5
-  askQty: 1.5
-  timestamp: 2021-10-10 17:34:19
+---
+book_ticker_8945:
+  id: 8945
+  coin_id: 1
+  avgPrice: 53486.08
+  bidPrice: 53486.08
+  bidQty: 0.043036
+  askPrice: 53498.77
+  askQty: 0.004309
+  timestamp: 2021-12-03 22:33:49.552631000 Z
+book_ticker_8946:
+  id: 8946
+  coin_id: 2
+  avgPrice: 4225.62
+  bidPrice: 4225.29
+  bidQty: 0.7
+  askPrice: 4227.37
+  askQty: 0.28
+  timestamp: 2021-12-03 22:33:49.552748000 Z
+book_ticker_8947:
+  id: 8947
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:33:49.552794000 Z
+book_ticker_8948:
+  id: 8948
+  coin_id: 4
+  avgPrice: 188.45
+  bidPrice: 188.21
+  bidQty: 4.17518
+  askPrice: 188.45
+  askQty: 3.24515
+  timestamp: 2021-12-03 22:33:49.552835000 Z
+book_ticker_8949:
+  id: 8949
+  coin_id: 1
+  avgPrice: 53486.08
+  bidPrice: 53486.08
+  bidQty: 0.040676
+  askPrice: 53494.75
+  askQty: 0.11581
+  timestamp: 2021-12-03 22:33:55.736493000 Z
+book_ticker_8950:
+  id: 8950
+  coin_id: 2
+  avgPrice: 4225.62
+  bidPrice: 4225.75
+  bidQty: 0.7
+  askPrice: 4227.85
+  askQty: 0.28
+  timestamp: 2021-12-03 22:33:55.736603000 Z
+book_ticker_8951:
+  id: 8951
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:33:55.736646000 Z
+book_ticker_8952:
+  id: 8952
+  coin_id: 4
+  avgPrice: 188.5
+  bidPrice: 188.3
+  bidQty: 53.06819
+  askPrice: 188.5
+  askQty: 4.52482
+  timestamp: 2021-12-03 22:33:55.736685000 Z
+book_ticker_8953:
+  id: 8953
+  coin_id: 1
+  avgPrice: 53486.08
+  bidPrice: 53487.84
+  bidQty: 0.03955
+  askPrice: 53498.77
+  askQty: 0.003215
+  timestamp: 2021-12-03 22:34:00.889175000 Z
+book_ticker_8954:
+  id: 8954
+  coin_id: 2
+  avgPrice: 4225.62
+  bidPrice: 4225.76
+  bidQty: 0.7
+  askPrice: 4227.52
+  askQty: 0.28
+  timestamp: 2021-12-03 22:34:00.889282000 Z
+book_ticker_8955:
+  id: 8955
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:34:00.889324000 Z
+book_ticker_8956:
+  id: 8956
+  coin_id: 4
+  avgPrice: 188.5
+  bidPrice: 188.29
+  bidQty: 4.0
+  askPrice: 188.56
+  askQty: 4.7
+  timestamp: 2021-12-03 22:34:00.889362000 Z
+book_ticker_8957:
+  id: 8957
+  coin_id: 1
+  avgPrice: 53486.08
+  bidPrice: 53487.84
+  bidQty: 0.03955
+  askPrice: 53501.5
+  askQty: 0.112166
+  timestamp: 2021-12-03 22:34:06.050673000 Z
+book_ticker_8958:
+  id: 8958
+  coin_id: 2
+  avgPrice: 4227.53
+  bidPrice: 4225.76
+  bidQty: 0.7
+  askPrice: 4227.53
+  askQty: 1.4165
+  timestamp: 2021-12-03 22:34:06.050791000 Z
+book_ticker_8959:
+  id: 8959
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:34:06.050836000 Z
+book_ticker_8960:
+  id: 8960
+  coin_id: 4
+  avgPrice: 188.5
+  bidPrice: 188.29
+  bidQty: 4.0
+  askPrice: 188.56
+  askQty: 4.7
+  timestamp: 2021-12-03 22:34:06.050876000 Z
+book_ticker_8961:
+  id: 8961
+  coin_id: 1
+  avgPrice: 53486.08
+  bidPrice: 53486.0
+  bidQty: 0.093503
+  askPrice: 53505.33
+  askQty: 0.112152
+  timestamp: 2021-12-03 22:34:11.218724000 Z
+book_ticker_8962:
+  id: 8962
+  coin_id: 2
+  avgPrice: 4227.53
+  bidPrice: 4225.76
+  bidQty: 0.7
+  askPrice: 4227.53
+  askQty: 1.4165
+  timestamp: 2021-12-03 22:34:11.218850000 Z
+book_ticker_8963:
+  id: 8963
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:34:11.218905000 Z
+book_ticker_8964:
+  id: 8964
+  coin_id: 4
+  avgPrice: 188.5
+  bidPrice: 188.29
+  bidQty: 4.0
+  askPrice: 188.56
+  askQty: 4.7
+  timestamp: 2021-12-03 22:34:11.218945000 Z
+book_ticker_8965:
+  id: 8965
+  coin_id: 1
+  avgPrice: 53486.08
+  bidPrice: 53486.08
+  bidQty: 0.000449
+  askPrice: 53505.33
+  askQty: 0.112152
+  timestamp: 2021-12-03 22:34:16.365619000 Z
+book_ticker_8966:
+  id: 8966
+  coin_id: 2
+  avgPrice: 4227.53
+  bidPrice: 4225.76
+  bidQty: 0.7
+  askPrice: 4227.92
+  askQty: 0.27
+  timestamp: 2021-12-03 22:34:16.365746000 Z
+book_ticker_8967:
+  id: 8967
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:34:16.365797000 Z
+book_ticker_8968:
+  id: 8968
+  coin_id: 4
+  avgPrice: 188.5
+  bidPrice: 188.29
+  bidQty: 4.0
+  askPrice: 188.53
+  askQty: 4.7
+  timestamp: 2021-12-03 22:34:16.365837000 Z
+book_ticker_8969:
+  id: 8969
+  coin_id: 1
+  avgPrice: 53486.08
+  bidPrice: 53486.08
+  bidQty: 0.000449
+  askPrice: 53505.33
+  askQty: 0.112152
+  timestamp: 2021-12-03 22:34:21.490466000 Z
+book_ticker_8970:
+  id: 8970
+  coin_id: 2
+  avgPrice: 4227.92
+  bidPrice: 4226.54
+  bidQty: 0.50656
+  askPrice: 4227.84
+  askQty: 0.06617
+  timestamp: 2021-12-03 22:34:21.490575000 Z
+book_ticker_8971:
+  id: 8971
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:34:21.490618000 Z
+book_ticker_8972:
+  id: 8972
+  coin_id: 4
+  avgPrice: 188.5
+  bidPrice: 188.29
+  bidQty: 4.0
+  askPrice: 188.53
+  askQty: 4.7
+  timestamp: 2021-12-03 22:34:21.490656000 Z
+book_ticker_8973:
+  id: 8973
+  coin_id: 1
+  avgPrice: 53486.08
+  bidPrice: 53486.08
+  bidQty: 0.002873
+  askPrice: 53505.33
+  askQty: 0.115365
+  timestamp: 2021-12-03 22:34:26.650739000 Z
+book_ticker_8974:
+  id: 8974
+  coin_id: 2
+  avgPrice: 4228.06
+  bidPrice: 4226.54
+  bidQty: 0.5
+  askPrice: 4228.06
+  askQty: 0.22344
+  timestamp: 2021-12-03 22:34:26.650840000 Z
+book_ticker_8975:
+  id: 8975
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:34:26.650883000 Z
+book_ticker_8976:
+  id: 8976
+  coin_id: 4
+  avgPrice: 188.5
+  bidPrice: 188.29
+  bidQty: 4.0
+  askPrice: 188.56
+  askQty: 4.7
+  timestamp: 2021-12-03 22:34:26.650922000 Z
+book_ticker_8977:
+  id: 8977
+  coin_id: 1
+  avgPrice: 53505.33
+  bidPrice: 53486.08
+  bidQty: 0.000228
+  askPrice: 53505.33
+  askQty: 0.105788
+  timestamp: 2021-12-03 22:34:31.771358000 Z
+book_ticker_8978:
+  id: 8978
+  coin_id: 2
+  avgPrice: 4228.06
+  bidPrice: 4226.54
+  bidQty: 0.5
+  askPrice: 4227.77
+  askQty: 1.41912
+  timestamp: 2021-12-03 22:34:31.771486000 Z
+book_ticker_8979:
+  id: 8979
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:34:31.771536000 Z
+book_ticker_8980:
+  id: 8980
+  coin_id: 4
+  avgPrice: 188.5
+  bidPrice: 188.29
+  bidQty: 4.0
+  askPrice: 188.56
+  askQty: 8.7
+  timestamp: 2021-12-03 22:34:31.771576000 Z
+book_ticker_8981:
+  id: 8981
+  coin_id: 1
+  avgPrice: 53505.33
+  bidPrice: 53486.08
+  bidQty: 0.000228
+  askPrice: 53503.71
+  askQty: 0.114777
+  timestamp: 2021-12-03 22:34:36.928137000 Z
+book_ticker_8982:
+  id: 8982
+  coin_id: 2
+  avgPrice: 4228.06
+  bidPrice: 4226.54
+  bidQty: 0.5
+  askPrice: 4227.64
+  askQty: 0.06464
+  timestamp: 2021-12-03 22:34:36.928294000 Z
+book_ticker_8983:
+  id: 8983
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:34:36.928345000 Z
+book_ticker_8984:
+  id: 8984
+  coin_id: 4
+  avgPrice: 188.5
+  bidPrice: 188.31
+  bidQty: 4.0
+  askPrice: 188.55
+  askQty: 4.0
+  timestamp: 2021-12-03 22:34:36.928400000 Z
+book_ticker_8985:
+  id: 8985
+  coin_id: 1
+  avgPrice: 53505.33
+  bidPrice: 53486.08
+  bidQty: 0.005612
+  askPrice: 53506.63
+  askQty: 0.114745
+  timestamp: 2021-12-03 22:34:42.059630000 Z
+book_ticker_8986:
+  id: 8986
+  coin_id: 2
+  avgPrice: 4226.18
+  bidPrice: 4226.14
+  bidQty: 0.7
+  askPrice: 4227.7
+  askQty: 0.07895
+  timestamp: 2021-12-03 22:34:42.059737000 Z
+book_ticker_8987:
+  id: 8987
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:34:42.059780000 Z
+book_ticker_8988:
+  id: 8988
+  coin_id: 4
+  avgPrice: 188.5
+  bidPrice: 188.31
+  bidQty: 4.0
+  askPrice: 188.55
+  askQty: 4.0
+  timestamp: 2021-12-03 22:34:42.059819000 Z
+book_ticker_9085:
+  id: 9085
+  coin_id: 1
+  avgPrice: 53654.85
+  bidPrice: 53655.53
+  bidQty: 0.04037
+  askPrice: 53685.23
+  askQty: 0.5
+  timestamp: 2021-12-03 22:36:51.113588000 Z
+book_ticker_9086:
+  id: 9086
+  coin_id: 2
+  avgPrice: 4232.0
+  bidPrice: 4231.65
+  bidQty: 0.00927
+  askPrice: 4232.0
+  askQty: 1.56654
+  timestamp: 2021-12-03 22:36:51.113695000 Z
+book_ticker_9087:
+  id: 9087
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:36:51.113737000 Z
+book_ticker_8989:
+  id: 8989
+  coin_id: 1
+  avgPrice: 53486.08
+  bidPrice: 53486.01
+  bidQty: 0.043995
+  askPrice: 53506.63
+  askQty: 0.114745
+  timestamp: 2021-12-03 22:34:47.186004000 Z
+book_ticker_8990:
+  id: 8990
+  coin_id: 2
+  avgPrice: 4226.18
+  bidPrice: 4225.83
+  bidQty: 1.4192
+  askPrice: 4227.74
+  askQty: 1.41916
+  timestamp: 2021-12-03 22:34:47.186115000 Z
+book_ticker_8991:
+  id: 8991
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:34:47.186158000 Z
+book_ticker_8992:
+  id: 8992
+  coin_id: 4
+  avgPrice: 188.5
+  bidPrice: 188.31
+  bidQty: 4.0
+  askPrice: 188.53
+  askQty: 4.0
+  timestamp: 2021-12-03 22:34:47.186197000 Z
+book_ticker_9088:
+  id: 9088
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.51
+  bidQty: 4.0
+  askPrice: 188.67
+  askQty: 0.31459
+  timestamp: 2021-12-03 22:36:51.113776000 Z
+book_ticker_9089:
+  id: 9089
+  coin_id: 1
+  avgPrice: 53685.23
+  bidPrice: 53665.81
+  bidQty: 0.037
+  askPrice: 53685.23
+  askQty: 0.498344
+  timestamp: 2021-12-03 22:36:56.277535000 Z
+book_ticker_9090:
+  id: 9090
+  coin_id: 2
+  avgPrice: 4232.0
+  bidPrice: 4231.65
+  bidQty: 0.00927
+  askPrice: 4232.0
+  askQty: 0.88554
+  timestamp: 2021-12-03 22:36:56.277640000 Z
+book_ticker_9091:
+  id: 9091
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:36:56.277683000 Z
+book_ticker_9092:
+  id: 9092
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.51
+  bidQty: 4.0
+  askPrice: 188.67
+  askQty: 0.31459
+  timestamp: 2021-12-03 22:36:56.277722000 Z
+book_ticker_9093:
+  id: 9093
+  coin_id: 1
+  avgPrice: 53685.23
+  bidPrice: 53684.09
+  bidQty: 0.139377
+  askPrice: 53731.2
+  askQty: 0.0648
+  timestamp: 2021-12-03 22:37:01.426143000 Z
+book_ticker_9094:
+  id: 9094
+  coin_id: 2
+  avgPrice: 4232.0
+  bidPrice: 4231.65
+  bidQty: 0.0483
+  askPrice: 4232.0
+  askQty: 0.46459
+  timestamp: 2021-12-03 22:37:01.426259000 Z
+book_ticker_9095:
+  id: 9095
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:37:01.426396000 Z
+book_ticker_9096:
+  id: 9096
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.52
+  bidQty: 4.7
+  askPrice: 188.67
+  askQty: 0.31459
+  timestamp: 2021-12-03 22:37:01.426448000 Z
+book_ticker_9097:
+  id: 9097
+  coin_id: 1
+  avgPrice: 53685.23
+  bidPrice: 53684.1
+  bidQty: 0.037
+  askPrice: 53717.53
+  askQty: 0.03965
+  timestamp: 2021-12-03 22:37:06.584199000 Z
+book_ticker_9098:
+  id: 9098
+  coin_id: 2
+  avgPrice: 4232.0
+  bidPrice: 4231.88
+  bidQty: 0.7
+  askPrice: 4234.35
+  askQty: 0.59
+  timestamp: 2021-12-03 22:37:06.584311000 Z
+book_ticker_9099:
+  id: 9099
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:37:06.584356000 Z
+book_ticker_9100:
+  id: 9100
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.52
+  bidQty: 8.7
+  askPrice: 188.67
+  askQty: 0.31459
+  timestamp: 2021-12-03 22:37:06.584396000 Z
+book_ticker_9101:
+  id: 9101
+  coin_id: 1
+  avgPrice: 53685.23
+  bidPrice: 53696.31
+  bidQty: 0.048508
+  askPrice: 53721.44
+  askQty: 0.04016
+  timestamp: 2021-12-03 22:37:11.745649000 Z
+book_ticker_9102:
+  id: 9102
+  coin_id: 2
+  avgPrice: 4232.0
+  bidPrice: 4233.94
+  bidQty: 1.41637
+  askPrice: 4236.3
+  askQty: 0.59
+  timestamp: 2021-12-03 22:37:11.745818000 Z
+book_ticker_9103:
+  id: 9103
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:37:11.745904000 Z
+book_ticker_9104:
+  id: 9104
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.52
+  bidQty: 4.7
+  askPrice: 188.67
+  askQty: 0.31459
+  timestamp: 2021-12-03 22:37:11.745947000 Z
+book_ticker_9105:
+  id: 9105
+  coin_id: 1
+  avgPrice: 53685.23
+  bidPrice: 53696.31
+  bidQty: 0.048508
+  askPrice: 53721.44
+  askQty: 0.04016
+  timestamp: 2021-12-03 22:37:16.907002000 Z
+book_ticker_9106:
+  id: 9106
+  coin_id: 2
+  avgPrice: 4232.0
+  bidPrice: 4234.59
+  bidQty: 0.7
+  askPrice: 4236.31
+  askQty: 0.441
+  timestamp: 2021-12-03 22:37:16.907110000 Z
+book_ticker_9107:
+  id: 9107
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:37:16.907155000 Z
+book_ticker_9108:
+  id: 9108
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.86
+  askQty: 4.0
+  timestamp: 2021-12-03 22:37:16.907194000 Z
+book_ticker_9109:
+  id: 9109
+  coin_id: 1
+  avgPrice: 53685.23
+  bidPrice: 53686.01
+  bidQty: 0.037
+  askPrice: 53715.08
+  askQty: 0.111719
+  timestamp: 2021-12-03 22:37:22.063247000 Z
+book_ticker_9110:
+  id: 9110
+  coin_id: 2
+  avgPrice: 4234.59
+  bidPrice: 4234.59
+  bidQty: 0.65
+  askPrice: 4238.04
+  askQty: 0.7
+  timestamp: 2021-12-03 22:37:22.063348000 Z
+book_ticker_9111:
+  id: 9111
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:37:22.063390000 Z
+book_ticker_9112:
+  id: 9112
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.89
+  askQty: 4.7
+  timestamp: 2021-12-03 22:37:22.063428000 Z
+book_ticker_9113:
+  id: 9113
+  coin_id: 1
+  avgPrice: 53685.23
+  bidPrice: 53654.85
+  bidQty: 0.000373
+  askPrice: 53681.42
+  askQty: 0.111791
+  timestamp: 2021-12-03 22:37:27.223479000 Z
+book_ticker_9114:
+  id: 9114
+  coin_id: 2
+  avgPrice: 4234.59
+  bidPrice: 4234.22
+  bidQty: 0.7
+  askPrice: 4237.47
+  askQty: 0.7
+  timestamp: 2021-12-03 22:37:27.223585000 Z
+book_ticker_9115:
+  id: 9115
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:37:27.223629000 Z
+book_ticker_9116:
+  id: 9116
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.95
+  askQty: 4.7
+  timestamp: 2021-12-03 22:37:27.223667000 Z
+book_ticker_9117:
+  id: 9117
+  coin_id: 1
+  avgPrice: 53664.31
+  bidPrice: 53620.54
+  bidQty: 0.111829
+  askPrice: 53664.31
+  askQty: 0.038715
+  timestamp: 2021-12-03 22:37:32.380074000 Z
+book_ticker_9118:
+  id: 9118
+  coin_id: 2
+  avgPrice: 4234.22
+  bidPrice: 4234.52
+  bidQty: 0.7
+  askPrice: 4237.47
+  askQty: 0.7
+  timestamp: 2021-12-03 22:37:32.380177000 Z
+book_ticker_9119:
+  id: 9119
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:37:32.380220000 Z
+book_ticker_9120:
+  id: 9120
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.95
+  askQty: 4.7
+  timestamp: 2021-12-03 22:37:32.380259000 Z
+book_ticker_9121:
+  id: 9121
+  coin_id: 1
+  avgPrice: 53664.31
+  bidPrice: 53620.59
+  bidQty: 0.045
+  askPrice: 53644.34
+  askQty: 0.04019
+  timestamp: 2021-12-03 22:37:37.519806000 Z
+book_ticker_9122:
+  id: 9122
+  coin_id: 2
+  avgPrice: 4237.42
+  bidPrice: 4234.12
+  bidQty: 0.7
+  askPrice: 4237.41
+  askQty: 0.7
+  timestamp: 2021-12-03 22:37:37.519916000 Z
+book_ticker_9123:
+  id: 9123
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:37:37.519960000 Z
+book_ticker_9124:
+  id: 9124
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.95
+  askQty: 4.7
+  timestamp: 2021-12-03 22:37:37.520000000 Z
+book_ticker_9125:
+  id: 9125
+  coin_id: 1
+  avgPrice: 53650.0
+  bidPrice: 53650.0
+  bidQty: 0.127806
+  askPrice: 53664.31
+  askQty: 0.04
+  timestamp: 2021-12-03 22:37:42.678812000 Z
+book_ticker_9126:
+  id: 9126
+  coin_id: 2
+  avgPrice: 4234.12
+  bidPrice: 4234.5
+  bidQty: 0.76748
+  askPrice: 4236.88
+  askQty: 0.7
+  timestamp: 2021-12-03 22:37:42.678922000 Z
+book_ticker_9127:
+  id: 9127
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:37:42.678965000 Z
+book_ticker_9128:
+  id: 9128
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.95
+  askQty: 4.7
+  timestamp: 2021-12-03 22:37:42.679003000 Z
+book_ticker_9129:
+  id: 9129
+  coin_id: 1
+  avgPrice: 53650.0
+  bidPrice: 53650.01
+  bidQty: 0.038
+  askPrice: 53673.46
+  askQty: 0.04
+  timestamp: 2021-12-03 22:37:47.834657000 Z
+book_ticker_9130:
+  id: 9130
+  coin_id: 2
+  avgPrice: 4234.12
+  bidPrice: 4234.52
+  bidQty: 0.83888
+  askPrice: 4236.88
+  askQty: 0.7
+  timestamp: 2021-12-03 22:37:47.834766000 Z
+book_ticker_9131:
+  id: 9131
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:37:47.834809000 Z
+book_ticker_9132:
+  id: 9132
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.95
+  askQty: 12.61843
+  timestamp: 2021-12-03 22:37:47.834849000 Z
+book_ticker_8943:
+  id: 8943
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:33:44.399807000 Z
+book_ticker_8944:
+  id: 8944
+  coin_id: 4
+  avgPrice: 188.45
+  bidPrice: 188.21
+  bidQty: 4.0
+  askPrice: 188.45
+  askQty: 3.24515
+  timestamp: 2021-12-03 22:33:44.399847000 Z
+book_ticker_9133:
+  id: 9133
+  coin_id: 1
+  avgPrice: 53650.0
+  bidPrice: 53650.01
+  bidQty: 0.042085
+  askPrice: 53673.45
+  askQty: 0.083447
+  timestamp: 2021-12-03 22:37:52.973684000 Z
+book_ticker_9134:
+  id: 9134
+  coin_id: 2
+  avgPrice: 4236.88
+  bidPrice: 4234.52
+  bidQty: 1.53888
+  askPrice: 4236.49
+  askQty: 0.7
+  timestamp: 2021-12-03 22:37:52.973790000 Z
+book_ticker_9135:
+  id: 9135
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:37:52.973834000 Z
+book_ticker_9136:
+  id: 9136
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.92
+  askQty: 4.7
+  timestamp: 2021-12-03 22:37:52.973898000 Z
+book_ticker_9137:
+  id: 9137
+  coin_id: 1
+  avgPrice: 53673.44
+  bidPrice: 53650.01
+  bidQty: 0.038307
+  askPrice: 53673.44
+  askQty: 0.002521
+  timestamp: 2021-12-03 22:37:58.127371000 Z
+book_ticker_9138:
+  id: 9138
+  coin_id: 2
+  avgPrice: 4236.88
+  bidPrice: 4234.53
+  bidQty: 1.53781
+  askPrice: 4236.49
+  askQty: 0.7
+  timestamp: 2021-12-03 22:37:58.127472000 Z
+book_ticker_9139:
+  id: 9139
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:37:58.127514000 Z
+book_ticker_9140:
+  id: 9140
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.92
+  askQty: 4.7
+  timestamp: 2021-12-03 22:37:58.127553000 Z
+book_ticker_9141:
+  id: 9141
+  coin_id: 1
+  avgPrice: 53650.01
+  bidPrice: 53650.01
+  bidQty: 0.042003
+  askPrice: 53673.44
+  askQty: 0.000606
+  timestamp: 2021-12-03 22:38:03.287727000 Z
+book_ticker_9142:
+  id: 9142
+  coin_id: 2
+  avgPrice: 4236.49
+  bidPrice: 4234.54
+  bidQty: 0.83781
+  askPrice: 4236.49
+  askQty: 0.68926
+  timestamp: 2021-12-03 22:38:03.287836000 Z
+book_ticker_9143:
+  id: 9143
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:38:03.287880000 Z
+book_ticker_9144:
+  id: 9144
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.96
+  askQty: 8.7
+  timestamp: 2021-12-03 22:38:03.287921000 Z
+book_ticker_9145:
+  id: 9145
+  coin_id: 1
+  avgPrice: 53673.44
+  bidPrice: 53650.01
+  bidQty: 0.038
+  askPrice: 53667.88
+  askQty: 0.111808
+  timestamp: 2021-12-03 22:38:08.448148000 Z
+book_ticker_9146:
+  id: 9146
+  coin_id: 2
+  avgPrice: 4235.54
+  bidPrice: 4234.54
+  bidQty: 1.53781
+  askPrice: 4236.49
+  askQty: 0.68926
+  timestamp: 2021-12-03 22:38:08.448272000 Z
+book_ticker_9147:
+  id: 9147
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:38:08.448319000 Z
+book_ticker_9148:
+  id: 9148
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.94
+  askQty: 4.7
+  timestamp: 2021-12-03 22:38:08.448359000 Z
+book_ticker_9149:
+  id: 9149
+  coin_id: 1
+  avgPrice: 53673.44
+  bidPrice: 53650.01
+  bidQty: 0.038
+  askPrice: 53672.8
+  askQty: 0.114539
+  timestamp: 2021-12-03 22:38:13.616288000 Z
+book_ticker_9150:
+  id: 9150
+  coin_id: 2
+  avgPrice: 4235.54
+  bidPrice: 4234.84
+  bidQty: 1.4162
+  askPrice: 4236.42
+  askQty: 2.11624
+  timestamp: 2021-12-03 22:38:13.616400000 Z
+book_ticker_9151:
+  id: 9151
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:38:13.616444000 Z
+book_ticker_9152:
+  id: 9152
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.94
+  askQty: 4.7
+  timestamp: 2021-12-03 22:38:13.616483000 Z
+book_ticker_9153:
+  id: 9153
+  coin_id: 1
+  avgPrice: 53667.96
+  bidPrice: 53650.01
+  bidQty: 0.041719
+  askPrice: 53667.96
+  askQty: 0.112624
+  timestamp: 2021-12-03 22:38:18.784063000 Z
+book_ticker_9154:
+  id: 9154
+  coin_id: 2
+  avgPrice: 4235.54
+  bidPrice: 4235.16
+  bidQty: 1.41621
+  askPrice: 4236.8
+  askQty: 0.7
+  timestamp: 2021-12-03 22:38:18.784190000 Z
+book_ticker_9155:
+  id: 9155
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:38:18.784236000 Z
+book_ticker_9156:
+  id: 9156
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.94
+  askQty: 4.7
+  timestamp: 2021-12-03 22:38:18.784275000 Z
+book_ticker_8861:
+  id: 8861
+  coin_id: 1
+  avgPrice: 53515.92
+  bidPrice: 53493.97
+  bidQty: 0.11211
+  askPrice: 53527.05
+  askQty: 0.112108
+  timestamp: 2021-12-03 22:32:01.294323000 Z
+book_ticker_8862:
+  id: 8862
+  coin_id: 2
+  avgPrice: 4225.26
+  bidPrice: 4221.5
+  bidQty: 0.7
+  askPrice: 4224.55
+  askQty: 0.28
+  timestamp: 2021-12-03 22:32:01.294451000 Z
+book_ticker_8863:
+  id: 8863
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:32:01.294499000 Z
+book_ticker_8864:
+  id: 8864
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.21
+  bidQty: 4.0
+  askPrice: 188.39
+  askQty: 4.0
+  timestamp: 2021-12-03 22:32:01.294538000 Z
+book_ticker_8865:
+  id: 8865
+  coin_id: 1
+  avgPrice: 53540.0
+  bidPrice: 53493.99
+  bidQty: 0.044107
+  askPrice: 53519.31
+  askQty: 0.114873
+  timestamp: 2021-12-03 22:32:06.500477000 Z
+book_ticker_9157:
+  id: 9157
+  coin_id: 1
+  avgPrice: 53667.96
+  bidPrice: 53650.01
+  bidQty: 0.041637
+  askPrice: 53672.82
+  askQty: 0.043385
+  timestamp: 2021-12-03 22:38:23.944611000 Z
+book_ticker_9158:
+  id: 9158
+  coin_id: 2
+  avgPrice: 4235.54
+  bidPrice: 4235.46
+  bidQty: 1.41615
+  askPrice: 4237.16
+  askQty: 0.7
+  timestamp: 2021-12-03 22:38:23.944721000 Z
+book_ticker_9159:
+  id: 9159
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:38:23.944765000 Z
+book_ticker_9160:
+  id: 9160
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.94
+  askQty: 4.7
+  timestamp: 2021-12-03 22:38:23.944804000 Z
+book_ticker_9161:
+  id: 9161
+  coin_id: 1
+  avgPrice: 53650.01
+  bidPrice: 53650.01
+  bidQty: 0.037
+  askPrice: 53672.82
+  askQty: 0.043038
+  timestamp: 2021-12-03 22:38:29.103762000 Z
+book_ticker_9162:
+  id: 9162
+  coin_id: 2
+  avgPrice: 4235.54
+  bidPrice: 4235.13
+  bidQty: 0.79608
+  askPrice: 4236.38
+  askQty: 1.41629
+  timestamp: 2021-12-03 22:38:29.104124000 Z
+book_ticker_9163:
+  id: 9163
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:38:29.104195000 Z
+book_ticker_9164:
+  id: 9164
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.94
+  askQty: 4.7
+  timestamp: 2021-12-03 22:38:29.104241000 Z
+book_ticker_9165:
+  id: 9165
+  coin_id: 1
+  avgPrice: 53650.01
+  bidPrice: 53651.79
+  bidQty: 0.037
+  askPrice: 53673.51
+  askQty: 0.0432
+  timestamp: 2021-12-03 22:38:34.239006000 Z
+book_ticker_9166:
+  id: 9166
+  coin_id: 2
+  avgPrice: 4235.54
+  bidPrice: 4234.18
+  bidQty: 0.35402
+  askPrice: 4235.79
+  askQty: 0.7
+  timestamp: 2021-12-03 22:38:34.239116000 Z
+book_ticker_9167:
+  id: 9167
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:38:34.239159000 Z
+book_ticker_9168:
+  id: 9168
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.94
+  askQty: 4.7
+  timestamp: 2021-12-03 22:38:34.239197000 Z
+book_ticker_9169:
+  id: 9169
+  coin_id: 1
+  avgPrice: 53650.01
+  bidPrice: 53664.14
+  bidQty: 0.005182
+  askPrice: 53687.34
+  askQty: 0.043601
+  timestamp: 2021-12-03 22:38:39.402813000 Z
+book_ticker_9170:
+  id: 9170
+  coin_id: 2
+  avgPrice: 4235.54
+  bidPrice: 4234.67
+  bidQty: 0.78645
+  askPrice: 4236.41
+  askQty: 0.7
+  timestamp: 2021-12-03 22:38:39.402922000 Z
+book_ticker_9171:
+  id: 9171
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:38:39.402967000 Z
+book_ticker_9172:
+  id: 9172
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.93
+  askQty: 4.0
+  timestamp: 2021-12-03 22:38:39.403007000 Z
+book_ticker_9173:
+  id: 9173
+  coin_id: 1
+  avgPrice: 53682.86
+  bidPrice: 53673.44
+  bidQty: 0.093177
+  askPrice: 53682.86
+  askQty: 0.003426
+  timestamp: 2021-12-03 22:38:44.557418000 Z
+book_ticker_9174:
+  id: 9174
+  coin_id: 2
+  avgPrice: 4235.54
+  bidPrice: 4234.67
+  bidQty: 0.78645
+  askPrice: 4235.54
+  askQty: 0.35215
+  timestamp: 2021-12-03 22:38:44.557523000 Z
+book_ticker_9175:
+  id: 9175
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:38:44.557566000 Z
+book_ticker_9176:
+  id: 9176
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.93
+  askQty: 4.0
+  timestamp: 2021-12-03 22:38:44.557605000 Z
+book_ticker_8866:
+  id: 8866
+  coin_id: 2
+  avgPrice: 4225.26
+  bidPrice: 4221.97
+  bidQty: 0.7
+  askPrice: 4225.8
+  askQty: 0.28
+  timestamp: 2021-12-03 22:32:06.500590000 Z
+book_ticker_8993:
+  id: 8993
+  coin_id: 1
+  avgPrice: 53502.68
+  bidPrice: 53486.01
+  bidQty: 0.000494
+  askPrice: 53502.68
+  askQty: 0.114615
+  timestamp: 2021-12-03 22:34:52.342328000 Z
+book_ticker_8994:
+  id: 8994
+  coin_id: 2
+  avgPrice: 4226.18
+  bidPrice: 4226.22
+  bidQty: 0.7
+  askPrice: 4227.71
+  askQty: 0.07037
+  timestamp: 2021-12-03 22:34:52.342465000 Z
+book_ticker_8995:
+  id: 8995
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:34:52.342510000 Z
+book_ticker_8996:
+  id: 8996
+  coin_id: 4
+  avgPrice: 188.53
+  bidPrice: 188.31
+  bidQty: 4.33649
+  askPrice: 188.52
+  askQty: 4.7
+  timestamp: 2021-12-03 22:34:52.342550000 Z
+book_ticker_8997:
+  id: 8997
+  coin_id: 1
+  avgPrice: 53502.68
+  bidPrice: 53486.0
+  bidQty: 0.098729
+  askPrice: 53502.68
+  askQty: 0.113627
+  timestamp: 2021-12-03 22:34:57.496862000 Z
+book_ticker_8998:
+  id: 8998
+  coin_id: 2
+  avgPrice: 4226.18
+  bidPrice: 4226.22
+  bidQty: 0.7
+  askPrice: 4227.71
+  askQty: 0.07037
+  timestamp: 2021-12-03 22:34:57.496977000 Z
+book_ticker_8999:
+  id: 8999
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:34:57.497021000 Z
+book_ticker_9000:
+  id: 9000
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.31
+  bidQty: 4.0
+  askPrice: 188.52
+  askQty: 4.36351
+  timestamp: 2021-12-03 22:34:57.497086000 Z
+book_ticker_9001:
+  id: 9001
+  coin_id: 1
+  avgPrice: 53502.68
+  bidPrice: 53486.01
+  bidQty: 0.04
+  askPrice: 53502.68
+  askQty: 0.002976
+  timestamp: 2021-12-03 22:35:02.647668000 Z
+book_ticker_9002:
+  id: 9002
+  coin_id: 2
+  avgPrice: 4226.18
+  bidPrice: 4226.22
+  bidQty: 0.7
+  askPrice: 4227.75
+  askQty: 1.41911
+  timestamp: 2021-12-03 22:35:02.647791000 Z
+book_ticker_9003:
+  id: 9003
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:35:02.647835000 Z
+book_ticker_9004:
+  id: 9004
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.31
+  bidQty: 4.0
+  askPrice: 188.51
+  askQty: 4.0
+  timestamp: 2021-12-03 22:35:02.647873000 Z
+book_ticker_9005:
+  id: 9005
+  coin_id: 1
+  avgPrice: 53502.68
+  bidPrice: 53486.0
+  bidQty: 0.098581
+  askPrice: 53503.18
+  askQty: 0.115404
+  timestamp: 2021-12-03 22:35:07.802815000 Z
+book_ticker_9006:
+  id: 9006
+  coin_id: 2
+  avgPrice: 4226.18
+  bidPrice: 4226.5
+  bidQty: 1.41897
+  askPrice: 4228.04
+  askQty: 0.41
+  timestamp: 2021-12-03 22:35:07.802940000 Z
+book_ticker_9007:
+  id: 9007
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:35:07.802988000 Z
+book_ticker_9008:
+  id: 9008
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.3
+  bidQty: 4.0
+  askPrice: 188.63
+  askQty: 8.7
+  timestamp: 2021-12-03 22:35:07.803026000 Z
+book_ticker_9009:
+  id: 9009
+  coin_id: 1
+  avgPrice: 53502.68
+  bidPrice: 53486.0
+  bidQty: 0.093503
+  askPrice: 53505.33
+  askQty: 0.102897
+  timestamp: 2021-12-03 22:35:12.963073000 Z
+book_ticker_9010:
+  id: 9010
+  coin_id: 2
+  avgPrice: 4226.5
+  bidPrice: 4226.5
+  bidQty: 0.01088
+  askPrice: 4228.03
+  askQty: 0.67473
+  timestamp: 2021-12-03 22:35:12.963175000 Z
+book_ticker_9011:
+  id: 9011
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:35:12.963218000 Z
+book_ticker_9012:
+  id: 9012
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.3
+  bidQty: 4.0
+  askPrice: 188.57
+  askQty: 4.7
+  timestamp: 2021-12-03 22:35:12.963258000 Z
+book_ticker_9013:
+  id: 9013
+  coin_id: 1
+  avgPrice: 53502.68
+  bidPrice: 53483.88
+  bidQty: 0.03955
+  askPrice: 53502.95
+  askQty: 0.115087
+  timestamp: 2021-12-03 22:35:18.123191000 Z
+book_ticker_9014:
+  id: 9014
+  coin_id: 2
+  avgPrice: 4226.8
+  bidPrice: 4226.8
+  bidQty: 1.64496
+  askPrice: 4228.35
+  askQty: 0.39674
+  timestamp: 2021-12-03 22:35:18.123296000 Z
+book_ticker_9015:
+  id: 9015
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:35:18.123339000 Z
+book_ticker_9016:
+  id: 9016
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.3
+  bidQty: 4.0
+  askPrice: 188.57
+  askQty: 4.7
+  timestamp: 2021-12-03 22:35:18.123402000 Z
+book_ticker_9017:
+  id: 9017
+  coin_id: 1
+  avgPrice: 53502.68
+  bidPrice: 53483.88
+  bidQty: 0.043222
+  askPrice: 53505.33
+  askQty: 0.103043
+  timestamp: 2021-12-03 22:35:23.270433000 Z
+book_ticker_9018:
+  id: 9018
+  coin_id: 2
+  avgPrice: 4228.68
+  bidPrice: 4226.81
+  bidQty: 0.7
+  askPrice: 4228.68
+  askQty: 0.2387
+  timestamp: 2021-12-03 22:35:23.270543000 Z
+book_ticker_9019:
+  id: 9019
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:35:23.270586000 Z
+book_ticker_9020:
+  id: 9020
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.3
+  bidQty: 4.0
+  askPrice: 188.57
+  askQty: 8.7
+  timestamp: 2021-12-03 22:35:23.270625000 Z
+book_ticker_9021:
+  id: 9021
+  coin_id: 1
+  avgPrice: 53502.68
+  bidPrice: 53487.42
+  bidQty: 0.115855
+  askPrice: 53505.33
+  askQty: 0.1
+  timestamp: 2021-12-03 22:35:28.438260000 Z
+book_ticker_9022:
+  id: 9022
+  coin_id: 2
+  avgPrice: 4228.68
+  bidPrice: 4227.22
+  bidQty: 0.70504
+  askPrice: 4228.67
+  askQty: 0.32
+  timestamp: 2021-12-03 22:35:28.438394000 Z
+book_ticker_9023:
+  id: 9023
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:35:28.438447000 Z
+book_ticker_9024:
+  id: 9024
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.3
+  bidQty: 4.0
+  askPrice: 188.58
+  askQty: 4.7
+  timestamp: 2021-12-03 22:35:28.438489000 Z
+book_ticker_8867:
+  id: 8867
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:32:06.500634000 Z
+book_ticker_8868:
+  id: 8868
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.21
+  bidQty: 4.0
+  askPrice: 188.41
+  askQty: 4.0
+  timestamp: 2021-12-03 22:32:06.500711000 Z
+book_ticker_8869:
+  id: 8869
+  coin_id: 1
+  avgPrice: 53519.31
+  bidPrice: 53510.77
+  bidQty: 0.133041
+  askPrice: 53519.31
+  askQty: 0.063425
+  timestamp: 2021-12-03 22:32:11.634657000 Z
+book_ticker_8870:
+  id: 8870
+  coin_id: 2
+  avgPrice: 4225.26
+  bidPrice: 4225.26
+  bidQty: 0.01336
+  askPrice: 4226.99
+  askQty: 1.75159
+  timestamp: 2021-12-03 22:32:11.635070000 Z
+book_ticker_8871:
+  id: 8871
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:32:11.635123000 Z
+book_ticker_8872:
+  id: 8872
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.21
+  bidQty: 4.0
+  askPrice: 188.43
+  askQty: 4.0
+  timestamp: 2021-12-03 22:32:11.635164000 Z
+book_ticker_8873:
+  id: 8873
+  coin_id: 1
+  avgPrice: 53519.31
+  bidPrice: 53510.77
+  bidQty: 0.117
+  askPrice: 53519.31
+  askQty: 0.026069
+  timestamp: 2021-12-03 22:32:16.793041000 Z
+book_ticker_8874:
+  id: 8874
+  coin_id: 2
+  avgPrice: 4225.26
+  bidPrice: 4224.42
+  bidQty: 11.19724
+  askPrice: 4225.9
+  askQty: 1.4201
+  timestamp: 2021-12-03 22:32:16.793148000 Z
+book_ticker_8875:
+  id: 8875
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:32:16.793191000 Z
+book_ticker_8876:
+  id: 8876
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.22
+  bidQty: 0.48
+  askPrice: 188.43
+  askQty: 4.0
+  timestamp: 2021-12-03 22:32:16.793259000 Z
+book_ticker_8877:
+  id: 8877
+  coin_id: 1
+  avgPrice: 53519.31
+  bidPrice: 53512.67
+  bidQty: 0.15722
+  askPrice: 53519.31
+  askQty: 0.013808
+  timestamp: 2021-12-03 22:32:21.947571000 Z
+book_ticker_8878:
+  id: 8878
+  coin_id: 2
+  avgPrice: 4225.38
+  bidPrice: 4224.42
+  bidQty: 11.20115
+  askPrice: 4225.38
+  askQty: 1.41633
+  timestamp: 2021-12-03 22:32:21.947679000 Z
+book_ticker_8879:
+  id: 8879
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:32:21.947722000 Z
+book_ticker_8880:
+  id: 8880
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.22
+  bidQty: 0.48
+  askPrice: 188.43
+  askQty: 4.0
+  timestamp: 2021-12-03 22:32:21.947790000 Z
+book_ticker_8881:
+  id: 8881
+  coin_id: 1
+  avgPrice: 53519.31
+  bidPrice: 53512.67
+  bidQty: 0.161037
+  askPrice: 53519.31
+  askQty: 0.013808
+  timestamp: 2021-12-03 22:32:27.101105000 Z
+book_ticker_8882:
+  id: 8882
+  coin_id: 2
+  avgPrice: 4224.42
+  bidPrice: 4224.42
+  bidQty: 11.18201
+  askPrice: 4225.38
+  askQty: 1.41144
+  timestamp: 2021-12-03 22:32:27.101215000 Z
+book_ticker_8883:
+  id: 8883
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:32:27.101259000 Z
+book_ticker_8884:
+  id: 8884
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.26
+  bidQty: 4.0
+  askPrice: 188.43
+  askQty: 4.0
+  timestamp: 2021-12-03 22:32:27.101298000 Z
+book_ticker_8885:
+  id: 8885
+  coin_id: 1
+  avgPrice: 53519.31
+  bidPrice: 53512.67
+  bidQty: 0.159072
+  askPrice: 53523.64
+  askQty: 0.114693
+  timestamp: 2021-12-03 22:32:32.225489000 Z
+book_ticker_8886:
+  id: 8886
+  coin_id: 2
+  avgPrice: 4224.42
+  bidPrice: 4224.43
+  bidQty: 0.7
+  askPrice: 4225.38
+  askQty: 1.40383
+  timestamp: 2021-12-03 22:32:32.225598000 Z
+book_ticker_9025:
+  id: 9025
+  coin_id: 1
+  avgPrice: 53502.68
+  bidPrice: 53493.67
+  bidQty: 0.004436
+  askPrice: 53505.33
+  askQty: 0.10302
+  timestamp: 2021-12-03 22:35:33.588255000 Z
+book_ticker_9026:
+  id: 9026
+  coin_id: 2
+  avgPrice: 4227.07
+  bidPrice: 4227.27
+  bidQty: 0.62045
+  askPrice: 4228.69
+  askQty: 1.41883
+  timestamp: 2021-12-03 22:35:33.588369000 Z
+book_ticker_9027:
+  id: 9027
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:35:33.588676000 Z
+book_ticker_9028:
+  id: 9028
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.3
+  bidQty: 4.0
+  askPrice: 188.58
+  askQty: 4.7
+  timestamp: 2021-12-03 22:35:33.588742000 Z
+book_ticker_8887:
+  id: 8887
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:32:32.225642000 Z
+book_ticker_8888:
+  id: 8888
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.26
+  bidQty: 4.0
+  askPrice: 188.43
+  askQty: 4.0
+  timestamp: 2021-12-03 22:32:32.225682000 Z
+book_ticker_8889:
+  id: 8889
+  coin_id: 1
+  avgPrice: 53523.64
+  bidPrice: 53518.44
+  bidQty: 0.121843
+  askPrice: 53523.64
+  askQty: 0.106547
+  timestamp: 2021-12-03 22:32:37.381537000 Z
+book_ticker_8890:
+  id: 8890
+  coin_id: 2
+  avgPrice: 4225.38
+  bidPrice: 4224.42
+  bidQty: 11.1744
+  askPrice: 4225.38
+  askQty: 1.40603
+  timestamp: 2021-12-03 22:32:37.381671000 Z
+book_ticker_8891:
+  id: 8891
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:32:37.381722000 Z
+book_ticker_8892:
+  id: 8892
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.26
+  bidQty: 4.0
+  askPrice: 188.43
+  askQty: 4.0
+  timestamp: 2021-12-03 22:32:37.381763000 Z
+book_ticker_8893:
+  id: 8893
+  coin_id: 1
+  avgPrice: 53523.64
+  bidPrice: 53517.06
+  bidQty: 0.045436
+  askPrice: 53523.64
+  askQty: 0.108967
+  timestamp: 2021-12-03 22:32:42.542260000 Z
+book_ticker_8894:
+  id: 8894
+  coin_id: 2
+  avgPrice: 4225.38
+  bidPrice: 4224.42
+  bidQty: 11.1783
+  askPrice: 4225.38
+  askQty: 1.40603
+  timestamp: 2021-12-03 22:32:42.542367000 Z
+book_ticker_8895:
+  id: 8895
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:32:42.542410000 Z
+book_ticker_8896:
+  id: 8896
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.26
+  bidQty: 4.0
+  askPrice: 188.43
+  askQty: 4.0
+  timestamp: 2021-12-03 22:32:42.542448000 Z
+book_ticker_9029:
+  id: 9029
+  coin_id: 1
+  avgPrice: 53502.68
+  bidPrice: 53492.0
+  bidQty: 0.048873
+  askPrice: 53505.33
+  askQty: 0.1
+  timestamp: 2021-12-03 22:35:38.832437000 Z
+book_ticker_9030:
+  id: 9030
+  coin_id: 2
+  avgPrice: 4227.07
+  bidPrice: 4227.27
+  bidQty: 0.62045
+  askPrice: 4228.69
+  askQty: 1.41883
+  timestamp: 2021-12-03 22:35:38.832547000 Z
+book_ticker_9031:
+  id: 9031
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:35:38.832589000 Z
+book_ticker_9032:
+  id: 9032
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.31
+  bidQty: 4.0
+  askPrice: 188.58
+  askQty: 4.7
+  timestamp: 2021-12-03 22:35:38.832627000 Z
+book_ticker_9033:
+  id: 9033
+  coin_id: 1
+  avgPrice: 53502.68
+  bidPrice: 53494.22
+  bidQty: 0.045136
+  askPrice: 53505.33
+  askQty: 0.103751
+  timestamp: 2021-12-03 22:35:43.997040000 Z
+book_ticker_9034:
+  id: 9034
+  coin_id: 2
+  avgPrice: 4227.07
+  bidPrice: 4227.27
+  bidQty: 0.62045
+  askPrice: 4228.79
+  askQty: 1.41876
+  timestamp: 2021-12-03 22:35:43.997169000 Z
+book_ticker_9035:
+  id: 9035
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:35:43.997219000 Z
+book_ticker_9036:
+  id: 9036
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.31
+  bidQty: 4.0
+  askPrice: 188.58
+  askQty: 4.7
+  timestamp: 2021-12-03 22:35:43.997259000 Z
+book_ticker_9177:
+  id: 9177
+  coin_id: 1
+  avgPrice: 53682.87
+  bidPrice: 53673.44
+  bidQty: 0.074941
+  askPrice: 53682.87
+  askQty: 0.10926
+  timestamp: 2021-12-03 22:38:49.717193000 Z
+book_ticker_9178:
+  id: 9178
+  coin_id: 2
+  avgPrice: 4235.54
+  bidPrice: 4236.0
+  bidQty: 0.41516
+  askPrice: 4237.06
+  askQty: 1.41619
+  timestamp: 2021-12-03 22:38:49.717297000 Z
+book_ticker_9179:
+  id: 9179
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:38:49.717341000 Z
+book_ticker_9180:
+  id: 9180
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.7
+  bidQty: 4.0
+  askPrice: 188.96
+  askQty: 4.0
+  timestamp: 2021-12-03 22:38:49.717403000 Z
+book_ticker_8897:
+  id: 8897
+  coin_id: 1
+  avgPrice: 53527.68
+  bidPrice: 53517.06
+  bidQty: 0.15733
+  askPrice: 53527.68
+  askQty: 0.114641
+  timestamp: 2021-12-03 22:32:47.697759000 Z
+book_ticker_8898:
+  id: 8898
+  coin_id: 2
+  avgPrice: 4224.42
+  bidPrice: 4224.42
+  bidQty: 11.13272
+  askPrice: 4225.38
+  askQty: 1.45465
+  timestamp: 2021-12-03 22:32:47.697881000 Z
+book_ticker_8899:
+  id: 8899
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:32:47.697927000 Z
+book_ticker_8900:
+  id: 8900
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.26
+  bidQty: 4.0
+  askPrice: 188.43
+  askQty: 4.0
+  timestamp: 2021-12-03 22:32:47.697966000 Z
+book_ticker_9181:
+  id: 9181
+  coin_id: 1
+  avgPrice: 53673.44
+  bidPrice: 53673.45
+  bidQty: 0.037
+  askPrice: 53696.76
+  askQty: 0.04
+  timestamp: 2021-12-03 22:38:54.887783000 Z
+book_ticker_9182:
+  id: 9182
+  coin_id: 2
+  avgPrice: 4236.53
+  bidPrice: 4236.0
+  bidQty: 0.41516
+  askPrice: 4236.91
+  askQty: 1.41616
+  timestamp: 2021-12-03 22:38:54.887890000 Z
+book_ticker_9183:
+  id: 9183
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:38:54.887934000 Z
+book_ticker_9184:
+  id: 9184
+  coin_id: 4
+  avgPrice: 188.67
+  bidPrice: 188.74
+  bidQty: 4.0
+  askPrice: 189.0
+  askQty: 8.7
+  timestamp: 2021-12-03 22:38:54.887974000 Z
+book_ticker_9037:
+  id: 9037
+  coin_id: 1
+  avgPrice: 53505.33
+  bidPrice: 53502.68
+  bidQty: 0.097587
+  askPrice: 53505.33
+  askQty: 0.10158
+  timestamp: 2021-12-03 22:35:49.147193000 Z
+book_ticker_9038:
+  id: 9038
+  coin_id: 2
+  avgPrice: 4227.07
+  bidPrice: 4227.27
+  bidQty: 0.62045
+  askPrice: 4228.78
+  askQty: 0.6
+  timestamp: 2021-12-03 22:35:49.147300000 Z
+book_ticker_9039:
+  id: 9039
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:35:49.147368000 Z
+book_ticker_9040:
+  id: 9040
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.31
+  bidQty: 4.0
+  askPrice: 188.58
+  askQty: 4.7
+  timestamp: 2021-12-03 22:35:49.147411000 Z
+book_ticker_9041:
+  id: 9041
+  coin_id: 1
+  avgPrice: 53579.3
+  bidPrice: 53549.34
+  bidQty: 0.000537
+  askPrice: 53586.2
+  askQty: 0.028285
+  timestamp: 2021-12-03 22:35:54.327251000 Z
+book_ticker_9042:
+  id: 9042
+  coin_id: 2
+  avgPrice: 4228.49
+  bidPrice: 4227.09
+  bidQty: 0.7
+  askPrice: 4228.79
+  askQty: 1.0
+  timestamp: 2021-12-03 22:35:54.327362000 Z
+book_ticker_9043:
+  id: 9043
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:35:54.327406000 Z
+book_ticker_9044:
+  id: 9044
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.34
+  bidQty: 4.7
+  askPrice: 188.61
+  askQty: 4.7
+  timestamp: 2021-12-03 22:35:54.327445000 Z
+book_ticker_9045:
+  id: 9045
+  coin_id: 1
+  avgPrice: 53543.23
+  bidPrice: 53543.2
+  bidQty: 0.044384
+  askPrice: 53578.45
+  askQty: 0.042646
+  timestamp: 2021-12-03 22:35:59.481668000 Z
+book_ticker_9046:
+  id: 9046
+  coin_id: 2
+  avgPrice: 4228.49
+  bidPrice: 4227.09
+  bidQty: 0.7
+  askPrice: 4228.79
+  askQty: 1.0
+  timestamp: 2021-12-03 22:35:59.481775000 Z
+book_ticker_9047:
+  id: 9047
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:35:59.481817000 Z
+book_ticker_9048:
+  id: 9048
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.47
+  bidQty: 4.0
+  askPrice: 188.64
+  askQty: 4.7
+  timestamp: 2021-12-03 22:35:59.481887000 Z
+book_ticker_9049:
+  id: 9049
+  coin_id: 1
+  avgPrice: 53543.23
+  bidPrice: 53545.79
+  bidQty: 0.044797
+  askPrice: 53580.6
+  askQty: 0.03996
+  timestamp: 2021-12-03 22:36:04.645085000 Z
+book_ticker_9050:
+  id: 9050
+  coin_id: 2
+  avgPrice: 4228.49
+  bidPrice: 4227.06
+  bidQty: 0.7
+  askPrice: 4228.79
+  askQty: 0.6
+  timestamp: 2021-12-03 22:36:04.645197000 Z
+book_ticker_9051:
+  id: 9051
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:36:04.645264000 Z
+book_ticker_9052:
+  id: 9052
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.47
+  bidQty: 4.0
+  askPrice: 188.66
+  askQty: 4.0
+  timestamp: 2021-12-03 22:36:04.645311000 Z
+book_ticker_9053:
+  id: 9053
+  coin_id: 1
+  avgPrice: 53580.6
+  bidPrice: 53556.56
+  bidQty: 0.002161
+  askPrice: 53580.6
+  askQty: 0.039371
+  timestamp: 2021-12-03 22:36:09.790210000 Z
+book_ticker_9054:
+  id: 9054
+  coin_id: 2
+  avgPrice: 4228.49
+  bidPrice: 4227.06
+  bidQty: 0.7
+  askPrice: 4228.79
+  askQty: 0.6
+  timestamp: 2021-12-03 22:36:09.790338000 Z
+book_ticker_9055:
+  id: 9055
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:36:09.790387000 Z
+book_ticker_9056:
+  id: 9056
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.47
+  bidQty: 4.0
+  askPrice: 188.66
+  askQty: 4.0
+  timestamp: 2021-12-03 22:36:09.790426000 Z
+book_ticker_9057:
+  id: 9057
+  coin_id: 1
+  avgPrice: 53545.79
+  bidPrice: 53559.28
+  bidQty: 0.005085
+  askPrice: 53580.58
+  askQty: 0.04
+  timestamp: 2021-12-03 22:36:15.017096000 Z
+book_ticker_9058:
+  id: 9058
+  coin_id: 2
+  avgPrice: 4228.49
+  bidPrice: 4227.06
+  bidQty: 0.7
+  askPrice: 4228.8
+  askQty: 1.41889
+  timestamp: 2021-12-03 22:36:15.017207000 Z
+book_ticker_9059:
+  id: 9059
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:36:15.017322000 Z
+book_ticker_9060:
+  id: 9060
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.47
+  bidQty: 4.0
+  askPrice: 188.67
+  askQty: 0.31459
+  timestamp: 2021-12-03 22:36:15.017409000 Z
+book_ticker_9061:
+  id: 9061
+  coin_id: 1
+  avgPrice: 53548.41
+  bidPrice: 53555.18
+  bidQty: 0.037
+  askPrice: 53580.59
+  askQty: 0.04
+  timestamp: 2021-12-03 22:36:20.182027000 Z
+book_ticker_9062:
+  id: 9062
+  coin_id: 2
+  avgPrice: 4228.49
+  bidPrice: 4227.39
+  bidQty: 0.7
+  askPrice: 4229.26
+  askQty: 0.6
+  timestamp: 2021-12-03 22:36:20.183779000 Z
+book_ticker_9063:
+  id: 9063
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:36:20.183877000 Z
+book_ticker_9064:
+  id: 9064
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.47
+  bidQty: 4.0
+  askPrice: 188.67
+  askQty: 0.31459
+  timestamp: 2021-12-03 22:36:20.183921000 Z
+book_ticker_9065:
+  id: 9065
+  coin_id: 1
+  avgPrice: 53548.41
+  bidPrice: 53583.76
+  bidQty: 0.111932
+  askPrice: 53606.12
+  askQty: 0.04
+  timestamp: 2021-12-03 22:36:25.336222000 Z
+book_ticker_9066:
+  id: 9066
+  coin_id: 2
+  avgPrice: 4228.49
+  bidPrice: 4228.49
+  bidQty: 0.76859
+  askPrice: 4229.13
+  askQty: 1.41872
+  timestamp: 2021-12-03 22:36:25.336331000 Z
+book_ticker_9067:
+  id: 9067
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:36:25.336375000 Z
+book_ticker_9068:
+  id: 9068
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.47
+  bidQty: 4.0
+  askPrice: 188.67
+  askQty: 0.31459
+  timestamp: 2021-12-03 22:36:25.336481000 Z
+book_ticker_9069:
+  id: 9069
+  coin_id: 1
+  avgPrice: 53548.41
+  bidPrice: 53601.24
+  bidQty: 0.037
+  askPrice: 53632.65
+  askQty: 0.000358
+  timestamp: 2021-12-03 22:36:30.483156000 Z
+book_ticker_9070:
+  id: 9070
+  coin_id: 2
+  avgPrice: 4228.49
+  bidPrice: 4228.49
+  bidQty: 0.76859
+  askPrice: 4230.1
+  askQty: 1.41845
+  timestamp: 2021-12-03 22:36:30.483263000 Z
+book_ticker_9071:
+  id: 9071
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:36:30.483308000 Z
+book_ticker_9072:
+  id: 9072
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.47
+  bidQty: 4.0
+  askPrice: 188.67
+  askQty: 0.31459
+  timestamp: 2021-12-03 22:36:30.483347000 Z
+book_ticker_9073:
+  id: 9073
+  coin_id: 1
+  avgPrice: 53548.41
+  bidPrice: 53601.24
+  bidQty: 0.037
+  askPrice: 53632.65
+  askQty: 0.000358
+  timestamp: 2021-12-03 22:36:35.635585000 Z
+book_ticker_9074:
+  id: 9074
+  coin_id: 2
+  avgPrice: 4230.14
+  bidPrice: 4228.72
+  bidQty: 0.0039
+  askPrice: 4230.14
+  askQty: 1.41442
+  timestamp: 2021-12-03 22:36:35.635714000 Z
+book_ticker_9075:
+  id: 9075
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:36:35.635767000 Z
+book_ticker_9076:
+  id: 9076
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.47
+  bidQty: 4.0
+  askPrice: 188.67
+  askQty: 0.31459
+  timestamp: 2021-12-03 22:36:35.635808000 Z
+book_ticker_9077:
+  id: 9077
+  coin_id: 1
+  avgPrice: 53548.41
+  bidPrice: 53615.18
+  bidQty: 0.037
+  askPrice: 53632.65
+  askQty: 0.000358
+  timestamp: 2021-12-03 22:36:40.791930000 Z
+book_ticker_9078:
+  id: 9078
+  coin_id: 2
+  avgPrice: 4231.65
+  bidPrice: 4229.23
+  bidQty: 0.7
+  askPrice: 4232.0
+  askQty: 2.65
+  timestamp: 2021-12-03 22:36:40.792056000 Z
+book_ticker_9079:
+  id: 9079
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:36:40.792106000 Z
+book_ticker_9080:
+  id: 9080
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.47
+  bidQty: 4.0
+  askPrice: 188.67
+  askQty: 0.31459
+  timestamp: 2021-12-03 22:36:40.792145000 Z
+book_ticker_9081:
+  id: 9081
+  coin_id: 1
+  avgPrice: 53632.65
+  bidPrice: 53636.94
+  bidQty: 0.037
+  askPrice: 53654.85
+  askQty: 0.00021
+  timestamp: 2021-12-03 22:36:45.947670000 Z
+book_ticker_9082:
+  id: 9082
+  coin_id: 2
+  avgPrice: 4231.65
+  bidPrice: 4229.74
+  bidQty: 0.86135
+  askPrice: 4232.0
+  askQty: 2.65
+  timestamp: 2021-12-03 22:36:45.947774000 Z
+book_ticker_9083:
+  id: 9083
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:36:45.947840000 Z
+book_ticker_9084:
+  id: 9084
+  coin_id: 4
+  avgPrice: 188.52
+  bidPrice: 188.5
+  bidQty: 4.0
+  askPrice: 188.67
+  askQty: 0.31459
+  timestamp: 2021-12-03 22:36:45.947894000 Z
+book_ticker_8901:
+  id: 8901
+  coin_id: 1
+  avgPrice: 53527.68
+  bidPrice: 53517.06
+  bidQty: 0.005363
+  askPrice: 53527.68
+  askQty: 0.114641
+  timestamp: 2021-12-03 22:32:52.861253000 Z
+book_ticker_8902:
+  id: 8902
+  coin_id: 2
+  avgPrice: 4224.96
+  bidPrice: 4224.42
+  bidQty: 10.99336
+  askPrice: 4224.96
+  askQty: 1.38284
+  timestamp: 2021-12-03 22:32:52.861368000 Z
+book_ticker_8903:
+  id: 8903
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:32:52.861411000 Z
+book_ticker_8904:
+  id: 8904
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.25
+  bidQty: 57.08639
+  askPrice: 188.43
+  askQty: 4.0
+  timestamp: 2021-12-03 22:32:52.861451000 Z
+book_ticker_8905:
+  id: 8905
+  coin_id: 1
+  avgPrice: 53527.68
+  bidPrice: 53504.92
+  bidQty: 0.04
+  askPrice: 53527.68
+  askQty: 0.114641
+  timestamp: 2021-12-03 22:32:58.014715000 Z
+book_ticker_8906:
+  id: 8906
+  coin_id: 2
+  avgPrice: 4224.96
+  bidPrice: 4224.42
+  bidQty: 10.99336
+  askPrice: 4224.96
+  askQty: 0.33928
+  timestamp: 2021-12-03 22:32:58.014824000 Z
+book_ticker_8907:
+  id: 8907
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:32:58.014867000 Z
+book_ticker_8908:
+  id: 8908
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.26
+  bidQty: 4.0
+  askPrice: 188.43
+  askQty: 4.0
+  timestamp: 2021-12-03 22:32:58.014906000 Z
+book_ticker_8909:
+  id: 8909
+  coin_id: 1
+  avgPrice: 53500.0
+  bidPrice: 53490.01
+  bidQty: 0.04
+  askPrice: 53513.84
+  askQty: 0.115095
+  timestamp: 2021-12-03 22:33:03.179292000 Z
+book_ticker_8910:
+  id: 8910
+  coin_id: 2
+  avgPrice: 4224.96
+  bidPrice: 4224.42
+  bidQty: 10.99336
+  askPrice: 4225.43
+  askQty: 1.42012
+  timestamp: 2021-12-03 22:33:03.179713000 Z
+book_ticker_8911:
+  id: 8911
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:33:03.179767000 Z
+book_ticker_8912:
+  id: 8912
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.26
+  bidQty: 4.0
+  askPrice: 188.46
+  askQty: 4.7
+  timestamp: 2021-12-03 22:33:03.179807000 Z
+book_ticker_8913:
+  id: 8913
+  coin_id: 1
+  avgPrice: 53500.0
+  bidPrice: 53490.03
+  bidQty: 0.04
+  askPrice: 53513.84
+  askQty: 0.115095
+  timestamp: 2021-12-03 22:33:08.332599000 Z
+book_ticker_8914:
+  id: 8914
+  coin_id: 2
+  avgPrice: 4224.96
+  bidPrice: 4224.79
+  bidQty: 0.07283
+  askPrice: 4225.62
+  askQty: 0.5
+  timestamp: 2021-12-03 22:33:08.332708000 Z
+book_ticker_8915:
+  id: 8915
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:33:08.332751000 Z
+book_ticker_8916:
+  id: 8916
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.26
+  bidQty: 4.0
+  askPrice: 188.45
+  askQty: 4.0
+  timestamp: 2021-12-03 22:33:08.332789000 Z
+book_ticker_8917:
+  id: 8917
+  coin_id: 1
+  avgPrice: 53490.0
+  bidPrice: 53455.49
+  bidQty: 0.112204
+  askPrice: 53489.55
+  askQty: 0.115355
+  timestamp: 2021-12-03 22:33:13.485089000 Z
+book_ticker_8918:
+  id: 8918
+  coin_id: 2
+  avgPrice: 4224.96
+  bidPrice: 4224.96
+  bidQty: 0.00928
+  askPrice: 4225.62
+  askQty: 0.5
+  timestamp: 2021-12-03 22:33:13.485201000 Z
+book_ticker_8919:
+  id: 8919
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:33:13.485245000 Z
+book_ticker_8920:
+  id: 8920
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.26
+  bidQty: 4.0
+  askPrice: 188.45
+  askQty: 4.0
+  timestamp: 2021-12-03 22:33:13.485283000 Z
+book_ticker_8921:
+  id: 8921
+  coin_id: 1
+  avgPrice: 53490.0
+  bidPrice: 53459.35
+  bidQty: 0.043867
+  askPrice: 53474.24
+  askQty: 0.003584
+  timestamp: 2021-12-03 22:33:18.642773000 Z
+book_ticker_8922:
+  id: 8922
+  coin_id: 2
+  avgPrice: 4224.96
+  bidPrice: 4224.96
+  bidQty: 0.01709
+  askPrice: 4225.62
+  askQty: 0.5
+  timestamp: 2021-12-03 22:33:18.642880000 Z
+book_ticker_8923:
+  id: 8923
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:33:18.642923000 Z
+book_ticker_8924:
+  id: 8924
+  coin_id: 4
+  avgPrice: 188.39
+  bidPrice: 188.21
+  bidQty: 4.0
+  askPrice: 188.45
+  askQty: 4.0
+  timestamp: 2021-12-03 22:33:18.642985000 Z
+book_ticker_8925:
+  id: 8925
+  coin_id: 1
+  avgPrice: 53490.0
+  bidPrice: 53478.2
+  bidQty: 0.0403
+  askPrice: 53498.35
+  askQty: 0.115874
+  timestamp: 2021-12-03 22:33:23.795788000 Z
+book_ticker_8926:
+  id: 8926
+  coin_id: 2
+  avgPrice: 4225.62
+  bidPrice: 4224.96
+  bidQty: 0.00928
+  askPrice: 4225.62
+  askQty: 0.47656
+  timestamp: 2021-12-03 22:33:23.795899000 Z
+book_ticker_8927:
+  id: 8927
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:33:23.795957000 Z
+book_ticker_8928:
+  id: 8928
+  coin_id: 4
+  avgPrice: 188.45
+  bidPrice: 188.21
+  bidQty: 4.0
+  askPrice: 188.45
+  askQty: 3.42586
+  timestamp: 2021-12-03 22:33:23.796011000 Z
+book_ticker_8929:
+  id: 8929
+  coin_id: 1
+  avgPrice: 53498.35
+  bidPrice: 53478.2
+  bidQty: 0.048021
+  askPrice: 53498.35
+  askQty: 0.001225
+  timestamp: 2021-12-03 22:33:28.923783000 Z
+book_ticker_8930:
+  id: 8930
+  coin_id: 2
+  avgPrice: 4225.62
+  bidPrice: 4224.96
+  bidQty: 0.00928
+  askPrice: 4226.39
+  askQty: 1.4197
+  timestamp: 2021-12-03 22:33:28.923890000 Z
+book_ticker_8931:
+  id: 8931
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:33:28.923932000 Z
+book_ticker_8932:
+  id: 8932
+  coin_id: 4
+  avgPrice: 188.45
+  bidPrice: 188.21
+  bidQty: 4.0
+  askPrice: 188.45
+  askQty: 3.42586
+  timestamp: 2021-12-03 22:33:28.923997000 Z
+book_ticker_8933:
+  id: 8933
+  coin_id: 1
+  avgPrice: 53498.77
+  bidPrice: 53478.2
+  bidQty: 0.000617
+  askPrice: 53498.77
+  askQty: 0.065443
+  timestamp: 2021-12-03 22:33:34.081104000 Z
+book_ticker_8934:
+  id: 8934
+  coin_id: 2
+  avgPrice: 4225.62
+  bidPrice: 4225.24
+  bidQty: 2.11949
+  askPrice: 4227.21
+  askQty: 0.28
+  timestamp: 2021-12-03 22:33:34.081207000 Z
+book_ticker_8935:
+  id: 8935
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:33:34.081249000 Z
+book_ticker_8936:
+  id: 8936
+  coin_id: 4
+  avgPrice: 188.45
+  bidPrice: 188.21
+  bidQty: 4.0
+  askPrice: 188.45
+  askQty: 3.42586
+  timestamp: 2021-12-03 22:33:34.081287000 Z
+book_ticker_8937:
+  id: 8937
+  coin_id: 1
+  avgPrice: 53498.77
+  bidPrice: 53478.2
+  bidQty: 0.004571
+  askPrice: 53498.77
+  askQty: 0.06359
+  timestamp: 2021-12-03 22:33:39.240591000 Z
+book_ticker_8938:
+  id: 8938
+  coin_id: 2
+  avgPrice: 4225.62
+  bidPrice: 4225.24
+  bidQty: 1.41949
+  askPrice: 4226.9
+  askQty: 0.28
+  timestamp: 2021-12-03 22:33:39.240697000 Z
+book_ticker_8939:
+  id: 8939
+  coin_id: 3
+  avgPrice: 0.297
+  bidPrice: 0.0
+  bidQty: 0.0
+  askPrice: 0.0
+  askQty: 0.0
+  timestamp: 2021-12-03 22:33:39.240740000 Z
+book_ticker_8940:
+  id: 8940
+  coin_id: 4
+  avgPrice: 188.46
+  bidPrice: 188.21
+  bidQty: 4.0
+  askPrice: 188.46
+  askQty: 4.12586
+  timestamp: 2021-12-03 22:33:39.240778000 Z
+book_ticker_8941:
+  id: 8941
+  coin_id: 1
+  avgPrice: 53498.77
+  bidPrice: 53486.08
+  bidQty: 0.03992
+  askPrice: 53498.77
+  askQty: 0.053406
+  timestamp: 2021-12-03 22:33:44.399654000 Z
+book_ticker_8942:
+  id: 8942
+  coin_id: 2
+  avgPrice: 4225.62
+  bidPrice: 4224.96
+  bidQty: 0.00928
+  askPrice: 4226.64
+  askQty: 1.41965
+  timestamp: 2021-12-03 22:33:44.399763000 Z
