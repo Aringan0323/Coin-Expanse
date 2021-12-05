@@ -27,7 +27,6 @@ module StrategiesHelper
     uni_operation = ['not']
 
     simple_indic = ['rsi', 'vwap']
-    med_indic = ['stoch']
 
     res = []
     alg.keys.each do |key|
