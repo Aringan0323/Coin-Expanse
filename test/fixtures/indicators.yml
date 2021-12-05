@@ -1,11 +1,501 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  coin: one
-  name: MyString
-  data: MyString
-
-two:
-  coin: two
-  name: MyString
-  data: MyString
+---
+indicator_101:
+  id: 101
+  coin_id: 3
+  name: XRP_rsi
+  data: '{"value"=>44.21878264648555}'
+  interval: 1w
+  created_at: 2021-12-05 02:59:24.223283000 Z
+  updated_at: 2021-12-05 02:59:24.223283000 Z
+indicator_102:
+  id: 102
+  coin_id: 3
+  name: XRP_stoch
+  data: '{"valueK"=>25.241092211124478, "valueD"=>39.521212940587255}'
+  interval: 1w
+  created_at: 2021-12-05 02:59:24.235143000 Z
+  updated_at: 2021-12-05 02:59:24.235143000 Z
+indicator_103:
+  id: 103
+  coin_id: 3
+  name: XRP_macd
+  data: '{"valueMACD"=>0.043815867542388864, "valueMACDSignal"=>0.0780007464381908,
+    "valueMACDHist"=>-0.034184878895801935}'
+  interval: 1w
+  created_at: 2021-12-05 02:59:24.238504000 Z
+  updated_at: 2021-12-05 02:59:24.238504000 Z
+indicator_104:
+  id: 104
+  coin_id: 3
+  name: XRP_bbands2
+  data: '{"valueUpperBand"=>1.4121458882538167, "valueMiddleBand"=>1.0458649999999996,
+    "valueLowerBand"=>0.6795841117461825}'
+  interval: 1w
+  created_at: 2021-12-05 02:59:24.241357000 Z
+  updated_at: 2021-12-05 02:59:24.241357000 Z
+indicator_105:
+  id: 105
+  coin_id: 3
+  name: XRP_vwap
+  data: '{"value"=>0.6588115994471085}'
+  interval: 1w
+  created_at: 2021-12-05 02:59:24.244283000 Z
+  updated_at: 2021-12-05 02:59:24.244283000 Z
+indicator_106:
+  id: 106
+  coin_id: 4
+  name: LTC_rsi
+  data: '{"value"=>42.566977841908134}'
+  interval: 1h
+  created_at: 2021-12-05 02:59:40.621688000 Z
+  updated_at: 2021-12-05 02:59:40.621688000 Z
+indicator_107:
+  id: 107
+  coin_id: 4
+  name: LTC_stoch
+  data: '{"valueK"=>43.58974358974364, "valueD"=>48.79982353666568}'
+  interval: 1h
+  created_at: 2021-12-05 02:59:40.626971000 Z
+  updated_at: 2021-12-05 02:59:40.626971000 Z
+indicator_108:
+  id: 108
+  coin_id: 4
+  name: LTC_macd
+  data: '{"valueMACD"=>-3.797046673521322, "valueMACDSignal"=>-5.70411351052815, "valueMACDHist"=>1.9070668370068278}'
+  interval: 1h
+  created_at: 2021-12-05 02:59:40.630315000 Z
+  updated_at: 2021-12-05 02:59:40.630315000 Z
+indicator_109:
+  id: 109
+  coin_id: 4
+  name: LTC_bbands2
+  data: '{"valueUpperBand"=>167.82538264560418, "valueMiddleBand"=>158.02499999999984,
+    "valueLowerBand"=>148.2246173543955}'
+  interval: 1h
+  created_at: 2021-12-05 02:59:40.633011000 Z
+  updated_at: 2021-12-05 02:59:40.633011000 Z
+indicator_110:
+  id: 110
+  coin_id: 4
+  name: LTC_vwap
+  data: '{"value"=>212.670476117029}'
+  interval: 1h
+  created_at: 2021-12-05 02:59:40.635929000 Z
+  updated_at: 2021-12-05 02:59:40.635929000 Z
+indicator_111:
+  id: 111
+  coin_id: 4
+  name: LTC_rsi
+  data: '{"value"=>32.78327872987528}'
+  interval: 1d
+  created_at: 2021-12-05 02:59:57.098506000 Z
+  updated_at: 2021-12-05 02:59:57.098506000 Z
+indicator_112:
+  id: 112
+  coin_id: 4
+  name: LTC_stoch
+  data: '{"valueK"=>31.634694361150732, "valueD"=>39.86615928214518}'
+  interval: 1d
+  created_at: 2021-12-05 02:59:57.102150000 Z
+  updated_at: 2021-12-05 02:59:57.102150000 Z
+indicator_113:
+  id: 113
+  coin_id: 4
+  name: LTC_macd
+  data: '{"valueMACD"=>-10.651401633231046, "valueMACDSignal"=>-4.637364896706808,
+    "valueMACDHist"=>-6.014036736524238}'
+  interval: 1d
+  created_at: 2021-12-05 02:59:57.105208000 Z
+  updated_at: 2021-12-05 02:59:57.105208000 Z
+indicator_114:
+  id: 114
+  coin_id: 4
+  name: LTC_bbands2
+  data: '{"valueUpperBand"=>242.88930034506527, "valueMiddleBand"=>205.92499999999995,
+    "valueLowerBand"=>168.96069965493464}'
+  interval: 1d
+  created_at: 2021-12-05 02:59:57.108090000 Z
+  updated_at: 2021-12-05 02:59:57.108090000 Z
+indicator_115:
+  id: 115
+  coin_id: 4
+  name: LTC_vwap
+  data: '{"value"=>162.6682831580286}'
+  interval: 1d
+  created_at: 2021-12-05 02:59:57.110900000 Z
+  updated_at: 2021-12-05 02:59:57.110900000 Z
+indicator_116:
+  id: 116
+  coin_id: 4
+  name: LTC_rsi
+  data: '{"value"=>46.49474427091371}'
+  interval: 1w
+  created_at: 2021-12-05 03:00:13.348458000 Z
+  updated_at: 2021-12-05 03:00:13.348458000 Z
+indicator_117:
+  id: 117
+  coin_id: 4
+  name: LTC_stoch
+  data: '{"valueK"=>27.44413533563814, "valueD"=>48.47240386818854}'
+  interval: 1w
+  created_at: 2021-12-05 03:00:13.360508000 Z
+  updated_at: 2021-12-05 03:00:13.360508000 Z
+indicator_118:
+  id: 118
+  coin_id: 4
+  name: LTC_macd
+  data: '{"valueMACD"=>8.123620259863031, "valueMACDSignal"=>7.504550334171133, "valueMACDHist"=>0.6190699256918988}'
+  interval: 1w
+  created_at: 2021-12-05 03:00:13.363935000 Z
+  updated_at: 2021-12-05 03:00:13.363935000 Z
+indicator_119:
+  id: 119
+  coin_id: 4
+  name: LTC_bbands2
+  data: '{"valueUpperBand"=>249.90086671567758, "valueMiddleBand"=>183.93949999999995,
+    "valueLowerBand"=>117.97813328432231}'
+  interval: 1w
+  created_at: 2021-12-05 03:00:13.366806000 Z
+  updated_at: 2021-12-05 03:00:13.366806000 Z
+indicator_120:
+  id: 120
+  coin_id: 4
+  name: LTC_vwap
+  data: '{"value"=>132.54861493381173}'
+  interval: 1w
+  created_at: 2021-12-05 03:00:13.369473000 Z
+  updated_at: 2021-12-05 03:00:13.369473000 Z
+indicator_61:
+  id: 61
+  coin_id: 1
+  name: BTC_rsi
+  data: '{"value"=>43.115435494464585}'
+  interval: 1h
+  created_at: 2021-12-05 02:57:13.668925000 Z
+  updated_at: 2021-12-05 02:57:13.668925000 Z
+indicator_62:
+  id: 62
+  coin_id: 1
+  name: BTC_stoch
+  data: '{"valueK"=>48.83142163984004, "valueD"=>55.90920630671527}'
+  interval: 1h
+  created_at: 2021-12-05 02:57:13.682780000 Z
+  updated_at: 2021-12-05 02:57:13.682780000 Z
+indicator_63:
+  id: 63
+  coin_id: 1
+  name: BTC_macd
+  data: '{"valueMACD"=>-689.9352962731864, "valueMACDSignal"=>-1066.3463503600153,
+    "valueMACDHist"=>376.4110540868289}'
+  interval: 1h
+  created_at: 2021-12-05 02:57:13.685870000 Z
+  updated_at: 2021-12-05 02:57:13.685870000 Z
+indicator_64:
+  id: 64
+  coin_id: 1
+  name: BTC_bbands2
+  data: '{"valueUpperBand"=>49904.95200820377, "valueMiddleBand"=>48202.097000000016,
+    "valueLowerBand"=>46499.24199179626}'
+  interval: 1h
+  created_at: 2021-12-05 02:57:13.699029000 Z
+  updated_at: 2021-12-05 02:57:13.699029000 Z
+indicator_65:
+  id: 65
+  coin_id: 1
+  name: BTC_vwap
+  data: '{"value"=>56751.12401181447}'
+  interval: 1h
+  created_at: 2021-12-05 02:57:13.702572000 Z
+  updated_at: 2021-12-05 02:57:13.702572000 Z
+indicator_66:
+  id: 66
+  coin_id: 1
+  name: BTC_rsi
+  data: '{"value"=>31.25016636207506}'
+  interval: 1d
+  created_at: 2021-12-05 02:57:30.115782000 Z
+  updated_at: 2021-12-05 02:57:30.115782000 Z
+indicator_67:
+  id: 67
+  coin_id: 1
+  name: BTC_stoch
+  data: '{"valueK"=>36.07710013954759, "valueD"=>41.81764760551638}'
+  interval: 1d
+  created_at: 2021-12-05 02:57:30.127349000 Z
+  updated_at: 2021-12-05 02:57:30.127349000 Z
+indicator_68:
+  id: 68
+  coin_id: 1
+  name: BTC_macd
+  data: '{"valueMACD"=>-2314.152961689222, "valueMACDSignal"=>-1498.5495716533312,
+    "valueMACDHist"=>-815.6033900358909}'
+  interval: 1d
+  created_at: 2021-12-05 02:57:30.130738000 Z
+  updated_at: 2021-12-05 02:57:30.130738000 Z
+indicator_69:
+  id: 69
+  coin_id: 1
+  name: BTC_bbands2
+  data: '{"valueUpperBand"=>62553.530491431666, "valueMiddleBand"=>56470.90600000003,
+    "valueLowerBand"=>50388.2815085684}'
+  interval: 1d
+  created_at: 2021-12-05 02:57:30.133904000 Z
+  updated_at: 2021-12-05 02:57:30.133904000 Z
+indicator_70:
+  id: 70
+  coin_id: 1
+  name: BTC_vwap
+  data: '{"value"=>35803.37283988878}'
+  interval: 1d
+  created_at: 2021-12-05 02:57:30.136715000 Z
+  updated_at: 2021-12-05 02:57:30.136715000 Z
+indicator_71:
+  id: 71
+  coin_id: 1
+  name: BTC_rsi
+  data: '{"value"=>48.314294903560494}'
+  interval: 1w
+  created_at: 2021-12-05 02:57:46.542576000 Z
+  updated_at: 2021-12-05 02:57:46.542576000 Z
+indicator_72:
+  id: 72
+  coin_id: 1
+  name: BTC_stoch
+  data: '{"valueK"=>24.65390843319908, "valueD"=>42.22424835030508}'
+  interval: 1w
+  created_at: 2021-12-05 02:57:46.546473000 Z
+  updated_at: 2021-12-05 02:57:46.546473000 Z
+indicator_73:
+  id: 73
+  coin_id: 1
+  name: BTC_macd
+  data: '{"valueMACD"=>4348.645303875455, "valueMACDSignal"=>4512.524614811176, "valueMACDHist"=>-163.87931093572115}'
+  interval: 1w
+  created_at: 2021-12-05 02:57:46.549525000 Z
+  updated_at: 2021-12-05 02:57:46.549525000 Z
+indicator_74:
+  id: 74
+  coin_id: 1
+  name: BTC_bbands2
+  data: '{"valueUpperBand"=>67966.73632359672, "valueMiddleBand"=>51621.30549999997,
+    "valueLowerBand"=>35275.874676403226}'
+  interval: 1w
+  created_at: 2021-12-05 02:57:46.552591000 Z
+  updated_at: 2021-12-05 02:57:46.552591000 Z
+indicator_75:
+  id: 75
+  coin_id: 1
+  name: BTC_vwap
+  data: '{"value"=>20319.479994181547}'
+  interval: 1w
+  created_at: 2021-12-05 02:57:46.555622000 Z
+  updated_at: 2021-12-05 02:57:46.555622000 Z
+indicator_76:
+  id: 76
+  coin_id: 2
+  name: ETH_rsi
+  data: '{"value"=>51.31900834114739}'
+  interval: 1h
+  created_at: 2021-12-05 02:58:03.096806000 Z
+  updated_at: 2021-12-05 02:58:03.096806000 Z
+indicator_77:
+  id: 77
+  coin_id: 2
+  name: ETH_stoch
+  data: '{"valueK"=>55.06608379604856, "valueD"=>64.04575987815086}'
+  interval: 1h
+  created_at: 2021-12-05 02:58:03.100245000 Z
+  updated_at: 2021-12-05 02:58:03.100245000 Z
+indicator_78:
+  id: 78
+  coin_id: 2
+  name: ETH_macd
+  data: '{"valueMACD"=>-15.805589659212274, "valueMACDSignal"=>-43.122458645566994,
+    "valueMACDHist"=>27.31686898635472}'
+  interval: 1h
+  created_at: 2021-12-05 02:58:03.102952000 Z
+  updated_at: 2021-12-05 02:58:03.102952000 Z
+indicator_79:
+  id: 79
+  coin_id: 2
+  name: ETH_bbands2
+  data: '{"valueUpperBand"=>4185.14497680756, "valueMiddleBand"=>4018.4704999999994,
+    "valueLowerBand"=>3851.7960231924385}'
+  interval: 1h
+  created_at: 2021-12-05 02:58:03.105702000 Z
+  updated_at: 2021-12-05 02:58:03.105702000 Z
+indicator_80:
+  id: 80
+  coin_id: 2
+  name: ETH_vwap
+  data: '{"value"=>4287.584232917203}'
+  interval: 1h
+  created_at: 2021-12-05 02:58:03.108423000 Z
+  updated_at: 2021-12-05 02:58:03.108423000 Z
+indicator_81:
+  id: 81
+  coin_id: 2
+  name: ETH_rsi
+  data: '{"value"=>44.57166590854682}'
+  interval: 1d
+  created_at: 2021-12-05 02:58:19.320108000 Z
+  updated_at: 2021-12-05 02:58:19.320108000 Z
+indicator_82:
+  id: 82
+  coin_id: 2
+  name: ETH_stoch
+  data: '{"valueK"=>40.067433390865325, "valueD"=>47.524846487847014}'
+  interval: 1d
+  created_at: 2021-12-05 02:58:19.331932000 Z
+  updated_at: 2021-12-05 02:58:19.331932000 Z
+indicator_83:
+  id: 83
+  coin_id: 2
+  name: ETH_macd
+  data: '{"valueMACD"=>-16.040553904324042, "valueMACDSignal"=>11.783789497227906,
+    "valueMACDHist"=>-27.82434340155195}'
+  interval: 1d
+  created_at: 2021-12-05 02:58:19.335119000 Z
+  updated_at: 2021-12-05 02:58:19.335119000 Z
+indicator_84:
+  id: 84
+  coin_id: 2
+  name: ETH_bbands2
+  data: '{"valueUpperBand"=>4646.601455735132, "valueMiddleBand"=>4286.110999999996,
+    "valueLowerBand"=>3925.62054426486}'
+  interval: 1d
+  created_at: 2021-12-05 02:58:19.338248000 Z
+  updated_at: 2021-12-05 02:58:19.338248000 Z
+indicator_85:
+  id: 85
+  coin_id: 2
+  name: ETH_vwap
+  data: '{"value"=>1712.4357998136004}'
+  interval: 1d
+  created_at: 2021-12-05 02:58:19.340987000 Z
+  updated_at: 2021-12-05 02:58:19.340987000 Z
+indicator_86:
+  id: 86
+  coin_id: 2
+  name: ETH_rsi
+  data: '{"value"=>60.35144026474302}'
+  interval: 1w
+  created_at: 2021-12-05 02:58:35.525733000 Z
+  updated_at: 2021-12-05 02:58:35.525733000 Z
+indicator_87:
+  id: 87
+  coin_id: 2
+  name: ETH_stoch
+  data: '{"valueK"=>44.87224064333793, "valueD"=>59.73517742748584}'
+  interval: 1w
+  created_at: 2021-12-05 02:58:35.537381000 Z
+  updated_at: 2021-12-05 02:58:35.537381000 Z
+indicator_88:
+  id: 88
+  coin_id: 2
+  name: ETH_macd
+  data: '{"valueMACD"=>524.5565720864088, "valueMACDSignal"=>505.12938432268226, "valueMACDHist"=>19.427187763726522}'
+  interval: 1w
+  created_at: 2021-12-05 02:58:35.539961000 Z
+  updated_at: 2021-12-05 02:58:35.539961000 Z
+indicator_89:
+  id: 89
+  coin_id: 2
+  name: ETH_bbands2
+  data: '{"valueUpperBand"=>4906.802165979095, "valueMiddleBand"=>3610.9160000000006,
+    "valueLowerBand"=>2315.0298340209065}'
+  interval: 1w
+  created_at: 2021-12-05 02:58:35.543103000 Z
+  updated_at: 2021-12-05 02:58:35.543103000 Z
+indicator_90:
+  id: 90
+  coin_id: 2
+  name: ETH_vwap
+  data: '{"value"=>1038.8711814819226}'
+  interval: 1w
+  created_at: 2021-12-05 02:58:35.545911000 Z
+  updated_at: 2021-12-05 02:58:35.545911000 Z
+indicator_91:
+  id: 91
+  coin_id: 3
+  name: XRP_rsi
+  data: '{"value"=>46.809393540531055}'
+  interval: 1h
+  created_at: 2021-12-05 02:58:51.765456000 Z
+  updated_at: 2021-12-05 02:58:51.765456000 Z
+indicator_92:
+  id: 92
+  coin_id: 3
+  name: XRP_stoch
+  data: '{"valueK"=>33.26474622770912, "valueD"=>51.1943548566824}'
+  interval: 1h
+  created_at: 2021-12-05 02:58:51.777188000 Z
+  updated_at: 2021-12-05 02:58:51.777188000 Z
+indicator_93:
+  id: 93
+  coin_id: 3
+  name: XRP_macd
+  data: '{"valueMACD"=>-0.00900589102393623, "valueMACDSignal"=>-0.018290948411373693,
+    "valueMACDHist"=>0.009285057387437463}'
+  interval: 1h
+  created_at: 2021-12-05 02:58:51.780539000 Z
+  updated_at: 2021-12-05 02:58:51.780539000 Z
+indicator_94:
+  id: 94
+  coin_id: 3
+  name: XRP_bbands2
+  data: '{"valueUpperBand"=>0.8606143307394843, "valueMiddleBand"=>0.8039850000000002,
+    "valueLowerBand"=>0.747355669260516}'
+  interval: 1h
+  created_at: 2021-12-05 02:58:51.783505000 Z
+  updated_at: 2021-12-05 02:58:51.783505000 Z
+indicator_95:
+  id: 95
+  coin_id: 3
+  name: XRP_vwap
+  data: '{"value"=>0.9929443075587904}'
+  interval: 1h
+  created_at: 2021-12-05 02:58:51.786159000 Z
+  updated_at: 2021-12-05 02:58:51.786159000 Z
+indicator_96:
+  id: 96
+  coin_id: 3
+  name: XRP_rsi
+  data: '{"value"=>27.26241873687868}'
+  interval: 1d
+  created_at: 2021-12-05 02:59:07.992735000 Z
+  updated_at: 2021-12-05 02:59:07.992735000 Z
+indicator_97:
+  id: 97
+  coin_id: 3
+  name: XRP_stoch
+  data: '{"valueK"=>44.339175498265355, "valueD"=>47.48039185483004}'
+  interval: 1d
+  created_at: 2021-12-05 02:59:08.004316000 Z
+  updated_at: 2021-12-05 02:59:08.004316000 Z
+indicator_98:
+  id: 98
+  coin_id: 3
+  name: XRP_macd
+  data: '{"valueMACD"=>-0.062430157112810414, "valueMACDSignal"=>-0.04530061036466807,
+    "valueMACDHist"=>-0.017129546748142342}'
+  interval: 1d
+  created_at: 2021-12-05 02:59:08.007483000 Z
+  updated_at: 2021-12-05 02:59:08.007483000 Z
+indicator_99:
+  id: 99
+  coin_id: 3
+  name: XRP_bbands2
+  data: '{"valueUpperBand"=>1.1548581598451026, "valueMiddleBand"=>1.0019099999999999,
+    "valueLowerBand"=>0.8489618401548971}'
+  interval: 1d
+  created_at: 2021-12-05 02:59:08.010540000 Z
+  updated_at: 2021-12-05 02:59:08.010540000 Z
+indicator_100:
+  id: 100
+  coin_id: 3
+  name: XRP_vwap
+  data: '{"value"=>0.7392393664813225}'
+  interval: 1d
+  created_at: 2021-12-05 02:59:08.013295000 Z
+  updated_at: 2021-12-05 02:59:08.013295000 Z

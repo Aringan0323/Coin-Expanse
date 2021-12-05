@@ -1,1 +1,73 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+---
+day_summary_1:
+  id: 1
+  coin_id: 1
+  priceChange: -2073.49
+  priceChangePercent: -3.646
+  weightedAvgPrice: 56189.3319
+  prevClosePrice: 56852.38
+  lastPrice: 54802.64
+  lastQty: 0.044416
+  bidPrice: 54787.69
+  askPrice: 54802.65
+  openPrice: 56876.13
+  highPrice: 57655.99
+  lowPrice: 54472.7
+  volume: 1011.142045
+  openTime: 2021-12-02 19:13:22.000000000 Z
+  closeTime: 2021-12-03 19:13:22.000000000 Z
+  tradeCount: 49377
+day_summary_2:
+  id: 2
+  coin_id: 2
+  priceChange: -192.55
+  priceChangePercent: -4.281
+  weightedAvgPrice: 4471.0711
+  prevClosePrice: 4498.57
+  lastPrice: 4304.97
+  lastQty: 2.00511
+  bidPrice: 4304.92
+  askPrice: 4305.22
+  openPrice: 4497.52
+  highPrice: 4674.57
+  lowPrice: 4276.64
+  volume: 13420.35456
+  openTime: 2021-12-02 19:13:21.000000000 Z
+  closeTime: 2021-12-03 19:13:21.000000000 Z
+  tradeCount: 51131
+day_summary_3:
+  id: 3
+  coin_id: 3
+  priceChange: 0.0
+  priceChangePercent: 0.0
+  weightedAvgPrice: 0.0
+  prevClosePrice: 0.297
+  lastPrice: 0.0
+  lastQty: 0.0
+  bidPrice: 0.0
+  askPrice: 0.0
+  openPrice: 0.0
+  highPrice: 0.0
+  lowPrice: 0.0
+  volume: 0.0
+  openTime: 2021-09-01 06:49:28.000000000 Z
+  closeTime: 2021-09-02 06:49:28.000000000 Z
+  tradeCount: 0
+day_summary_4:
+  id: 4
+  coin_id: 4
+  priceChange: -12.5
+  priceChangePercent: -6.049
+  weightedAvgPrice: 201.1241
+  prevClosePrice: 206.78
+  lastPrice: 194.14
+  lastQty: 5.53854
+  bidPrice: 194.04
+  askPrice: 194.21
+  openPrice: 206.64
+  highPrice: 208.23
+  lowPrice: 191.31
+  volume: 20694.21242
+  openTime: 2021-12-02 19:13:20.000000000 Z
+  closeTime: 2021-12-03 19:13:20.000000000 Z
+  tradeCount: 5694
