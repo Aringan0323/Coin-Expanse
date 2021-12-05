@@ -42,7 +42,7 @@ $(document).on("turbolinks:load", function () {
         }
     });
 
-    $('.alert').fadeTo(2000, 0, function () {
+    $('.alert').fadeTo(2500, 0, function () {
         $('.alert').slideUp(750);
     });
 
@@ -104,6 +104,25 @@ $(document).on("turbolinks:load", function () {
         $.ajax({
             type: "POST",
             url: "/strategies/new",
+            data: { html_raw: rawHtml, name: name, coin: coin, type: type, data: data, quantity: quantity },
+            success: (resp) => console.log(resp),
+            error: (err) => console.error(err)
+        })
+    });
+
+    $('#update-strat').on('click', (e) => {
+        e.preventDefault();
+        const name = $('#strategy_name').val();
+        const coin = $('#strategy_coin option:selected').text();
+        const data = mapDOM(document.getElementById('create-cards'), false);
+        const type = $('#buy-radio').attr('checked') ? 'BUY' : 'SELL';
+        const rawHtml = $('#create-cards').html();
+        const quantity = $("#quantity").val();
+        const id = $('#strat-id').text();
+        console.log(id)
+        $.ajax({
+            type: "POST",
+            url: `/strategies/edit/${id}`,
             data: { html_raw: rawHtml, name: name, coin: coin, type: type, data: data, quantity: quantity },
             success: (resp) => console.log(resp),
             error: (err) => console.error(err)

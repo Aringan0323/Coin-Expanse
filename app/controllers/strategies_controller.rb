@@ -8,6 +8,19 @@ class StrategiesController < PrivateController
     @for = strategy.coin_name
     @qty = strategy.amount
     @side = strategy.side
+    @id = params[:id]
+  end
+
+  def update
+    strategy = Strategy.find(params[:id])
+    filtered_json = filter_json(params['data']['content']['0'])
+    pp filtered_json
+    if strategy.update(name: params[:name], side: params[:type], coin_name: params[:coin], amount: params[:quantity], algorithm: filtered_json.to_json, raw: params[:html_raw])
+      flash[:success] = "#{strategy.name} successfully updated"
+    else
+      flash[:danger] = "Not able to update #{strategy.name}"
+    end
+    redirect_to '/strategies/library'
   end
 
   def create
