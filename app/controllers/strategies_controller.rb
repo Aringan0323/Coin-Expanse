@@ -5,6 +5,7 @@ class StrategiesController < PrivateController
     strategy = Strategy.find(params[:id])
     @raw = strategy.raw
     @name = strategy.name
+    @for = strategy.coin_name
     @qty = strategy.amount
     @side = strategy.side
   end

@@ -65,7 +65,12 @@
           <%= text_field_tag :strategy_name, "", class: "form-control form-control-lg", id: "strategy_name" %>
           <label class="form-label" for="strategy_name">Strategy Name</label>
         </div>
-        <%= collection_select :coin, :coin_id, Coin.all.order(:name), :id, :name, :include_blank => true , class: "browser-default custom-select"%>
+        <select id='strategy_coin' class="mdb-select md-form">
+          <option value="1" disabled selected>Coin</option>
+          <% Coin.all.order(:name).each_with_index do |coin, index| %>
+            <option value="<%= index + 2 %>"><%= coin.name %></option>
+          <% end %>
+        </select>
         <div class="form-outline">
           <input type="number" id="quantity" name="quantity" class="form-control" min="0.000001" step="0.000001">
           <label class="form-label" for="typeNumber">Quantity </label>
@@ -134,13 +139,11 @@
   function changeInput(e) {
     console.log(e.target.value)
     $(e.target).attr('value', e.target.value)
-    $('#'+e.target.attr('id')).val(e.target.value)
   }
 
   function change(e) {
     const val = e.target.options[e.target.value - 1].text;
     $(e.target).attr('value', val);
-    $('#'+e.target.attr('id')).val(val)
   }
 
   function switchRadio(e) {
