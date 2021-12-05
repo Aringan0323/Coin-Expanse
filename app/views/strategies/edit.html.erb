@@ -1,5 +1,6 @@
 <%= render 'shared/nav' %>
 <div class='page'>
+  <div hidden id="strat-id"><%= @id %></div>
   <% if flash[:danger] %>
     <div class="alert alert-danger strategy-alert"><%= flash[:danger] %></div>
   <% end %>
@@ -62,42 +63,48 @@
     <div class="create">
       <div class="create-header">
         <div class="form-outline">
-          <%= text_field_tag :strategy_name, "", class: "form-control form-control-lg", id: "strategy_name" %>
+          <%= text_field_tag :strategy_name, "", class: "form-control form-control-lg", id: "strategy_name", value: @name %>
           <label class="form-label" for="strategy_name">Strategy Name</label>
         </div>
-        <select id='strategy_coin' class="mdb-select md-form">
-          <option value="1" disabled selected>Coin</option>
+        <select id='strategy_coin' class="mdb-select md-form" onchange="change(event)">
+          <option value="1" disabled>Coin</option>
           <% Coin.all.order(:name).each_with_index do |coin, index| %>
-            <option value="<%= index + 2 %>"><%= coin.name %></option>
+            <% if coin.name == @for %>
+              <option value="<%= index + 2 %>" selected><%= coin.name %></option>
+            <% else %>
+              <option value="<%= index + 2 %>"><%= coin.name %></option>
+            <% end %>
           <% end %>
         </select>
         <div class="form-outline">
-          <input type="number" id="quantity" name="quantity" class="form-control" min="0.000001" step="0.000001">
+          <input type="number" id="quantity" name="quantity" class="form-control" min="0.000001" step="0.000001" value=<%= @qty %>>
           <label class="form-label" for="typeNumber">Quantity </label>
         </div>
         <div class="create-buttons">
           <strong>Strategy Option:</strong>
           <div class="btn-group">
-            <input
-              type="radio"
-              class="btn-check"
-              name="options"
-              id="buy-radio"
-              autocomplete="off"
-              checked
-              onclick="switchRadio(event)"
-            />
+            <% if @side == 'BUY' %>
+              <input type="radio" class="btn-check" name="options" id="buy-radio" autocomplete="off" checked  onclick="switchRadio(event)" />
+            <% else %>
+              <input type="radio" class="btn-check" name="options" id="buy-radio" autocomplete="off" onclick="switchRadio(event)" />
+            <% end %>
             <label class="btn btn-secondary" for="buy-radio">Buy</label>
 
-            <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" onclick="switchRadio(event)"/>
+            <% if @side == 'SELL' %>
+              <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" checked onclick="switchRadio(event)"/>
+            <% else %>
+              <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" onclick="switchRadio(event)"/>
+            <% end %>
             <label class="btn btn-secondary" for="sell-radio">Sell</label>
           </div>
         </div>
       </div>
       <div class="create-space">
-        <div id= "create-cards" class="create-cards"></div>
+        <div id= "create-cards" class="create-cards">
+          <%= raw @raw %>
+        </div>
         <div class="submit">
-          <button id="create-strat" class="btn btn-primary">Create</button>
+          <button id="update-strat" class="btn btn-success">Update</button>
         </div>
       </div>
     </div>

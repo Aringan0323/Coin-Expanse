@@ -4,12 +4,26 @@
   <% flash.each do |type, msg| %>
     <div class="alert alert-<%= type %> library-alert"><%= flash[type] %></div>
   <% end %>
-  <div class='library-space'>
-    <% @strategies.each do |strat| %>
-      <%= render 'library_entry', locals: {strat: strat} %>
+  <div class='library-desc'>
+    <div class='pb-3'>
+      This page allows you to view all strategies you have created with our <a href='/strategies/new'>Custom CryptoTrading Automated Strategy GUI</a>.
+      Each entry on this page is a drop-down, contianing the first time the strategy was created, when it was last updated, a brief sentence descrbing the algorithm,
+      and an string interpretation of the strategy you created, with buzzwords associated to each indicator type. Additionally, each entry has three corresponding
+      actions: Edit, Execute Manually, and Delete, which allow you to edit the given strategy, execute the strategy manually, and delete it permanently.
+    </div>
+    <div>
+      If you have any inquiries on what the current values of indicators are for a given coin, please visit our <a href='/coin'>Supported Cryptos</a> page,
+      where links to individual coins' ask, bid, and average price, as well as their current indicator values are, are available.
+    </div>
+  </div>
+</div>
+<div class='strategies'>
+  <div class='accordion' id='accordianPanelsStayOpen'>
+    <% @strategies.each_with_index do |strat, index| %>
+      <%= render 'library_entry', locals: {strat: strat, index: index} %>
     <% end %>
   </div>
-<div>
+</div>
 <script type='text/javascript'>
 
   $(".rotate").on('click', function(){

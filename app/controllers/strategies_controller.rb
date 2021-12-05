@@ -1,6 +1,28 @@
 class StrategiesController < PrivateController
   def new; end
 
+  def edit
+    strategy = Strategy.find(params[:id])
+    @raw = strategy.raw
+    @name = strategy.name
+    @for = strategy.coin_name
+    @qty = strategy.amount
+    @side = strategy.side
+    @id = params[:id]
+  end
+
+  def update
+    strategy = Strategy.find(params[:id])
+    filtered_json = filter_json(params['data']['content']['0'])
+    pp filtered_json
+    if strategy.update(name: params[:name], side: params[:type], coin_name: params[:coin], amount: params[:quantity], algorithm: filtered_json.to_json, raw: params[:html_raw])
+      flash[:success] = "#{strategy.name} successfully updated"
+    else
+      flash[:danger] = "Not able to update #{strategy.name}"
+    end
+    redirect_to '/strategies/library'
+  end
+
   def create
     if !params['data']['content']
       flash[:danger] = 'Unrecognized strategy format'
@@ -8,7 +30,7 @@ class StrategiesController < PrivateController
     else
       filtered_json = filter_json(params['data']['content']['0'])
       pp filtered_json
-      strat = Strategy.new(name: params[:name], side: params[:type], coin_name: params[:coin], amount: params[:quantity], algorithm: filtered_json.to_json)
+      strat = Strategy.new(name: params[:name], side: params[:type], coin_name: params[:coin], amount: params[:quantity], algorithm: filtered_json.to_json, raw: params[:html_raw])
       current_user.strategies << strat
       if strat.save
         redirect_to '/strategies/library'

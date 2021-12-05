@@ -1,39 +1,63 @@
-<div class='entry'>
-  <div class='entry-header'>
-    <div class='display-6 entry-title'>
-      <%= locals[:strat].name %>
-    </div>
-    <a 
-      class='arrow rotate' 
-      data-mdb-toggle="collapse" 
-      href="#description-<%= locals[:strat].name.gsub(" ", "") %>" 
-      aria-expanded="false"
-      aria-controls="collapseExample"
-      onclick="handleClick(event)"
-      id="collapse-<%= locals[:strat].name.gsub(" ", "") %>"
-    >
-      <i class="fas fa-angle-down"></i>
-    </a>
+<div class="accordion-item">
+  <div class="accordion-header display-6" id="<%= locals[:strat].name %>-heading">
+    <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+      data-mdb-target="#<%= locals[:strat].name.gsub(" ", "") %>-collapse" 
+      aria-expanded="true" aria-controls="<%= locals[:strat].name.gsub(" ", "") %>-collapse">
+      <div class='display-title'>
+        <%= locals[:strat].name %>
+      </div>
+    </button>
   </div>
-  <div class="collapse mt-3 description" id="description-<%= locals[:strat].name.gsub(" ", "") %>">
-    <div class='description-row'>
-      <div>
-        For: 
-        <a href="<%= generate_coin_link locals[:strat].coin_name %>">
-          <%= locals[:strat].coin_name %>
-        </a>
+  <div id="<%= locals[:strat].name.gsub(" ", "") %>-collapse" class="accordion-collapse collapse" 
+    aria-labelledby="<%= locals[:strat].name.gsub(" ", "") %>-heading">
+    <div class="accordion-body description">
+      <div class='description-left'>
+        <div class='display-text'>
+          <strong>Created: </strong>
+          <%= locals[:strat].created_at.localtime.strftime("%m/%d/%Y %I:%M %p") %>
+        </div>
+        <div class='display-text'>
+          <strong>Last Updated: </strong>
+          <%= locals[:strat].updated_at.localtime.strftime("%m/%d/%Y %I:%M %p") %>
+        </div>
+        <div class='display-text'>
+          <strong>Action: </strong>
+          <%= generate_description locals[:strat] %>
+        </div>
+        <div class='display-text'>
+          <strong>Algorithm Evaluated Description: </strong>
+          <%= to_string_from_json(locals[:strat])[0] %>
+        </div>
       </div>
-      <div>
-        Type: <%= locals[:strat].side %>
+      <div class='description-right'>
+        <%= button_to "Edit", generate_edit_link(locals[:strat]), class: "btn btn-dark", method: :get %>
+        <%= button_to "Execute Manually", '#', class: "btn btn-info", method: :get %>
+        <div>
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#<%= locals[:strat].name.gsub(" ", "") %>-delete">
+            Delete
+          </button>
+          <div class="modal fade" id="<%= locals[:strat].name.gsub(" ", "") %>-delete" tabindex="-1" role="dialog" 
+            aria-labelledby="<%= locals[:strat].name.gsub(" ", "") %>-deleteLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Caution: About to Delete an Automatic Strategy</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Are you sure you want to delete strategy "<%= locals[:strat].name %>"? Deleted strategies are not cached or stored for any period of time,
+                  so deleting this strategy will mean it is lost forever.
+                </div>
+                <div class="modal-footer">
+                  <%= button_to "I understand, delete anyways", generate_delete_link(locals[:strat]), class: "btn btn-danger" %>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
       </div>
-      <div>
-        Quantity: <%= locals[:strat].amount %>
-      </div>
-    </div>
-    <div class='description-row' style="width:25%">
-      <%= link_to "Edit", '#', class: "btn btn-primary" %>
-      <%= button_to "Delete", generate_delete_link(locals[:strat]), class: "btn btn-danger" %>
     </div>
   </div>
-  <hr/>
 </div>

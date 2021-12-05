@@ -22,7 +22,30 @@ Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
-$(document).on("turbolinks:load", function() {
+$(document).on("turbolinks:load", function () {
+
+    $('select').each(function (_index, _id) {
+        // used for loading an edit function
+        const id = $(this).attr('id');
+
+        const expected = $(this).attr('value');
+
+        if (id && expected) {
+            $(this).children('option').toArray().forEach(option => {
+                const text = $(option).text();
+                let change = false;
+                if (text === expected) {
+                    change = true;
+                }
+                $(option).prop('selected', change)
+            });
+        }
+    });
+
+    $('.alert').fadeTo(2500, 0, function () {
+        $('.alert').slideUp(750);
+    });
+
     // draggable functionality 
     $("div[id*='-draggable']").draggable({
         containment: '.create-cards',
@@ -71,7 +94,7 @@ $(document).on("turbolinks:load", function() {
     $('#create-strat').on('click', (e) => {
         e.preventDefault();
         const name = $('#strategy_name').val();
-        const coin = $('#coin_coin_id option:selected').text();
+        const coin = $('#strategy_coin option:selected').text();
         const data = mapDOM(document.getElementById('create-cards'), false);
         const type = $('#buy-radio').attr('checked') ? 'BUY' : 'SELL';
         const rawHtml = $('#create-cards').html();
@@ -81,6 +104,25 @@ $(document).on("turbolinks:load", function() {
         $.ajax({
             type: "POST",
             url: "/strategies/new",
+            data: { html_raw: rawHtml, name: name, coin: coin, type: type, data: data, quantity: quantity },
+            success: (resp) => console.log(resp),
+            error: (err) => console.error(err)
+        })
+    });
+
+    $('#update-strat').on('click', (e) => {
+        e.preventDefault();
+        const name = $('#strategy_name').val();
+        const coin = $('#strategy_coin option:selected').text();
+        const data = mapDOM(document.getElementById('create-cards'), false);
+        const type = $('#buy-radio').attr('checked') ? 'BUY' : 'SELL';
+        const rawHtml = $('#create-cards').html();
+        const quantity = $("#quantity").val();
+        const id = $('#strat-id').text();
+        console.log(id)
+        $.ajax({
+            type: "POST",
+            url: `/strategies/edit/${id}`,
             data: { html_raw: rawHtml, name: name, coin: coin, type: type, data: data, quantity: quantity },
             success: (resp) => console.log(resp),
             error: (err) => console.error(err)
@@ -125,12 +167,12 @@ function create_chart(id, url) {
                 backgroundColor: "rgb(38,38,38)",
                 boarderColor: "rgb(0,0,0)",
                 zoomType: "x"
-                
+
             },
             legend: {
-                itemStyle:{
-                    "color":"rgb(255,255,255)",
-                    "fontSize":"17px"
+                itemStyle: {
+                    "color": "rgb(255,255,255)",
+                    "fontSize": "17px"
 
                 }
             },

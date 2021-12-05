@@ -1,10 +1,10 @@
 require "test_helper"
 
-class StrategyTest < ActiveSupport::TestCase
-  test "works" do
+class AboutTest < ActiveSupport::TestCase
+  test "Works on Valid Input" do
     input = 'hello there this is some text'
     word = 'he'
-    expected= '<strong>he</strong>llo t<strong>he</strong>re this is some text'
+    expected= '<mark>he</mark>llo t<mark>he</mark>re this is some text'
     actual = AboutHelper.highlight_instances(input, word)
     assert expected == actual
   end
