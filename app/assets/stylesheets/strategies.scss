@@ -4,8 +4,7 @@
     flex-direction: column;
     padding-left: 100px;
     padding-right: 100px;
-    padding-top: 100px;
-    // border: 3px sold blue;
+    padding-top: 30px;
 }
 
 .strategies {
@@ -16,21 +15,10 @@
     width: 100%;
 }
 
-// .library-alert {
-//     animation: fadeOut 2s forwards;
-//     width: 50%;
-// }
-
-// @keyframes fadeOut {
-//     from {opacity: 1;}
-//     to {opacity: 0;}
-// }
-
 .workspace {
     display: flex;
-    flex: 1;
     flex-direction: row;
-    height: 800px;
+    height: 85vh;
     // border: 1px solid purple;
 }
 
@@ -50,6 +38,7 @@
     padding-left: 10px;
     border: outset;
     border-radius: 10px;
+    height: 85vh;
     // border: 2px solid purple;
 }
 
@@ -100,7 +89,7 @@
     flex-direction: column;
     width: 99%;
     flex: 7;
-    max-height: 90%;
+    // max-height: 90%;
 }
 
 .create-cards {
@@ -110,9 +99,14 @@
     flex-direction: row;
     overflow: scroll;
     flex-wrap: wrap;
-    max-height: 500px;
+    max-height: 70vh;
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+.cards {
+    height: 75vh;
+    border: 1px solid green;
 }
 
 .create-cards::-webkit-scrollbar {
@@ -129,7 +123,7 @@
     flex-direction: column;
     flex: 1;
     width: 98%;
-    height: 525px;
+    height: 69vh;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -144,8 +138,8 @@
     height: 300px;
     min-height: 100px;
     min-width: 100px;
-    max-width: 600px;
-    max-height: 400px;
+    max-width: 1000px;
+    max-height: 800px;
     z-index: 0;
     // position: fixed;
 }
