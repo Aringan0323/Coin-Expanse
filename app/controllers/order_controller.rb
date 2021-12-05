@@ -16,12 +16,11 @@ class OrderController < PrivateController
     else
       response = OrderApi.sell(current_user, coin, qty)
     end
-    keys = response.keys
-    if keys.include?('code') && keys.include?('msg') then
-      flash[:danger] = response['msg']
+    if response.success?
+      flash[:success] = "You successfully #{params[:buy] ? 'bought' : 'sold'} #{qty} #{qty == 1 ? 'coin' : 'coins'} of #{coin.name}"
       redirect_to '/order'
     else
-      flash[:success] = "You successfully #{params[:buy] ? 'bought' : 'sold'} #{qty} #{qty == 1 ? 'coin' : 'coins'} of #{coin.name}"
+      flash[:danger] = JSON.parse(response.body)['msg']
       redirect_to '/order'
     end
   end

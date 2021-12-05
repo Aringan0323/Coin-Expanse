@@ -42,8 +42,7 @@ module OrderApi
       "type" => 'MARKET'
     }
 
-    response = self.binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
-    JSON.parse(response.body)
+    self.binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
   end
 
 
@@ -57,8 +56,7 @@ module OrderApi
       "type" => 'MARKET'
     }
 
-    response = self.binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
-    JSON.parse(response.body)
+    self.binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
   end
 
 

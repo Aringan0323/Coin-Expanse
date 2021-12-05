@@ -91,6 +91,7 @@ GEM
     chartkick (4.1.2)
     childprocess (4.1.0)
     concurrent-ruby (1.1.9)
+    connection_pool (2.2.5)
     crass (1.0.6)
     digest (3.0.0)
     dotenv (2.7.6)
@@ -211,6 +212,10 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    sidekiq (6.3.1)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
     spring (3.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -288,6 +293,7 @@ DEPENDENCIES
   securerandom
   seedbank
   selenium-webdriver
+  sidekiq
   spring
   stimulus_reflex (~> 3.4)
   turbolinks (~> 5)
