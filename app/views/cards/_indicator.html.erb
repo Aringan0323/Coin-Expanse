@@ -9,8 +9,10 @@
         A stochastic oscillator (<strong>STOCH</strong>) is a momentum indicator comparing a particular closing price of a security to a range of its prices over a certain period of time.
       <% elsif locals[:name] == 'vwap' %>
         The volume weighted average price (<strong>VWAP</strong>) is a trading benchmark used by traders that gives the average price a security has traded at throughout the day, based on both volume and price.
+      <% elsif locals[:name] == 'bbands2' %>
+        Bollinger Bands (<strong>BBANDS2</strong>) are envelopes plotted at a standard deviation level above and below a simple moving average of the price.
       <% else %>
-        Bollinger Bands (<strong>BBANDS</strong>) are envelopes plotted at a standard deviation level above and below a simple moving average of the price.
+        Moving average convergence divergence (<strong>MACD</strong>) is a trend-following momentum indicator that shows the relationship between two moving averages of a security’s price.
       <% end %>
     </p>
     <%= link_to "Add to Creation Space", "/strategies/add_card", id: "#{locals[:name]}-button", class: "btn btn-primary", remote: true, method: :post %>

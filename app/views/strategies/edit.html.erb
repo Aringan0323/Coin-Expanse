@@ -41,7 +41,7 @@
             aria-labelledby="indicators-tab"
           >
             <div class="operations">
-              <% %w(rsi stoch vwap bband macd).each do |indicator_name| %>
+              <% %w(rsi stoch vwap bbands2 macd).each do |indicator_name| %>
                 <div style="padding-bottom: 50px">
                   <%= render 'cards/indicator', locals: { name: indicator_name } %>
                 </div>
@@ -129,7 +129,7 @@
       $(".create-cards").append(`<%= j render 'cards/stoch_draggable' %>`);
     } else if (name === 'vwap') {
       $(".create-cards").append(`<%= j render 'cards/vwap_draggable' %>`);
-    } else if (name === 'bband') {
+    } else if (name === 'bbands2') {
       $(".create-cards").append(`<%= j render 'cards/bbands_draggable' %>`);
     } else {
       $(".create-cards").append(`<%= j render 'cards/macd_draggable' %>`);
