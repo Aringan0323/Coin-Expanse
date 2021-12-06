@@ -57,7 +57,8 @@ Coin.all.each do |coin|
     indics.each do |indic|
       indic.save
     end
+    puts "Created #{coin.name} #{interval} indicators"
   end
 end
-puts "Created indicators"
+puts "Created all indicators"
 
