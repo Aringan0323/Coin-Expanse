@@ -1,0 +1,23 @@
+:concurrency: 5
+:pidfile: ./tmp/pids/sidekiq.pid
+:logfile: ./log/sidekiq.log
+:dynamic: true
+:enabled: true
+:queues:
+ - default
+:schedule:
+  NewsWorker:
+    every: ['24h', first_in: '0s']
+    disable: true
+
+  StrategyWorker:
+    every: ['15 minutes', first_in: '0s']
+    disable: true
+
+  TickerWorker:
+    every: ['3 seconds', first_in: '0s']
+    disable: true
+
+  IndicatorDispatchWorker:
+    every: ['10 minutes', first_in: '0s']
+    disable: false

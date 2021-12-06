@@ -79,6 +79,13 @@ namespace :db do
     puts "Created indicators"
   end
 
+  desc "check the indicators"
+  task schedule_update_indicators: :environment do
+    
+  end
+
+
+
 
 end
 

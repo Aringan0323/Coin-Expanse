@@ -1,4 +1,8 @@
+require 'sidekiq/web'
+require 'sidekiq-scheduler/web'
 Rails.application.routes.draw do
+
+  mount Sidekiq::Web => '/sidekiq'
   # mount ActionCable.server, at: '/cable'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
