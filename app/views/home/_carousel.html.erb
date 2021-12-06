@@ -1,0 +1,67 @@
+<!-- Carousel wrapper -->
+<div
+  id="carouselDarkVariant"
+  class="carousel slide carousel-fade carousel-dark"
+  data-mdb-ride="carousel"
+>
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button
+      data-mdb-target="#carouselDarkVariant"
+      data-mdb-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      data-mdb-target="#carouselDarkVariant"
+      data-mdb-slide-to="1"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      data-mdb-target="#carouselDarkVariant"
+      data-mdb-slide-to="2"
+      aria-label="Slide 1"
+    ></button>
+  </div>
+
+  <!-- Inner -->
+  <div class="carousel-inner">
+    <!-- Single item -->
+    <div class="carousel-item active">
+      <%= image_tag "create.png", class: "d-block w-100" %>
+    </div>
+
+    <!-- Single item -->
+    <div class="carousel-item">
+      <%= image_tag "strategies.png", class: "d-block w-100" %>
+    </div>
+
+    <!-- Single item -->
+    <div class="carousel-item">
+      <%= image_tag "supported.png", class: "d-block w-100" %>
+    </div>
+  </div>
+  <!-- Inner -->
+
+  <!-- Controls -->
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-mdb-target="#carouselDarkVariant"
+    data-mdb-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-mdb-target="#carouselDarkVariant"
+    data-mdb-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- Carousel wrapper -->

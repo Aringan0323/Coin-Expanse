@@ -1,9 +1,44 @@
 <%= render 'shared/nav' %>
-  <div class="page">
-    <% if flash[:notice] %>
-        <div class="alert alert-success order-alert"><%= flash[:success] %></div>
-      <% end %>
-    <p class="home-title">Coin Expanse</P>
-    <p style="font-size: x-large"><%= "Welcome, #{@current_user.username}"%></p>
-    <%= render 'partials/news', :news => @news%>
+<% if flash[:notice] %>
+  <div class="alert alert-success order-alert"><%= flash[:success] %></div>
+<% end %>
+<div class='top-content'>
+  <div class='top-left'>
+    <div class='display-1'>Coin Expanse</div>
+    <div class='display-6'>A new way of handling cryptocurrency</div>
+    <div class='pt-3'>
+      Coin Expanse is a site dedicated to helping you manage your cryptocurrency in new, exciting ways.
+      By linking your BinanceUS account to your Coin Expanse account, via public and private keys, you can access
+      a set of amazing features, including: automatic crypto stratgey creations in an immersive drag-and-drop
+      experience, a detailed library from which to view, edit, and manage your strategies, and a way to manually buy
+      and sell cryptocurrency through a convenient form.
+    </div>
+    <div class='pt-3'>
+      We're so happy that you have decided to take time and check out our site. If you have any questions, concerns, or 
+      suggestions regarding aesthetic or functionality, check out our <a href='/about'>about</a> page for website founder contact
+      information.
+    </div>
   </div>
+  <div class='top-right'>
+    <div class="card shadow">
+      <div class="bg-image hover-overlay" data-mdb-ripple-color="light">
+        <%= render 'carousel' %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Explore new ways to create and manage your portfolio</h5>
+        <p class="card-text">
+          We offer some of the best content related to automatic strategy creation, maintenance, and tracking. 
+          Visit our custom GUI now to get started with our immersive drag-and-drop system, or visit our supported cryptos page
+          to start monitoring our supported cryptocurrencies! 
+        </p>
+        <div class='buttons'>
+          <a href="/strategies/new" class="btn btn-primary">Create a Strategy</a>
+          <a href="/strategies/library" class="btn btn-secondary">Manage My Strategies</a>
+          <a href="/coin" class="btn btn-success">Track Cryptos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='display-3 news-title'>Check out the latest news in cryptocurrency!</div>
+<%= render 'partials/news', :news => @news%>
