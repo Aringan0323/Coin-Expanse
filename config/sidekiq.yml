@@ -16,7 +16,7 @@
     disable: false
 
   TickerWorker:
-    every: ['3 seconds', first_in: '0s']
+    every: ['10 seconds', first_in: '0s']
     disable: false
 
   IndicatorDispatchWorker:
