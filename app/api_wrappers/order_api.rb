@@ -41,8 +41,11 @@ module OrderApi
       "symbol" => coin.binance_symbol,
       "type" => 'MARKET'
     }
-
-    self.binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
+    res = self.binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
+    if res.success?
+      Order.create(symbol: coin.binance_symbol, amount: qty, side: "BUY", user: user)
+    end
+    res
   end
 
 
@@ -56,7 +59,11 @@ module OrderApi
       "type" => 'MARKET'
     }
 
-    self.binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
+    res = self.binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
+    if res.success?
+      Order.create(symbol: coin.binance_symbol, amount: qty, side: "BUY", user: user)
+    end
+    res
   end
 
 

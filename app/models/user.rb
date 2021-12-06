@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   has_many :strategies
+  has_many :orders
   
   def send_password_reset
     generate_token(:reset_password_token)
