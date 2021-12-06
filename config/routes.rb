@@ -1,9 +1,7 @@
 require 'sidekiq/web'
 require 'sidekiq-scheduler/web'
 Rails.application.routes.draw do
-
   mount Sidekiq::Web => '/sidekiq'
-  # mount ActionCable.server, at: '/cable'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'logout', to: 'private_sessions#destroy'
@@ -15,8 +13,6 @@ Rails.application.routes.draw do
   get "password/forgot", to: 'password#forgot'
   post 'password/forgot', to: 'password#forgot'
   post 'password/reset', to: 'password#reset'
-  #post '/buyorder' to: 'order#buy'
-  #post '/sellorder' to: 'order#sell'
   resources :news_articles
   resources :indicators
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -50,7 +46,6 @@ Rails.application.routes.draw do
   post '/strategies/delete/:id', to: 'strategies#delete'
   get '/strategies/edit/:id', to: 'strategies#edit'
   post '/strategies/edit/:id', to: 'strategies#update'
-  # post '/strategies/new', to: 'strategies#new'
 
   # orders
   post '/order', to: 'order#order'

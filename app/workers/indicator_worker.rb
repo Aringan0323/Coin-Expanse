@@ -5,14 +5,12 @@ class IndicatorWorker
   include Sidekiq::Worker
   sidekiq_options queue: 'critical'
   def perform(args)
-    coin = args[:coin]
-    interval = args[:interval]
+    coin = Coin.find(args[0])
+    interval = args[1]
     indics = coin.indicators.where(interval: interval)
     
     IndicatorApi.bulk(coin, interval, indics)
-    10.times do 
-      puts "Created #{coin.name} #{interval} indicators"
-    end
+    puts "Created #{coin.name} #{interval} indicators"
   end
 
   # def perform(*args)

@@ -5,7 +5,7 @@ class NewsWorker
   sidekiq_options queue: 'default'
   def perform(*args)
     puts "Deleting all news articles"
-    NewsArticle.delete_all
+    NewsArticle.where(['date < ?', 3.days.ago]).delete_all
 
     puts "Creating news articles"
     articles_list = NewsApi.all_articles(["crypto", "cryptocurrency", "blockchain", "bitcoin"])
