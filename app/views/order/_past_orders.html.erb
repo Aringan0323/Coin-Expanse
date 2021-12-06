@@ -1,0 +1,30 @@
+<div class="card bg-dark mb-3 text-center rounded" style="max-width: 80rem; height: 900px">
+  <div class="card-header font-weight-bold" style="color:white">Order History</div>
+    
+      <table class="table table-gray">
+        <div class="card-header font-weight-bold" style="color:white">
+          <thead>
+            <tr class="bg-primary">
+              <th scope="col" class="bg-dark" style="color:white">Side</th>
+              <th scope="col" class="bg-dark" style="color:white">Coin</th>
+              <th scope="col" class="bg-dark" style="color:white">Amount</th>
+              <th scope="col" class="bg-dark" style="color:white">Executed</th>
+            </tr>
+          </thead>
+        </div>
+        <div class="card-body card-padding bg-dark" style="max-height:840px;overflow-y: auto">
+          <tbody class="overflow-auto" >
+            <% locals[:orders].each_with_index do |order| %>
+              <tr>
+                <th scope="row" style="color:white"><%=order.side%></th>
+                <td style="color:white"><%=order.symbol%></td>
+                <td style="color:white"><%=order.amount%></td>
+                <td style="color:white"><%=order.created_at%></td>
+              </tr>
+            <%end%>
+          </tbody>
+        </div>
+      </table>
+    </div>
+  </div>
+</div>

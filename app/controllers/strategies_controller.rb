@@ -1,3 +1,6 @@
+require "./lib/utils/strategy_interpreter.rb"
+
+
 class StrategiesController < PrivateController
   def new; end
 
@@ -41,8 +44,20 @@ class StrategiesController < PrivateController
     end
   end
 
+  def manual_execute
+    strat = Strategy.find(params[:id])
+    user = User.find(strat.user_id)
+    algorithm = JSON.parse(strat.algorithm.gsub("=>", ":"))
+    side = strat.side
+    coin = Coin.find_by(name: strat.coin_name)
+    amount = strat.amount
+    StrategyInterpreter.check_strategy(user, algorithm, side, coin, amount)
+  end
+
   def show
+
     @strategies = current_user.strategies
+    @orders = current_user.orders
   end
 
   def add_card
@@ -60,6 +75,10 @@ class StrategiesController < PrivateController
       flash[:danger] = "Something went wrong"
       redirect_to '/strategies/library'
     end
+  end
+
+  def execute
+    JSON.parse(strat.algorithm.gsub("=>", ":"))
   end
 
   private

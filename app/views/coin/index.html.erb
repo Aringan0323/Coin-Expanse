@@ -5,9 +5,9 @@
   <tbody>
     <% @coins.each do |coin| %>
         
-        <div class="card bg-dark mb-3 text-center rounded" style="max-width: 80rem;">
+        <div class="card shadow bg-dark mb-3 text-center rounded" style="max-width: 1000rem;">
           <div class="card-header" style="color:white;font-size:30px"><%=coin.name%></div>
-          <div class="card-body">
+          <div class="card-body card-padding">
             <div class="chart" id="<%=coin.id%>" ></div>
             <%=link_to "Details", coin, style:"color:dark-grey", class:"btn btn-light btn-lg"%>
           </div>

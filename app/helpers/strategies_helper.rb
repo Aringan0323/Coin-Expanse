@@ -1,3 +1,5 @@
+require "./lib/utils/strategy_interpreter.rb"
+
 module StrategiesHelper
 
   def generate_coin_link(name)
@@ -13,6 +15,10 @@ module StrategiesHelper
     "/strategies/edit/#{strat.id}"
   end
 
+  def generate_execute_link(strat)
+    "/strategies/execute/#{strat.id}"
+  end
+  
   def generate_description(strat)
     "This strategy will #{strat.side.downcase} #{pluralize strat.amount, 'coin'} of #{strat.coin_name}"
   end

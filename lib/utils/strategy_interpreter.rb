@@ -16,8 +16,8 @@ module StrategyInterpreter
         puts outcomes
     end
 
-    def self.check_strategy(user, strategy, side, coin, amount)
-        if self.check_and(strategy)
+    def self.check_strategy(user, algorithm, side, coin, amount)
+        if self.check_and(algorithm)
             if side == "BUY"
                 OrderApi.buy(user, coin, amount)
             else

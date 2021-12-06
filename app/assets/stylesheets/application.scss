@@ -223,8 +223,8 @@ mark {
 }
 
 .chart {
-  width: 900px;
-  height: 500px;
+  width: 1200px;
+  height: 600px;
   margin-top: 25px;
   margin-bottom: 75px;
 }
@@ -233,15 +233,84 @@ mark {
   padding: 50px;
 }
 
+.order-container{
+  width:1600px;height:900px;
+  padding: 0px;
+  // margin: 0px;
+
+}
+
+.order-row{
+  display: flex;
+  flex-direction: row;
+  padding-top: 75px;
+  padding: 50px;
+  min-height: 900px;
+  max-height: 900px;
+
+}
+
+.scrollbar-orders::-webkit-scrollbar-track {
+background-color: rgba(54, 53, 53, 0);
+border-radius: 10px; }
+
+.scrollbar-orders::-webkit-scrollbar {
+width: 20px;
+background-color: #36353500; }
+  
+.scrollbar-orders::-webkit-scrollbar-thumb {
+margin-right: 10px;
+border-radius: 20px;
+background-image: -webkit-gradient(linear, left top, right top, from(rgb(255, 255, 255)), to(#444444));
+background-image: -webkit-linear-gradient(left, (#1b1a17) 0%, (#444444) 100%);
+background-image: linear-gradient(to right, (#808080) 0%, (#444444) 100%); }
+
+.order-col{
+  display: flex;
+  flex-direction: row;
+  min-width: 600px;
+  overflow: auto
+}
+
+.indicators{
+  max-width: 1200px;
+}
+
+tbody { display: block; }
+
+tbody {
+    height: 670px;       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+}
 .order-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   padding-top: 75px;
+  height: 670px;
 }
 
 .card-padding {
   padding: 30px;
+}
+
+table {
+  text-align: left;
+  position: relative;
+  overflow: auto;
+  border-collapse: collapse; 
+
+}
+
+th, td {
+  padding: 0.25rem;
+}
+
+th {
+  background: white;
+  position: sticky;
+  top: 0;
 }
 
 .order-title {
@@ -282,3 +351,7 @@ mark {
   flex-direction: row;
   justify-content: center;
 }
+
+
+
+
