@@ -5,29 +5,29 @@ module OrderApi
 
   include ApiUtils
   include HTTParty
-  def self.check_orders
-    ENV["BINANCE_API_KEY"] = current_user.binance_public_key
-    ENV["BINANCE_SECRET_KEY"] = current_user.encryptedBinanceApiKey
-    open_orders = Binance::Api::Order.all_open!
-    Binance::Api::Configuration.api_key = nil
-    Binance::Api::Configuration.secret_key = nil
-    ENV["BINANCE_API_KEY"] = nil
-    ENV["BINANCE_SECRET_KEY"] = nil
-    open_orders
-  end
+  # def self.check_orders
+  #   ENV["BINANCE_API_KEY"] = current_user.binance_public_key
+  #   ENV["BINANCE_SECRET_KEY"] = current_user.encryptedBinanceApiKey
+  #   open_orders = Binance::Api::Order.all_open!
+  #   Binance::Api::Configuration.api_key = nil
+  #   Binance::Api::Configuration.secret_key = nil
+  #   ENV["BINANCE_API_KEY"] = nil
+  #   ENV["BINANCE_SECRET_KEY"] = nil
+  #   open_orders
+  # end
 
 
-  def self.account_info(user)
-    # reqire_login
-    ENV["BINANCE_API_KEY"] = user.binance_public_key
-    ENV["BINANCE_SECRET_KEY"] = user.encryptedBinanceApiKey
-    info = Binance::Api::Account.info!
-    Binance::Api::Configuration.api_key = nil
-    Binance::Api::Configuration.secret_key = nil
-    ENV["BINANCE_API_KEY"] = nil
-    ENV["BINANCE_SECRET_KEY"] = nil
-    info
-  end
+  # def self.account_info(user)
+  #   # reqire_login
+  #   ENV["BINANCE_API_KEY"] = user.binance_public_key
+  #   ENV["BINANCE_SECRET_KEY"] = user.encryptedBinanceApiKey
+  #   info = Binance::Api::Account.info!
+  #   Binance::Api::Configuration.api_key = nil
+  #   Binance::Api::Configuration.secret_key = nil
+  #   ENV["BINANCE_API_KEY"] = nil
+  #   ENV["BINANCE_SECRET_KEY"] = nil
+  #   info
+  # end
 
 
   def self.buy(user, coin, qty)
@@ -40,9 +40,12 @@ module OrderApi
       "side"=> 'BUY',
       "symbol" => coin.binance_symbol,
       "type" => 'MARKET'
-  }
-
-    puts self.binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
+    }
+    res = self.binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
+    if res.success?
+      Order.create(symbol: coin.binance_symbol, amount: qty, side: "BUY", user: user)
+    end
+    res
   end
 
 
@@ -54,23 +57,27 @@ module OrderApi
       "side"=> 'SELL',
       "symbol" => coin.binance_symbol,
       "type" => 'MARKET'
-  }
+    }
 
-    puts self.binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
+    res = self.binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
+    if res.success?
+      Order.create(symbol: coin.binance_symbol, amount: qty, side: "BUY", user: user)
+    end
+    res
   end
 
 
 
-  def self.check_orders(user)
-    ENV["BINANCE_API_KEY"] = user.binance_public_key
-    ENV["BINANCE_SECRET_KEY"] = user.encryptedBinanceApiKey
-    open_orders = Binance::Api::Order.all_open!
-    Binance::Api::Configuration.api_key = nil
-    Binance::Api::Configuration.secret_key = nil
-    ENV["BINANCE_API_KEY"] = nil
-    ENV["BINANCE_SECRET_KEY"] = nil
-    open_orders
-  end
+  # def self.check_orders(user)
+  #   ENV["BINANCE_API_KEY"] = user.binance_public_key
+  #   ENV["BINANCE_SECRET_KEY"] = user.encryptedBinanceApiKey
+  #   open_orders = Binance::Api::Order.all_open!
+  #   Binance::Api::Configuration.api_key = nil
+  #   Binance::Api::Configuration.secret_key = nil
+  #   ENV["BINANCE_API_KEY"] = nil
+  #   ENV["BINANCE_SECRET_KEY"] = nil
+  #   open_orders
+  # end
 
   def self.binance_order_req(params, api_key, secret_key)
     fixie = URI.parse ENV['FIXIE_URL']

@@ -18,17 +18,17 @@ namespace :db do
       btickers.each do |bticker|
         bticker.save
       end
-      # Coin.all.each do |coin|
-      #   broadcast_coin(coin)
-      # end
 
       puts "saved btickers"
       sleep(1.second)
     end
   end
 
+
+
   task refresh_tickers: :environment do
     while true do
+
       BookTicker.where(['timestamp < ?', 7.minutes.ago]).destroy_all
       btickers = MarketApi.book_tickers(Coin.all)
       btickers.each do |bticker|
@@ -76,9 +76,15 @@ namespace :db do
         end
       end
     end
-    
     puts "Created indicators"
   end
+
+  desc "check the indicators"
+  task schedule_update_indicators: :environment do
+    
+  end
+
+
 
 
 end
