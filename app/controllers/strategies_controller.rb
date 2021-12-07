@@ -2,7 +2,9 @@ require "./lib/utils/strategy_interpreter.rb"
 
 
 class StrategiesController < PrivateController
-  def new; end
+  def new
+    @raw = params[:raw_html] || nil
+  end
 
   def edit
     strategy = Strategy.find(params[:id])
@@ -31,15 +33,21 @@ class StrategiesController < PrivateController
       flash[:danger] = 'Unrecognized strategy format'
       redirect_to '/strategies/new'
     else
-      filtered_json = filter_json(params['data']['content']['0'])
-      pp filtered_json
-      strat = Strategy.new(name: params[:name], side: params[:type], coin_name: params[:coin], amount: params[:quantity], algorithm: filtered_json.to_json, raw: params[:html_raw])
-      current_user.strategies << strat
-      if strat.save
-        redirect_to '/strategies/library'
-      else
-        flash[:danger] = 'Please fill out all required fields'
-        redirect_to '/strategies/new'
+      begin
+        filtered_json = filter_json(params['data']['content']['0'])
+        pp filtered_json
+        strat = Strategy.new(name: params[:name], side: params[:type], coin_name: params[:coin], amount: params[:quantity], algorithm: filtered_json.to_json, raw: params[:html_raw])
+        current_user.strategies << strat
+        if strat.save
+          redirect_to '/strategies/library'
+        else
+          flash[:danger] = 'Please fill out all required fields'
+          redirect_to '/strategies/new'
+        end
+      rescue => exception
+        puts exception
+        flash[:danger] = "#{exception}"
+        redirect_to controller: 'strategies', action: 'new', raw_html: params[:html_raw]
       end
     end
   end
@@ -101,6 +109,9 @@ class StrategiesController < PrivateController
       elsif json['attributes']['class'] == 'input-row'
         content = json['content']
         name = content['0']['content']['0']['attributes']['id']
+        unless content['0']['content']['0']['attributes']['value'] && content['1']['attributes']['value']
+          raise "Missing subdata field for an indicator"
+        end
         res[name] = { 'value' => content['0']['content']['0']['attributes']['value'],
                       'condition' => content['1']['attributes']['value'] } # is a row of value and error
       else
@@ -110,6 +121,9 @@ class StrategiesController < PrivateController
       end
     elsif json['type'] == 'SELECT'
       data = json['attributes']
+      unless data['value']
+        raise "Error: #{data['id']} not set in one or more of the cards"
+      end
       res[data['id']] = data['value']
     end
     res
