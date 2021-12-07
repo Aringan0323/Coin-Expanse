@@ -73,7 +73,7 @@
               <tbody class="table-body scrollbar-orders ">
 
 
-                  <% @orders.each_with_index do |order| %>
+                  <% @orders.order(created_at: :desc).each do |order| %>
                     <tr>
                       <td style="color:white"><%=order.side%></td>
                       <td style="color:white"><%=order.symbol%></td>
