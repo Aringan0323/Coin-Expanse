@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   post '/strategies/delete/:id', to: 'strategies#delete'
   get '/strategies/edit/:id', to: 'strategies#edit'
   post '/strategies/edit/:id', to: 'strategies#update'
-  get '/strategies/execute/:id', to: 'strategies#manual_execute'
+  post '/strategies/execute/:id', to: 'strategies#manual_execute'
 
   # orders
   post '/order', to: 'order#order'

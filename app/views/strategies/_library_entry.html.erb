@@ -31,7 +31,7 @@
       </div>
       <div class='description-right'>
         <%= button_to "Edit", generate_edit_link(locals[:strat]), class: "btn btn-dark", method: :get %>
-        <%= button_to "Execute Manually", generate_execute_link(locals[:strat]), class: "btn btn-info", method: :get %>
+        <%= button_to "Execute Manually", generate_execute_link(locals[:strat]), class: "btn btn-info", method: :post %>
         <div>
           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#<%= locals[:strat].name.gsub(" ", "") %>-delete">
             Delete

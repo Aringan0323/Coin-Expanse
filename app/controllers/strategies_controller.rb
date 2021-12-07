@@ -51,7 +51,12 @@ class StrategiesController < PrivateController
     side = strat.side
     coin = Coin.find_by(name: strat.coin_name)
     amount = strat.amount
-    StrategyInterpreter.check_strategy(user, algorithm, side, coin, amount)
+    if StrategyInterpreter.check_strategy(user, algorithm, side, coin, amount)
+      flash[:success] = "Your strategy executed a trade"
+    else
+      flash[:danger] = "Your strategy did not execute a trade"
+    end
+    redirect_to '/strategies/library'
   end
 
   def show
