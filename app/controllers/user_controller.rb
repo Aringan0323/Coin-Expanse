@@ -2,6 +2,7 @@ class UserController < PublicController
   include SessionsHelper
 
   def update
+    require_login
     user = current_user
     if user.update(params.require(:user).permit(:full_name, :username, :encryptedBinanceApiKey, :binance_public_key, :email))
       flash[:success] = 'Successfully updated your account'
@@ -32,6 +33,7 @@ class UserController < PublicController
   end
 
   def edit
+    require_login
   end
 
 end
