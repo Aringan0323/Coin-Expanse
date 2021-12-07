@@ -1,0 +1,39 @@
+<div class='edit-form'>
+  <%= form_for :user, scope: :post, url: '/user/edit', class: 'mx-1 mx-md-4' do |form| %>
+    <div class='pb-5'>
+      <div class="form-outline flex-fill mb-0">
+        <%= form.text_field :username, class: "form-control", required: true, value: current_user.username %>
+        <label class="form-label" for="username">Username</label>
+      </div>
+    </div>
+    <div class='pb-5'>
+      <div class="form-outline flex-fill mb-0">
+        <%= form.text_field :full_name, class: "form-control", required: true, value: current_user.full_name %>
+        <label class="form-label" for="username">Full Name</label>
+      </div>
+    </div>
+    <div class='pb-5'>
+      <div class="form-outline flex-fill mb-0">
+        <%= form.text_field :email, class: "form-control", required: true, value: current_user.email, disabled: true %>
+        <label class="form-label" for="username">Email</label>
+      </div>
+    </div>
+    <div class='pb-5'>
+      <div class="form-outline flex-fill mb-0">
+        <%= form.password_field :binance_public_key, class: "form-control" %>
+        <label class="form-label" for="username">Binance API Key</label>
+      </div>
+    </div>
+    <div class='pb-5'>
+      <div class="form-outline flex-fill mb-0">
+        <%= form.password_field :encryptedBinanceApiKey, class: "form-control" %>
+        <label class="form-label" for="username">Secret Binance API Key (optional)</label>
+      </div>
+    </div>
+    <div class='pb-5'>
+      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+        <%= form.submit "Update", class: "btn btn-dark btn-lg" %>
+      </div>
+    </div>
+  <% end %>
+</div>
