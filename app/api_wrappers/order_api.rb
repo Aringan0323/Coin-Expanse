@@ -38,7 +38,7 @@ module OrderApi
 
     res = self.binance_order_req(params, user.binance_public_key, user.encryptedBinanceApiKey)
     if res.success?
-      Order.create(symbol: coin.binance_symbol, amount: qty, side: "BUY", user: user)
+      Order.create(symbol: coin.binance_symbol, amount: qty, side: "SELL", user: user)
     end
     res
   end
