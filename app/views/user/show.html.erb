@@ -1,5 +1,8 @@
 <%= render 'shared/nav' %>
 <div class='page'>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-<%= type %> library-alert"><%= flash[type] %></div>
+  <% end %>
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-lg-6 mb-4 mb-lg-0">
@@ -30,6 +33,12 @@
                   <div class="col-6 mb-3">
                     <h6>Full Name</h6>
                     <p class="text-muted"><%= @user.full_name %></p>
+                  </div>
+                </div>
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h6>User Since</h6>
+                    <p class="text-muted"><%= @user.created_at.localtime.strftime("%m/%d/%Y") %></p>
                   </div>
                 </div>
               </div>

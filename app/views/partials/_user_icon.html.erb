@@ -14,6 +14,12 @@
       My Account
     <% end %>
   </li>
+  <li>
+  <%= link_to ('/account/edit'), class: "dropdown-item ripple" do %>
+    <i class="bi bi-gear"></i>
+    Edit Settings
+  <% end %>
+  </li>
   <li><hr class="dropdown-divider" /></li>
   <li>
     <%= link_to ('/logout'), class: "dropdown-item ripple" do %>
