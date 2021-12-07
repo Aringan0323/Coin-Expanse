@@ -1,20 +1,23 @@
 <%= render 'shared/nav' %>
-<div class="page">
-  <h1 class="chart_page_title"><%= @coin.name %></h1>
-  <div class="card bg-dark mb-3 text-center rounded" style="max-width: 80rem;">
-    <div class="card-header font-weight-bold" style="color:white">Prices</div>
-    <div class="card-body">
+<div class="page grid coin-show" >
+  <div class="row">
+  <h1 class="chart_page_title text-center"><%= @coin.name %></h1>
+  <div class='col'>
+  <div class="card bg-dark text-center rounded row">
+    <div class="card-header font-weight-bold">Prices</div>
+    <div class="card-body coin-show">
       <div class="chart" id="<%=@coin.id%>" ></div>
     </div>
   </div>
+  </div>
   <%ind_data = get_ind_data(@coin)%>
-  <p>
-    <div class="accordion" id="indicator-accordion">
+    <div class="accordion col-md-4 " id="indicator-accordion">
+      <h2 class="text-center">Indicators</h2>
       <%@coin.indicators.pluck(:name).uniq.each do |ind|%>
         <div class="accordion-item">
-          <h2 class="accordion-header" id="heading<%=ind%>">
+          <h2 class="accordion-header bg-dark" id="heading<%=ind%>">
             <button
-              class="accordion-button"
+              class="accordion-button collapsed bg-dark"
               type="button"
               data-mdb-toggle="collapse"
               data-mdb-target="#collapse<%=ind%>"
@@ -22,9 +25,9 @@
               aria-controls="collapse<%=ind%>"
             >
 
-              <table class="table table-gray indicators table-boardered">
-                <thead>
-                  <tr class="bg-primary">
+              <table class="table table-gray indicators " >
+                <thead style="display:flex;flex-direction:row">
+                  <tr>
                     <th scope="col" class="bg-dark" style="color:white"><%=ind.split("_")[1].upcase%></th>
                     <th scope="col" class="bg-dark" style="color:white">Hour</th>
                     <th scope="col" class="bg-dark" style="color:white">Day</th>
@@ -37,20 +40,28 @@
 
           <div
             id="collapse<%=ind%>"
-            class="accordion-collapse collapse show"
+            class="accordion-collapse collapse "
             aria-labelledby="heading<%=ind%>"
             data-mdb-parent="#indicator-accordion"
           >
-            <div class="accordion-body">
-              <table class="table table-gray indicators table-boardered">
-                <tbody>
-                  <% ind_data["1h"][ind].keys.each do |key|%>
+            <div class="accordion-body" style="width:100px;">
+              <table class="table table-gray" >
+                <thead>
                   <tr>
-                    <th scope="row" class="bg-light"><%=key%></th>
-                    <% ["1h", "1d", "1w"].each do |interval|%>
-                    <td><%=ind_data[interval][ind][key]%></td>
-                    <%end%>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                   </tr>
+                </thead>
+                <tbody id="body<%=ind%>">
+                  <% ind_data["1h"][ind].keys.each do |key|%>
+                    <tr style="width:100px">
+                      <td class="bg-light"><%=key%></th>
+                      <% ["1h", "1d", "1w"].each do |interval|%>
+                        <td ><%=ind_data[interval][ind][key].round(2)%></td>
+                      <%end%>
+                    </tr>
                   <%end%>
                 </tbody>
               </table>
@@ -59,8 +70,8 @@
         </div>
       <%end%>
     </div>
-  </p>
-
+  </div>
+  </div>
   
 
 </div>

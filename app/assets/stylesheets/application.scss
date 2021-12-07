@@ -223,11 +223,23 @@ mark {
 }
 
 .chart {
-  width: 1200px;
-  height: 600px;
+  width: 1000px;
+  height: 500px;
   margin-top: 25px;
   margin-bottom: 75px;
 }
+
+.coin-show > .chart{
+  display:flex;
+  margin-top: 25px;
+  margin-bottom: 75px;
+}
+
+.order-row > .card{
+  display: initial;
+  size: 100%
+}
+
 
 .chart_page_title {
   padding: 50px;
@@ -268,21 +280,22 @@ background-image: linear-gradient(to right, (#808080) 0%, (#444444) 100%); }
 .order-col{
   display: flex;
   flex-direction: row;
-  min-width: 600px;
+  min-width: 700px;
   overflow: auto
 }
 
 .indicators{
-  max-width: 1200px;
+  min-width: 600px;
 }
 
-tbody { display: block; }
 
-tbody {
-    height: 670px;       /* Just for the demo          */
-    overflow-y: auto;    /* Trigger vertical scroll    */
-    overflow-x: hidden;  /* Hide the horizontal scroll */
+.scrollable-body > tbody{ 
+  height: 40rem;
+  display: block;
+  overflow-y: auto;    /* Trigger vertical scroll    */
+  overflow-x: hidden;
 }
+
 .order-form {
   display: flex;
   flex-direction: column;
@@ -295,19 +308,27 @@ tbody {
   padding: 30px;
 }
 
-table {
-  text-align: left;
-  position: relative;
-  overflow: auto;
-  border-collapse: collapse; 
+// table {
+//   text-align: left;
+//   position: relative;
+//   overflow: auto;
+//   border-collapse: collapse; 
 
+// }
+
+.accordion-body > table{
+  width: 100%;
 }
 
-th, td {
+
+.accordion-button > table{
+  width: 100%;
+}
+.scrollable-body > th, td {
   padding: 0.25rem;
 }
 
-th {
+.scrollable-body > th {
   background: white;
   position: sticky;
   top: 0;

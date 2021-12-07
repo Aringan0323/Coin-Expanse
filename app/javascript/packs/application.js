@@ -150,8 +150,6 @@ function create_chart(id, url) {
     return new Chartkick.LineChart(id, url, {
         code: true,
         adapter: "highcharts",
-        height: "800px",
-        width: "1400px",
         min: null,
         ytitle: "USD",
         curve: false,
