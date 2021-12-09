@@ -1,7 +1,3 @@
----
-title: Technical Overview
-layout: default
----
 # Technical Description
 
 ## Technologies Used
