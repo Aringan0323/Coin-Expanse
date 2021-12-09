@@ -43,3 +43,5 @@ From there, we had to create an mini interpreter that would parse the JSON and c
 Those schedulers were another point of difficulty. Given limitations on Heroku, as well as API request/rate limits, we solved a series of optimizations to determine the best rates and times for which we could run our tasks on Heroku.
 
 All of these together took an immense amount of time, but made the application so much better.
+
+![Strategy Creation Page in Action](assets/creation_page.png)
