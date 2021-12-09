@@ -1,9 +1,18 @@
 ---
 ---
 
+.inner {
+  position: relative;
+  max-width: 900px;
+  padding: 20px 10px;
+  margin: 0 auto;
+}
+
+
 @import "{{ site.theme }}";
 
 .navbar {
+  max-width
   background-color: #333;
   font-family: Arial;
   margin: 0;
