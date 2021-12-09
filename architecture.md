@@ -39,4 +39,4 @@ Since the News Article model served solely to populate our home page with news a
 ## Database visualization
 Below is a visualization of the database schema that includes the table entries for each model:
 
-<img src="db_schema.png" alt="Schema Visualization" height="400"/>
+<img src="db_schema.png" alt="Schema Visualization" />
