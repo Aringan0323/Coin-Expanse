@@ -1,3 +1,8 @@
+---
+title: Design Process
+layout: default
+
+---
 # Process
 
 ## Development
