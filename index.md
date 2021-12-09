@@ -1,6 +1,1 @@
----
 
-title: Home
-layout: default
-
----
