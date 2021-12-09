@@ -28,13 +28,22 @@ The main thing about this application that sets it apart from a plain web applic
 
 These three things make our website a place for a multitude of possibilities in cryptocurrency trading and strategy creation; not only can you create, but you can manage, update, and execute strategies to give you full control over your portfolio, something not even the biggest and best sites currently on the market in cryptocurrency offer.
 
-### What was challenging?
+### Front-end challenges:
 
-The creation of the automated strategy GUI was by far the most difficult aspect of this project. It involved extensive `jQuery` and `jQuery-ui` setup in order to get interactions like `draggable`, `resizeable`, and `droppable`. Even once that process was set up in Rails 6, the issue was fine-tuning the configurations of each to create a smooth user experience.
+The creation of the automated strategy GUI was by far the most difficult aspect of front-end development for this project. It involved extensive `jQuery` and `jQuery-ui` setup in order to get interactions like `draggable`, `resizeable`, and `droppable`. Even once that process was set up in Rails 6, the issue was fine-tuning the configurations of each to create a smooth user experience.
 
 However, the biggest challenge within that was linking the configuration and scripts to the Rails frontend. Simply using an `js.erb` file was not enough; we needed a mix of javascript within our HTML, a `js.erb` file, and other methods in our `/javascript/packs/application.js`. Then, the only issue was mapping the subset of the DOM containing the cards, sending it via post request to be processed into a JSON, and then store it in the database.
 
+
+### Back-end challanges:
+
+There were two major challenges during the development of the back-end functionality of this project: 
+
+
+
+
 From there, we had to create an mini interpreter that would parse the JSON and construct a boolean expression that would determine whether or not the given strategy could execute. From there, we had a fully working automated strategy system that worked on a scheduler.
+
 
 Those schedulers were another point of difficulty. Given limitations on Heroku, as well as API request/rate limits, we solved a series of optimizations to determine the best rates and times for which we could run our tasks on Heroku.
 
