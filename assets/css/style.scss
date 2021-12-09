@@ -2,6 +2,12 @@
 ---
 
 
+
+
+@import "{{ site.theme }}";
+
+
+
 .inner {
   position: relative;
   max-width: 900px;
@@ -9,9 +15,6 @@
   margin: 0 auto;
 }
 
-
-
-@import "{{ site.theme }}";
 
 .navbar {
   background-color: #333;
