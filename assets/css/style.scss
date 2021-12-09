@@ -1,6 +1,16 @@
 ---
 ---
 
+
+.custom_inner {
+  position: relative;
+  max-width: 900px;
+  padding: 20px 10px;
+  margin: 0 auto;
+}
+
+
+
 @import "{{ site.theme }}";
 
 .navbar {
@@ -23,10 +33,4 @@
   background-color: blue;
 }
 
-.custom_inner {
-  position: relative;
-  max-width: 900px;
-  padding: 20px 10px;
-  margin: 0 auto;
-}
 
