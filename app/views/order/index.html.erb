@@ -128,7 +128,6 @@
     const coins = ["Bitcoin", "Ethereum", "Litecoin", "Ripple XRP"]
     const conversion = data[coins.indexOf(coin)][side === 'buy' ? 1 : 0]
     const USD = amount * conversion;
-    console.log(USD);
     const start = parseFloat($('#el').text());
     jQuery({someValue: start}).animate({someValue: USD}, {
       duration: 1000,
@@ -143,9 +142,6 @@
     const coin = $('#coin').val();
     const amount = $('#quantity').val();
     const side = $("input[name='sideRadio']:checked").attr('id') === 'buy' ? 'true' : 'false';
-    console.log(coin)
-    console.log(amount)
-    console.log(side)
     $.ajax({
         type: "POST",
         url: `/order`,
