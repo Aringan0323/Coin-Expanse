@@ -14,26 +14,45 @@
             1. Please select the type of order you would like to make:
             <div class="radio pt-4">
               <div>
-                <%= form.label :autolyse, "Buy", :value => "true"  %>
-                <%= form.radio_button :buy, true, :checked => true %>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="buy"
+                  />
+                  <label class="form-check-label" for="buy"> Buy </label>
+                </div>
               </div>
               <div>
-                <%= form.label :autolyse, "Sell", :value => "false" %>
-                <%= form.radio_button :buy, false %>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="sell"
+                    checked
+                  />
+                  <label class="form-check-label" for="sell"> Sell </label>
+                </div>
               </div>
             </div>
           </div>
           <div class='input'>
             2. Please select the coin you'd like to make an order for:
             <div class='pt-4'>
-              <%= form.collection_select :coin_id, @coins.order(:name),:id,:name, required: true %>
+              <select id='coin' class="mdb-select md-form" onchange="update_price(event)">
+                <% Coin.all.order(:name).each_with_index do |coin, index| %>
+                  <option value="<%= index + 1 %>"><%= coin.name %></option>
+                <% end %>
+              </select>
             </div>
           </div>
           <div class='input'>
             3. Please enter the quantity of the coin for transaction:
             <div class='input-row'>
               <div class='pt-4'>
-                <%= form.number_field :quantity, min: 0, step: 0.000001, required: true %>
+                <%= form.number_field :quantity, min: 0, step: 0.000001, required: true, oninput: "update_price(event)" %>
               </div>
             </div>
           </div>
@@ -51,10 +70,10 @@
         for any issues.</h6>
       </div>
     </div>
-    <div class="card bg-dark mb-3 text-center rounded order-column" >
-      <div class="card-title font-weight-bold " style="color:white">Order History
+    <div class="card bg-dark mb-3 text-center rounded order-col" >
+      <div class="card-title font-weight-bold sticky-top bg-dark table-title">Order History</div>
         <div class=" font-weight-bold" style="color:white">
-            <table class="table table-gray">
+          <table class="table table-gray">
             <thead>
               <tr>
                 <th scope="col" class="bg-dark" style="color:white">Side</th>
@@ -63,31 +82,33 @@
                 <th scope="col" class="bg-dark" style="color:white">Executed</th>
               </tr>
             </thead>
-            </table>
-      </div>
-      </div>
-
-          <table class="table table-gray  order-table-body scrollable-body">
-            
-            <div class="card-text ">
-              <tbody class="table-body scrollbar-orders ">
-
-
-                  <% @orders.order(created_at: :desc).each do |order| %>
-                    <tr>
-                      <td style="color:white"><%=order.side%></td>
-                      <td style="color:white"><%=order.symbol%></td>
-                      <td style="color:white"><%=order.amount%></td>
-                      <td style="color:white"><%=order.created_at%></td>
-                    </tr>
-                  <%end%>
-              </tbody>
-            </div>
+            <tbody class="table-body scrollbar-orders ">
+              <% @orders.order(created_at: :desc).each do |order| %>
+                <tr>
+                  <td style="color:white"><%=order.side%></td>
+                  <td style="color:white"><%=order.symbol%></td>
+                  <td style="color:white"><%=order.amount%></td>
+                  <td style="color:white"><%=order.created_at%></td>
+                </tr>
+              <%end%>
+            </tbody>
           </table>
         </div>
-      </div>
     </div>
   </div>
 </div>
+<script type='text/javascript'>
+
+  function update_price(e) {
+    e.preventDefault();
+    const coin = $('#coin option:selected').text();
+    const buy = $('input[id="buy"]:checked').val() === 'true';
+    const amount = $('#quantity').val();
+    console.log(coin)
+    console.log(buy)
+    console.log(amount)
+  }
+
+</script>
 
 
