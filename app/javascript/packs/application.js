@@ -93,12 +93,16 @@ $(document).on("turbolinks:load", function () {
 
     $('#create-strat').on('click', (e) => {
         e.preventDefault();
+        console.log('helko wtf')
         const name = $('#strategy_name').val();
         const coin = $('#strategy_coin option:selected').text();
         const data = mapDOM(document.getElementById('create-cards'), false);
         const type = $('#buy-radio').attr('checked') ? 'BUY' : 'SELL';
         const rawHtml = $('#create-cards').html();
         const quantity = $("#quantity").val();
+        console.log(name);
+        console.log(coin);
+        console.log(type)
         console.log(quantity)
         console.log(data)
         $.ajax({

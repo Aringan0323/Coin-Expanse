@@ -35,53 +35,8 @@ module CoinHelper
 
 
 	end
-
-
-	# def self.getDaySummary(coin)
-
-	# 	json = MarketApi.day_summary(coin.symbol)		
-
-	# 	if json.nil?
-
-	# 		puts "Day summary data for #{coin.symbol} could not be fetched"
-
-	# 	else
-	# 		day_summary = DaySummary.create(
-	# 			priceChange: json["priceChange"],
-	# 			priceChangePercent: json["priceChangePercent"],
-	# 			weightedAvgPrice: json["weightedAvgPrice"],
-	# 			prevClosePrice: json["prevClosePrice"],
-	# 			lastPrice: json["lastPrice"],
-	# 			lastQty: json["lastQty"],
-	# 			bidPrice: json["bidPrice"],
-	# 			askPrice: json["askPrice"],
-	# 			openPrice: json["openPrice"],
-	# 			highPrice: json["highPrice"],
-	# 			lowPrice: json["lowPrice"],
-	# 			volume: json["volume"],
-	# 			openTime: nil,
-	# 			closeTime: nil,
-	# 			tradeCount: json["count"],
-	# 			coin_id: coin.id
-	# 		)
-			
-	# 	end
-	# end
-
-	# def broadcast_coin(coin)
-
-    # # avg_chart = render_chart(coin, "average", "avgPrice")
-    # # ask_chart = render_chart(coin, "ask", "askPrice")
-    # # bid_chart = render_chart(coin, "bid", "bidPrice")
-
-    # ActionCable.server.broadcast(
-    #   "#{coin.symbol}",
-    #   {
-    #     btickers: coin.book_tickers
-    #   }
-    # )
-	# end
-
+	
+	
 	def get_chart_data(coin, display_type, type)
 		data = {}
 		book_tickers = coin.book_tickers.order(:timestamp)
@@ -107,21 +62,4 @@ module CoinHelper
 		inds_hash
         
 	end
-
-	# def render_chart(data)
-
-
-	# 	line_chart data["chart_data"],
-	# 		min: data["min_price"],
-	# 		ytitle: "USD",
-	# 		title: "#{data["coin_name"]} #{data["display_type"]} price: $#{data["latest_price"]}",
-	# 		height: "500px",
-	# 		curve: false,
-	# 		points: false,
-	# 		round: 2,
-	# 		zeros: true,
-	# 		prefix: "$",
-	# 		thousands: ","
-
-	# end
 end

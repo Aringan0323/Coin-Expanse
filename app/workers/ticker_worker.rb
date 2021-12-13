@@ -9,6 +9,6 @@ class TickerWorker
         bticker.save
       end
 
-      puts "saved btickers"
+      # puts "saved btickers"
   end
 end
