@@ -15,10 +15,19 @@ BookTicker.delete_all
 puts("Creating coins")
 coins = MarketApi.get_all_coins
 
+
 coins.each do |coin|
   coin.save
 end
 
+
+puts("Creating coin book tickers")
+
+book_tickers = MarketApi.book_tickers(coins)
+
+book_tickers.each do |bt|
+  bt.save
+end
 
 puts "Creating coin indicators"
 first = true
