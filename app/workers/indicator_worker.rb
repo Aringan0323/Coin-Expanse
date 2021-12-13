@@ -5,7 +5,7 @@ class IndicatorWorker
   include Sidekiq::Worker
   sidekiq_options queue: 'critical'
   def perform(args)
-    coin = Coin.find(args[0])
+    coin = Coin.find_by(symbol: args[0])
     interval = args[1]
     indics = coin.indicators.where(interval: interval)
     
