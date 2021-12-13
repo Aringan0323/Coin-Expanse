@@ -41,6 +41,7 @@ class StrategiesController < PrivateController
         if strat.save
           redirect_to '/strategies/library'
         else
+          pp execute(strat.algorithm)
           flash[:danger] = 'Please fill out all required fields'
           redirect_to '/strategies/new'
         end

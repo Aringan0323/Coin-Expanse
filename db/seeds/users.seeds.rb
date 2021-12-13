@@ -3,16 +3,30 @@ require 'faker'
 require 'date'
 
 puts("Deleting all users")
+Order.delete_all
+
 User.delete_all
 
-User.create(
+admin = User.create(
     full_name: "Psuedo User",
     username: "admin",
     email: "test@gmail.com",
-    password: "pass",
-    binance_public_key: "zsXP0MQ3XUQ3clwfewN45dLm0xcBlks0QokSUsLaxT9PkvXMiarAhXYTxy7sHRMi",
-    encryptedBinanceApiKey: "f2xDJ4YJSLUrddqvpk5nQg62XfD8gcPMsikOpkPPhRxB5iKYTf2LXf2tnOLcx8cn"
+    password: ENV["ADMIN_PASSWORD"],
+    binance_public_key: ENV["ADMIN_PUBLIC_KEY"],
+    encryptedBinanceApiKey: ENV["ADMIN_SECRET_KEY"]
 )
+
+coin_symbols = Coin.all.pluck(:symbol)
+num_coins = coin_symbols.count
+sides = ["BUY", "SELL"]
+
+(0..40).each do |i|
+    admin.orders << Order.create(
+        amount: rand(0.200...3.000), 
+        side: sides.sample, 
+        symbol: coin_symbols.sample
+    )
+end
+
 puts "Admin user created"
 
-ENV["BINANCE_TLD"] = "US"

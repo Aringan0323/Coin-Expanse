@@ -40,7 +40,7 @@ module NewsApi
     oldest = DateTime.now() - 3
     oldest = oldest.strftime("%Y-%m-%d")
     puts oldest
-    response = ApiUtils.get_api_res("https://newsapi.org/v2/everything?q=#{keyword_params}&from=#{oldest}&language=en&apiKey=af7ed64513f5449a855f235ca6484388")
+    response = ApiUtils.get_api_res("https://newsapi.org/v2/everything?q=#{keyword_params}&from=#{oldest}&language=en&apiKey=#{ENV["NEWS_API_KEY"]}")
     if response.nil?
       nil
     else
