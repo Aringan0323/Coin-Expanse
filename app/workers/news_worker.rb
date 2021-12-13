@@ -4,10 +4,10 @@ class NewsWorker
   include Sidekiq::Worker
   sidekiq_options queue: 'default'
   def perform(*args)
-    puts "Deleting all news articles"
+    # puts "Deleting all news articles"
     NewsArticle.where(['date < ?', 3.days.ago]).delete_all
 
-    puts "Creating news articles"
+    # puts "Creating news articles"
     articles_list = NewsApi.all_articles(["crypto", "cryptocurrency", "blockchain", "bitcoin"])
 
     articles_list.each do |article|

@@ -1,5 +1,5 @@
 require "./app/api_wrappers/order_api.rb"
-
+require "httparty"
 
 module StrategyInterpreter
 
@@ -13,20 +13,20 @@ module StrategyInterpreter
 
             outcomes << check_strategy(user, algorithm, side, coin, amount)
         end 
-        puts outcomes
     end
 
     def self.check_strategy(user, algorithm, side, coin, amount)
+        res = nil
         if self.check_and(algorithm)
             if side == "BUY"
-                OrderApi.buy(user, coin, amount)
+                res = OrderApi.buy(user, coin, amount)
             else
-                OrderApi.sell(user, coin, amount)
+                res = OrderApi.sell(user, coin, amount)
             end
-            true
-        else
-            false
+            puts res
         end
+        puts res
+        return res
     end
 
 
@@ -77,7 +77,6 @@ module StrategyInterpreter
             execute = true
             data.keys.each do |key|
                 val = ind_hash[key.to_s]
-                puts("else")
                 execute = execute && self.cond(val['value'], val['condition'], data[key.to_s])
             end
             execute
@@ -94,7 +93,6 @@ module StrategyInterpreter
         else
             bool = false
         end
-        puts "actual: #{actual} #{condition} expected: #{expected}   :   #{bool}"
         bool
     end
 

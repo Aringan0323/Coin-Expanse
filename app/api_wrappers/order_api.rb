@@ -8,10 +8,6 @@ module OrderApi
 
 
   def self.buy(user, coin, qty)
-
-    puts qty.to_s
-    puts coin.binance_symbol
-
     params = {
       "quantity" => qty.to_s,
       "side"=> 'BUY',
@@ -27,8 +23,6 @@ module OrderApi
 
 
   def self.sell(user, coin, qty)
-    puts qty.to_s
-    puts coin.binance_symbol
     params = {
       "quantity" => qty.to_s,
       "side"=> 'SELL',
@@ -47,15 +41,23 @@ module OrderApi
     fixie = URI.parse ENV['FIXIE_URL']
     params['timestamp'] = ApiUtils.timestamp
     params['signature'] = ApiUtils.signed_request_signature(params, secret_key)
-    response = post(
-      "https://api.binance.us/api/v3/order", 
-      query: params, 
-      headers: ApiUtils.key_header(api_key), 
-      http_proxyaddr: fixie.host,
-      http_proxyport: fixie.port,
-      http_proxyuser: fixie.user,
-      http_proxypass: fixie.password
-    )
+    if Rails.env.production?
+      response = post(
+        "https://api.binance.us/api/v3/order", 
+        query: params, 
+        headers: ApiUtils.key_header(api_key), 
+        http_proxyaddr: fixie.host,
+        http_proxyport: fixie.port,
+        http_proxyuser: fixie.user,
+        http_proxypass: fixie.password
+      )
+    else
+      response = post(
+        "https://api.binance.us/api/v3/order", 
+        query: params, 
+        headers: ApiUtils.key_header(api_key)
+      )
+    end
     response
   end
 

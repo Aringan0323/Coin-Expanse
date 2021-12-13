@@ -3,9 +3,11 @@ require 'faker'
 require 'date'
 
 puts("Deleting all users")
-Order.delete_all
-
-User.delete_all
+User.all.each do |user|
+    user.orders.delete_all
+    user.strategies.delete_all
+    user.delete
+end
 
 admin = User.create(
     full_name: "Psuedo User",

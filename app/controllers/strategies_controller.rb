@@ -1,5 +1,5 @@
 require "./lib/utils/strategy_interpreter.rb"
-
+require "httparty"
 
 class StrategiesController < PrivateController
   def new
@@ -60,10 +60,16 @@ class StrategiesController < PrivateController
     side = strat.side
     coin = Coin.find_by(name: strat.coin_name)
     amount = strat.amount
-    if StrategyInterpreter.check_strategy(user, algorithm, side, coin, amount)
-      flash[:success] = "Your strategy executed a trade"
-    else
+    response = StrategyInterpreter.check_strategy(user, algorithm, side, coin, amount)
+    puts response
+    puts response.class
+    if response == nil
       flash[:danger] = "Your strategy did not execute a trade"
+    elsif response.success?
+      flash[:success] = "You successfully #{side_string} #{qty} #{qty == 1 ? 'coin' : 'coins'} of #{coin.name}"
+      redirect_to '/order'
+    else
+      flash[:danger] = JSON.parse(response.body)['msg']
     end
     redirect_to '/strategies/library'
   end

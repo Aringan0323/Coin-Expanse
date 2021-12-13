@@ -4,10 +4,10 @@ class IndicatorDispatchWorker
     include Sidekiq::Worker
     def perform(*args)
         time_delay = 0
-        Coin.all.each do |coin|
+        coin_ids = Coin.all.pluck(:id)
+        coin_ids.each do |coin_id|
             ["1h", "1d", "1w"].each do |interval|
-
-                IndicatorWorker.perform_in(time_delay.seconds.from_now, [coin.id, interval])
+                IndicatorWorker.perform_in(time_delay.seconds.from_now, [coin_id, interval])
                 time_delay = time_delay + 20
             end
         end
