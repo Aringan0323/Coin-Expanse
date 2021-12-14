@@ -66,14 +66,14 @@
           <%= text_field_tag :strategy_name, "", class: "form-control form-control-lg", id: "strategy_name" %>
           <label class="form-label" for="strategy_name">Strategy Name</label>
         </div>
-        <select id='strategy_coin' class="mdb-select md-form">
+        <select id='strategy_coin' class="mdb-select md-form" onchange="update_price(event, <%= createData %>)">
           <option value="1" disabled selected>Coin</option>
           <% Coin.all.order(:name).each_with_index do |coin, index| %>
             <option value="<%= index + 2 %>"><%= coin.name %></option>
           <% end %>
         </select>
         <div class="form-outline">
-          <input type="number" id="quantity" name="quantity" class="form-control" min="0.000001" step="0.000001">
+          <input type="number" id="quantity" name="quantity" class="form-control" min="0.000001" step="0.000001" oninput="update_price(event, <%= createData %>)">
           <label class="form-label" for="typeNumber">Quantity </label>
         </div>
         <div class="create-buttons">
@@ -86,11 +86,11 @@
               id="buy-radio"
               autocomplete="off"
               checked
-              onclick="switchRadio(event)"
+              onclick="switchRadio(event, <%= createData %>)"
             />
             <label class="btn btn-secondary" for="buy-radio">Buy</label>
 
-            <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" onclick="switchRadio(event)"/>
+            <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" onclick="switchRadio(event, <%= createData %>)"/>
             <label class="btn btn-secondary" for="sell-radio">Sell</label>
           </div>
         </div>
@@ -102,6 +102,10 @@
           <% end%>
         </div>
         <div class="submit">
+          <div class="value-row" style="font-size:20px">
+            <div style='padding-right: 30px'>Strategy value (USD):</div>
+            <div>$<span id="el">0.00</span></div>
+          </div>
           <button id="create-strat" class="btn btn-primary">Create</button>
         </div>
       </div>
@@ -151,7 +155,7 @@
     $(e.target).attr('value', val);
   }
 
-  function switchRadio(e) {
+  function switchRadio(e, data) {
     const id = $(e.target).attr('id')
     if (id === 'buy-radio') {
       $('#buy-radio').attr('checked', 'checked')
@@ -160,5 +164,26 @@
       $('#sell-radio').attr('checked', 'checked')
       $('#buy-radio').removeAttr('checked')
     }
+    update_price(null, data)
+  }
+
+  function update_price(event, data) {
+    if (event) event.preventDefault();
+    const coin = $('#strategy_coin option:selected').text();
+    if (coin === 'Coin') return;
+    const amount = $('#quantity').val();
+    const side = $('#buy-radio').attr('checked') ? 'buy' : 'sell';
+    // data[x][0] is the bid, data[x][1] is the ask
+    const coins = ["Bitcoin", "Ethereum", "RippleXRP", "Litecoin"]
+    const conversion = data[coins.indexOf(coin)][side === 'buy' ? 1 : 0]
+    const USD = amount * conversion;
+    const start = parseFloat($('#el').text());
+    jQuery({someValue: start}).animate({someValue: USD}, {
+      duration: 1000,
+      easing:'linear',
+      step: function(now) {
+        $('#el').text(now.toFixed(2));
+      }
+    });
   }
 </script>

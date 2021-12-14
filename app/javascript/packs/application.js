@@ -22,9 +22,9 @@ Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
-$(document).on("turbolinks:load", function () {
+$(document).on("turbolinks:load", function() {
 
-    $('select').each(function (_index, _id) {
+    $('select').each(function(_index, _id) {
         // used for loading an edit function
         const id = $(this).attr('id');
 
@@ -42,7 +42,7 @@ $(document).on("turbolinks:load", function () {
         }
     });
 
-    $('.alert').fadeTo(2500, 0, function () {
+    $('.alert').fadeTo(2500, 0, function() {
         $('.alert').slideUp(750);
     });
 
@@ -93,7 +93,6 @@ $(document).on("turbolinks:load", function () {
 
     $('#create-strat').on('click', (e) => {
         e.preventDefault();
-        console.log('helko wtf')
         const name = $('#strategy_name').val();
         const coin = $('#strategy_coin option:selected').text();
         const data = mapDOM(document.getElementById('create-cards'), false);
@@ -252,5 +251,3 @@ function filterLast(html) {
         html.splice(-1)
     }
 }
-
-

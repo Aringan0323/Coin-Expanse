@@ -1,6 +1,6 @@
 <%= render 'shared/nav' %>
 <div class="order-container container" >
-  <%= render 'shared/lock_modal' %>
+  <%= render 'shared/lock_modal'%>
   <div class='order-row'>
     <div class='card shadow card-padding' style="width:1000px">
       <div class='card-title order-title'>
@@ -68,7 +68,7 @@
         </div>
         <div class="input-row pb-4" style="font-size:20px">
           <div>Order value (USD): </div>
-          <div>$<span id="el">0</span></div>
+          <div>$<span id="el">0.00</span></div>
         </div>
         <div class="pt-3 mb-4">
           <input id="order" type="submit" value="Order" class="btn btn-dark btn-large btn-block" style="width:100%">
@@ -126,7 +126,7 @@
     const amount = $('#quantity').val();
     const side = $("input[name='sideRadio']:checked").attr('id');
     // data[x][0] is the bid, data[x][1] is the ask
-    const coins = ["Bitcoin", "Ethereum", "Litecoin", "Ripple XRP"]
+    const coins = ["Bitcoin", "Ethereum", "Ripple XRP", "Litecoin"]
     const conversion = data[coins.indexOf(coin)][side === 'buy' ? 1 : 0]
     const USD = amount * conversion;
     const start = parseFloat($('#el').text());

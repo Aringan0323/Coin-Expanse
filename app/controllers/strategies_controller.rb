@@ -2,6 +2,7 @@ require "./lib/utils/strategy_interpreter.rb"
 require "httparty"
 
 class StrategiesController < PrivateController
+  include StrategiesHelper
   def new
     @raw = params[:raw_html] || nil
   end
@@ -14,6 +15,8 @@ class StrategiesController < PrivateController
     @qty = strategy.amount
     @side = strategy.side
     @id = params[:id]
+    coin = Coin.find_by(name: @for)
+    @price = calculate_price coin, @side, @qty
   end
 
   def update

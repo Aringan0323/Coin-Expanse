@@ -80,6 +80,7 @@
         display: flex;
         flex: 1;
         flex-direction: row;
+        align-items: center;
         justify-content: flex-end;
         // border: 1px solid purple;
     }
@@ -284,4 +285,12 @@
     
     .display-title {
         font-size: 30px;
+    }
+    
+    .value-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-right: 100px;
     }

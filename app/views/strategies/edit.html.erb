@@ -66,7 +66,7 @@
           <%= text_field_tag :strategy_name, "", class: "form-control form-control-lg", id: "strategy_name", value: @name %>
           <label class="form-label" for="strategy_name">Strategy Name</label>
         </div>
-        <select id='strategy_coin' class="mdb-select md-form" onchange="change(event)">
+        <select id='strategy_coin' class="mdb-select md-form" onchange="change(event, <%= createData %>)">
           <option value="1" disabled>Coin</option>
           <% Coin.all.order(:name).each_with_index do |coin, index| %>
             <% if coin.name == @for %>
@@ -77,23 +77,25 @@
           <% end %>
         </select>
         <div class="form-outline">
-          <input type="number" id="quantity" name="quantity" class="form-control" min="0.000001" step="0.000001" value=<%= @qty %>>
+          <input type="number" id="quantity" name="quantity" class="form-control" min="0.000001" step="0.000001" 
+            value=<%= @qty %>
+            oninput="update_price(event, <%= createData %>)">
           <label class="form-label" for="typeNumber">Quantity </label>
         </div>
         <div class="create-buttons">
           <strong>Strategy Option:</strong>
           <div class="btn-group">
             <% if @side == 'BUY' %>
-              <input type="radio" class="btn-check" name="options" id="buy-radio" autocomplete="off" checked  onclick="switchRadio(event)" />
+              <input type="radio" class="btn-check" name="options" id="buy-radio" autocomplete="off" checked  onclick="switchRadio(event. <%= createData %>)" />
             <% else %>
-              <input type="radio" class="btn-check" name="options" id="buy-radio" autocomplete="off" onclick="switchRadio(event)" />
+              <input type="radio" class="btn-check" name="options" id="buy-radio" autocomplete="off" onclick="switchRadio(event, <%= createData %>)" />
             <% end %>
             <label class="btn btn-secondary" for="buy-radio">Buy</label>
 
             <% if @side == 'SELL' %>
-              <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" checked onclick="switchRadio(event)"/>
+              <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" checked onclick="switchRadio(event, <%= createData %>)"/>
             <% else %>
-              <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" onclick="switchRadio(event)"/>
+              <input type="radio" class="btn-check" name="options" id="sell-radio" autocomplete="off" onclick="switchRadio(event, <%= createData %>)"/>
             <% end %>
             <label class="btn btn-secondary" for="sell-radio">Sell</label>
           </div>
@@ -104,6 +106,10 @@
           <%= raw @raw %>
         </div>
         <div class="submit">
+          <div class="value-row" style="font-size:20px">
+            <div style='padding-right: 30px'>Strategy value (USD):</div>
+            <div>$<span id="el"><%= @price %></span></div>
+          </div>
           <button id="update-strat" class="btn btn-success">Update</button>
         </div>
       </div>
@@ -148,12 +154,13 @@
     $(e.target).attr('value', e.target.value)
   }
 
-  function change(e) {
+  function change(e, data) {
     const val = e.target.options[e.target.value - 1].text;
     $(e.target).attr('value', val);
+    update_price(null, data);
   }
 
-  function switchRadio(e) {
+  function switchRadio(e, data) {
     const id = $(e.target).attr('id')
     if (id === 'buy-radio') {
       $('#buy-radio').attr('checked', 'checked')
@@ -162,5 +169,26 @@
       $('#sell-radio').attr('checked', 'checked')
       $('#buy-radio').removeAttr('checked')
     }
+    update_price(null, data);
+  }
+
+  function update_price(event, data) {
+    if (event) event.preventDefault();
+    const coin = $('#strategy_coin option:selected').text();
+    if (coin === 'Coin') return;
+    const amount = $('#quantity').val();
+    const side = $('#buy-radio').attr('checked') ? 'buy' : 'sell';
+    // data[x][0] is the bid, data[x][1] is the ask
+    const coins = ["Bitcoin", "Ethereum", "RippleXRP", "Litecoin"]
+    const conversion = data[coins.indexOf(coin)][side === 'buy' ? 1 : 0]
+    const USD = amount * conversion;
+    const start = parseFloat($('#el').text());
+    jQuery({someValue: start}).animate({someValue: USD}, {
+      duration: 1000,
+      easing:'linear',
+      step: function(now) {
+        $('#el').text(now.toFixed(2));
+      }
+    });
   }
 </script>

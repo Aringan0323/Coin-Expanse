@@ -53,6 +53,11 @@ module StrategiesHelper
     res
   end
 
+  def calculate_price(coin, side, amount)
+    conversion = coin.book_tickers[-1][side == 'BUY' ? :askPrice : :bidPrice]
+    amount * conversion
+  end
+
   private
 
   def format_simple(name, parts)
