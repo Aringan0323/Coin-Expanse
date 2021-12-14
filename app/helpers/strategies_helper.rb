@@ -2,6 +2,8 @@ require "./lib/utils/strategy_interpreter.rb"
 
 module StrategiesHelper
 
+  include SessionsHelper
+
   def generate_coin_link(name)
     id = Coin.find_by(name: name).id
     "/coin/#{id}"

@@ -1,5 +1,6 @@
 <%= render 'shared/nav' %>
 <div class='page'>
+  <%= render 'shared/lock_modal' %>
   <% if flash[:danger] %>
     <div class="alert alert-danger strategy-alert"><%= flash[:danger] %></div>
   <% end %>

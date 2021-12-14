@@ -1,0 +1,14 @@
+<% unless safe_user? %>
+  <div class='overlay'></div>
+  <div class='card shadow-lg lock gradient-custom'>
+    <div class='card-body'>
+      <i class="fas fa-lock fa-10x"></i>
+      <div class='pt-5'>
+        You cannot access this page since you have not registered your BinanceUS account with us.
+      </div>
+      <div class='pt-5'>
+        <%= link_to "Update your account", '/account/edit', class: 'btn btn-lg btn-secondary' %>
+      </div>
+    </div>
+  </div>
+<% end %>

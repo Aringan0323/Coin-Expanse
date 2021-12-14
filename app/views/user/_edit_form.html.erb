@@ -20,14 +20,14 @@
     </div>
     <div class='pb-5'>
       <div class="form-outline flex-fill mb-0">
-        <%= form.password_field :binance_public_key, class: "form-control" %>
+        <%= form.password_field :binance_public_key, class: "form-control", value: current_user.binance_public_key %>
         <label class="form-label" for="username">Binance API Key</label>
       </div>
     </div>
     <div class='pb-5'>
       <div class="form-outline flex-fill mb-0">
-        <%= form.password_field :encryptedBinanceApiKey, class: "form-control" %>
-        <label class="form-label" for="username">Secret Binance API Key (optional)</label>
+        <%= form.password_field :encryptedBinanceApiKey, class: "form-control", value: current_user.encryptedBinanceApiKey %>
+        <label class="form-label" for="username">Secret Binance API Key</label>
       </div>
     </div>
     <div class='pb-5'>
