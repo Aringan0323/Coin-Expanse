@@ -131,7 +131,7 @@
     const start = parseFloat($('#el').text());
     jQuery({someValue: start}).animate({someValue: USD}, {
       duration: 1000,
-      easing:'swing',
+      easing:'linear',
       step: function(now) {
         $('#el').text(now.toFixed(2));
       }

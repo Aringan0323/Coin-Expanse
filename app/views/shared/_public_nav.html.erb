@@ -1,0 +1,19 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand mt-2 mt-lg-0" href="/">
+        <%= image_tag "nav_logo.png", alt: "logo", loading: 'lazy' %>
+      </a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to '/about', class: "nav-link" do%>
+            About
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class="pub-nav-buttons">
+      <%= link_to 'Sign-in', '/login', class: 'btn btn-primary' %>
+      <%= link_to 'Don\'t have an account? Sign up', '/register', class: 'btn btn-primary' %>
+  </div>
+</nav>

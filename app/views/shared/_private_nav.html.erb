@@ -1,0 +1,64 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand mt-2 mt-lg-0" href="/">
+        <%= image_tag "nav_logo.png", alt: "logo", loading: 'lazy' %>
+      </a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to coin_index_path, class: "nav-link" do%>
+            Supported Cryptos
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to '/about', class: "nav-link" do%>
+            About
+          <% end %>
+        </li>
+        <li class="nav-item dropdown me-3 me-lg-1" id="workspaceDropdownLink">
+          <a
+            class="nav-link dropdown-toggle hidden-arrow"
+            href="#"
+            id="workspaceDropdown"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+            style="height:110%"
+          >
+            Workspace
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
+            aria-labelledby="workspaceDropdown"
+            id="workspaceList"
+          >
+            <li>
+              <%= link_to 'Strategies Creation', '/strategies/new' , class: 'dropdown-item' %>
+            </li>
+            <li>
+              <%= link_to 'Strategies Library', '/strategies/library', class: 'dropdown-item' %>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <%= link_to '/order', class: "nav-link" do%>
+            Order Crypto
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="container-fluid">
+        <%= form_tag request.path, method: "GET", class: "d-flex input-group w-auto", id: 'search_form' do %>
+          <%= text_field_tag :search_param, params[:search_param], 
+            placeholder: "Search this page...", class: "form-control rounded", type: "search" %>
+          <span class="input-group-text text-white border-0" id="search-addon">
+            <%= link_to request.path, onclick: "$('#search_form').submit()"  do %>
+              <i class="bi bi-search" style="color: white;"></i>
+            <% end %>
+          </span>
+        <% end %>
+      </div>
+      <%= render 'partials/user_icon' %>
+  </div>
+</nav>

@@ -1,4 +1,4 @@
-class HomeController < PrivateController
+class HomeController < PublicController
 
   def index
     @news =  NewsArticle.order(date: :desc).limit(12)

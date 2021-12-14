@@ -360,3 +360,12 @@ td {
     flex-direction: row;
     justify-content: center;
 }
+
+.pub-nav-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 25rem;
+    // border: 3px solid blue
+}

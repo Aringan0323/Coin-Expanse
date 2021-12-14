@@ -51,4 +51,6 @@ Rails.application.routes.draw do
 
   # orders
   post '/order', to: 'order#order'
+
+  get '*path' => redirect('/')
 end
