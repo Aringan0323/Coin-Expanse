@@ -63,14 +63,16 @@ class StrategiesController < PrivateController
     side = strat.side
     coin = Coin.find_by(name: strat.coin_name)
     amount = strat.amount
-    response = StrategyInterpreter.check_strategy(user, algorithm, side, coin, amount)
-    puts response
-    puts response.class
-    if response == nil
+    response = StrategyInterpreter.check_strategy(user, algorithm, side, coin, amount, strat)
+
+    if response.nil?
       flash[:danger] = "Your strategy did not execute a trade"
     elsif response.success?
-      flash[:success] = "You successfully #{side_string} #{qty} #{qty == 1 ? 'coin' : 'coins'} of #{coin.name}"
-      redirect_to '/order'
+      side_string = "sold"
+      if side == "BUY"
+        side_string = "bought"
+      end
+      flash[:success] = "You successfully #{side_string} #{amount} #{amount == 1 ? 'coin' : 'coins'} of #{coin.name}"
     else
       flash[:danger] = JSON.parse(response.body)['msg']
     end

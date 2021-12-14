@@ -78,4 +78,14 @@ module StrategiesHelper
     res.join ", "
   end
 
+
+  def display_last_executed(le)
+    puts "Never Executed: #{le.nil?}"
+    if le.nil?
+      "never"
+    else
+      le.localtime.strftime("%m/%d/%Y %I:%M %p")
+    end
+  end
+
 end

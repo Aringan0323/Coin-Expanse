@@ -1,5 +1,6 @@
 require "./app/api_wrappers/order_api.rb"
 require "httparty"
+require "date"
 
 module StrategyInterpreter
 
@@ -11,11 +12,11 @@ module StrategyInterpreter
             coin = Coin.find_by(name: strat.coin_name)
             amount = strat.amount
 
-            outcomes << check_strategy(user, algorithm, side, coin, amount)
+            outcomes << check_strategy(user, algorithm, side, coin, amount, strat)
         end 
     end
 
-    def self.check_strategy(user, algorithm, side, coin, amount)
+    def self.check_strategy(user, algorithm, side, coin, amount, strat)
         res = nil
         if self.check_and(algorithm)
             if side == "BUY"
@@ -23,9 +24,13 @@ module StrategyInterpreter
             else
                 res = OrderApi.sell(user, coin, amount)
             end
-            puts res
         end
-        puts res
+
+        if !res.nil? && res.success?
+            puts "I am running!!!!!"
+            strat.last_executed = DateTime.now()
+            strat.save
+        end
         return res
     end
 
