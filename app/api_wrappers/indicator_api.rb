@@ -39,6 +39,7 @@ module IndicatorApi
       indicators: indicator_names
     }
     body = {secret: ENV["TAAPI_API_KEY"], construct: construct}
+    puts body
     response = ApiUtils.post_api_res("https://api.taapi.io/bulk", body)
     if !response.key?("error")
       data = response["data"]
