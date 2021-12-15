@@ -20,6 +20,14 @@ module StrategiesHelper
   def generate_execute_link(strat)
     "/strategies/execute/#{strat.id}"
   end
+
+  def disabled?(strat)
+    !strat.enabled
+  end
+
+  def generate_toggle_link(strat)
+    "/strategies/toggle/#{strat.id}"
+  end
   
   def generate_description(strat)
     "This strategy will #{strat.side.downcase} #{pluralize strat.amount, 'coin'} of #{strat.coin_name}"

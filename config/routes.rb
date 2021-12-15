@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   get '/strategies/edit/:id', to: 'strategies#edit'
   post '/strategies/edit/:id', to: 'strategies#update'
   post '/strategies/execute/:id', to: 'strategies#manual_execute'
+  post '/strategies/toggle/:id', to: 'strategies#toggle'
 
   # orders
   post '/order', to: 'order#order'
