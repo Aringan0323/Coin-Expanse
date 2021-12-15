@@ -73,7 +73,7 @@ Rails.application.configure do
     :enable_starttls_auto => true 
   }
 
-  host = "www.coinexpanse.com"
+  host = "coinexpanse.herokuapp.com"
 
   config.action_mailer.default_url_options = {:host => host}
 
