@@ -180,7 +180,7 @@
     const side = $('#buy-radio').attr('checked') ? 'buy' : 'sell';
     // data[x][0] is the bid, data[x][1] is the ask
     const coins = ["Bitcoin", "Ethereum", "Ripple XRP", "Litecoin"]
-    const conversion = data[coins.indexOf(coin)][side === 'buy' ? 1 : 0]
+    const conversion = data[coin][side === 'buy' ? 'ask' : 'bid']
     const USD = amount * conversion;
     const start = parseFloat($('#el').text());
     jQuery({someValue: start}).animate({someValue: USD}, {

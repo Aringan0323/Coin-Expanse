@@ -1,7 +1,12 @@
 module OrderHelper
   def createData
-    Coin.includes(:book_tickers).pluck(:book_tickers)[-4..-1].map { |ticker|
-      ticker[1..-2].split(',').select.with_index { |e, i| e if [3, 5].include? i }
-    }
+    hash = {}
+    Coin.all.each do |coin|
+      hash[coin.name] = {}
+      tickers = coin.book_tickers[-1]
+      hash[coin.name][:ask] = tickers[:askPrice]
+      hash[coin.name][:bid] = tickers[:bidPrice] 
+    end
+    hash.to_json
   end
 end
