@@ -18,7 +18,7 @@ module StrategyInterpreter
 
     def self.check_strategy(user, algorithm, side, coin, amount, strat)
         res = nil
-        if self.check_and(algorithm)
+        if strat.enabled && self.check_and(algorithm)
             if side == "BUY"
                 res = OrderApi.buy(user, coin, amount)
             else
@@ -27,7 +27,6 @@ module StrategyInterpreter
         end
 
         if !res.nil? && res.success?
-            puts "I am running!!!!!"
             strat.last_executed = DateTime.now()
             strat.save
         end
