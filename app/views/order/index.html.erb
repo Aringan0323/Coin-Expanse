@@ -7,8 +7,8 @@
         <div class='display-4'>Make an Order</div>
       </div>
       <div class='card-body card-padding order-column'>
-        <% if flash[:danger] %>
-          <div class="alert alert-danger order-alert"><%= flash[:danger] %></div>
+        <% flash.each do |type, msg| %>
+          <div class="alert alert-<%= type %> library-alert"><%= flash[type] %></div>
         <% end %>
         <div class='input'>
           1. Please select the type of order you would like to make:
