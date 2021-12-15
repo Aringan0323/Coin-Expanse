@@ -46,6 +46,7 @@ admin.strategies << Strategy.create(
     coin_name: "Ethereum",
     side: "SELL",
     amount: 50.0,
+    enabled: true,
     algorithm:
      "{\"or\":{\"rsi\":{\"coin\":\"Ethereum\",\"value\":\"50\",\"condition\":\"\\u003c\",\"interval\":\"1w\"},\"not\":{\"rsi\":{\"coin\":\"Ethereum\",\"value\":\"50\",\"condition\":\"\\u003c\",\"interval\":\"1w\"}}}}",
     raw:

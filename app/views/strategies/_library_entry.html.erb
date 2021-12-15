@@ -6,6 +6,13 @@
       <div class='display-title'>
         <%= locals[:strat].name %>
       </div>
+      <div class='indication'>
+        <% if disabled? locals[:strat] %>
+          <i class="fas fa-times text-danger"></i>
+        <% else %>
+          <i class="fas fa-check text-success"></i>
+        <% end %>
+      </div>
     </button>
   </div>
   <div id="<%= locals[:strat].name.gsub(" ", "") %>-collapse" class="accordion-collapse collapse" 
@@ -36,8 +43,9 @@
       <div class='description-right'>
         <%= button_to "Edit", generate_edit_link(locals[:strat]), class: "btn btn-dark", method: :get %>
         <%= button_to "Execute Manually", generate_execute_link(locals[:strat]), class: "btn btn-info", method: :post %>
+        <%= button_to "#{disabled?(locals[:strat]) ? 'Enable' : 'Disable'}", generate_toggle_link(locals[:strat]), class: "btn #{disabled?(locals[:strat]) ? 'btn-success' : 'btn-danger'}", method: :post %>
         <div>
-          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#<%= locals[:strat].name.gsub(" ", "") %>-delete">
+          <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#<%= locals[:strat].name.gsub(" ", "") %>-delete">
             Delete
           </button>
           <div class="modal fade" id="<%= locals[:strat].name.gsub(" ", "") %>-delete" tabindex="-1" role="dialog" 

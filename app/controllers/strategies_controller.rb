@@ -7,6 +7,18 @@ class StrategiesController < PrivateController
     @raw = params[:raw_html] || nil
   end
 
+  def toggle
+    strategy = Strategy.find(params[:id])
+    old = strategy.enabled
+    if strategy.update(enabled: !old)
+      flash[:success] = "Successfully #{old ? 'disabled' : 'enabled'} #{strategy.name}"
+    else
+      flash[:danger] = "Error #{old ? 'disabling' : 'enabling'} #{strategy.name}"
+    end
+    redirect_to '/strategies/library'
+
+  end
+
   def edit
     strategy = Strategy.find(params[:id])
     @raw = strategy.raw

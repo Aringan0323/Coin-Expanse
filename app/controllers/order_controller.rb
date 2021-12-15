@@ -21,7 +21,7 @@ class OrderController < PrivateController
     end
     puts("****____#{side_string}____****")
     if response.success?
-      flash[:danger] = "You successfully #{side_string} #{qty} #{qty == 1 ? 'coin' : 'coins'} of #{coin.name}"
+      flash[:success] = "You successfully #{side_string} #{qty} #{qty == 1 ? 'coin' : 'coins'} of #{coin.name}"
       redirect_to '/order'
     else
       flash[:danger] = JSON.parse(response.body)['msg']

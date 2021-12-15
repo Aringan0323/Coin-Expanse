@@ -270,7 +270,7 @@
     }
     
     .description-right {
-        height: 200px;
+        height: 250px;
         display: flex;
         flex-direction: column;
         flex: 1;
@@ -285,6 +285,10 @@
     
     .display-title {
         font-size: 30px;
+    }
+    
+    .indication {
+        padding-left: 2rem;
     }
     
     .value-row {
