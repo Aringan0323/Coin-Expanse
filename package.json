@@ -1,5 +1,5 @@
 {
-  "name": "block-trade",
+  "name": "coin-expanse",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",

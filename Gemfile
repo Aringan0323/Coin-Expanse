@@ -57,7 +57,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 
-# Block_Trade specific gems
+# Coin_Expanse specific gems
 
 gem 'rexml'
 
