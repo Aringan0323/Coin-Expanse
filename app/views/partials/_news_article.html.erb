@@ -8,7 +8,9 @@
         <%= content_tag :div, article.date.localtime.strftime("%m/%d/%Y %I:%M %p") %>
       </div>
       <div class='card-text'>
-        <%= content_tag :div, article.description[..90]+'...', :class => 'article-desc' %>
+        <div class="article-desc">
+          <%= raw(article.description[..90]+'...')%>
+        </div>
       </div>
     </div>
   </div>
