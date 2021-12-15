@@ -1,5 +1,7 @@
 # Coin Expanse
 
+### Can be found at [www.CoinExpanse.com](http://coinexpanse.com)
+
 Coin Expanse is an effort to consolidate cryptocurrency trading into a simple and modular GUI that allows users to customize their own widgets to view crypto metrics as well as give them a means to upload custom algorithmic implementations. Currently, the project includes:
 
 1. User profile creation and login (authentication)
