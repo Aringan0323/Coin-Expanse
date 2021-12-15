@@ -1,7 +1,20 @@
 require 'sidekiq/web'
 require 'sidekiq-scheduler/web'
+
 Rails.application.routes.draw do
-  mount Sidekiq::Web => '/sidekiq'
+  with_dev_auth =
+    lambda do |app|
+      Rack::Builder.new do
+        use Rack::Auth::Basic do |username, password|
+          ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(username), ::Digest::SHA256.hexdigest("admin")) &
+            ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(password), ::Digest::SHA256.hexdigest(ENV.fetch("ADMIN_PASSWORD")))
+        end
+        run app
+      end
+    end
+
+  mount with_dev_auth.call(Sidekiq::Web), at: "sidekiq"
+
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'logout', to: 'private_sessions#destroy'
