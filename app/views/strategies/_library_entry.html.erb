@@ -42,7 +42,7 @@
       </div>
       <div class='description-right'>
         <%= button_to "Edit", generate_edit_link(locals[:strat]), class: "btn btn-dark", method: :get %>
-        <%= button_to "Execute Manually", generate_execute_link(locals[:strat]), class: "btn btn-info", method: :post %>
+        <%= button_to "Execute Manually", generate_execute_link(locals[:strat]), class: "btn btn-info", method: :post, disabled: disabled?(locals[:strat]) %>
         <%= button_to "#{disabled?(locals[:strat]) ? 'Enable' : 'Disable'}", generate_toggle_link(locals[:strat]), class: "btn #{disabled?(locals[:strat]) ? 'btn-success' : 'btn-danger'}", method: :post %>
         <div>
           <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#<%= locals[:strat].name.gsub(" ", "") %>-delete">
