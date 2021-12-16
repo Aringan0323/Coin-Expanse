@@ -12,7 +12,7 @@
     disable: false
 
   StrategyWorker:
-    every: ['15 minutes', first_in: '0s']
+    every: ['3 minutes', first_in: '0s']
     disable: false
 
   TickerWorker:

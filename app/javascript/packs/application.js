@@ -161,7 +161,7 @@ function create_chart(id, url) {
         zeros: true,
         prefix: "$",
         thousands: ",",
-        refresh: 15,
+        refresh: 7,
         colors: ["rgb(117, 16, 232)", "rgb(16, 138, 232)", "rgb(158, 0, 0)"],
         library: {
             chart: {
