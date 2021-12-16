@@ -33,7 +33,7 @@ class StrategiesController < PrivateController
 
   def update
     strategy = Strategy.find(params[:id])
-    filtered_json = filter_json(params['data']['content']['0'])
+    filtered_json = filter_json(params['data']['content']['0'], 0)
     pp filtered_json
     if strategy.update(name: params[:name], side: params[:type], coin_name: params[:coin], amount: params[:quantity], algorithm: filtered_json.to_json, raw: params[:html_raw])
       flash[:success] = "#{strategy.name} successfully updated"
@@ -50,7 +50,7 @@ class StrategiesController < PrivateController
       redirect_to '/strategies/new'
     else
       begin
-        filtered_json = filter_json(params['data']['content']['0'])
+        filtered_json = filter_json(params['data']['content']['0'], 0)
         pp filtered_json
         strat = Strategy.new(name: params[:name], side: params[:type], coin_name: params[:coin], amount: params[:quantity], algorithm: filtered_json.to_json, raw: params[:html_raw])
         current_user.strategies << strat
@@ -120,15 +120,19 @@ class StrategiesController < PrivateController
 
   private
 
-  def filter_json(json)
+  def filter_json(json, itr)
     res = {}
     if json['type'] == 'DIV'
       if json['attributes']['id']
         id = json['attributes']['id']
         name = id[..id.index('-') - 1]
+        if not_op?(name)
+          name += "-#{itr}"
+        end
         res[name] = {}
         json['content']['0']['content'].each do |_key, child|
-          res[name].merge!(filter_json(child))
+          itr += 1
+          res[name].merge!(filter_json(child, itr))
         end
       elsif json['attributes']['class'] == 'input-row'
         content = json['content']
@@ -153,5 +157,8 @@ class StrategiesController < PrivateController
     res
   end
 
+  def not_op?(str)
+    !['and', 'or', 'not'].include?(str)
+  end
 
 end

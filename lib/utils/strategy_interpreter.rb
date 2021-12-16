@@ -71,6 +71,10 @@ module StrategyInterpreter
 
     def self.check_indicator(ind_name, ind_hash)
         coin = Coin.find_by(name: ind_hash['coin'])
+        index = ind_name.index('-')
+        if index
+            ind_name = ind_name[..index - 1]
+        end
         ind_name = coin.symbol + "_" + ind_name
         indicator = Indicator.find_by(name: ind_name, interval: ind_hash['interval'])
         data = JSON.parse(indicator.data.gsub("=>", ":"))

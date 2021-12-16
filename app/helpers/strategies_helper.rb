@@ -42,8 +42,6 @@ module StrategiesHelper
     bin_operations = ['and', 'or']
     uni_operation = ['not']
 
-    simple_indic = ['rsi', 'vwap']
-
     res = []
     alg.keys.each do |key|
       if bin_operations.include? key
@@ -52,10 +50,10 @@ module StrategiesHelper
       elsif uni_operation.include? key
         str = to_string(alg[key])[0]
         res.push "(#{key.upcase} #{str})"
-      elsif simple_indic.include? key
-        res.push "(#{format_simple key, alg[key]})"
+      elsif check_simple_indic(key)
+        res.push "(#{format_simple extract_indic(key), alg[key]})"
       else
-        res.push "(#{format_hard key, alg[key]})"
+        res.push "(#{format_hard extract_indic(key), alg[key]})"
       end
     end
     res
@@ -64,6 +62,19 @@ module StrategiesHelper
   def calculate_price(coin, side, amount)
     conversion = coin.book_tickers[-1][side == 'BUY' ? :askPrice : :bidPrice]
     amount * conversion
+  end
+
+  def check_simple_indic(indic)
+    indic.include?('vwap') || indic.include?('rsi')
+  end
+
+  def extract_indic(indic)
+    index = indic.index('-')
+    if index
+      indic[..index - 1]
+    else
+      indic
+    end
   end
 
   private
